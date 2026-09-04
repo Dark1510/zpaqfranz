@@ -20,7 +20,7 @@ Windows, FreeBSD, OpenBSD, Linux, MacOS, Solaris, OmniOS and others
 
 WWW: https://github.com/fcorbelli/zpaqfranz
 
-FACT: the best software for backup/disaster recovery your ever seen 
+FACT: the best software for backup/disaster recovery your ever seen
       (just joking)
 
            Provided as-is, with no warranty whatsoever,
@@ -65,13 +65,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 
 /*
-By NOT defining ZPAQFULL, you'll get the 
+By NOT defining ZPAQFULL, you'll get the
 full version of zpaqfranz, with all features enabled.
 
 Here's the "spiegone"
 https://github.com/fcorbelli/zpaqfranz/wiki/Security:-open-software
 */
- 
+
 #ifdef DLL
 	#undef OPEN
 	#define OPEN
@@ -93,7 +93,7 @@ https://github.com/fcorbelli/zpaqfranz/wiki/Security:-open-software
 #else
 	#define TEXT_ALIGN ""
 #endif // corresponds to #ifdef (#ifdef MALLOC_ALIGN)
-	
+
 /// "automagically" compiling (well, sort of)
 /// NO Windows? => no HWBLAKE,NOSHA1, YES unix
 #ifndef _WIN32
@@ -331,13 +331,13 @@ As far as I know this is allowed by the licenses.
 ****    Please report and I will fix as soon as possible     ****
 
 
-        _      _____ _____ ______ _   _  _____ ______  _____ 
+        _      _____ _____ ______ _   _  _____ ______  _____
        | |    |_   _/ ____|  ____| \ | |/ ____|  ____|/ ____|
-       | |      | || |    | |__  |  \| | (___ | |__  | (___  
-       | |      | || |    |  __| | . ` |\___ \|  __|  \___ \ 
+       | |      | || |    | |__  |  \| | (___ | |__  | (___
+       | |      | || |    |  __| | . ` |\___ \|  __|  \___ \
        | |____ _| || |____| |____| |\  |____) | |____ ____) |
-       |______|_____\_____|______|_| \_|_____/|______|_____/ 
-                                                       
+       |______|_____\_____|______|_| \_|_____/|______|_____/
+
 Credits and copyrights and licenses and links and internal bookmarks
 
  0 [Public domain]                zpaq http://mattmahoney.net/dc/zpaq.html
@@ -351,7 +351,7 @@ Credits and copyrights and licenses and links and internal bookmarks
  1 [Public domain]                zpaq.AES from libtomcrypt by Tom St Denis
  /// LICENSE_START.1
  /// LICENSE_END.1
- 
+
 	LibTomCrypt is licensed under DUAL licensing terms.
 	Choose and use the license of your needs.
 	[LICENSE #1]
@@ -370,7 +370,7 @@ Credits and copyrights and licenses and links and internal bookmarks
 	DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 	TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
-	0. You just DO WHAT THE FUCK YOU WANT TO. 
+	0. You just DO WHAT THE FUCK YOU WANT TO.
 	[/LICENSE #2]
 
  2 [Public domain]                zpaq.salsa20 by D. J. Bernstein
@@ -407,7 +407,7 @@ Credits and copyrights and licenses and links and internal bookmarks
 	Franco Corbelli
 	(Igor Pavlov, 2022-07-22)
 		Yes, you can use any public domain code from 7-zip in any project.
-	
+
  6 [MIT license]                  zpaq.Code from libdivsufsort 2.0 (C) Yuta Mori, 2003-2008
  /// LICENSE_START.6
  /// LICENSE_END.6
@@ -898,7 +898,7 @@ Credits and copyrights and licenses and links and internal bookmarks
 	BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 	WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 	OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-	EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+	EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 17 [almost-unrestricted]		  Twofish implementation,(c) 2002 by Niels Ferguson   https://github.com/wernerd/ZRTPCPP/blob/master/cryptcommon/twofish.c
 	**** This is part of currently not released zpaqfranz (future zpaq-over-IP)
@@ -1085,7 +1085,7 @@ Credits and copyrights and licenses and links and internal bookmarks
  /// LICENSE_START.20
  /// LICENSE_END.20
     github                        https://github.com/noloader/SHA-Intrinsics
-	
+
     Copyright © 2022 Jeffrey Walton <noloader@gmail.com>
     sha1-x86.c - Intel SHA extensions using C intrinsics
     Written and place in public domain by Jeffrey Walton
@@ -1096,7 +1096,7 @@ Credits and copyrights and licenses and links and internal bookmarks
  /// LICENSE_START.21
  /// LICENSE_END.21
     Removed (dump() function rewritten by me)
-	
+
 22 [BSD 2-Clause license]                LZ4 Copyright (C) 2011-2023, Yann Collet https://github.com/lz4/lz4
  /// LICENSE_START.22
  /// LICENSE_END.22
@@ -1158,32 +1158,32 @@ furnished to do so, subject to the following conditions:
 COPYRIGHT AND PERMISSION NOTICE
 Copyright (c) 1996 - 2025, Daniel Stenberg, daniel@haxx.se, and many contributors, see the THANKS file.
 All rights reserved.
-Permission to use, copy, modify, and distribute this software for any purpose with or without fee 
+Permission to use, copy, modify, and distribute this software for any purpose with or without fee
 is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
-TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. 
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-Except as contained in this notice, the name of a copyright holder shall not be used in advertising or 
-otherwise to promote the sale, use or other dealings in this Software without prior written 
+Except as contained in this notice, the name of a copyright holder shall not be used in advertising or
+otherwise to promote the sale, use or other dealings in this Software without prior written
 authorization of the copyright holder.
 
 
-   _____ _____  ______ ______ _______ _____ _   _  _____  _____ 
+   _____ _____  ______ ______ _______ _____ _   _  _____  _____
   / ____|  __ \|  ____|  ____|__   __|_   _| \ | |/ ____|/ ____|
- | |  __| |__) | |__  | |__     | |    | | |  \| | |  __| (___  
- | | |_ |  _  /|  __| |  __|    | |    | | | . ` | | |_ |\___ \ 
+ | |  __| |__) | |__  | |__     | |    | | |  \| | |  __| (___
+ | | |_ |  _  /|  __| |  __|    | |    | | | . ` | | |_ |\___ \
  | |__| | | \ \| |____| |____   | |   _| |_| |\  | |__| |____) |
-  \_____|_|  \_\______|______|  |_|  |_____|_| \_|\_____|_____/ 
-                                                                
+  \_____|_|  \_\______|______|  |_|  |_____|_| \_|\_____|_____/
 
 
- 0 ****** It is worth mentioning that the initial developer, 
+
+ 0 ****** It is worth mentioning that the initial developer,
    ****** the one who has the most credit is
    ****** Dr. Matt Mahoney             http://mattmahoney.net
    ****** If you like zpaq technology, HE is the one to thank
- 
+
  1 Thanks to JFLarvoire 								for usefun (yes, usefun) informations https://github.com/JFLarvoire/SysToolsLib/blob/master/C/MsvcLibX/src/readlink.c
  2 Thanks to Bulat Ziganshin 							for contribution on Slicing-by-16 for crc32
  3 Thanks to SeDD user of the encode.ru forum   		for SFX debugging
@@ -1220,7 +1220,7 @@ authorization of the copyright holder.
 34 Thanks to https://github.com/havocesp                for very useful ideas
 35 Thanks to https://github.com/luckman212              for a refactoring-induced bug detection
 36 Thanks to whiskytechfred user of the encode.su forum for truncate-touching
-37 Thanks to Takayuki Matsuoka                          for LZ4 streaming API example : line-by-line logfile 
+37 Thanks to Takayuki Matsuoka                          for LZ4 streaming API example : line-by-line logfile
 38 Thanks to whiskytechfred user of the encode.ru forum for vss filename fix
 39 Thanks to https://github.com/sergeevabc              for suggestions on hash command
 40 Thanks to https://github.com/gitboogey               for ideas on -test and -verify with vss
@@ -1238,18 +1238,18 @@ authorization of the copyright holder.
 52 Thanks to https://github.com/197788                  for help fix
 53 Thanks to https://github.com/cheebusjeebus           for "different" UTC fixes
 54 Thanks to https://github.com/def324/                 for Docker https://github.com/fcorbelli/zpaqfranz/tree/main/docker
-55 Thanks to https://github.com/KnightAR                for stdin-size switch   
+55 Thanks to https://github.com/KnightAR                for stdin-size switch
 
-  _____  ______          _      _  __     __   ____  _____  ______ _   _ 
+  _____  ______          _      _  __     __   ____  _____  ______ _   _
  |  __ \|  ____|   /\   | |    | | \ \   / /  / __ \|  __ \|  ____| \ | |
  | |__) | |__     /  \  | |    | |  \ \_/ /  | |  | | |__) | |__  |  \| |
  |  _  /|  __|   / /\ \ | |    | |   \   /   | |  | |  ___/|  __| | . ` |
  | | \ \| |____ / ____ \| |____| |____| |    | |__| | |    | |____| |\  |
  |_|  \_\______/_/    \_\______|______|_|     \____/|_|    |______|_| \_|
-                                                                         
 
-`zpaqfranz` is **fully open source**. 
-All its components (including binary SFX modules) 
+
+`zpaqfranz` is **fully open source**.
+All its components (including binary SFX modules)
 are published on GitHub and can be rebuilt from source.
 
 Here's the "spiegone"
@@ -1299,8 +1299,8 @@ wget http://www.francocorbelli.it/Makefile -O Makefile
 ```
 
 Why cc for a C++ file? LSS ancient-backward-compatibility
-This is therefore a "micro makefile" that you can try if you 
-can't use the full one, but it essentially works only 
+This is therefore a "micro makefile" that you can try if you
+can't use the full one, but it essentially works only
 on modern versions of Linux, not on older ones.
 
 
@@ -1331,11 +1331,11 @@ clean:
 ===============================================================================
 [4] The Makefile
 
-A universal Makefile is impossible, especially with older systems. 
-If you’re using reasonably modern operating systems, 
+A universal Makefile is impossible, especially with older systems.
+If you’re using reasonably modern operating systems,
 you can try the fairly complete Makefile I’ve provided here.
 
-https://github.com/fcorbelli/zpaqfranz/blob/main/Makefile 
+https://github.com/fcorbelli/zpaqfranz/blob/main/Makefile
 ===============================================================================
 
 
@@ -1363,7 +1363,7 @@ then... build (aka: compile)
 
 
 My main development platforms are AMD Windows
-(non-Intel Windows (arm) currently unsupported) 
+(non-Intel Windows (arm) currently unsupported)
 and Intel FreeBSD.
 
 I rarely use Linux or MacOS or whatever (for compiling),
@@ -1391,7 +1391,7 @@ DEFINEs at compile-time: IT IS UP TO YOU NOT TO MIX LOGICAL INCOMPATIBLE DEFINIT
 									// (Honeywell 316) or little word (PDP-11)
 									// the autotest command is for you :)
 									// https://gcc.gnu.org/legacy-ml/gcc-help/2007-07/msg00343.html
-									
+
 									// From 60.9s if compiled without -DNOJIT there is a switch -nojit
 									// Translation: even if you have an executable compiled with default
 									// you can turn off the JIT
@@ -1408,14 +1408,14 @@ DEFINEs at compile-time: IT IS UP TO YOU NOT TO MIX LOGICAL INCOMPATIBLE DEFINIT
 -DESX								// Yes, zpaqfranz run (kind of) on ESXi too :-)
 
 -DALIGNMALLOC 						// Force malloc to be aligned at something (sparc64). Use naive CRC-32
-	
+
 -DIPV6								// Do not force IPv4 (the current default)
 
 #ifdef ZPAQFULL ///NOSFTPSTART
 -DSFTP								// Enable SFTP support via curl (needs the library!)
 
--DOPEN								// Strips the executable of all non-immediately analyzable components, 
-									// disables temporary file creation, restricts potentially dangerous functions 
+-DOPEN								// Strips the executable of all non-immediately analyzable components,
+									// disables temporary file creation, restricts potentially dangerous functions
 									// such as library loading and file deletion
 -DDLL								// Experimental DLL interface for GUI
 
@@ -1454,26 +1454,26 @@ zpaqfranz translate (by default) ZPAQL opcodes into "real" Intel (amd64 or x86+S
 On other systems a -DNOJIT (ARM/Apple CPUs for example) will enforce software interpretation.
 I write it BIG, #1 FAQ with newer Macintosh (M1/M2) is forgetting -DNOJIT
 
-  _   _  ___  _   _   ___ _   _ _____ _____ _           __          ____  _   _  ___      _ ___ _____ 
+  _   _  ___  _   _   ___ _   _ _____ _____ _           __          ____  _   _  ___      _ ___ _____
  | \ | |/ _ \| \ | | |_ _| \ | |_   _| ____| |      ____\ \        |  _ \| \ | |/ _ \    | |_ _|_   _|
- |  \| | | | |  \| |  | ||  \| | | | |  _| | |     |_____\ \  _____| | | |  \| | | | |_  | || |  | |  
- | |\  | |_| | |\  |  | || |\  | | | | |___| |___  |_____/ / |_____| |_| | |\  | |_| | |_| || |  | |  
- |_| \_|\___/|_| \_| |___|_| \_| |_| |_____|_____|      /_/        |____/|_| \_|\___/ \___/|___| |_|  
-                                                                                                      
-Starting from version 60.9, the same zpaqfranz code is used even if compiled **without** `-DNOJIT`. 
-In this case, you can disable it with the `-nojit` switch. 
-Remember that JIT availability does not affect or slow down **compression** but has 
+ |  \| | | | |  \| |  | ||  \| | | | |  _| | |     |_____\ \  _____| | | |  \| | | | |_  | || |  | |
+ | |\  | |_| | |\  |  | || |\  | | | | |___| |___  |_____/ / |_____| |_| | |\  | |_| | |_| || |  | |
+ |_| \_|\___/|_| \_| |___|_| \_| |_| |_____|_____|      /_/        |____/|_| \_|\___/ \___/|___| |_|
+
+Starting from version 60.9, the same zpaqfranz code is used even if compiled **without** `-DNOJIT`.
+In this case, you can disable it with the `-nojit` switch.
+Remember that JIT availability does not affect or slow down **compression** but has
 a significant impact on **decompression**.
 
-To summarize: If you’re sure your system does not support JIT (for example Apple silicon), 
+To summarize: If you’re sure your system does not support JIT (for example Apple silicon),
 compile with `-DNOJIT` as before.
-Otherwise, compile: zpaqfranz will "automagically" turn on -nojit if CPU (or OS) is not OK. 
+Otherwise, compile: zpaqfranz will "automagically" turn on -nojit if CPU (or OS) is not OK.
 If, during extraction, the process fails because the JIT is kaputt,
 add the `-nojit` switch (e.g., zpaqfranz x z:\pippo.zpaq -to z:\ugo -nojit).
 
-Why this change? Because there are Intel platforms (which do support JIT) 
-where executing code from allocated memory is not allowed for security reasons. 
-Classic examples include certain BSD types (OpenBSD, NetBSD...). 
+Why this change? Because there are Intel platforms (which do support JIT)
+where executing code from allocated memory is not allowed for security reasons.
+Classic examples include certain BSD types (OpenBSD, NetBSD...).
 In such cases, even if the CPU is compatible, the operating system is not.
 Not my fault :)
 
@@ -1508,15 +1508,15 @@ If you are compiling from source you can safely use it.
 BTW on my PC native is faster in benchmark, but slower in real-world compression (!).
 
 CLANG OR GCC?
-It is hard to choose between these two compilers. 
-I generally prefer gcc for better performance. 
-However, this is not true all the time; it depends on a thousand things, including the CPU type. 
+It is hard to choose between these two compilers.
+I generally prefer gcc for better performance.
+However, this is not true all the time; it depends on a thousand things, including the CPU type.
 For example on Arch and AMD 7950, running inside VM,
 clang 17.0.6 (4992) is much faster than gcc 14.1.1 (4584).
 BUT with -march=native
 gcc 14.1.1 (5595) is way faster clang 17.0.6 (5044)
 
-Short version: test yourself. 
+Short version: test yourself.
 The b (benchmark) command is there for you.
 
 -O2 or -O3
@@ -1526,7 +1526,7 @@ OTHER COMPILERS
 I do not know. Try yourself :)
 
 *NIX AND DOUBLE QUOTES
-Please, on non-Windows systems, DO NOT FORGET THE DOUBLE QUOTES, 
+Please, on non-Windows systems, DO NOT FORGET THE DOUBLE QUOTES,
 especially with multipart files.
 "test_????.zpaq" is good
 test_????.zpaq   is BAD
@@ -1534,15 +1534,15 @@ test_????.zpaq   is BAD
 
 #ifdef ZPAQFULL ///NOSFTPSTART
 SFTP AND LIBCURL
-If you define -DSFTP during compilation, the program will dynamically use the 
-libcurl library, if it is available. 
-On Windows systems, this refers to the libcurl-x64.dll/libcurl.dll. 
-This DLL can be downloaded from the author's website simply by running zpaqfranz sftp. 
-For *nix systems, it is typically named libcurl.so (or something similar) and must be 
-installed manually, for example, using pkg add libcurl (on FreeBSD) or equivalent commands. 
+If you define -DSFTP during compilation, the program will dynamically use the
+libcurl library, if it is available.
+On Windows systems, this refers to the libcurl-x64.dll/libcurl.dll.
+This DLL can be downloaded from the author's website simply by running zpaqfranz sftp.
+For *nix systems, it is typically named libcurl.so (or something similar) and must be
+installed manually, for example, using pkg add libcurl (on FreeBSD) or equivalent commands.
 If it cannot be made to work, zpaqfranz will return an error.
-On *nix systems, the location of libcurl.so might not be known: there are many different systems, 
-and it can be found almost anywhere. 
+On *nix systems, the location of libcurl.so might not be known: there are many different systems,
+and it can be found almost anywhere.
 Therefore, you need to ensure it is in the current path
 
 Usually libcurl can be installed with something like
@@ -1573,7 +1573,7 @@ It's up to you
 #endif ///NOSFTPEND
 
 
-	
+
 NOTE: from 59_3 you need to link urlmon (with a -lurlmon) on Windows
 
 TARGET EXAMPLES
@@ -1605,7 +1605,7 @@ g++ -O3 -DSERVER zpaqfranz.cpp -o zpaqfranz -lwsock32 -lws2_32 -lurlmon
 
 #ifdef ZPAQFULL ///NOSFTPSTART
 Windows 64 (g++ 7.3.0) WITH SFTP (everything)
-g++ -O3 -DSFTP -DHWSHA2 zpaqfranz.cpp -o zpaqfranz -Wunused-parameter -Wall -Wextra -pedantic -lwsock32 -lws2_32 -lurlmon -IC:/zpaqfranz/libcurl/include 
+g++ -O3 -DSFTP -DHWSHA2 zpaqfranz.cpp -o zpaqfranz -Wunused-parameter -Wall -Wextra -pedantic -lwsock32 -lws2_32 -lurlmon -IC:/zpaqfranz/libcurl/include
 #endif ///NOSFTPEND
 
 FreeBSD (11.x) gcc 7
@@ -1759,9 +1759,9 @@ g++ -DHWSHA2 -Dunix -O3 zpaqfranz.cpp -o zpaqfranz -pthread -static
 
 
 HPPA gcc version 14.2.0 (Debian 14.2.0-8)
-This type of CPU is quite particular, often requiring memory alignment, 
-which is not very compatible with the CRC-32 calculation function using 16-byte slices. 
-In this case, the "classic" algorithm is used, much slower but expected to work. 
+This type of CPU is quite particular, often requiring memory alignment,
+which is not very compatible with the CRC-32 calculation function using 16-byte slices.
+In this case, the "classic" algorithm is used, much slower but expected to work.
 I don't have access to hardware for thorough testing.
 g++ -O3 -DBIG -DALIGNMALLOC zpaqfranz.cpp -o zpaqfranz -pthread
 
@@ -1772,7 +1772,7 @@ Alpine Linux
 Sorry, cannot make pthread work
 Just run with -t1 (aka: multithread is disabled)
 
-Windows XP 
+Windows XP
 Newer zpaqfranz32.exe (>=60.10) more or less works on XP
 Please do not use "strange" things (ADS & whatever)
 
@@ -1800,25 +1800,25 @@ sometimes __sun, sometimes not
 
 ///NOSFTPSTART
 
-      _______ ______  _____ _______   ______ _____ _      ______ 
+      _______ ______  _____ _______   ______ _____ _      ______
      |__   __|  ____|/ ____|__   __| |  ____|_   _| |    |  ____|
-        | |  | |__  | (___    | |    | |__    | | | |    | |__   
-        | |  |  __|  \___ \   | |    |  __|   | | | |    |  __|  
-        | |  | |____ ____) |  | |    | |     _| |_| |____| |____ 
+        | |  | |__  | (___    | |    | |__    | | | |    | |__
+        | |  |  __|  \___ \   | |    |  __|   | | | |    |  __|
+        | |  | |____ ____) |  | |    | |     _| |_| |____| |____
         |_|  |______|_____/   |_|    |_|    |_____|______|______|
-                                                                                     
+
 
 https://github.com/fcorbelli/zpaqfranz/tree/main/AUTOTEST
 
-zpaqfranz has an internal self-testing mechanism, aimed at 'strange' systems, 
-i.e. with CPUs operating differently from Intel, such as Apple M1, M2, 
+zpaqfranz has an internal self-testing mechanism, aimed at 'strange' systems,
+i.e. with CPUs operating differently from Intel, such as Apple M1, M2,
 PowerPC, sparc, ARM, BIG endians and so on.
 
-The command autotest -to extracts a binary file, 
-contained within the source, a (Windows-created) .zpaq archive 
+The command autotest -to extracts a binary file,
+contained within the source, a (Windows-created) .zpaq archive
 for check whether the PAQL code (during extraction) is well processed.
 
-It is essentially an interoperability test between Windows 
+It is essentially an interoperability test between Windows
 (taken as a known good-working model) and the "weird" host system.
 
 It is packed with 256 "shuffled" pieces of the Iliade
@@ -1829,8 +1829,8 @@ l'ira funesta che infiniti addusse
 lutti agli Achei, molte anzi tempo all'Orco
 generose travolse alme d'eroi...
 
-From version 55.16, instead of using deduplicated pseudorandom files, 
-I preferred plaintext, in order to dispel any doubts about the contents of 
+From version 55.16, instead of using deduplicated pseudorandom files,
+I preferred plaintext, in order to dispel any doubts about the contents of
 the binary archive: the theoretical coverage is minor, but it does not matter.
 
 The resulting archive (sha256.zpaq), compressed by -m5 on Windows,
@@ -1862,12 +1862,12 @@ From branch 63 you can strip everything, losing the autotest capabilities of cou
 ///NOSFTPEND
 
 Fixer build
-g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -o fixed  
+g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -o fixed
 */
 
 /*
 	Here start the program.
-	
+
 	zpaqfranz can use a backwards compatible archive format, using various "packages"
 	Each FRANZOFFSET occupies, for each archived file, a certain space,
 	upto ~500 bytes, but they are still compressed, so there is less waste
@@ -1894,13 +1894,13 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 */
 #define FRANZO_NONE				0
 #define FRANZO_CRC_32 			1
-#define	FRANZO_XXHASH64			2 
-#define FRANZO_SHA_1			3 
-#define FRANZO_SHA_256			4 
-#define	FRANZO_XXH3				5 
-#define	FRANZO_BLAKE3			6 
-#define FRANZO_SHA3				7 
-#define FRANZO_MD5				8 
+#define	FRANZO_XXHASH64			2
+#define FRANZO_SHA_1			3
+#define FRANZO_SHA_256			4
+#define	FRANZO_XXH3				5
+#define	FRANZO_BLAKE3			6
+#define FRANZO_SHA3				7
+#define FRANZO_MD5				8
 #define FRANZO_WINHASH64		9
 #define FRANZO_WHIRLPOOL		10
 #define FRANZO_HIGHWAY64		11
@@ -1988,7 +1988,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 	#include <utime.h>
 	#include <queue>
 
-	
+
 #ifndef __HAIKU__
 	#include <sys/mount.h>
 #endif // corresponds to #ifndef (#ifndef __HAIKU__)
@@ -2010,7 +2010,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 		#include <sys/sysctl.h>
 		#include <sys/mount.h>
 	#endif // corresponds to #ifdef (#ifdef BSD)
-	
+
 	#include <netinet/in.h>
 	#include <sys/socket.h>
 	#include <netdb.h>
@@ -2091,7 +2091,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
  * If you have libcurl problems, all docs and details are found here:
  *   https://curl.se/libcurl/
  */
- 
+
 /// This is a bit reworked header
 
 #if (defined(__GNUC__) &&                                              \
@@ -2186,7 +2186,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #  endif
 #  define CURL_TYPEOF_CURL_SOCKLEN_T int
 #elif defined(__LCC__)
-#  if defined(__MCST__) 
+#  if defined(__MCST__)
 #    define CURL_TYPEOF_CURL_OFF_T     long
 #    define CURL_FORMAT_CURL_OFF_T     "ld"
 #    define CURL_FORMAT_CURL_OFF_TU    "lu"
@@ -2195,7 +2195,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #    define CURL_TYPEOF_CURL_SOCKLEN_T socklen_t
 #    define CURL_PULL_SYS_TYPES_H      1
 #    define CURL_PULL_SYS_SOCKET_H     1
-#  else                
+#  else
 #    define CURL_TYPEOF_CURL_OFF_T     long
 #    define CURL_FORMAT_CURL_OFF_T     "ld"
 #    define CURL_FORMAT_CURL_OFF_TU    "lu"
@@ -2326,7 +2326,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #  define CURL_SUFFIX_CURL_OFF_T     L
 #  define CURL_SUFFIX_CURL_OFF_TU    UL
 #  define CURL_TYPEOF_CURL_SOCKLEN_T int
-#elif defined(__TINYC__) 
+#elif defined(__TINYC__)
 #  define CURL_TYPEOF_CURL_OFF_T     long long
 #  define CURL_FORMAT_CURL_OFF_T     "lld"
 #  define CURL_FORMAT_CURL_OFF_TU    "llu"
@@ -2335,7 +2335,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #  define CURL_TYPEOF_CURL_SOCKLEN_T socklen_t
 #  define CURL_PULL_SYS_TYPES_H      1
 #  define CURL_PULL_SYS_SOCKET_H     1
-#elif defined(__SUNPRO_C) || defined(__SUNPRO_CC) 
+#elif defined(__SUNPRO_C) || defined(__SUNPRO_CC)
 #  if !defined(__LP64) && (defined(__ILP32) ||                          \
                            defined(__i386) ||                           \
                            defined(__sparcv8) ||                        \
@@ -2356,7 +2356,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #  define CURL_TYPEOF_CURL_SOCKLEN_T socklen_t
 #  define CURL_PULL_SYS_TYPES_H      1
 #  define CURL_PULL_SYS_SOCKET_H     1
-#elif defined(__xlc__) 
+#elif defined(__xlc__)
 #  if !defined(_LP64)
 #    define CURL_TYPEOF_CURL_OFF_T     long long
 #    define CURL_FORMAT_CURL_OFF_T     "lld"
@@ -2373,7 +2373,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #  define CURL_TYPEOF_CURL_SOCKLEN_T socklen_t
 #  define CURL_PULL_SYS_TYPES_H      1
 #  define CURL_PULL_SYS_SOCKET_H     1
-#elif defined(__hpux) 
+#elif defined(__hpux)
 #  if !defined(_LP64)
 #    define CURL_TYPEOF_CURL_OFF_T     long long
 #    define CURL_FORMAT_CURL_OFF_T     "lld"
@@ -2490,7 +2490,7 @@ g++ -g -Wall -Wextra -Wpedantic -fsanitize=address,undefined -O3 zpaqfranz.cpp -
 #  define CURL_OFF_T_C(Val)  CURLINC_OFF_T_C_HLPR1(Val,CURL_SUFFIX_CURL_OFF_T)
 #  define CURL_OFF_TU_C(Val) CURLINC_OFF_T_C_HLPR1(Val,CURL_SUFFIX_CURL_OFF_TU)
 #endif
-#endif 
+#endif
 #include <stdio.h>
 #include <limits.h>
 #if defined(__FreeBSD__) || defined(__MidnightBSD__)
@@ -2549,13 +2549,13 @@ typedef int curl_socket_t;
 #define CURL_SOCKET_BAD -1
 #endif
 #define curl_socket_typedef
-#endif 
+#endif
 typedef enum {
   CURLSSLBACKEND_NONE = 0,
   CURLSSLBACKEND_OPENSSL = 1,
   CURLSSLBACKEND_GNUTLS = 2,
   CURLSSLBACKEND_NSS                    CURL_DEPRECATED(8.3.0, "") = 3,
-  CURLSSLBACKEND_OBSOLETE4 = 4,  
+  CURLSSLBACKEND_OBSOLETE4 = 4,
   CURLSSLBACKEND_GSKIT                  CURL_DEPRECATED(8.3.0, "") = 5,
   CURLSSLBACKEND_POLARSSL               CURL_DEPRECATED(7.69.0, "") = 6,
   CURLSSLBACKEND_WOLFSSL = 7,
@@ -2568,20 +2568,20 @@ typedef enum {
   CURLSSLBACKEND_RUSTLS = 14
 } curl_sslbackend;
 struct curl_httppost {
-  struct curl_httppost *next;       
-  char *name;                       
-  long namelength;                  
-  char *contents;                   
-  long contentslength;              
-  char *buffer;                     
-  long bufferlength;                
-  char *contenttype;                
-  struct curl_slist *contentheader; 
-  struct curl_httppost *more;       
-  long flags;                       
-  char *showfilename;               
-  void *userp;                      
-  curl_off_t contentlen;            
+  struct curl_httppost *next;
+  char *name;
+  long namelength;
+  char *contents;
+  long contentslength;
+  char *buffer;
+  long bufferlength;
+  char *contenttype;
+  struct curl_slist *contentheader;
+  struct curl_httppost *more;
+  long flags;
+  char *showfilename;
+  void *userp;
+  curl_off_t contentlen;
 };
 typedef int (*curl_progress_callback)(void *clientp,
                                       double dltotal,
@@ -2616,13 +2616,13 @@ typedef enum {
   CURLFILETYPE_DEVICE_CHAR,
   CURLFILETYPE_NAMEDPIPE,
   CURLFILETYPE_SOCKET,
-  CURLFILETYPE_DOOR, 
-  CURLFILETYPE_UNKNOWN 
+  CURLFILETYPE_DOOR,
+  CURLFILETYPE_UNKNOWN
 } curlfiletype;
 struct curl_fileinfo {
   char *filename;
   curlfiletype filetype;
-  time_t time; 
+  time_t time;
   unsigned int perm;
   int uid;
   int gid;
@@ -2633,7 +2633,7 @@ struct curl_fileinfo {
     char *perm;
     char *user;
     char *group;
-    char *target; 
+    char *target;
   } strings;
   unsigned int flags;
   char *b_data;
@@ -2649,7 +2649,7 @@ typedef int (*curl_fnmatch_callback)(void *ptr,
                                      const char *string);
 typedef int (*curl_seek_callback)(void *instream,
                                   curl_off_t offset,
-                                  int origin); 
+                                  int origin);
 typedef size_t (*curl_read_callback)(char *buffer,
                                       size_t size,
                                       size_t nitems,
@@ -2657,12 +2657,12 @@ typedef size_t (*curl_read_callback)(char *buffer,
 typedef int (*curl_trailer_callback)(struct curl_slist **list,
                                       void *userdata);
 typedef enum {
-  CURLSOCKTYPE_IPCXN,  
-  CURLSOCKTYPE_ACCEPT, 
-  CURLSOCKTYPE_LAST    
+  CURLSOCKTYPE_IPCXN,
+  CURLSOCKTYPE_ACCEPT,
+  CURLSOCKTYPE_LAST
 } curlsocktype;
 #define CURL_SOCKOPT_OK 0
-#define CURL_SOCKOPT_ERROR 1 
+#define CURL_SOCKOPT_ERROR 1
 #define CURL_SOCKOPT_ALREADY_CONNECTED 2
 typedef int (*curl_sockopt_callback)(void *clientp,
                                      curl_socket_t curlfd,
@@ -2671,7 +2671,7 @@ struct curl_sockaddr {
   int family;
   int socktype;
   int protocol;
-  unsigned int addrlen; 
+  unsigned int addrlen;
   struct sockaddr addr;
 };
 typedef curl_socket_t
@@ -2681,15 +2681,15 @@ typedef curl_socket_t
 typedef int
 (*curl_closesocket_callback)(void *clientp, curl_socket_t item);
 typedef enum {
-  CURLIOE_OK,            
-  CURLIOE_UNKNOWNCMD,    
-  CURLIOE_FAILRESTART,   
-  CURLIOE_LAST           
+  CURLIOE_OK,
+  CURLIOE_UNKNOWNCMD,
+  CURLIOE_FAILRESTART,
+  CURLIOE_LAST
 } curlioerr;
 typedef enum {
-  CURLIOCMD_NOP,         
-  CURLIOCMD_RESTARTREAD, 
-  CURLIOCMD_LAST         
+  CURLIOCMD_NOP,
+  CURLIOCMD_RESTARTREAD,
+  CURLIOCMD_LAST
 } curliocmd;
 typedef curlioerr (*curl_ioctl_callback)(CURL *handle,
                                          int cmd,
@@ -2704,20 +2704,20 @@ typedef void *(*curl_calloc_callback)(size_t nmemb, size_t size);
 #endif
 typedef enum {
   CURLINFO_TEXT = 0,
-  CURLINFO_HEADER_IN,    
-  CURLINFO_HEADER_OUT,   
-  CURLINFO_DATA_IN,      
-  CURLINFO_DATA_OUT,     
-  CURLINFO_SSL_DATA_IN,  
-  CURLINFO_SSL_DATA_OUT, 
+  CURLINFO_HEADER_IN,
+  CURLINFO_HEADER_OUT,
+  CURLINFO_DATA_IN,
+  CURLINFO_DATA_OUT,
+  CURLINFO_SSL_DATA_IN,
+  CURLINFO_SSL_DATA_OUT,
   CURLINFO_END
 } curl_infotype;
 typedef int (*curl_debug_callback)
-       (CURL *handle,      
-        curl_infotype type, 
-        char *data,        
-        size_t size,       
-        void *userptr);    
+       (CURL *handle,
+        curl_infotype type,
+        char *data,
+        size_t size,
+        void *userptr);
 typedef int (*curl_prereq_callback)(void *clientp,
                                     char *conn_primary_ip,
                                     char *conn_local_ip,
@@ -2725,108 +2725,108 @@ typedef int (*curl_prereq_callback)(void *clientp,
                                     int conn_local_port);
 typedef enum {
   CURLE_OK = 0,
-  CURLE_UNSUPPORTED_PROTOCOL,    
-  CURLE_FAILED_INIT,             
-  CURLE_URL_MALFORMAT,           
-  CURLE_NOT_BUILT_IN,            
-  CURLE_COULDNT_RESOLVE_PROXY,   
-  CURLE_COULDNT_RESOLVE_HOST,    
-  CURLE_COULDNT_CONNECT,         
-  CURLE_WEIRD_SERVER_REPLY,      
-  CURLE_REMOTE_ACCESS_DENIED,    
-  CURLE_FTP_ACCEPT_FAILED,       
-  CURLE_FTP_WEIRD_PASS_REPLY,    
-  CURLE_FTP_ACCEPT_TIMEOUT,      
-  CURLE_FTP_WEIRD_PASV_REPLY,    
-  CURLE_FTP_WEIRD_227_FORMAT,    
-  CURLE_FTP_CANT_GET_HOST,       
-  CURLE_HTTP2,                   
-  CURLE_FTP_COULDNT_SET_TYPE,    
-  CURLE_PARTIAL_FILE,            
-  CURLE_FTP_COULDNT_RETR_FILE,   
-  CURLE_OBSOLETE20,              
-  CURLE_QUOTE_ERROR,             
-  CURLE_HTTP_RETURNED_ERROR,     
-  CURLE_WRITE_ERROR,             
-  CURLE_OBSOLETE24,              
-  CURLE_UPLOAD_FAILED,           
-  CURLE_READ_ERROR,              
-  CURLE_OUT_OF_MEMORY,           
-  CURLE_OPERATION_TIMEDOUT,      
-  CURLE_OBSOLETE29,              
-  CURLE_FTP_PORT_FAILED,         
-  CURLE_FTP_COULDNT_USE_REST,    
-  CURLE_OBSOLETE32,              
-  CURLE_RANGE_ERROR,             
-  CURLE_OBSOLETE34,              
-  CURLE_SSL_CONNECT_ERROR,       
-  CURLE_BAD_DOWNLOAD_RESUME,     
-  CURLE_FILE_COULDNT_READ_FILE,  
-  CURLE_LDAP_CANNOT_BIND,        
-  CURLE_LDAP_SEARCH_FAILED,      
-  CURLE_OBSOLETE40,              
-  CURLE_OBSOLETE41,              
-  CURLE_ABORTED_BY_CALLBACK,     
-  CURLE_BAD_FUNCTION_ARGUMENT,   
-  CURLE_OBSOLETE44,              
-  CURLE_INTERFACE_FAILED,        
-  CURLE_OBSOLETE46,              
-  CURLE_TOO_MANY_REDIRECTS,      
-  CURLE_UNKNOWN_OPTION,          
-  CURLE_SETOPT_OPTION_SYNTAX,    
-  CURLE_OBSOLETE50,              
-  CURLE_OBSOLETE51,              
-  CURLE_GOT_NOTHING,             
-  CURLE_SSL_ENGINE_NOTFOUND,     
-  CURLE_SSL_ENGINE_SETFAILED,    
-  CURLE_SEND_ERROR,              
-  CURLE_RECV_ERROR,              
-  CURLE_OBSOLETE57,              
-  CURLE_SSL_CERTPROBLEM,         
-  CURLE_SSL_CIPHER,              
-  CURLE_PEER_FAILED_VERIFICATION, 
-  CURLE_BAD_CONTENT_ENCODING,    
-  CURLE_OBSOLETE62,              
-  CURLE_FILESIZE_EXCEEDED,       
-  CURLE_USE_SSL_FAILED,          
-  CURLE_SEND_FAIL_REWIND,        
-  CURLE_SSL_ENGINE_INITFAILED,   
-  CURLE_LOGIN_DENIED,            
-  CURLE_TFTP_NOTFOUND,           
-  CURLE_TFTP_PERM,               
-  CURLE_REMOTE_DISK_FULL,        
-  CURLE_TFTP_ILLEGAL,            
-  CURLE_TFTP_UNKNOWNID,          
-  CURLE_REMOTE_FILE_EXISTS,      
-  CURLE_TFTP_NOSUCHUSER,         
-  CURLE_OBSOLETE75,              
-  CURLE_OBSOLETE76,              
-  CURLE_SSL_CACERT_BADFILE,      
-  CURLE_REMOTE_FILE_NOT_FOUND,   
-  CURLE_SSH,                     
-  CURLE_SSL_SHUTDOWN_FAILED,     
-  CURLE_AGAIN,                   
-  CURLE_SSL_CRL_BADFILE,         
-  CURLE_SSL_ISSUER_ERROR,        
-  CURLE_FTP_PRET_FAILED,         
-  CURLE_RTSP_CSEQ_ERROR,         
-  CURLE_RTSP_SESSION_ERROR,      
-  CURLE_FTP_BAD_FILE_LIST,       
-  CURLE_CHUNK_FAILED,            
-  CURLE_NO_CONNECTION_AVAILABLE, 
-  CURLE_SSL_PINNEDPUBKEYNOTMATCH, 
-  CURLE_SSL_INVALIDCERTSTATUS,   
-  CURLE_HTTP2_STREAM,            
-  CURLE_RECURSIVE_API_CALL,      
-  CURLE_AUTH_ERROR,              
-  CURLE_HTTP3,                   
-  CURLE_QUIC_CONNECT_ERROR,      
-  CURLE_PROXY,                   
-  CURLE_SSL_CLIENTCERT,          
-  CURLE_UNRECOVERABLE_POLL,      
-  CURLE_TOO_LARGE,               
-  CURLE_ECH_REQUIRED,            
-  CURL_LAST 
+  CURLE_UNSUPPORTED_PROTOCOL,
+  CURLE_FAILED_INIT,
+  CURLE_URL_MALFORMAT,
+  CURLE_NOT_BUILT_IN,
+  CURLE_COULDNT_RESOLVE_PROXY,
+  CURLE_COULDNT_RESOLVE_HOST,
+  CURLE_COULDNT_CONNECT,
+  CURLE_WEIRD_SERVER_REPLY,
+  CURLE_REMOTE_ACCESS_DENIED,
+  CURLE_FTP_ACCEPT_FAILED,
+  CURLE_FTP_WEIRD_PASS_REPLY,
+  CURLE_FTP_ACCEPT_TIMEOUT,
+  CURLE_FTP_WEIRD_PASV_REPLY,
+  CURLE_FTP_WEIRD_227_FORMAT,
+  CURLE_FTP_CANT_GET_HOST,
+  CURLE_HTTP2,
+  CURLE_FTP_COULDNT_SET_TYPE,
+  CURLE_PARTIAL_FILE,
+  CURLE_FTP_COULDNT_RETR_FILE,
+  CURLE_OBSOLETE20,
+  CURLE_QUOTE_ERROR,
+  CURLE_HTTP_RETURNED_ERROR,
+  CURLE_WRITE_ERROR,
+  CURLE_OBSOLETE24,
+  CURLE_UPLOAD_FAILED,
+  CURLE_READ_ERROR,
+  CURLE_OUT_OF_MEMORY,
+  CURLE_OPERATION_TIMEDOUT,
+  CURLE_OBSOLETE29,
+  CURLE_FTP_PORT_FAILED,
+  CURLE_FTP_COULDNT_USE_REST,
+  CURLE_OBSOLETE32,
+  CURLE_RANGE_ERROR,
+  CURLE_OBSOLETE34,
+  CURLE_SSL_CONNECT_ERROR,
+  CURLE_BAD_DOWNLOAD_RESUME,
+  CURLE_FILE_COULDNT_READ_FILE,
+  CURLE_LDAP_CANNOT_BIND,
+  CURLE_LDAP_SEARCH_FAILED,
+  CURLE_OBSOLETE40,
+  CURLE_OBSOLETE41,
+  CURLE_ABORTED_BY_CALLBACK,
+  CURLE_BAD_FUNCTION_ARGUMENT,
+  CURLE_OBSOLETE44,
+  CURLE_INTERFACE_FAILED,
+  CURLE_OBSOLETE46,
+  CURLE_TOO_MANY_REDIRECTS,
+  CURLE_UNKNOWN_OPTION,
+  CURLE_SETOPT_OPTION_SYNTAX,
+  CURLE_OBSOLETE50,
+  CURLE_OBSOLETE51,
+  CURLE_GOT_NOTHING,
+  CURLE_SSL_ENGINE_NOTFOUND,
+  CURLE_SSL_ENGINE_SETFAILED,
+  CURLE_SEND_ERROR,
+  CURLE_RECV_ERROR,
+  CURLE_OBSOLETE57,
+  CURLE_SSL_CERTPROBLEM,
+  CURLE_SSL_CIPHER,
+  CURLE_PEER_FAILED_VERIFICATION,
+  CURLE_BAD_CONTENT_ENCODING,
+  CURLE_OBSOLETE62,
+  CURLE_FILESIZE_EXCEEDED,
+  CURLE_USE_SSL_FAILED,
+  CURLE_SEND_FAIL_REWIND,
+  CURLE_SSL_ENGINE_INITFAILED,
+  CURLE_LOGIN_DENIED,
+  CURLE_TFTP_NOTFOUND,
+  CURLE_TFTP_PERM,
+  CURLE_REMOTE_DISK_FULL,
+  CURLE_TFTP_ILLEGAL,
+  CURLE_TFTP_UNKNOWNID,
+  CURLE_REMOTE_FILE_EXISTS,
+  CURLE_TFTP_NOSUCHUSER,
+  CURLE_OBSOLETE75,
+  CURLE_OBSOLETE76,
+  CURLE_SSL_CACERT_BADFILE,
+  CURLE_REMOTE_FILE_NOT_FOUND,
+  CURLE_SSH,
+  CURLE_SSL_SHUTDOWN_FAILED,
+  CURLE_AGAIN,
+  CURLE_SSL_CRL_BADFILE,
+  CURLE_SSL_ISSUER_ERROR,
+  CURLE_FTP_PRET_FAILED,
+  CURLE_RTSP_CSEQ_ERROR,
+  CURLE_RTSP_SESSION_ERROR,
+  CURLE_FTP_BAD_FILE_LIST,
+  CURLE_CHUNK_FAILED,
+  CURLE_NO_CONNECTION_AVAILABLE,
+  CURLE_SSL_PINNEDPUBKEYNOTMATCH,
+  CURLE_SSL_INVALIDCERTSTATUS,
+  CURLE_HTTP2_STREAM,
+  CURLE_RECURSIVE_API_CALL,
+  CURLE_AUTH_ERROR,
+  CURLE_HTTP3,
+  CURLE_QUIC_CONNECT_ERROR,
+  CURLE_PROXY,
+  CURLE_SSL_CLIENTCERT,
+  CURLE_UNRECOVERABLE_POLL,
+  CURLE_TOO_LARGE,
+  CURLE_ECH_REQUIRED,
+  CURL_LAST
 } CURLcode;
 typedef enum {
   CURLPX_OK,
@@ -2863,30 +2863,30 @@ typedef enum {
   CURLPX_UNKNOWN_FAIL,
   CURLPX_UNKNOWN_MODE,
   CURLPX_USER_REJECTED,
-  CURLPX_LAST 
+  CURLPX_LAST
 } CURLproxycode;
 typedef CURLcode (*curl_conv_callback)(char *buffer, size_t length);
-typedef CURLcode (*curl_ssl_ctx_callback)(CURL *curl,    
-                                          void *ssl_ctx, 
+typedef CURLcode (*curl_ssl_ctx_callback)(CURL *curl,
+                                          void *ssl_ctx,
                                           void *userptr);
 typedef enum {
-  CURLPROXY_HTTP = 0,   
-  CURLPROXY_HTTP_1_0 = 1,   
-  CURLPROXY_HTTPS = 2,  
-  CURLPROXY_HTTPS2 = 3, 
-  CURLPROXY_SOCKS4 = 4, 
-  CURLPROXY_SOCKS5 = 5, 
-  CURLPROXY_SOCKS4A = 6, 
-  CURLPROXY_SOCKS5_HOSTNAME = 7 
-} curl_proxytype;  
-#define CURLSSH_AUTH_ANY       ~0     
-#define CURLSSH_AUTH_NONE      0      
-#define CURLSSH_AUTH_PUBLICKEY (1<<0) 
-#define CURLSSH_AUTH_PASSWORD  (1<<1) 
-#define CURLSSH_AUTH_HOST      (1<<2) 
-#define CURLSSH_AUTH_KEYBOARD  (1<<3) 
-#define CURLSSH_AUTH_AGENT     (1<<4) 
-#define CURLSSH_AUTH_GSSAPI    (1<<5) 
+  CURLPROXY_HTTP = 0,
+  CURLPROXY_HTTP_1_0 = 1,
+  CURLPROXY_HTTPS = 2,
+  CURLPROXY_HTTPS2 = 3,
+  CURLPROXY_SOCKS4 = 4,
+  CURLPROXY_SOCKS5 = 5,
+  CURLPROXY_SOCKS4A = 6,
+  CURLPROXY_SOCKS5_HOSTNAME = 7
+} curl_proxytype;
+#define CURLSSH_AUTH_ANY       ~0
+#define CURLSSH_AUTH_NONE      0
+#define CURLSSH_AUTH_PUBLICKEY (1<<0)
+#define CURLSSH_AUTH_PASSWORD  (1<<1)
+#define CURLSSH_AUTH_HOST      (1<<2)
+#define CURLSSH_AUTH_KEYBOARD  (1<<3)
+#define CURLSSH_AUTH_AGENT     (1<<4)
+#define CURLSSH_AUTH_GSSAPI    (1<<5)
 #define CURLSSH_AUTH_DEFAULT CURLSSH_AUTH_ANY
 #define CURL_ERROR_SIZE 256
 enum curl_khtype {
@@ -2898,76 +2898,76 @@ enum curl_khtype {
   CURLKHTYPE_ED25519
 };
 struct curl_khkey {
-  const char *key; 
+  const char *key;
   size_t len;
   enum curl_khtype keytype;
 };
 enum curl_khstat {
   CURLKHSTAT_FINE_ADD_TO_FILE,
   CURLKHSTAT_FINE,
-  CURLKHSTAT_REJECT, 
-  CURLKHSTAT_DEFER,  
-  CURLKHSTAT_FINE_REPLACE, 
-  CURLKHSTAT_LAST    
+  CURLKHSTAT_REJECT,
+  CURLKHSTAT_DEFER,
+  CURLKHSTAT_FINE_REPLACE,
+  CURLKHSTAT_LAST
 };
 enum curl_khmatch {
-  CURLKHMATCH_OK,       
-  CURLKHMATCH_MISMATCH, 
-  CURLKHMATCH_MISSING,  
-  CURLKHMATCH_LAST      
+  CURLKHMATCH_OK,
+  CURLKHMATCH_MISMATCH,
+  CURLKHMATCH_MISSING,
+  CURLKHMATCH_LAST
 };
 typedef int
-  (*curl_sshkeycallback) (CURL *easy,     
-                          const struct curl_khkey *knownkey, 
-                          const struct curl_khkey *foundkey, 
-                          enum curl_khmatch, 
-                          void *clientp); 
+  (*curl_sshkeycallback) (CURL *easy,
+                          const struct curl_khkey *knownkey,
+                          const struct curl_khkey *foundkey,
+                          enum curl_khmatch,
+                          void *clientp);
 typedef int
   (*curl_sshhostkeycallback) (void *clientp,
-                          int keytype, 
-                          const char *key, 
-                          size_t keylen); 
+                          int keytype,
+                          const char *key,
+                          size_t keylen);
 typedef enum {
-  CURLUSESSL_NONE,    
-  CURLUSESSL_TRY,     
-  CURLUSESSL_CONTROL, 
-  CURLUSESSL_ALL,     
-  CURLUSESSL_LAST     
+  CURLUSESSL_NONE,
+  CURLUSESSL_TRY,
+  CURLUSESSL_CONTROL,
+  CURLUSESSL_ALL,
+  CURLUSESSL_LAST
 } curl_usessl;
 typedef enum {
-  CURLFTPSSL_CCC_NONE,    
-  CURLFTPSSL_CCC_PASSIVE, 
-  CURLFTPSSL_CCC_ACTIVE,  
-  CURLFTPSSL_CCC_LAST     
+  CURLFTPSSL_CCC_NONE,
+  CURLFTPSSL_CCC_PASSIVE,
+  CURLFTPSSL_CCC_ACTIVE,
+  CURLFTPSSL_CCC_LAST
 } curl_ftpccc;
 typedef enum {
-  CURLFTPAUTH_DEFAULT, 
-  CURLFTPAUTH_SSL,     
-  CURLFTPAUTH_TLS,     
-  CURLFTPAUTH_LAST 
+  CURLFTPAUTH_DEFAULT,
+  CURLFTPAUTH_SSL,
+  CURLFTPAUTH_TLS,
+  CURLFTPAUTH_LAST
 } curl_ftpauth;
 typedef enum {
-  CURLFTP_CREATE_DIR_NONE,  
-  CURLFTP_CREATE_DIR,       
-  CURLFTP_CREATE_DIR_RETRY, 
-  CURLFTP_CREATE_DIR_LAST   
+  CURLFTP_CREATE_DIR_NONE,
+  CURLFTP_CREATE_DIR,
+  CURLFTP_CREATE_DIR_RETRY,
+  CURLFTP_CREATE_DIR_LAST
 } curl_ftpcreatedir;
 typedef enum {
-  CURLFTPMETHOD_DEFAULT,   
-  CURLFTPMETHOD_MULTICWD,  
-  CURLFTPMETHOD_NOCWD,     
-  CURLFTPMETHOD_SINGLECWD, 
-  CURLFTPMETHOD_LAST       
+  CURLFTPMETHOD_DEFAULT,
+  CURLFTPMETHOD_MULTICWD,
+  CURLFTPMETHOD_NOCWD,
+  CURLFTPMETHOD_SINGLECWD,
+  CURLFTPMETHOD_LAST
 } curl_ftpmethod;
 struct curl_hstsentry {
   char *name;
   size_t namelen;
   unsigned int includeSubDomains:1;
-  char expire[18]; 
+  char expire[18];
 };
 struct curl_index {
-  size_t index; 
-  size_t total; 
+  size_t index;
+  size_t total;
 };
 typedef enum {
   CURLSTS_OK,
@@ -3319,21 +3319,21 @@ typedef enum {
   CURLOPT(CURLOPT_SERVER_RESPONSE_TIMEOUT_MS, CURLOPTTYPE_LONG, 324),
   CURLOPT(CURLOPT_ECH, CURLOPTTYPE_STRINGPOINT, 325),
   CURLOPT(CURLOPT_TCP_KEEPCNT, CURLOPTTYPE_LONG, 326),
-  CURLOPT_LASTENTRY 
+  CURLOPT_LASTENTRY
 } CURLoption;
 enum {
-  CURL_HTTP_VERSION_NONE, 
-  CURL_HTTP_VERSION_1_0,  
-  CURL_HTTP_VERSION_1_1,  
-  CURL_HTTP_VERSION_2_0,  
-  CURL_HTTP_VERSION_2TLS, 
-  CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE,  
-  CURL_HTTP_VERSION_3 = 30, 
-  CURL_HTTP_VERSION_3ONLY = 31, 
-  CURL_HTTP_VERSION_LAST 
+  CURL_HTTP_VERSION_NONE,
+  CURL_HTTP_VERSION_1_0,
+  CURL_HTTP_VERSION_1_1,
+  CURL_HTTP_VERSION_2_0,
+  CURL_HTTP_VERSION_2TLS,
+  CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE,
+  CURL_HTTP_VERSION_3 = 30,
+  CURL_HTTP_VERSION_3ONLY = 31,
+  CURL_HTTP_VERSION_LAST
 };
 enum {
-    CURL_RTSPREQ_NONE, 
+    CURL_RTSPREQ_NONE,
     CURL_RTSPREQ_OPTIONS,
     CURL_RTSPREQ_DESCRIBE,
     CURL_RTSPREQ_ANNOUNCE,
@@ -3345,18 +3345,18 @@ enum {
     CURL_RTSPREQ_SET_PARAMETER,
     CURL_RTSPREQ_RECORD,
     CURL_RTSPREQ_RECEIVE,
-    CURL_RTSPREQ_LAST 
+    CURL_RTSPREQ_LAST
 };
 enum CURL_NETRC_OPTION {
-  CURL_NETRC_IGNORED,     
-  CURL_NETRC_OPTIONAL,    
-  CURL_NETRC_REQUIRED,    
+  CURL_NETRC_IGNORED,
+  CURL_NETRC_OPTIONAL,
+  CURL_NETRC_REQUIRED,
   CURL_NETRC_LAST
 };
 enum CURL_TLSAUTH {
   CURL_TLSAUTH_NONE,
   CURL_TLSAUTH_SRP,
-  CURL_TLSAUTH_LAST 
+  CURL_TLSAUTH_LAST
 };
 typedef enum {
   CURL_TIMECOND_NONE,
@@ -3367,8 +3367,8 @@ typedef enum {
 } curl_TimeCond;
 CURL_EXTERN int curl_strequal(const char *s1, const char *s2);
 CURL_EXTERN int curl_strnequal(const char *s1, const char *s2, size_t n);
-typedef struct curl_mime      curl_mime;      
-typedef struct curl_mimepart  curl_mimepart;  
+typedef struct curl_mime      curl_mime;
+typedef struct curl_mimepart  curl_mimepart;
 CURL_EXTERN curl_mime *curl_mime_init(CURL *easy);
 CURL_EXTERN void curl_mime_free(curl_mime *mime);
 CURL_EXTERN curl_mimepart *curl_mime_addpart(curl_mime *mime);
@@ -3414,16 +3414,16 @@ typedef enum {
   CURLFORM_END,
   CURLFORM_OBSOLETE2,
   CURLFORM_STREAM          CURL_DEPRECATED(7.56.0, "Use curl_mime_data_cb()"),
-  CURLFORM_CONTENTLEN  
+  CURLFORM_CONTENTLEN
                            CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
-  CURLFORM_LASTENTRY 
+  CURLFORM_LASTENTRY
 } CURLformoption;
 struct curl_forms {
   CURLformoption option;
   const char     *value;
 };
 typedef enum {
-  CURL_FORMADD_OK             CURL_DEPRECATED(7.56.0, ""), 
+  CURL_FORMADD_OK             CURL_DEPRECATED(7.56.0, ""),
   CURL_FORMADD_MEMORY         CURL_DEPRECATED(7.56.0, ""),
   CURL_FORMADD_OPTION_TWICE   CURL_DEPRECATED(7.56.0, ""),
   CURL_FORMADD_NULL           CURL_DEPRECATED(7.56.0, ""),
@@ -3431,7 +3431,7 @@ typedef enum {
   CURL_FORMADD_INCOMPLETE     CURL_DEPRECATED(7.56.0, ""),
   CURL_FORMADD_ILLEGAL_ARRAY  CURL_DEPRECATED(7.56.0, ""),
   CURL_FORMADD_DISABLED       CURL_DEPRECATED(7.56.0, ""),
-  CURL_FORMADD_LAST 
+  CURL_FORMADD_LAST
 } CURLFORMcode;
 CURL_EXTERN CURLFORMcode CURL_DEPRECATED(7.56.0, "Use curl_mime_init()")
 curl_formadd(struct curl_httppost **httppost,
@@ -3480,7 +3480,7 @@ typedef enum {
   CURLSSLSET_OK = 0,
   CURLSSLSET_UNKNOWN_BACKEND,
   CURLSSLSET_TOO_LATE,
-  CURLSSLSET_NO_BACKENDS 
+  CURLSSLSET_NO_BACKENDS
 } CURLsslset;
 CURL_EXTERN CURLsslset curl_global_sslset(curl_sslbackend id, const char *name,
                                           const curl_ssl_backend ***avail);
@@ -3489,8 +3489,8 @@ CURL_EXTERN struct curl_slist *curl_slist_append(struct curl_slist *list,
 CURL_EXTERN void curl_slist_free_all(struct curl_slist *list);
 CURL_EXTERN time_t curl_getdate(const char *p, const time_t *unused);
 struct curl_certinfo {
-  int num_of_certs;             
-  struct curl_slist **certinfo; 
+  int num_of_certs;
+  struct curl_slist **certinfo;
 };
 struct curl_tlssessioninfo {
   curl_sslbackend backend;
@@ -3500,11 +3500,11 @@ struct curl_tlssessioninfo {
 #define CURLINFO_LONG     0x200000
 #define CURLINFO_DOUBLE   0x300000
 #define CURLINFO_SLIST    0x400000
-#define CURLINFO_PTR      0x400000 
+#define CURLINFO_PTR      0x400000
 #define CURLINFO_SOCKET   0x500000
 #define CURLINFO_OFF_T    0x600000
 typedef enum {
-  CURLINFO_NONE, 
+  CURLINFO_NONE,
   CURLINFO_EFFECTIVE_URL    = CURLINFO_STRING + 1,
   CURLINFO_RESPONSE_CODE    = CURLINFO_LONG   + 2,
   CURLINFO_TOTAL_TIME       = CURLINFO_DOUBLE + 3,
@@ -3599,15 +3599,15 @@ typedef enum {
   CURLINFO_LASTONE          = 68
 } CURLINFO;
 typedef enum {
-  CURLCLOSEPOLICY_NONE, 
+  CURLCLOSEPOLICY_NONE,
   CURLCLOSEPOLICY_OLDEST,
   CURLCLOSEPOLICY_LEAST_RECENTLY_USED,
   CURLCLOSEPOLICY_LEAST_TRAFFIC,
   CURLCLOSEPOLICY_SLOWEST,
   CURLCLOSEPOLICY_CALLBACK,
-  CURLCLOSEPOLICY_LAST 
+  CURLCLOSEPOLICY_LAST
 } curl_closepolicy;
-#define CURL_GLOBAL_SSL (1<<0) 
+#define CURL_GLOBAL_SSL (1<<0)
 #define CURL_GLOBAL_WIN32 (1<<1)
 #define CURL_GLOBAL_ALL (CURL_GLOBAL_SSL|CURL_GLOBAL_WIN32)
 #define CURL_GLOBAL_DEFAULT CURL_GLOBAL_ALL
@@ -3623,10 +3623,10 @@ typedef enum {
   CURL_LOCK_DATA_LAST
 } curl_lock_data;
 typedef enum {
-  CURL_LOCK_ACCESS_NONE = 0,   
-  CURL_LOCK_ACCESS_SHARED = 1, 
-  CURL_LOCK_ACCESS_SINGLE = 2, 
-  CURL_LOCK_ACCESS_LAST        
+  CURL_LOCK_ACCESS_NONE = 0,
+  CURL_LOCK_ACCESS_SHARED = 1,
+  CURL_LOCK_ACCESS_SINGLE = 2,
+  CURL_LOCK_ACCESS_LAST
 } curl_lock_access;
 typedef void (*curl_lock_function)(CURL *handle,
                                    curl_lock_data data,
@@ -3636,71 +3636,71 @@ typedef void (*curl_unlock_function)(CURL *handle,
                                      curl_lock_data data,
                                      void *userptr);
 typedef enum {
-  CURLSHE_OK,  
-  CURLSHE_BAD_OPTION, 
-  CURLSHE_IN_USE,     
-  CURLSHE_INVALID,    
-  CURLSHE_NOMEM,      
-  CURLSHE_NOT_BUILT_IN, 
-  CURLSHE_LAST        
+  CURLSHE_OK,
+  CURLSHE_BAD_OPTION,
+  CURLSHE_IN_USE,
+  CURLSHE_INVALID,
+  CURLSHE_NOMEM,
+  CURLSHE_NOT_BUILT_IN,
+  CURLSHE_LAST
 } CURLSHcode;
 typedef enum {
-  CURLSHOPT_NONE,  
-  CURLSHOPT_SHARE,   
-  CURLSHOPT_UNSHARE, 
-  CURLSHOPT_LOCKFUNC,   
-  CURLSHOPT_UNLOCKFUNC, 
-  CURLSHOPT_USERDATA,   
-  CURLSHOPT_LAST  
+  CURLSHOPT_NONE,
+  CURLSHOPT_SHARE,
+  CURLSHOPT_UNSHARE,
+  CURLSHOPT_LOCKFUNC,
+  CURLSHOPT_UNLOCKFUNC,
+  CURLSHOPT_USERDATA,
+  CURLSHOPT_LAST
 } CURLSHoption;
 CURL_EXTERN CURLSH *curl_share_init(void);
 CURL_EXTERN CURLSHcode curl_share_setopt(CURLSH *share, CURLSHoption option,
                                          ...);
 CURL_EXTERN CURLSHcode curl_share_cleanup(CURLSH *share);
 typedef enum {
-  CURLVERSION_FIRST,    
-  CURLVERSION_SECOND,   
-  CURLVERSION_THIRD,    
-  CURLVERSION_FOURTH,   
-  CURLVERSION_FIFTH,    
-  CURLVERSION_SIXTH,    
-  CURLVERSION_SEVENTH,  
-  CURLVERSION_EIGHTH,   
-  CURLVERSION_NINTH,    
-  CURLVERSION_TENTH,    
-  CURLVERSION_ELEVENTH, 
-  CURLVERSION_TWELFTH,  
-  CURLVERSION_LAST 
+  CURLVERSION_FIRST,
+  CURLVERSION_SECOND,
+  CURLVERSION_THIRD,
+  CURLVERSION_FOURTH,
+  CURLVERSION_FIFTH,
+  CURLVERSION_SIXTH,
+  CURLVERSION_SEVENTH,
+  CURLVERSION_EIGHTH,
+  CURLVERSION_NINTH,
+  CURLVERSION_TENTH,
+  CURLVERSION_ELEVENTH,
+  CURLVERSION_TWELFTH,
+  CURLVERSION_LAST
 } CURLversion;
 #define CURLVERSION_NOW CURLVERSION_TWELFTH
 struct curl_version_info_data {
-  CURLversion age;          
-  const char *version;      
-  unsigned int version_num; 
-  const char *host;         
-  int features;             
-  const char *ssl_version;  
-  long ssl_version_num;     
-  const char *libz_version; 
+  CURLversion age;
+  const char *version;
+  unsigned int version_num;
+  const char *host;
+  int features;
+  const char *ssl_version;
+  long ssl_version_num;
+  const char *libz_version;
   const char * const *protocols;
   const char *ares;
   int ares_num;
   const char *libidn;
   int iconv_ver_num;
-  const char *libssh_version; 
-  unsigned int brotli_ver_num; 
-  const char *brotli_version; 
-  unsigned int nghttp2_ver_num; 
-  const char *nghttp2_version; 
-  const char *quic_version;    
-  const char *cainfo;          
-  const char *capath;          
-  unsigned int zstd_ver_num; 
-  const char *zstd_version; 
-  const char *hyper_version; 
-  const char *gsasl_version; 
+  const char *libssh_version;
+  unsigned int brotli_ver_num;
+  const char *brotli_version;
+  unsigned int nghttp2_ver_num;
+  const char *nghttp2_version;
+  const char *quic_version;
+  const char *cainfo;
+  const char *capath;
+  unsigned int zstd_ver_num;
+  const char *zstd_version;
+  const char *hyper_version;
+  const char *gsasl_version;
   const char * const *feature_names;
-  const char *rtmp_version; 
+  const char *rtmp_version;
 };
 typedef struct curl_version_info_data curl_version_info_data;
 
@@ -3713,7 +3713,7 @@ CURL_EXTERN CURLcode curl_easy_pause(CURL *handle, int bitmask);
 struct curl_blob {
   void *data;
   size_t len;
-  unsigned int flags; 
+  unsigned int flags;
 };
 CURL_EXTERN CURL *curl_easy_init(void);
 CURL_EXTERN CURLcode curl_easy_setopt(CURL *curl, CURLoption option, ...);
@@ -3732,33 +3732,33 @@ CURL_EXTERN CURLcode curl_easy_upkeep(CURL *curl);
 #define CURLINC_MULTI_H
 typedef void CURLM;
 typedef enum {
-  CURLM_CALL_MULTI_PERFORM = -1, 
+  CURLM_CALL_MULTI_PERFORM = -1,
   CURLM_OK,
-  CURLM_BAD_HANDLE,      
-  CURLM_BAD_EASY_HANDLE, 
-  CURLM_OUT_OF_MEMORY,   
-  CURLM_INTERNAL_ERROR,  
-  CURLM_BAD_SOCKET,      
-  CURLM_UNKNOWN_OPTION,  
-  CURLM_ADDED_ALREADY,   
-  CURLM_RECURSIVE_API_CALL, 
-  CURLM_WAKEUP_FAILURE,  
-  CURLM_BAD_FUNCTION_ARGUMENT, 
+  CURLM_BAD_HANDLE,
+  CURLM_BAD_EASY_HANDLE,
+  CURLM_OUT_OF_MEMORY,
+  CURLM_INTERNAL_ERROR,
+  CURLM_BAD_SOCKET,
+  CURLM_UNKNOWN_OPTION,
+  CURLM_ADDED_ALREADY,
+  CURLM_RECURSIVE_API_CALL,
+  CURLM_WAKEUP_FAILURE,
+  CURLM_BAD_FUNCTION_ARGUMENT,
   CURLM_ABORTED_BY_CALLBACK,
   CURLM_UNRECOVERABLE_POLL,
   CURLM_LAST
 } CURLMcode;
 typedef enum {
-  CURLMSG_NONE, 
-  CURLMSG_DONE, 
-  CURLMSG_LAST 
+  CURLMSG_NONE,
+  CURLMSG_DONE,
+  CURLMSG_LAST
 } CURLMSG;
 struct CURLMsg {
-  CURLMSG msg;       
-  CURL *easy_handle; 
+  CURLMSG msg;
+  CURL *easy_handle;
   union {
-    void *whatever;    
-    CURLcode result;   
+    void *whatever;
+    CURLcode result;
   } data;
 };
 typedef struct CURLMsg CURLMsg;
@@ -3795,14 +3795,14 @@ CURL_EXTERN CURLMsg *curl_multi_info_read(CURLM *multi_handle,
                                           int *msgs_in_queue);
 CURL_EXTERN const char *curl_multi_strerror(CURLMcode);
 #define CURL_SOCKET_TIMEOUT CURL_SOCKET_BAD
-typedef int (*curl_socket_callback)(CURL *easy,      
-                                    curl_socket_t s, 
-                                    int what,        
-                                    void *userp,     
-                                    void *socketp);  
-typedef int (*curl_multi_timer_callback)(CURLM *multi,    
-                                         long timeout_ms, 
-                                         void *userp);    
+typedef int (*curl_socket_callback)(CURL *easy,
+                                    curl_socket_t s,
+                                    int what,
+                                    void *userp,
+                                    void *socketp);
+typedef int (*curl_multi_timer_callback)(CURLM *multi,
+                                         long timeout_ms,
+                                         void *userp);
 CURL_EXTERN CURLMcode CURL_DEPRECATED(7.19.5, "Use curl_multi_socket_action()")
 curl_multi_socket(CURLM *multi_handle, curl_socket_t s, int *running_handles);
 CURL_EXTERN CURLMcode curl_multi_socket_action(CURLM *multi_handle,
@@ -3833,14 +3833,14 @@ typedef enum {
   CURLOPT(CURLMOPT_PUSHFUNCTION, CURLOPTTYPE_FUNCTIONPOINT, 14),
   CURLOPT(CURLMOPT_PUSHDATA, CURLOPTTYPE_OBJECTPOINT, 15),
   CURLOPT(CURLMOPT_MAX_CONCURRENT_STREAMS, CURLOPTTYPE_LONG, 16),
-  CURLMOPT_LASTENTRY 
+  CURLMOPT_LASTENTRY
 } CURLMoption;
 CURL_EXTERN CURLMcode curl_multi_setopt(CURLM *multi_handle,
                                         CURLMoption option, ...);
 CURL_EXTERN CURLMcode curl_multi_assign(CURLM *multi_handle,
                                         curl_socket_t sockfd, void *sockp);
 CURL_EXTERN CURL **curl_multi_get_handles(CURLM *multi_handle);
-struct curl_pushheaders;  
+struct curl_pushheaders;
 CURL_EXTERN char *curl_pushheader_bynum(struct curl_pushheaders *h,
                                         size_t num);
 CURL_EXTERN char *curl_pushheader_byname(struct curl_pushheaders *h,
@@ -3859,37 +3859,37 @@ CURL_EXTERN CURLMcode curl_multi_waitfds(CURLM *multi,
 #define CURLINC_URLAPI_H
 typedef enum {
   CURLUE_OK,
-  CURLUE_BAD_HANDLE,          
-  CURLUE_BAD_PARTPOINTER,     
-  CURLUE_MALFORMED_INPUT,     
-  CURLUE_BAD_PORT_NUMBER,     
-  CURLUE_UNSUPPORTED_SCHEME,  
-  CURLUE_URLDECODE,           
-  CURLUE_OUT_OF_MEMORY,       
-  CURLUE_USER_NOT_ALLOWED,    
-  CURLUE_UNKNOWN_PART,        
-  CURLUE_NO_SCHEME,           
-  CURLUE_NO_USER,             
-  CURLUE_NO_PASSWORD,         
-  CURLUE_NO_OPTIONS,          
-  CURLUE_NO_HOST,             
-  CURLUE_NO_PORT,             
-  CURLUE_NO_QUERY,            
-  CURLUE_NO_FRAGMENT,         
-  CURLUE_NO_ZONEID,           
-  CURLUE_BAD_FILE_URL,        
-  CURLUE_BAD_FRAGMENT,        
-  CURLUE_BAD_HOSTNAME,        
-  CURLUE_BAD_IPV6,            
-  CURLUE_BAD_LOGIN,           
-  CURLUE_BAD_PASSWORD,        
-  CURLUE_BAD_PATH,            
-  CURLUE_BAD_QUERY,           
-  CURLUE_BAD_SCHEME,          
-  CURLUE_BAD_SLASHES,         
-  CURLUE_BAD_USER,            
-  CURLUE_LACKS_IDN,           
-  CURLUE_TOO_LARGE,           
+  CURLUE_BAD_HANDLE,
+  CURLUE_BAD_PARTPOINTER,
+  CURLUE_MALFORMED_INPUT,
+  CURLUE_BAD_PORT_NUMBER,
+  CURLUE_UNSUPPORTED_SCHEME,
+  CURLUE_URLDECODE,
+  CURLUE_OUT_OF_MEMORY,
+  CURLUE_USER_NOT_ALLOWED,
+  CURLUE_UNKNOWN_PART,
+  CURLUE_NO_SCHEME,
+  CURLUE_NO_USER,
+  CURLUE_NO_PASSWORD,
+  CURLUE_NO_OPTIONS,
+  CURLUE_NO_HOST,
+  CURLUE_NO_PORT,
+  CURLUE_NO_QUERY,
+  CURLUE_NO_FRAGMENT,
+  CURLUE_NO_ZONEID,
+  CURLUE_BAD_FILE_URL,
+  CURLUE_BAD_FRAGMENT,
+  CURLUE_BAD_HOSTNAME,
+  CURLUE_BAD_IPV6,
+  CURLUE_BAD_LOGIN,
+  CURLUE_BAD_PASSWORD,
+  CURLUE_BAD_PATH,
+  CURLUE_BAD_QUERY,
+  CURLUE_BAD_SCHEME,
+  CURLUE_BAD_SLASHES,
+  CURLUE_BAD_USER,
+  CURLUE_LACKS_IDN,
+  CURLUE_TOO_LARGE,
   CURLUE_LAST
 } CURLUcode;
 typedef enum {
@@ -3903,7 +3903,7 @@ typedef enum {
   CURLUPART_PATH,
   CURLUPART_QUERY,
   CURLUPART_FRAGMENT,
-  CURLUPART_ZONEID 
+  CURLUPART_ZONEID
 } CURLUPart;
 typedef struct Curl_URL CURLU;
 CURL_EXTERN CURLU *curl_url(void);
@@ -3914,19 +3914,19 @@ CURL_EXTERN CURLUcode curl_url_get(const CURLU *handle, CURLUPart what,
 CURL_EXTERN CURLUcode curl_url_set(CURLU *handle, CURLUPart what,
                                    const char *part, unsigned int flags);
 CURL_EXTERN const char *curl_url_strerror(CURLUcode);
-#endif 
+#endif
 #ifndef CURLINC_OPTIONS_H
 #define CURLINC_OPTIONS_H
 typedef enum {
-  CURLOT_LONG,    
-  CURLOT_VALUES,  
-  CURLOT_OFF_T,   
-  CURLOT_OBJECT,  
-  CURLOT_STRING,  
-  CURLOT_SLIST,   
-  CURLOT_CBPTR,   
-  CURLOT_BLOB,    
-  CURLOT_FUNCTION 
+  CURLOT_LONG,
+  CURLOT_VALUES,
+  CURLOT_OFF_T,
+  CURLOT_OBJECT,
+  CURLOT_STRING,
+  CURLOT_SLIST,
+  CURLOT_CBPTR,
+  CURLOT_BLOB,
+  CURLOT_FUNCTION
 } curl_easytype;
 struct curl_easyoption {
   const char *name;
@@ -3940,26 +3940,26 @@ CURL_EXTERN const struct curl_easyoption *
 curl_easy_option_by_id(CURLoption id);
 CURL_EXTERN const struct curl_easyoption *
 curl_easy_option_next(const struct curl_easyoption *prev);
-#endif 
+#endif
 #ifndef CURLINC_HEADER_H
 #define CURLINC_HEADER_H
 struct curl_header {
-  char *name;    
+  char *name;
   char *value;
-  size_t amount; 
-  size_t index;  
-  unsigned int origin; 
-  void *anchor; 
+  size_t amount;
+  size_t index;
+  unsigned int origin;
+  void *anchor;
 };
 typedef enum {
   CURLHE_OK,
-  CURLHE_BADINDEX,      
-  CURLHE_MISSING,       
-  CURLHE_NOHEADERS,     
-  CURLHE_NOREQUEST,     
-  CURLHE_OUT_OF_MEMORY, 
-  CURLHE_BAD_ARGUMENT,  
-  CURLHE_NOT_BUILT_IN   
+  CURLHE_BADINDEX,
+  CURLHE_MISSING,
+  CURLHE_NOHEADERS,
+  CURLHE_NOREQUEST,
+  CURLHE_OUT_OF_MEMORY,
+  CURLHE_BAD_ARGUMENT,
+  CURLHE_NOT_BUILT_IN
 } CURLHcode;
 CURL_EXTERN CURLHcode curl_easy_header(CURL *easy,
                                        const char *name,
@@ -3971,15 +3971,15 @@ CURL_EXTERN struct curl_header *curl_easy_nextheader(CURL *easy,
                                                      unsigned int origin,
                                                      int request,
                                                      struct curl_header *prev);
-#endif 
+#endif
 #ifndef CURLINC_WEBSOCKETS_H
 #define CURLINC_WEBSOCKETS_H
 struct curl_ws_frame {
-  int age;              
-  int flags;            
-  curl_off_t offset;    
-  curl_off_t bytesleft; 
-  size_t len;           
+  int age;
+  int flags;
+  curl_off_t offset;
+  curl_off_t bytesleft;
+  size_t len;
 };
 CURL_EXTERN CURLcode curl_ws_recv(CURL *curl, void *buffer, size_t buflen,
                                   size_t *recv,
@@ -3989,7 +3989,7 @@ CURL_EXTERN CURLcode curl_ws_send(CURL *curl, const void *buffer,
                                   curl_off_t fragsize,
                                   unsigned int flags);
 CURL_EXTERN const struct curl_ws_frame *curl_ws_meta(CURL *curl);
-#endif 
+#endif
 #ifndef CURL_SKIP_INCLUDE_MPRINTF
 #ifndef CURLINC_MPRINTF_H
 #define CURLINC_MPRINTF_H
@@ -4000,7 +4000,7 @@ CURL_EXTERN const struct curl_ws_frame *curl_ws_meta(CURL *curl);
   defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 199901L) &&         \
   !defined(CURL_NO_FMT_CHECKS)
 #if defined(__MINGW32__) && !defined(__clang__)
-#if defined(__MINGW_PRINTF_FORMAT)  
+#if defined(__MINGW_PRINTF_FORMAT)
 #define CURL_TEMP_PRINTF(fmt, arg) \
   __attribute__((format(__MINGW_PRINTF_FORMAT, fmt, arg)))
 #else
@@ -4037,7 +4037,7 @@ CURL_EXTERN char *curl_maprintf(const char *format, ...)
 CURL_EXTERN char *curl_mvaprintf(const char *format, va_list args)
   CURL_TEMP_PRINTF(1, 0);
 #undef CURL_TEMP_PRINTF
-#endif 
+#endif
 #endif
 #if defined(__GNUC__) && defined(__GNUC_MINOR__) && \
     ((__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 3)) && \
@@ -4427,7 +4427,7 @@ CURLWARNING(_curl_easy_getinfo_err_curl_off_t,
 #define curlcheck_cb_data(expr)                                         \
   (curlcheck_ptr((expr), void) ||                                       \
    curlcheck_ptr((expr), FILE))
-#else 
+#else
 #define curlcheck_cb_data(expr)                 \
   curlcheck_any_ptr(expr)
 #endif
@@ -4594,16 +4594,16 @@ typedef CURLcode (*_curl_conv_callback4)(const void *, size_t length);
    curlcheck_cb_compatible((expr), _curl_seek_callback2))
 typedef CURLcode (*_curl_seek_callback1)(void *, curl_off_t, int);
 typedef CURLcode (*_curl_seek_callback2)(const void *, curl_off_t, int);
-#endif 
+#endif
 #else
 #if defined(__STDC__) && (__STDC__ >= 1)
 #define curl_easy_setopt(handle,opt,param) curl_easy_setopt(handle,opt,param)
 #define curl_easy_getinfo(handle,info,arg) curl_easy_getinfo(handle,info,arg)
 #define curl_share_setopt(share,opt,param) curl_share_setopt(share,opt,param)
 #define curl_multi_setopt(handle,opt,param) curl_multi_setopt(handle,opt,param)
-#endif 
-#endif 
-#endif 
+#endif
+#endif
+#endif
 
 
 /// LICENSE_END.24
@@ -6000,7 +6000,7 @@ void myprintf(const char *format, ...)
             printf("02750: myprintf format NULL\n");
         return;
     }
-#ifdef DLL    
+#ifdef DLL
     // Se c'è un callback attivo (modalità DLL), usalo
     if (g_outputCallback)
     {
@@ -6027,7 +6027,7 @@ void myprintf(const char *format, ...)
 		va_start(args, format);
 		vsnprintf(buffer, sizeof(buffer), new_format, args);
 		va_end(args);
-        
+
         g_outputCallback(buffer);
     }
     else
@@ -6042,170 +6042,6 @@ void myprintf(const char *format, ...)
         va_end(args);
     }
 }
-
-
-/*
-void myprintf_autotest(void)
-{
-	printf("**** myprintf (TEST01-TEST40)\n");
-
-	// TEST01: Specificatori standard
-	printf("TEST01: Specificatori standard\n");
-	myprintf("Int: %d, Unsigned: %u, Octal: %o, Hex: %x, HEX: %X\n", -123, 123, 123, 123, 123);
-	myprintf("Float: %f, Scientific: %e, General: %g\n", 123.456, 123.456, 123.456);
-	myprintf("Char: %c, String: %s, Pointer: %p\n", 'A', "Test string", (void *)&g_error);
-
-	// TEST02: Specificatori con modificatori di lunghezza
-	printf("TEST02: Modificatori di lunghezza\n");
-	myprintf("Long long: %lld, Long long hex: %llx\n", (long long)INT64_MAX, (long long)INT64_MAX);
-	myprintf("Short int: %hd\n", (short)123);
-	myprintf("Size_t: %zu, Intmax_t: %jd\n", (size_t)123, (intmax_t)123);
-
-	// TEST03: Specificatore %K
-	printf("TEST03: Specificatore %%K\n");
-	myprintf("Int64: %K\n", (int64_t)123456789);
-	myprintf("Int64 negative: %K\n", (int64_t)-123456789);
-	myprintf("Int64 max: %K\n", INT64_MAX);
-	myprintf("Int64 min: %K\n", INT64_MIN);
-	myprintf("Int64 with width: %10K\n", (int64_t)123456);
-	myprintf("Int64 left-align: %-10K\n", (int64_t)123456);
-
-	// TEST04: Specificatore %H
-	printf("TEST04: Specificatore %%H\n");
-	myprintf("Bytes: %H\n", (int64_t)123456789);
-	myprintf("Negative bytes: %H\n", (int64_t)-123);
-	myprintf("Large bytes: %H\n", (int64_t)(1024 * 1024 * 1024 * 5LL));
-	myprintf("Bytes with width: %10H\n", (int64_t)123456);
-	myprintf("Bytes left-align: %-10H\n", (int64_t)123456);
-
-	// TEST05: Specificatore %Z
-	printf("TEST05: Specificatore %%Z\n");
-	myprintf("String: %Z\n", "Test UTF8 string");
-	myprintf("Null string: %Z\n", (char *)NULL);
-	myprintf("String with width: %10Z\n", "Test");
-	myprintf("String left-align: %-10Z\n", "Test");
-
-	// TEST06: Prefissi per flagcolon, flagerror, flagwarning
-	printf("TEST06: Prefissi flagcolon, flagerror, flagwarning\n");
-	myprintf("12345: Test colon\n");
-	myprintf("12345! Test error\n");
-	myprintf("12345$ Test warning\n");
-	myprintf("12345: Test %d\n", 123);
-
-	// TEST07: Modalità debug
-	printf("TEST07: Modalità debug\n");
-	bool old_flagdebug= flagdebug;
-	flagdebug		  = true;
-	myprintf(" Debug message\n");
-	myprintf(" Debug level 2\n");
-	myprintf(" Debug level 3\n");
-	flagdebug= old_flagdebug;
-
-	// TEST08: Modalità verbose
-	printf("TEST08: Modalità verbose\n");
-	bool old_flagverbose= flagverbose;
-	flagverbose			= true;
-	myprintf("VERBOSE: Verbose message\n");
-	flagverbose= old_flagverbose;
-
-	// TEST09: Modalità silenziosa
-	printf("TEST09: Modalità silenziosa\n");
-	bool old_flagsilent= flagsilent;
-	flagsilent		   = true;
-	myprintf("Test in silent mode: %d\n", 123);
-	myprintf("12345! Test error in silent mode\n");
-	flagsilent= old_flagsilent;
-
-	// TEST10: Formati con troncamento
-	printf("TEST10: Troncamento buffer\n");
-	flagdebug= true;
-	char long_str[7000];
-	memset(long_str, 'A', 6999);
-	long_str[6999]= '\0';
-	myprintf("Long string: %s\n", long_str);
-	flagdebug= old_flagdebug;
-
-	// TEST11: Formati con parametri nulli
-	printf("TEST11: Parametri nulli\n");
-	myprintf("Null format: %s\n", (char *)NULL);
-	myprintf(NULL);
-
-	// TEST12: Specificatori con precisione e flag
-	printf("TEST12: Precisione e flag\n");
-	myprintf("Padded int: %010d\n", 123);
-	myprintf("Precision float: %.2f\n", 123.456789);
-	myprintf("Signed int: %+d\n", 123);
-	myprintf("Space int: % d\n", 123);
-
-	// TEST13: Specificatore %n
-	printf("TEST13: Specificatore %%n\n");
-	flagdebug= true;
-	int n;
-	myprintf("Store count: %n\n", &n);
-	flagdebug= old_flagdebug;
-
-	// TEST14: Stringhe vuote e spazi
-	printf("TEST14: Stringhe vuote e spazi\n");
-	myprintf("Empty string: %s\n", "");
-	myprintf("Spaces: %s\n", "   ");
-
-	// TEST15: Combinazioni complesse
-	printf("TEST15: Combinazioni complesse\n");
-	myprintf("12345: Complex: %K %H %Z %d %.2f\n", (int64_t)123456, (int64_t)1048576, "Test", 123, 123.456);
-	myprintf("12345! Error complex: %K %H %Z\n", (int64_t)-123456, (int64_t)1024, (char *)NULL);
-
-	// TEST16: Padding con caratteri diversi
-	printf("TEST16: Padding con caratteri diversi\n");
-	char buffer[32];
-	format_int64_t_refactored(123456, buffer, sizeof(buffer), 10, false);
-	myprintf("Padded %K: %s\n", (int64_t)123456, buffer);
-	mytohuman2_refactored(123456, buffer, sizeof(buffer), 10, true);
-	myprintf("Padded %H: %s\n", (int64_t)123456, buffer);
-
-	// TEST17: Formati non validi
-	printf("TEST17: Formati non validi\n");
-	flagdebug= true;
-	myprintf("12345X Invalid format\n");
-	myprintf("1234: Short prefix\n");
-	flagdebug= old_flagdebug;
-
-	// TEST18: Specificatori con modificatori complessi
-	printf("TEST18: Modificatori complessi\n");
-	myprintf("Zero-padded: %08d\n", 123);
-	myprintf("Precision string: %.5s\n", "HelloWorld");
-	myprintf("Complex float: %10.3f\n", 123.456789);
-
-	// TEST19: Più specificatori
-	printf("TEST19: Più specificatori\n");
-	myprintf("Mixed: %d %s %K %H\n", 123, "Test", (int64_t)123456, (int64_t)1048576);
-
-	// TEST20: Specificatori non riconosciuti
-	printf("TEST20: Specificatori non riconosciuti\n");
-	flagdebug= true;
-	myprintf("Unknown: %q\n", 123);
-	flagdebug= old_flagdebug;
-
-	// TEST21: Combinazioni di flag
-	printf("TEST21: Combinazioni di flag\n");
-	myprintf("Signed padded: %+10d\n", 123);
-	myprintf("Zero padded float: %010.3f\n", 123.456);
-	myprintf("Space padded: % 10d\n", 123);
-
-	// TEST22: Precisione non supportata per %K e %H
-	printf("TEST22: Precisione non supportata per %%K e %%H\n");
-	flagdebug= true;
-	myprintf("Precision %K: %.2K\n", (int64_t)123456);
-	myprintf("Precision %H: %.2H\n", (int64_t)123456);
-	flagdebug= old_flagdebug;
-
-	// TEST23: Stringhe UTF-8
-	printf("TEST23: Stringhe UTF-8\n");
-	myprintf("UTF-8 string: %Z\n", "Café München");
-	myprintf("UTF-8 with width: %15Z\n", "Café");
-
-	printf("===== Fine Test myprintf =====\n");
-}
-*/
 
 /// LICENSE_START.23
 
@@ -6271,7 +6107,7 @@ class Fonts
 		curr_col+= (char_cols + 2);
 	}
 
-	
+
 	void printvector()
 	{
 		for (unsigned int i= 0; i < letters.size(); i++)
@@ -9500,7 +9336,7 @@ std::string bin2hex_128(uint64_t i_high, uint64_t i_low)
 #ifdef _WIN32
 /// LICENSE_START.22
 
-/// A "stripped" LZ4 
+/// A "stripped" LZ4
 
 #define LZ4_ACCELERATION_DEFAULT 1
 #define LZ4_ACCELERATION_MAX 65537
@@ -9672,7 +9508,7 @@ typedef enum {
 static unsigned LZ4_isLittleEndian(void)
 {
 	return 1;
-	
+
     ///const union { U32 u; BYTE c[4]; } one = { 1 };   /* don't use static : performance detrimental */
     ///return one.c[0];
 }
@@ -9759,7 +9595,7 @@ LZ4_memcpy_using_offset_base(BYTE* dstPtr, const BYTE* srcPtr, BYTE* dstEnd, con
         dstPtr[1] = srcPtr[1];
         dstPtr[2] = srcPtr[2];
         dstPtr[3] = srcPtr[3];
-		
+
         srcPtr += inc32table[offset];
         LZ4_memcpy(dstPtr+4, srcPtr, 4);
         srcPtr -= dec64table[offset];
@@ -12651,7 +12487,7 @@ public:
   T& operator[](size_t i) {assert(n>0 && i<n); if (!(n>0 && i<n))
 	  {
 		    error("09386: operator[] kaputt");
-	  }		  
+	  }
   return data[i];}
   T& operator()(size_t i) {assert(n>0 && (n&(n-1))==0); return data[i&(n-1)];}
 };
@@ -12668,7 +12504,7 @@ void Array<T>::resize(size_t sz, int ex) {
     assert((char*)data-offset);
     ::free((char*)data-offset);
 	 g_arrayram-=n;
- 
+
   }
   n=0;
   offset=0;
@@ -12728,7 +12564,6 @@ void SHA1::init()
 }
 void SHA1::put(int c)
 {
-	///sha1_write(&sum_ctx,(const uint8_t*)&c,1);
 
 	w_hw[bufpos++]=c;
 	if (bufpos==SHA1CHUNK)
@@ -13295,13 +13130,11 @@ public:
   Decompresser(): z(), dec(z), pp(), state(BLOCK), decode_state(FIRSTSEG) {}
   void setInput(Reader* in) {dec.in=in;}
   bool findBlock(double* memptr = 0);
-  ///void hcomp(Writer* out2) {z.write(out2, false);}
   bool findFilename(Writer* = 0);
   void readComment(Writer* = 0);
   void setOutput(Writer* out) {pp.setOutput(out);}
   void setSHA1(SHA1* sha1ptr) {pp.setSHA1(sha1ptr);}
   bool decompress(int n = -1);  // n bytes, -1=all, return true until done
-  ///bool pcomp(Writer* out2) {return pp.z.write(out2, true);}
   void readSegmentEnd(char* sha1string = 0);
   int stat(int x) {return dec.stat(x);}
   int buffered() {return dec.buffered();}
@@ -13388,7 +13221,6 @@ public:
   void setVerify(bool v) {verify = v;}    // check postprocessing?
 #endif // corresponds to #ifdef (#ifdef DEBUG)
   void hcomp(Writer* out2) {z.write(out2, false);}
-  ///bool pcomp(Writer* out2) {return pz.write(out2, true);}
   void startSegment(const char* filename = 0, const char* comment = 0);
   void setInput(Reader* i) {in=i;}
   void postProcess(const char* pcomp = 0, int len = 0);  // byte code
@@ -13404,7 +13236,6 @@ private:
   Encoder enc;  // arithmetic encoder containing predictor
   Reader* in;   // input source
   SHA1 sha1;    // to test pz output
-///  char sha1result[20];  // sha1 output
   enum {INIT, BLOCK1, SEG1, BLOCK2, SEG2} state;
   bool verify;  // if true then test by postprocessing
 };
@@ -13422,18 +13253,22 @@ class StringBuffer: public libzpaq::Reader, public libzpaq::Writer {
   void reserve(size_t a) {
     assert(!al==!p);
     if (a<=al) return;
-	///g_allocatedram+=a;
     unsigned char* q=0;
-    if (a>0) q=(unsigned char*)(p ? franz_extend(p,a,al) : franz_malloc(a));
-    if (a>0 && !q) error("Out of memory");
+    if (a>0)
+        q=(unsigned char*)
+        (p ? franz_extend(p,a,al) : franz_malloc(a));
+    if (a>0 && !q)
+        error("Out of memory");
     p=q;
     al=a;
   }
   // Enlarge al to make room to write at least n bytes.
   void lengthen(size_t n) {
     assert(wpos<=al);
-    if (wpos+n>limit || wpos+n<wpos) error("StringBuffer overflow");
-    if (wpos+n<=al) return;
+    if (wpos+n>limit || wpos+n<wpos)
+        error("StringBuffer overflow");
+    if (wpos+n<=al)
+        return;
     size_t a=al;
     while (wpos+n>=a) a=a*2+init;
     reserve(a);
@@ -13457,8 +13292,8 @@ public:
   ///size_t remaining() const {return wpos-rpos;}
   // Reset size to 0 and free memory.
   void reset() {
-	  
-    if (p) 
+
+    if (p)
 	{franz_free(p);
 	g_allocatedram-=al;
 	}
@@ -13570,15 +13405,13 @@ void allocx(U8* &p, int &n, int newsize) {
     p=0;
     n=0;
   }
-  if (newsize>0) 
+  if (newsize>0)
   {
 #ifdef unix
-	///myprintf("BEFORE mmap of newsize %s\n",migliaia(newsize));
 	/// PROT_EXEC can be stopped
     p=(U8*)mmap(0, newsize, PROT_READ|PROT_WRITE|PROT_EXEC,MAP_PRIVATE|MAP_ANON, -1, 0);
-	////myprintf("AFTER mmap\n");
 
-    if ((void*)p==MAP_FAILED) 
+    if ((void*)p==MAP_FAILED)
 	{
 		if (flagdebug3)
 			myprintf("10253$ MAP FAILED!\n");
@@ -13593,7 +13426,7 @@ void allocx(U8* &p, int &n, int newsize) {
 	  g_allocatedram+=newsize;
       n=newsize;
 	}
-    else 
+    else
 	{
 		n=0;
 		myprintf("\n\n");
@@ -13955,10 +13788,10 @@ void stretchKey(char* out, const char* in, const char* salt) {
 // For a pure random number, discard the first byte.
 // In VC++, must link to advapi32.lib.
 #ifdef DLL
-void random(char* buf, int n) 
+void random(char* buf, int n)
 {}
 #else
-	
+
 void random(char* buf, int n) {
 #ifdef unix
   FILE* in=fopen("/dev/urandom", "rb");
@@ -14984,12 +14817,10 @@ void Predictor::init() {
     initTables=true;
     memcpy(dt2k, sdt2k, sizeof(dt2k));
     memcpy(dt, sdt, sizeof(dt));
-    // ssquasht[i]=int(32768.0/(1+exp((i-2048)*(-1.0/64))));
     // Copy middle 1344 of 4096 entries.
     memset(squasht, 0, 1376*2);
     memcpy(squasht+1376, ssquasht, 1344*2);
     for (int i=2720; i<4096; ++i) squasht[i]=32767;
-    // sstretcht[i]=int(log((i+0.5)/(32767.5-i))*64+0.5+100000)-100000;
     int k=16384;
     for (unsigned int i=0; i<712; ++i)
       for (int j=stdt[i]; j>0; --j)
@@ -15783,7 +15614,7 @@ void Compiler::syntaxError(const char* msg, const char* expected) {
     error(s);
 }
 #else
-	
+
 void Compiler::syntaxError(const char* msg, const char* expected) {
   Array<char> sbuf(128);  // error message to report
   char* s=&sbuf[0];
@@ -17689,7 +17520,7 @@ int Predictor::assemble_p() {
 int Predictor::predict() {
 	if (flagnojit)
 		return predict0();
-	
+
   if (!pcode) {
     allocx(pcode, pcode_size, (z.cend*100+4096)&-4096);
     int n=assemble_p();
@@ -17703,7 +17534,7 @@ int Predictor::predict() {
   ///assert(pcode && pcode[0]);
   if (!(pcode && pcode[0]))
 	  error("14367: pcode/pcode[0] kaputt\n");
-  if (!pcode || !pcode[10]) 
+  if (!pcode || !pcode[10])
     error("Invalid function pointer at pcode[10]");
  return ((int(*)(Predictor*))&pcode[10])(this);
 }
@@ -17749,8 +17580,8 @@ void ZPAQL::run(U32 input) {
       error("run JIT failed");
   }
   a=input;
-  
-   if (rcode && rcode[0]) 
+
+   if (rcode && rcode[0])
    {
         const U32 rc = ((int(*)())(&rcode[0]))();
         if (rc == 0) return;
@@ -17758,21 +17589,11 @@ void ZPAQL::run(U32 input) {
         else if (rc == 2) libzpaq::error("Out of memory");
         else if (rc == 3) libzpaq::error("Write error");
         else libzpaq::error("ZPAQL execution error");
-    } 
-	else 
+    }
+	else
 	{
         libzpaq::error("14427 Invalid function pointer in rcode[0]");
     }
-	/*
-	
-	
-  const U32 rc=((int(*)())(&rcode[0]))();
-  if (rc==0) return;
-  else if (rc==1) libzpaq::error("Bad ZPAQL opcode");
-  else if (rc==2) libzpaq::error("Out of memory");
-  else if (rc==3) libzpaq::error("Write error");
-  else libzpaq::error("ZPAQL execution error");
-  */
 }
 
 /// LICENSE_START.6
@@ -18977,7 +18798,6 @@ trsort(int *ISA, int *SA, int n, int depth) {
   trbudget_t budget;
   int t, skip, unsorted;
   trbudget_init(&budget, tr_ilg(n) * 2 / 3, n);
-/*  trbudget_init(&budget, tr_ilg(n) * 3 / 4, n); */
   for(ISAd = ISA + depth; -n < *SA; ISAd += ISAd - ISA) {
     first = SA;
     skip = 0;
@@ -19187,8 +19007,6 @@ divsufsort(const unsigned char *T, int *SA, int n) {
   else if(n == 2) { m = (T[0] < T[1]); SA[m ^ 1] = 0, SA[m] = 1; return 0; }
   bucket_A = (int *)franz_malloc(BUCKET_A_SIZE * sizeof(int));
   bucket_B = (int *)franz_malloc(BUCKET_B_SIZE * sizeof(int));
-  
-//	g_allocatedram+=BUCKET_A_SIZE * sizeof(int)+BUCKET_B_SIZE * sizeof(int);
 
   /* Suffixsort. */
   if((bucket_A != NULL) && (bucket_B != NULL)) {
@@ -19340,7 +19158,7 @@ int nbits(unsigned x) {
   return r;
 }
 // catch buffer overflow with gdb backtrace
-void *alpine_memcpy(void *dest, const void *src, size_t n) 
+void *alpine_memcpy(void *dest, const void *src, size_t n)
 {
 	if (dest==NULL)
 	{
@@ -19354,19 +19172,19 @@ void *alpine_memcpy(void *dest, const void *src, size_t n)
 	}
 	if (n==0)
 		return dest;
-	
+
     unsigned char *d = (unsigned char *)dest;
     const unsigned char *s = (const unsigned char *)src;
 
-    for (size_t i=0;i<n;i++) 
+    for (size_t i=0;i<n;i++)
 	    d[i]=s[i];
-    
+
     return dest;
 }
 
 // Read n bytes of compressed output into p and return number of
 // bytes read in 0..n. 0 signals EOF (overrides Reader).
-int LZBuffer::read(char* p, int n) 
+int LZBuffer::read(char* p, int n)
 {
 ///	if (flagdebug5)
 ///		myprintf("15964: LZBuffer::read char*p %s  int n %d\n",migliaia(int64_t(p)),n);
@@ -19374,7 +19192,7 @@ int LZBuffer::read(char* p, int n)
   int nr=n;
   if (nr>int(wpos-rpos)) nr=wpos-rpos;
   ///alpine linux does not like this. why? I do not know.
-  
+
   if (flagdebug5)
   {
 	if (nr) alpine_memcpy(p, buf+rpos, nr);
@@ -19556,17 +19374,8 @@ void LZBuffer::fill() {
             h2=(((h2*9)<<shift2)
                 +(in[i+minMatch2+lookahead]+1)*23456789u)&(htsize-1);
           }
-          ht[h1^ih]=p;	
+          ht[h1^ih]=p;
 		  ///alpine
-/*
-		  if (flagdebug5)
-		  {
-			  myprintf("16181: inzuppo i %d minMatch %d sum %d\n",i,minMatch,i+minMatch);
-			  myprintf("16186: byte %03d %03d+1\n",in[i+minMatch] & 0xff,(in[i+minMatch]+1) & 0xff);
-			  myprintf("16187: Z1   %d\n",((in[i+minMatch]+1)*123456791u)&(htsize-1));
-			  myprintf("16188: Z2   %d\n",(h1*5)<<shift1);
-		  }
-*/
           h1=(((h1*5)<<shift1)+(in[i+minMatch]+1)*123456791u)&(htsize-1);
         }
         ++i;
@@ -20204,7 +20013,6 @@ std::string makeConfig(const char* method, int args[]) {
           " a+=b b=a\n";
         else if (v[i]>1000)
           hcomp+="a= "+itos(v[i]-1000)+" a+=b b=a\n";
-///        if (v[i]<512 && i<v.size()-1)
         if (i<v.size()-1)
 			if (v[i]<512)
           hcomp+="b++ ";
@@ -27670,7 +27478,7 @@ string my_realpath(std::string const &i_path)
 	char   buffer[MAXIMUM_REPARSE_DATA_BUFFER_SIZE];
 	DWORD  dwBytesReturned= 0;
 	DeviceIoControl(h, FSCTL_GET_REPARSE_POINT, NULL, 0, buffer, sizeof(buffer), &dwBytesReturned, 0);
-	
+
 	typedef struct
 	{
 		ULONG  ReparseTag;
@@ -27701,7 +27509,7 @@ string my_realpath(std::string const &i_path)
 			} GenericReparseBuffer;
 		} u;  // Union name
 	} REPARSE_DATA_BUFFER;
-	
+
 	REPARSE_DATA_BUFFER *pRDB= reinterpret_cast<REPARSE_DATA_BUFFER *>(buffer);
 	if (pRDB->ReparseTag == IO_REPARSE_TAG_SYMLINK)
 	{
@@ -30335,13 +30143,13 @@ uint32_t crc32_16bytes(const void* data, size_t length, uint32_t previousCrc32)
 {
     const uint8_t* bytes = (const uint8_t*) data;
     uint32_t crc = ~previousCrc32;
-    while (length--) 
+    while (length--)
 	{
         crc ^= *bytes++;
-        for (int i = 0; i < 8; i++) 
-		if (crc & 1) 
+        for (int i = 0; i < 8; i++)
+		if (crc & 1)
 		  crc = (crc >> 1) ^ POLYNOMIAL;
-		else 
+		else
 			crc >>= 1;
     }
     return ~crc;
@@ -32211,15 +32019,15 @@ bool myavanzamentoby1sec(int64_t i_lavorati, int64_t i_totali, int64_t i_inizio,
 		double eta = 0.001 * (mtime() - i_inizio) * (i_totali - i_lavorati) / (i_lavorati + 1.0);
 		if (secondi == 0)
 			secondi= 1;
-		
-		if (flagcatpaqmode) 
+
+		if (flagcatpaqmode)
         {
             // Formato macchina: @SPK@PRG@<percentuale>@<lavorati>@<totali>@<eta>
             printf("@SPK@PRG@%d@%lld@%lld@%d\n", percentuale, (long long)i_lavorati, (long long)i_totali, (int)eta);
             fflush(stdout); // CRITICO: svuota il buffer del pipe verso Lazarus!
             return true;
         }
-		
+
 		if (eta < 356000)
 		{
 			if (flagwriteonconsole)
@@ -32502,21 +32310,6 @@ double custom_exp(double x)
 
 class franz_do_hash
 {
-	/*
-		do you think this is kind of "weird" C/C++/Delphi?
-		Well, we need to compile on gcc 3.4
-		therefore no C++20, no C++14, no... nothing
-
-		franz_do_hash hashfrombuffer(par->algo[i]);
-		hashfrombuffer.init();
-		hashfrombuffer.update(par->data[i],par->filesize[i]);
-		hashstringato=hashfrombuffer.finalize();
-
-
-		franz_do_hash dummy(tmpalgo[i]);
-		string risu=dummy.filehash(work,false,par->inizio,par->dimensione);
-
-	*/
 
   private:
 	bool			 isinit;
@@ -32542,7 +32335,6 @@ class franz_do_hash
 
 	bool i_filehash; // if false, do a RAM hash
 
-	/// string		i_filename;
 	bool	i_flagmm;
 	int64_t i_inizio;
 	int64_t i_totali;
@@ -32584,8 +32376,6 @@ class franz_do_hash
 			{
 				ffinalize= p->second.ffinalize;
 				ihashtype= p->first;
-				/// printf("stopme %d\n",p->first);
-				/// exit(0);
 			}
 		if (ffinalize == NULL)
 		{
@@ -32806,23 +32596,6 @@ string franz_do_hash::finalize()
 
 void franz_do_hash::update(char *i_buffer, const int i_buflen)
 {
-	//	(*p_xxhash64).add(i_buffer,i_buflen);
-	/// return;
-	/*
-	if (!isinit)
-	{
-		myprintf("00780: GURU hash not init\n");
-		seppuku();
-		return;
-	}
-
-	if (isfinalized)
-	{
-		myprintf("00781: GURU hash finalized, cannot update\n");
-		seppuku();
-		return;
-	}
-*/
 	if ((ihashtype == FRANZO_XXHASH64) || (ihashtype == FRANZO_WINHASH64) || (ihashtype == FRANZO_XXHASH64B))
 	{
 		(*p_xxhash64).add(i_buffer, i_buflen);
@@ -34308,7 +34081,7 @@ bool headcompare(std::string i_file1, std::string i_file2) {
     }
 
     int64_t delta = len2 - len1;
-    
+
     myprintf("84152: Reference File (Short) %21s\n", migliaia(len1));
     myprintf("84154: Target File    (Long)  %21s\n", migliaia(len2));
     myprintf("84155: Delta size             %21s\n", migliaia(delta));
@@ -34341,7 +34114,7 @@ bool headcompare(std::string i_file1, std::string i_file2) {
     // 5. Ciclo di lettura
     // Dobbiamo leggere solo fino alla lunghezza del file PIÙ CORTO (len1)
     while (total_read < len1 && are_equal_prefix) {
-        
+
         int64_t remaining = len1 - total_read;
         size_t to_read = (remaining > (int64_t)buf_size) ? buf_size : (size_t)remaining;
 
@@ -34365,13 +34138,13 @@ bool headcompare(std::string i_file1, std::string i_file2) {
                 for (size_t i = 0; i < to_read; ++i) {
                     if (buf1[i] != buf2[i]) {
                         int64_t diff_offset = total_read + i;
-                        
+
                         eol();
                         color_yellow();
                         myprintf("84209: CONTENT DIFFERENCE at offset %21s (0x%llX)\n", migliaia(diff_offset), (long long)diff_offset);
                         myprintf("       File1 byte: %02X | File2 byte: %02X\n", (unsigned char)buf1[i], (unsigned char)buf2[i]);
                         color_restore();
-                        break; 
+                        break;
                     }
                 }
             }
@@ -34387,7 +34160,7 @@ bool headcompare(std::string i_file1, std::string i_file2) {
     // 7. Risultato finale
     if (are_equal_prefix) {
         // Se siamo qui, il contenuto di File1 è identico alla parte iniziale di File2.
-        
+
         if (len1 == len2) {
             color_green();
             myprintf("RESULT: FILES ARE IDENTICAL (Same size, same content).\n");
@@ -34605,29 +34378,6 @@ class franzcri
 	{
 		return host_to_le64(val);
 	}
-
-	/*
-		void print_nonce(const unsigned char *nonce, size_t len, const char *context)
-		{
-			if (!flagdebug)
-				return;
-
-			myprintf(" %s Nonce: ", context);
-			for (size_t i = 0; i < len; ++i)
-				myprintf("%02x", nonce[i]);
-			myprintf("\n");
-		}
-
-		void print_key()
-		{
-			if (!flagdebug)
-				return;
-			myprintf("Key: ");
-			for (size_t i = 0; i < sizeof(key); ++i)
-				myprintf("%02x", key[i]);
-			myprintf("\n");
-		}
-	*/
 
 #ifndef RTLD_LAZY
 #define RTLD_LAZY 1
@@ -35941,7 +35691,7 @@ class franzcri
 
 	// V4: Query encryption type after open()
 	bool get_is_aes_too() const { return is_aes_too; }
-	
+
 	// V4: Static helper - detect encryption type from file without opening/decrypting
 	// Returns: 0=not franzen, 1=FRANZEN only, 2=FRENZEN (AES+Franzen)
 	static int detect_franzen_type(const char* filename)
@@ -36079,7 +35829,7 @@ class franzcri
 				{
 					int64_t diff= (int64_t)footer.file_data_size - original_size;
 
-					if (diff == 104) 
+					if (diff == 104)
 					{
 						// Franzen is AHEAD of the .zpaq file.
 						// This happens when a jidac header (104 bytes) was appended
@@ -36264,7 +36014,7 @@ class franzcri
 		// - A new segment is created only when we REOPEN an existing file and append
 		// - Multiple write() calls in the same session are part of the SAME segment
 		// - is_file_new tracks whether this is a freshly created file
-		
+
 		// For a NEW file (no data yet), start right after header
 		// For an EXISTING file being reopened, start AFTER the current footer
 
@@ -37681,12 +37431,6 @@ class franzcri
 					sodium.sodium_memzero(dummy_plaintext.data(), dummy_plaintext.size());
 				return false;
 			}
-
-			/*
-					int percent = (int)(100.0 * (block_idx + 1) / total_blocks);
-					printf("\rVerification in progress: %d%%", percent);
-					fflush(stdout);
-			*/
 		}
 		if (flagmemzero)
 			sodium.sodium_memzero(dummy_plaintext.data(), dummy_plaintext.size());
@@ -37839,7 +37583,7 @@ class franzcri
 		fclose(input_file);
 		return NULL;
 	}
-	
+
 	static void *decryption_worker(void *arg)
 	{
 		decode_thread_data *data= (decode_thread_data *)arg;
@@ -38439,275 +38183,6 @@ class franzcri
 		return (bytes_needed == 0);
 	}
 
-/*
-	// Debug function per testare read_at_to
-	// Decripta il file già aperto usando read_at_to con letture a pezzi
-	// Il file deve essere già aperto con open() prima di chiamare questa funzione
-	//
-	// Uso:
-	//   franzcri fc("password", strlen("password"));
-	//   fc.open("file.franzen", false);
-	//   fc.decriptadebug("output.bin", 32768);
-	//   fc.close();
-
-	bool decriptadebug(const char *output_filename, size_t chunk_size)
-	{
-		if (!output_filename)
-		{
-			myprintf("45001! decriptadebug: output_filename nullo\n");
-			return false;
-		}
-
-		if (!is_file_open)
-		{
-			myprintf("45002! decriptadebug: file non aperto! Usa open() prima\n");
-			return false;
-		}
-
-		if (chunk_size == 0)
-			chunk_size= 32768; // Default 32KB, volutamente non allineato a block_size
-
-		myprintf("45010: decriptadebug: output %s\n", output_filename);
-		myprintf("45011: decriptadebug: chunk_size     = %s\n", migliaia(chunk_size));
-		myprintf("45012: decriptadebug: file_data_size = %s\n", migliaia2(footer.file_data_size));
-		myprintf("45013: decriptadebug: block_size     = %s\n", migliaia3(block_size));
-
-		uint64_t total_blocks= (footer.file_data_size + block_size - 1) / block_size;
-		myprintf("45014: decriptadebug: total_blocks   = %s\n", migliaia4(total_blocks));
-
-		// Open the output file
-		FILE *fout= fopen(output_filename, "wb");
-		if (!fout)
-		{
-			myprintf("45040! decriptadebug: impossibile creare file output %s\n", output_filename);
-			return false;
-		}
-
-		// Allocate read buffer
-		char *buffer= new char[chunk_size];
-		if (!buffer)
-		{
-			myprintf("45050! decriptadebug: impossibile allocare buffer %s byte\n", migliaia(chunk_size));
-			fclose(fout);
-			return false;
-		}
-
-		uint64_t offset		  = 0;
-		uint64_t total_written= 0;
-		uint64_t file_size	  = footer.file_data_size;
-		int		 chunk_count  = 0;
-		bool	 success	  = true;
-
-		myprintf("45060: decriptadebug: inizio ciclo di lettura\n");
-		myprintf("===========================================\n");
-
-		while (offset < file_size)
-		{
-			// Calcola quanto leggere
-			uint64_t remaining= file_size - offset;
-			size_t	 to_read  = (remaining < chunk_size) ? (size_t)remaining : chunk_size;
-
-			// Calculate involved blocks (for debug)
-			uint64_t first_block_idx= offset / block_size;
-			uint64_t last_block_idx = (offset + to_read - 1) / block_size;
-
-			myprintf("45100: chunk #%d: offset=%s to_read=%s blocchi=[%s..%s]\n",
-					 chunk_count,
-					 migliaia(offset),
-					 migliaia2(to_read),
-					 migliaia3(first_block_idx),
-					 migliaia4(last_block_idx));
-
-			// Offset inside the first block
-			size_t offset_in_first_block= (size_t)(offset % block_size);
-			myprintf("45101:          offset_in_first_block=%s\n", migliaia(offset_in_first_block));
-
-			// Chiama read_at_to
-			memset(buffer, 0xAA, chunk_size); // Pattern per debug
-
-			if (!read_at_to(buffer, to_read, offset))
-			{
-				myprintf("45110! decriptadebug: read_at_to FALLITO al chunk #%d offset=%s\n",
-						 chunk_count, migliaia(offset));
-				success= false;
-				break;
-			}
-
-			// Scrivi su file
-			size_t written= fwrite(buffer, 1, to_read, fout);
-			if (written != to_read)
-			{
-				myprintf("45120! decriptadebug: fwrite fallito, scritti %s di %s\n",
-						 migliaia(written), migliaia2(to_read));
-				success= false;
-				break;
-			}
-
-			// Debug: show first and last bytes del chunk
-			if (to_read >= 16)
-			{
-				myprintf("45130:          primi 8 byte: %02X %02X %02X %02X %02X %02X %02X %02X\n",
-						 (unsigned char)buffer[0], (unsigned char)buffer[1],
-						 (unsigned char)buffer[2], (unsigned char)buffer[3],
-						 (unsigned char)buffer[4], (unsigned char)buffer[5],
-						 (unsigned char)buffer[6], (unsigned char)buffer[7]);
-				myprintf("45131:          ultimi 8 byte: %02X %02X %02X %02X %02X %02X %02X %02X\n",
-						 (unsigned char)buffer[to_read - 8], (unsigned char)buffer[to_read - 7],
-						 (unsigned char)buffer[to_read - 6], (unsigned char)buffer[to_read - 5],
-						 (unsigned char)buffer[to_read - 4], (unsigned char)buffer[to_read - 3],
-						 (unsigned char)buffer[to_read - 2], (unsigned char)buffer[to_read - 1]);
-			}
-
-			offset+= to_read;
-			total_written+= written;
-			chunk_count++;
-
-			myprintf("45140:          OK, total_written=%s\n", migliaia(total_written));
-			myprintf("-------------------------------------------\n");
-		}
-
-		myprintf("===========================================\n");
-		myprintf("45200: decriptadebug: ciclo terminato\n");
-		myprintf("45201: decriptadebug: chunks processati = %d\n", chunk_count);
-		myprintf("45202: decriptadebug: byte scritti      = %s\n", migliaia(total_written));
-		myprintf("45203: decriptadebug: file_data_size    = %s\n", migliaia2(file_size));
-		myprintf("45204: decriptadebug: risultato         = %s\n", success ? "OK" : "FALLITO");
-
-		delete[] buffer;
-		fclose(fout);
-
-		return success;
-	}
-
-	// Version with variable chunk size per stress test
-	// Il file deve essere già aperto con open() prima di chiamare questa funzione
-	bool decriptadebug_stress(const char *output_filename)
-	{
-		if (!output_filename)
-		{
-			myprintf("45501! decriptadebug_stress: output_filename is null\n");
-			return false;
-		}
-
-		if (!is_file_open)
-		{
-			myprintf("45502! decriptadebug_stress: file not open! Use open() first\n");
-			return false;
-		}
-
-		myprintf("45510: decriptadebug_stress: output %s\n", output_filename);
-		myprintf("45511: decriptadebug_stress: file_data_size = %s\n", migliaia(footer.file_data_size));
-		myprintf("45512: decriptadebug_stress: block_size     = %s\n", migliaia2(block_size));
-
-		// Open the output file
-		FILE *fout= fopen(output_filename, "wb");
-		if (!fout)
-		{
-			myprintf("45540! decriptadebug_stress: cannot create output file\n");
-			return false;
-		}
-
-		// Large buffer for worst-case scenario
-		size_t max_chunk= (size_t)(block_size * 3); // Up to 3 blocks
-		char  *buffer	= new char[max_chunk];
-		if (!buffer)
-		{
-			myprintf("45550! decriptadebug_stress: cannot allocate buffer\n");
-			fclose(fout);
-			return false;
-		}
-
-		// Array of chunk sizes to test (intentionally weird values)
-		size_t chunk_sizes[]= {
-			1,							  // 1 byte
-			7,							  // Prime number
-			100,						  // Small
-			1000,						  // 1KB
-			4096,						  // 4KB (typical sector)
-			(size_t)(block_size - 1),	  // Almost one block
-			(size_t)(block_size),		  // Exactly one block
-			(size_t)(block_size + 1),	  // Slightly more than one block
-			(size_t)(block_size + 100),	  // A block and a bit
-			(size_t)(block_size * 2 - 1), // Almost two blocks
-			(size_t)(block_size * 2),	  // Exactly two blocks
-			(size_t)(block_size * 2 + 1), // Slightly more than two blocks
-			32768,						  // 32KB
-			65000,						  // Almost 64KB
-			100000						  // ~100KB
-		};
-		size_t num_sizes = sizeof(chunk_sizes) / sizeof(chunk_sizes[0]);
-		size_t size_index= 0;
-
-		uint64_t offset		  = 0;
-		uint64_t total_written= 0;
-		uint64_t file_size	  = footer.file_data_size;
-		int		 chunk_count  = 0;
-		bool	 success	  = true;
-
-		myprintf("45560: decriptadebug_stress: starting loop with variable chunks\n");
-		myprintf("===========================================\n");
-
-		while (offset < file_size)
-		{
-			// Choose chunk size cyclically
-			size_t current_chunk_size= chunk_sizes[size_index % num_sizes];
-			size_index++;
-
-			// Limit to max allocated
-			if (current_chunk_size > max_chunk)
-				current_chunk_size= max_chunk;
-
-			// Calculate how much to read
-			uint64_t remaining= file_size - offset;
-			size_t	 to_read  = (remaining < (uint64_t)current_chunk_size) ? (size_t)remaining : current_chunk_size;
-
-			uint64_t first_block_idx= offset / block_size;
-			uint64_t last_block_idx = (offset + to_read - 1) / block_size;
-			size_t	 offset_in_first= (size_t)(offset % block_size);
-
-			myprintf("45600: chunk #%d: chunk_size=%s offset=%s to_read=%s\n",
-					 chunk_count,
-					 migliaia((uint64_t)current_chunk_size),
-					 migliaia2(offset),
-					 migliaia3((uint64_t)to_read));
-			myprintf("45601:          blocks=[%s..%s] offset_in_first=%s\n",
-					 migliaia(first_block_idx),
-					 migliaia2(last_block_idx),
-					 migliaia3((uint64_t)offset_in_first));
-
-			memset(buffer, 0xAA, to_read);
-
-			if (!read_at_to(buffer, to_read, offset))
-			{
-				myprintf("45610! decriptadebug_stress: read_at_to FAILED\n");
-				success= false;
-				break;
-			}
-
-			size_t written= fwrite(buffer, 1, to_read, fout);
-			if (written != to_read)
-			{
-				myprintf("45620! decriptadebug_stress: fwrite failed\n");
-				success= false;
-				break;
-			}
-
-			offset+= to_read;
-			total_written+= (uint64_t)written;
-			chunk_count++;
-		}
-
-		myprintf("===========================================\n");
-		myprintf("45700: decriptadebug_stress: result = %s\n", success ? "OK" : "FAILED");
-		myprintf("45701: decriptadebug_stress: bytes written = %s / %s\n",
-				 migliaia(total_written), migliaia2(file_size));
-
-		delete[] buffer;
-		fclose(fout);
-
-		return success;
-	}
-*/
 	void dumpa(const bool flagall, const unsigned int menoenne)
 	{
 		printbar('=');
@@ -39786,7 +39261,7 @@ class franzcri
 		// TEST 7: RSYNC-FRIENDLY APPEND TEST
 		// Verifies that after append, the original file content is bit-identical
 		// to the prefix of the appended file (crucial for rsync --append)
-		
+
 		myprintf("\nTEST 7: Rsync-friendly append (bit-identical prefix)...\n");
 		{
 			const char	*file_original= "franzen_test_original.tmp";
@@ -40911,7 +40386,7 @@ franzcri* get_thread_franzenfile()
 {
     if (tls_franzenfile != NULL)
 		return tls_franzenfile;
-		
+
 	if (flagdebug6)
 		{
 			color_cyan();
@@ -40926,12 +40401,12 @@ franzcri* get_thread_franzenfile()
     if (tls_franzenfile == NULL && g_franzen_filename != "")
     {
         if (flagdebug)
-            myprintf("46001: Thread creating its own franzcri for %s\n", 
+            myprintf("46001: Thread creating its own franzcri for %s\n",
                      g_franzen_filename.c_str());
-        
-        tls_franzenfile = new franzcri(g_franzen.c_str(), 
+
+        tls_franzenfile = new franzcri(g_franzen.c_str(),
                                         g_franzen.length());
-        
+
         if (!tls_franzenfile->open(g_franzen_filename.c_str(), false))
         {
             myprintf("46010! Thread failed to open franzen file\n");
@@ -40939,13 +40414,13 @@ franzcri* get_thread_franzenfile()
             tls_franzenfile = NULL;
             return NULL;
         }
-        
+
         if (flagdebug)
             myprintf("46020: Thread franzcri opened successfully\n");
     }
 	else
 		myprintf("Problema creando tls_franzen\n");
-    
+
     return tls_franzenfile;
 }
 
@@ -40978,25 +40453,6 @@ size_t myfwrite(const void *ptr, size_t size, size_t nobj, FP fp)
 	if ((nobj * size) == 0)
 		return 0;
 
-	/*
-		char mynomefile[100];
-		uint32_t crc=crc32_16bytes(ptr,nobj*size);
-
-		if ((fp==g_fp_zpaq) || (g_fp_zpaq==0))
-			snprintf(mynomefile,sizeof(mynomefile),"z:\\d_%08d_start_%11s_size_%7s_%08X",g_crc32_sequence_data,migliaia3(ftello(fp)),migliaia2(nobj*size),crc);
-		else
-			snprintf(mynomefile,sizeof(mynomefile),"z:\\i_%08d_start_%11s_size_%7s_%08X",g_crc32_sequence_index,migliaia3(ftello(fp)),migliaia2(nobj*size));
-
-		FILE* myfile=fopen(mynomefile, "wb");
-		if (myfile==NULL)
-		{
-			myprintf("00100: cannot write on %s\n",mynomefile);
-			exit(0);
-		}
-		fwrite(ptr,size*nobj,1,myfile);
-		fclose(myfile);
-	*/
-
 #ifdef _WIN32
 	DWORD r= 0;
 	if (flagdebug3)
@@ -41015,14 +40471,14 @@ size_t myfwrite(const void *ptr, size_t size, size_t nobj, FP fp)
 
 #ifndef NOFRANZEN
 #ifdef ZPAQFULL /// NOSFTPSTART
-	
+
 	if (g_p_franzenfile)
 	{
 		if (r == 104)
 		{
 			if (flagdebug6)
 			 myprintf("FRANZEN_WRITEAT: offset=%s size=%s\n", migliaia(g_franzen_jidacheader), migliaia2(size*nobj));
-				 
+
 			if (flagdebug3)
 				myprintf("r is %s g_franzen_jidacheader %s \n", migliaia(r), migliaia2(g_franzen_jidacheader));
 
@@ -41040,7 +40496,7 @@ size_t myfwrite(const void *ptr, size_t size, size_t nobj, FP fp)
 					{
 						myprintf("111111111111111 fatto writeat del jidacheader %s myoffsettino %s di %d\n",
 								 migliaia(g_franzen_jidacheader), migliaia2(myoffsettino), size * nobj);
-								 
+
 					 if (g_password)
 						{
 							color_yellow();
@@ -41054,7 +40510,7 @@ size_t myfwrite(const void *ptr, size_t size, size_t nobj, FP fp)
 					}
 
 				}
-				
+
 			}
 			else
 			{
@@ -41075,7 +40531,7 @@ size_t myfwrite(const void *ptr, size_t size, size_t nobj, FP fp)
 	}
 	else
 	{
-///		myprintf("FRANZEN_NULL: g_p_franzenfile is NULL! size=%s\n", 
+///		myprintf("FRANZEN_NULL: g_p_franzenfile is NULL! size=%s\n",
 	///			 migliaia(size*nobj));
 	}
 
@@ -41268,11 +40724,6 @@ bool getdirinfo(string i_folder, int64_t &o_date, int64_t &o_attr)
 	if (!lstat(i_folder.c_str(), &sb))
 		if (S_ISDIR(sb.st_mode))
 		{
-			/*
-				time_t    st_atime;   // time of last access
-				time_t    st_mtime;   // time of last modification
-				time_t    st_ctime;   // time of last status change
-			*/
 			o_date= decimal_time(sb.st_mtime);
 			o_attr= 'u' + (sb.st_mode << 8);
 			return true;
@@ -41290,15 +40741,6 @@ bool getdirinfo(string i_folder, int64_t &o_date, int64_t &o_attr)
 	SYSTEMTIME st;
 	if (FileTimeToSystemTime(&ffd.ftLastWriteTime, &st))
 		o_date= st.wYear * 10000000000LL + st.wMonth * 100000000LL + st.wDay * 1000000 + st.wHour * 10000 + st.wMinute * 100 + st.wSecond;
-
-	/*
-		if (FileTimeToSystemTime(&ffd.ftCreationTime, &st))
-				creationdate=st.wYear*10000000000LL+st.wMonth*100000000LL+st.wDay*1000000
-					+st.wHour*10000+st.wMinute*100+st.wSecond;
-		if (FileTimeToSystemTime(&ffd.ftLastAccessTime, &st))
-				accessdate=st.wYear*10000000000LL+st.wMonth*100000000LL+st.wDay*1000000
-					+st.wHour*10000+st.wMinute*100+st.wSecond;
-	*/
 
 	o_attr= ffd.dwFileAttributes;
 	FindClose(h);
@@ -41652,7 +41094,6 @@ bool win32_readads_sb(string i_filename, string i_adsname, StringBuffer *o_strin
 
 	while (ReadFile(hFile, buffer, sizeof(buffer), &br, NULL))
 	{
-		/// myprintf("00154: chunkino %s\n",migliaia(br));
 		if (br == 0)
 			break;
 		(*o_stringbuffer).write((const char *)buffer, br);
@@ -42274,7 +41715,7 @@ string relativetolongpath(string i_filename)
         {
             // Fallimento: dobbiamo liberare buf prima di uscire!
             myprintf("00193! GetFullPathNameW failed on second call.\n"); // Add debug log
-            franz_free(buf); 
+            franz_free(buf);
             g_allocatedram -= (len) * sizeof(WCHAR);
         }
 
@@ -42451,7 +41892,7 @@ int numberOfProcessors()
 		while (fgets(line, sizeof(line), cpuinfo) != NULL)
 		/*	if (strncmp(line, "processor", 9) == 0)
 				logical_cores++;
-			else*/ 
+			else*/
 				if (strncmp(line, "cpu cores", 9) == 0)
 				sscanf(line, "cpu cores : %d", &cpu_cores);
 			else if (strncmp(line, "siblings", 8) == 0)
@@ -43118,7 +42559,7 @@ FP g_archivefp_first;
 
 
 bool g_franzen_alreadywritten;
-	
+
 
 // Base of InputArchive and OutputArchive
 class ArchiveBase
@@ -43163,43 +42604,43 @@ class InputArchive : public ArchiveBase, public libzpaq::Reader
 	int64_t			total_sz;
 	int64_t			off; // current offset
 	string			fn;	 // filename, possibly multi-part with wildcards
-	
+
 	ArchiveType     archive_type;  // detected archive type
 	string          physical_file; // actual file to open (.zpaq or .zpaq.franzen)
 	bool            uses_franzen;  // true if Franzen encryption is present
-	
+
   public:
 	vector<string> filepartnames;
 	string		   lastfilename;
-	
+
 	// Open filename. If password then decrypt input.
 	InputArchive(const char *filename);
-	
+
 	// Read and return 1 byte or -1 (EOF)
 	int get()
 	{
 		error("get() not implemented");
 		return -1;
 	}
-	
+
 	int64_t get_totalsize()
 	{
 		return total_sz;
 	}
-	
+
 	// Read up to len bytes into obuf at current offset. Return 0..len bytes
 	// actually read. 0 indicates EOF.
 	int read(char *obuf, int len);
-	
+
 	// Like fseeko()
 	void seek(int64_t p, int whence);
-	
+
 	// Like ftello()
 	int64_t tell()
 	{
 		return off;
 	}
-	
+
 	int64_t totalsize()
 	{
 		int64_t temp= 0;
@@ -43207,11 +42648,11 @@ class InputArchive : public ArchiveBase, public libzpaq::Reader
 			temp+= sz[i];
 		return temp;
 	}
-	
+
   private:
 	// Detect archive type and set physical_file
 	ArchiveType detect_archive_type(const string& base_file);
-	
+
 	// Read first bytes from physical file (handling Franzen if needed)
 	bool read_header_bytes(char* buffer, size_t len);
 };
@@ -43280,7 +42721,7 @@ ArchiveType InputArchive::detect_archive_type(const string& base_file)
 	myreplace(zpaq_file,".franzen","");
 	bool zpaq_exists 		= fileexists(zpaq_file);
 	bool franzen_exists = fileexists(franzen_file);
-	
+
 	if  (iszpaq(base_file))
 		if (g_password)
 			if (g_franzen=="")
@@ -43303,14 +42744,14 @@ ArchiveType InputArchive::detect_archive_type(const string& base_file)
 		// Franzen file exists and is valid
 		physical_file = franzen_file;
 		uses_franzen = true;
-		
+
 		// Read first 32 bytes (decrypted) to check for AES salt
 		char header[32];
 		if (!read_header_bytes(header, 32))
 		{
 			error("Failed to read header from Franzen archive");
 		}
-		
+
 		// If decrypted content starts with "7kSt" (or zPQ) → no AES (Franzen only)
 		// Otherwise → AES salt present → AES + Franzen
 		if (is_buffer_zpaq(header, 32))
@@ -43333,19 +42774,19 @@ ArchiveType InputArchive::detect_archive_type(const string& base_file)
 				color_restore();
 				g_franzen_alreadywritten=true;
 			}
-				
+
 			return ARCHIVE_ZPAQ_AES_FRANZEN;
 		}
 	}
-	else 
+	else
 #endif /// NOSFTPEND
-#endif	
+#endif
 	if (zpaq_exists)
 	{
 		// No Franzen, use regular .zpaq file
 		physical_file = zpaq_file;
 		uses_franzen = false;
-		
+
 		if (g_chunk_size>0)
 		{
 			if (g_password)
@@ -43383,13 +42824,13 @@ ArchiveType InputArchive::detect_archive_type(const string& base_file)
 
 
 	}
-	else 
+	else
 #ifndef NOFRANZEN
-#ifdef ZPAQFULL /// NOSFTPSTART		
+#ifdef ZPAQFULL /// NOSFTPSTART
 	if (franzen_exists)
 	{
 		// Only .franzen exists but it's not a valid Franzen file
-		myprintf("39129! File %s not found and %s is not a valid franzen file\n", 
+		myprintf("39129! File %s not found and %s is not a valid franzen file\n",
 		         zpaq_file.c_str(), franzen_file.c_str());
 		error("Archive not found");
 	}
@@ -43401,7 +42842,7 @@ ArchiveType InputArchive::detect_archive_type(const string& base_file)
 		myprintf("39127! Archive not found: %s\n", zpaq_file.c_str());
 		error("Archive not found");
 	}
-	
+
 	return ARCHIVE_ZPAQ_PLAIN; // unreachable
 }
 
@@ -43418,7 +42859,7 @@ bool InputArchive::read_header_bytes(char* buffer, size_t len)
 			myprintf("Leggo header ma con franzen len %s off %s\n",migliaia(len),migliaia2(off));
 			color_restore();
 		}
-		
+
 		if (g_franzen=="")
 		{
 			color_yellow();
@@ -43438,7 +42879,7 @@ bool InputArchive::read_header_bytes(char* buffer, size_t len)
 			return false;
 		}
 
-/*		
+/*
 		for (unsigned int i=0;i<len;i++)
 			myprintf("franzen_header (pre)%03d %02X\n",i,buffer[i]&255);
 		*/
@@ -43454,7 +42895,7 @@ bool InputArchive::read_header_bytes(char* buffer, size_t len)
 #endif
 #endif
 	{
-		
+
 		if (flagdebug6)
 			myprintf("leggo header da archivio fisico per len %d\n",len);
 
@@ -43462,7 +42903,7 @@ bool InputArchive::read_header_bytes(char* buffer, size_t len)
 		FILE* f = fopen(physical_file.c_str(), "rb");
 		if (f == NULL)
 			return false;
-		
+
 		bool result = (fread(buffer, 1, len, f) == len);
 		fclose(f);
 		return result;
@@ -43476,7 +42917,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 	lastfilename = "";
 	off = 0;
 	total_sz = 0;
-	
+
 	// Get file sizes (for multi-part archives)
 	const string part0 = subpart(filename, 0);
 	for (unsigned i = 1;; ++i)
@@ -43484,7 +42925,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 		const string parti = subpart(filename, i);
 		if (i > 1 && parti == part0)
 			break;
-			
+
 		FP temp_fp = myfopen(parti.c_str(), RB);
 		if (temp_fp == FPNULL)
 		{
@@ -43501,19 +42942,19 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 			filepartnames.push_back(parti);
 			lastfilename = parti;
 		}
-		
+
 		fseeko(temp_fp, 0, SEEK_END);
 		sz.push_back(ftello(temp_fp));
 		total_sz += sz.back();
 		myfclose(&temp_fp);
 	}
-	
+
 	// Get first part filename
 	string part1 = subpart(filename, 1);
-	
+
 	// Detect archive type
 	archive_type = detect_archive_type(part1);
-	
+
 	// Initialize Franzen if needed
 #ifndef NOFRANZEN
 #ifdef ZPAQFULL
@@ -43531,14 +42972,14 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 				error("Franzen password required but not provided");
 			}
 		}
-		
+
 		// Initialize global Franzen parameters (once)
 		if (g_franzen_filename == "")
 		{
 			g_franzen_filename = physical_file;
 			myprintf("Franzen mode enabled: %s\n", g_franzen_filename.c_str());
 		}
-		
+
 		// FIX: sz[] currently contains PHYSICAL file sizes (encrypted + header/footer/overhead).
 		// But zpaq uses totalsize()/sz[] to compute logical seek offsets, and read_at_to()
 		// works with logical offsets bounded by file_data_size.
@@ -43559,7 +43000,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 	}
 #endif
 #endif
-	
+
 	// Initialize AES if needed
 	if (archive_type == ARCHIVE_ZPAQ_AES || archive_type == ARCHIVE_ZPAQ_AES_FRANZEN)
 	{
@@ -43573,7 +43014,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 				else
 					myprintf("\nArchive is AES-encrypted\n");
 				color_restore();
-				
+
 				string spassword = mygetpasswordblind("Enter AES password: ");
 				if (spassword != "")
 				{
@@ -43588,9 +43029,9 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 					error("AES password required but not provided");
 				}
 			}
-			
+
 		// Read salt (first 32 bytes of decrypted content)
-		
+
 		char salt[32];
 		if (flagdebug6)
 		{
@@ -43600,7 +43041,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 			for (unsigned int i=0;i<32;i++)
 				myprintf("%03d %02X\n",i,salt[i]&255);
 		}
-		
+
 		if (!read_header_bytes(salt, 32))
 		{
 			error("Cannot read AES salt from archive");
@@ -43608,18 +43049,18 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 		if (flagdebug6)
 		{
 			myprintf("Sono in posizione dopo lettura header %s\n",migliaia(ftello(fp)));
-			
+
 			for (unsigned int i=0;i<32;i++)
 				myprintf("%03d %02X\n",i,salt[i]&255);
 			printbar('*');
 		}
-		
+
 		// Derive key and initialize AES
 		char key[32];
 		libzpaq::stretchKey(key, g_password, salt);
 		aes = new libzpaq::AES_CTR(key, 32, salt);
 		g_allocatedram += sizeof(libzpaq::AES_CTR);
-		
+
 		// Set initial offset past the salt
 		off = 32;
 	}
@@ -43628,7 +43069,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 		// No AES encryption
 		off = 0;
 	}
-	
+
 	// Open physical file (if not Franzen-only or if .zpaq also exists)
 	// For Franzen-only archives where .zpaq doesn't exist, fp can remain FPNULL
 	if (!uses_franzen || fileexists(part1))
@@ -43639,7 +43080,7 @@ InputArchive::InputArchive(const char *filename) : fn(filename), uses_franzen(fa
 			ioerr(part1.c_str());
 		}
 	}
-	
+
 	if (!uses_franzen)
 		if (off==32)
 			seek(32,SEEK_SET);
@@ -43652,7 +43093,7 @@ int InputArchive::read(char *obuf, int len)
 {
 	int nr = 0;
 	///myprintf("Faccio read di       %d offset %d\n",len,off);
-	
+
 	// Step 1: Read data (either via Franzen or direct fread)
 #ifndef NOFRANZEN
 #ifdef ZPAQFULL
@@ -43660,14 +43101,14 @@ int InputArchive::read(char *obuf, int len)
 	{
 		///myprintf("Uso franzen\n");
 		// Read and decrypt via Franzen
-				
+
 		franzcri* my_franzen = get_thread_franzenfile();
 		if (my_franzen == NULL)
 		{
 			error("Franzen decryption not available");
 			return 0;
 		}
-		
+
 		if (flagdebug6)
 			if (len==4)
 			{
@@ -43678,7 +43119,7 @@ int InputArchive::read(char *obuf, int len)
 				myprintf("\n");
 			}
 		///myprintf("Chiamo read_at_to di %d offset %d\n",len,off);
-		
+
 		// FIX: Calculate actual readable bytes - don't request beyond file_data_size
 		uint64_t franzen_data_size = my_franzen->get_file_data_size();
 		int actual_len = len;
@@ -43691,7 +43132,7 @@ int InputArchive::read(char *obuf, int len)
 		{
 			actual_len = (int)(franzen_data_size - off);
 		}
-		
+
 		if (!my_franzen->read_at_to(obuf, actual_len, off))
 		{
 			myprintf("43282: Error read_at_to (off=%lld, len=%d, actual_len=%d, data_size=%lld)\n",
@@ -43721,7 +43162,7 @@ int InputArchive::read(char *obuf, int len)
 		}
 		///printf("leggo da fp len %d offset %lld\n",len,off);
 		nr = fread(obuf, 1, len, fp);
-		
+
 		if (nr == 0)
 		{
 			// Try seeking to current position and retry (handles multipart)
@@ -43736,17 +43177,17 @@ int InputArchive::read(char *obuf, int len)
 					printf("%02X ",obuf[i]&255);
 				myprintf("\n");
 			}
-		
+
 		if (nr == 0)
 			return 0; // EOF
 	}
-	
+
 	// Step 2: Apply AES decryption if present
 	if (aes)
 	{
 		aes->encrypt(obuf, nr, off);
 	}
-	if (flagdebug6)	
+	if (flagdebug6)
 		if (len==4)
 		{
 			myprintf("Magic 4 NOAES: ");
@@ -43754,7 +43195,7 @@ int InputArchive::read(char *obuf, int len)
 				printf("%02X ",obuf[i]&255);
 			myprintf("\n");
 		}
-	
+
 	// Update offset
 	off += nr;
 	return nr;
@@ -43780,11 +43221,11 @@ void InputArchive::seek(int64_t p, int whence)
 		}
 		return;
 	}
-	
+
 	// Regular file mode: perform physical seek
 	if (!isopen())
 		return;
-		
+
 	// Compute new offset
 	if (whence == SEEK_SET)
 		off = p;
@@ -43796,14 +43237,14 @@ void InputArchive::seek(int64_t p, int whence)
 		for (unsigned i = 0; i < sz.size(); ++i)
 			off += sz[i];
 	}
-	
+
 	// Optimization for single file to avoid close and reopen
 	if (sz.size() == 1)
 	{
 		fseeko(fp, off, SEEK_SET);
 		return;
 	}
-	
+
 	// Seek across multiple files
 	assert(sz.size() > 1);
 	int64_t	 sum = 0;
@@ -43936,7 +43377,7 @@ class OutputArchive : public ArchiveBase, public libzpaq::Writer
 	bool		   firstchunk;
 	vector<string> filepartnames;
 
-	~OutputArchive() 
+	~OutputArchive()
 	{
 		if (buf != NULL) {
 			franz_free(buf);
@@ -44264,7 +43705,7 @@ class OutputArchive : public ArchiveBase, public libzpaq::Writer
 				myprintf("00241: calling flush on fp=%s\n", migliaia(int64_t(fp)));
 #endif
 			flush();
-/*			
+/*
 			if (g_chunk_size > 0)
 				if (chunksize ==0)
 				{
@@ -44656,11 +44097,10 @@ class easymultipart
 			++parts;
 		}
 		std::sort(partarray.begin(), partarray.end(), comparefilename);
-		isgood= (thehole == ""); // filenamearray.size()==partarray.size();
+		isgood= (thehole == "");
 
 		if (thehole != "")
 		{
-			///	myprintf("00269: PART NUMBER MISMATCH: disk %s vs part %s (HOLE IN %s)\n",migliaia(filenamearray.size()),migliaia2(partarray.size()),thehole.c_str());
 
 			myprintf("00270! [2] AT LEAST ONE HOLE DETECTED! <<%Z>>\n", thehole.c_str());
 			if (filenamearray.size() > partarray.size()) // this should be
@@ -44874,18 +44314,13 @@ class franzfs
 	}
 	bool init(int64_t i_size)
 	{
-		///		myprintf("00311: init1\n");
 		data= (char *)franz_malloc(i_size);
-		/// g_allocatedram+=i_size;
-		///	myprintf("00312: init2\n");
 		if (data == NULL)
 		{
 			myprintf("00313! GURU on malloc\n");
 			return false;
 		}
-		/// myprintf("00314: init3\n");
 		memset(data, 0, i_size); // required by zpaq extraction method
-		/// myprintf("00315: init4\n");
 
 		g_ramdisksize+= i_size;
 		filesize= i_size;
@@ -44936,7 +44371,6 @@ class franzfs
 			myprintf("50052! cannot write beyond size %s %s %s\n", migliaia((int64_t)position), migliaia2((int64_t)i_size), migliaia3((int64_t)filesize));
 			return 0;
 		}
-		/// myprintf("50050: Ready to copy with filesize %s on position %s with size %s\n",migliaia3(filesize),migliaia(position),migliaia2(i_size));
 
 		memcpy(data + position, i_ptr, i_size);
 		position+= i_size;
@@ -44978,7 +44412,7 @@ struct DT // if you get some warning here, update your compiler!
 	string outputname; // written filename
 
 	int		 franz_block_size;
-	char	*franz_block; //[FRANZOFFSETV3];
+	char	*franz_block;
 	uint32_t file_crc32;
 	int64_t	 hashedsize;
 	int		 chunk;
@@ -45012,7 +44446,7 @@ struct DT // if you get some warning here, update your compiler!
 	bool			 donotextractme;
 	vector<unsigned> block_for_ptr;
 
-	DT() : date(0), size(0), attr(0), data(0), creationdate(0), accessdate(0), written(-1), isordered(false), isselected(false), /*franz_block_size(FRANZOFFSETV3),*/ file_crc32(0), hashedsize(0), chunk(-1), expectedsize(0), version(0), forceadd(false), is4(false), red_total(0), red_count(0), red_min(256), red_max(0), red_avg(0), red_candidate(0), isedt(false), kompressedsize(0), filework(0),
+	DT() : date(0), size(0), attr(0), data(0), creationdate(0), accessdate(0), written(-1), isordered(false), isselected(false), file_crc32(0), hashedsize(0), chunk(-1), expectedsize(0), version(0), forceadd(false), is4(false), red_total(0), red_count(0), red_min(256), red_max(0), red_avg(0), red_candidate(0), isedt(false), kompressedsize(0), filework(0),
 		   donotextractme(false)
 	{
 		///	let's save a bit of RAM (during compression)
@@ -45031,8 +44465,6 @@ struct DT // if you get some warning here, update your compiler!
 					franz_block_size= 0;
 			}
 
-		///		myprintf("00320: franz_block_size %d  franzo_type %d |%c|\n",franz_block_size,g_franzotype,command);
-
 		franz_block= NULL;
 		if (franz_block_size > 0)
 		{
@@ -45046,15 +44478,11 @@ struct DT // if you get some warning here, update your compiler!
 			g_dt_ram+= franz_block_size;
 			g_allocatedram-= franz_block_size; // (updated in franz_malloc)
 		}
-		// g_dt_ram+=franz_block_size+sizeof(DT);
 
 		hexhash = "";
 		hexcrc32= "";
-		/// specificmethod	='Z';
 		hashtype  = "";
 		outputname= "";
-		/// listtext		="";
-		/// fragmentlisthash="";
 		pfile_highway64= NULL;
 		if ((g_franzotype == FRANZO_HIGHWAY64) || (g_franzotype == FRANZO_HIGHWAY128) || (g_franzotype == FRANZO_HIGHWAY256))
 		{
@@ -45117,56 +44545,6 @@ struct DT // if you get some warning here, update your compiler!
 		}
 		pramfile= NULL;
 	}
-	/* too slow
-	~DT()
-	{
-		if (pfile_highway64)
-		{
-			delete pfile_highway64;
-			pfile_highway64=NULL;
-		}
-		if (pfile_xxhash64)
-		{
-			delete pfile_xxhash64;
-			pfile_xxhash64=NULL;
-		}
-		if (pfile_md5)
-		{
-			delete pfile_md5;
-			pfile_md5=NULL;
-		}
-		if (pfile_sha1)
-		{
-			delete pfile_sha1;
-			pfile_sha1=NULL;
-		}
-		if (pfile_sha256)
-		{
-			delete pfile_sha256;
-			pfile_sha256=NULL;
-		}
-		if (pfile_sha3)
-		{
-			delete pfile_sha3;
-			pfile_sha3=NULL;
-		}
-		if (pfile_whirlpool)
-		{
-			delete pfile_whirlpool;
-			pfile_whirlpool=NULL;
-		}
-		if (pfile_xxh3)
-		{
-			aligned_free(pfile_xxh3);
-			pfile_xxh3=NULL;
-		}
-		if (pfile_blake3)
-		{
-			franz_free(pfile_blake3);
-			pfile_blake3=NULL;
-		}
-	}
-	*/
 };
 typedef std::map<string, DT> DTMap;
 
@@ -45182,7 +44560,7 @@ struct Block
   unsigned size;        // number of fragments to decompress
   unsigned frags;       // number of fragments in block
   unsigned extracted;   // number of fragments decompressed OK
-  
+
   enum {READY, WORKING, GOOD, BAD} state;
   Block(unsigned s, int64_t o): offset(o), usize(-1), bsize(0), start(s),
       size(0), frags(0), extracted(0), state(READY) {}
@@ -45221,7 +44599,7 @@ typedef void (*callback_function)(char*); // type for conciseness
 
 /*
 
-Portion to list the contents of zpaq files in the most concise way possible, 
+Portion to list the contents of zpaq files in the most concise way possible,
 to reduce the time necessary for subsequent uses (e.g. from GUIs written in other languages),
 on Windows.
 
@@ -45247,7 +44625,7 @@ The output of zpaqlist (or zpaqfranz with the brand-new pakka command) is compos
 - total row number (with +)
 +38915424
 
-- sorted by version and file name (for a time machine-like use) 
+- sorted by version and file name (for a time machine-like use)
 - and, by default, does not duplicate identical file names.
 - version_number
 - datetime (or D for deleted)
@@ -45267,9 +44645,9 @@ D
 0
 ?
 
-When the size of the output is large (and can even be hundreds of MB) 
-the savings both in writing (on magnetic disks), reading and parsing 
-can be considerable. 
+When the size of the output is large (and can even be hundreds of MB)
+the savings both in writing (on magnetic disks), reading and parsing
+can be considerable.
 
 For small archives (KB) there is obviously no difference compared to zpaq
 */
@@ -45278,7 +44656,7 @@ int64_t list_global_start=0;  // set to mtime() at start of main()
 
 
 namespace libzpaq2 {
-	
+
 /*
 This is similar, but NOT equal, to newer libzpaq
 A bit of Frankenstein, to incorporate older 6.60 inside 7.15-based source
@@ -45352,7 +44730,7 @@ void list_Decoder::init() {
 // Read un-modeled input into buf[low=0..high-1]
 // with curr remaining in subblock to read.
 void list_Decoder::loadbuf() {
- 
+
   if (curr==0) {
     for (int i=0; i<4; ++i) {
       int c=in->get();
@@ -45373,7 +44751,7 @@ int list_Decoder::decode(int p) {
   if (curr<low || curr>high) libzpaq::error("archive corrupted");
 
   U32 mid=low+U32(((high-low)*U64(U32(p)))>>16);  // split range
- 
+
   int y;
   if (curr<=mid) y=1, high=mid;  // pick half
   else y=0, low=mid+1;
@@ -45448,7 +44826,6 @@ int list_Decoder::skip() {
 // Find the start of a block and return true if found. Set memptr
 // to memory used.
 bool list_Decompresser::findBlock(double* memptr) {
-  ///printf("08116: findblock\n");
 
   // Find start of block
   U32 h1=0x3D49B113, h2=0x29EB7F93, h3=0x2614BE13, h4=0x3828EB13;
@@ -45456,7 +44833,6 @@ bool list_Decompresser::findBlock(double* memptr) {
   int c;
   ///int64_t startct=0;
   while ((c=dec.in->get())!=-1) {
-///	printf("08122: getted c %03d startct %08d\n",c,startct++);
     h1=h1*12+c;
     h2=h2*20+c;
     h3=h3*28+c;
@@ -45475,8 +44851,6 @@ bool list_Decompresser::findBlock(double* memptr) {
   if (memptr) *memptr=z.memory();
   state=FILENAME;
   decode_state=FIRSTSEG;
-  ///printf("08144: dec %08d\n",dec.in->ftell());
-    ///printf("08144: dec %08d\n",dec.in->tell());
   return true;
 }
 
@@ -45507,7 +44881,7 @@ bool list_Decompresser::findFilename(libzpaq::Writer* filename) {
 
 // Read the comment from the segment header
 void list_Decompresser::readComment(libzpaq::Writer* comment) {
- 
+
   state=DATA;
   while (true) {
     int c=dec.in->get();
@@ -45520,12 +44894,12 @@ void list_Decompresser::readComment(libzpaq::Writer* comment) {
 
 // Decompress n bytes, or all if n < 0. Return false if done
 bool list_Decompresser::decompress(int n) {
-  
+
 
   // Initialize models to start decompressing block
   if (decode_state==FIRSTSEG) {
     dec.init();
-   
+
     pp.init(z.header[4], z.header[5]);
     decode_state=SEG;
   }
@@ -45659,8 +45033,8 @@ string list_mydateToString(int64_t date) {
   ///        0123456789012345678
   string  s="0000-00-00 00:00:00";
   string s2="00/00/0000 00:00:00";
-  
-  
+
+
   static const int t[]={18,17,15,14,12,11,9,8,6,5,3,2,1,0};
   for (int i=0; i<14; ++i) s[t[i]]+=int(date%10), date/=10;
 
@@ -45673,13 +45047,13 @@ string list_mydateToString(int64_t date) {
   s2[7]=s[1];
   s2[8]=s[2];
   s2[9]=s[3];
-  
+
   s2[11]=s[11];
   s2[12]=s[12];
-  
+
   s2[14]=s[14];
   s2[15]=s[15];
-  
+
   s2[17]=s[17];
   s2[18]=s[18];
   return s2;
@@ -45720,11 +45094,11 @@ bool list_exists(string filename, int part= 0)
 {
     if (part > 0)
         filename= list_subpart(filename, part);
-    
+
     int len= filename.size();
     if (len < 1)
         return false;
-        
+
     if (filename[len - 1] == '/')
         filename= filename.substr(0, len - 1);
 
@@ -45805,21 +45179,21 @@ class list_InputFile : public list_File, public libzpaq::Reader
         n= ptr          = 0;
         aes = a;
         eoff= e;
-        
+
 #ifdef _WIN32
         std::wstring w= list_utow(filename, true);
         in              = CreateFile(w.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL,
                                    OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
         if (in == INVALID_HANDLE_VALUE)
             list_printerr(filename);
-            
+
         return in != INVALID_HANDLE_VALUE;
 #else
         // POSIX open
         in = ::open(filename, O_RDONLY);
         if (in == -1)
             list_printerr(filename);
-            
+
         return in != -1;
 #endif
     }
@@ -45839,7 +45213,7 @@ class list_InputFile : public list_File, public libzpaq::Reader
         if (ptr >= int(n))
         {
             ptr= 0;
-            
+
 #ifdef _WIN32
             ReadFile(in, &buf[0], BUFSIZE, &n, NULL);
             if (n == 0)
@@ -46557,159 +45931,24 @@ void restore_cursor()
 
 #if defined(_WIN32)
 
-
-/*
-
-#ifndef IOCTL_STORAGE_QUERY_PROPERTY
-#define IOCTL_STORAGE_QUERY_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x0500, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#endif
-#ifndef StorageDeviceSeekPenaltyProperty
-
-#define StorageDeviceSeekPenaltyProperty (STORAGE_PROPERTY_ID)7
-#endif
-
-#ifdef ZERR
-#ifndef DEVICE_SEEK_PENALTY_DESCRIPTOR_DEFINED
-typedef struct _DEVICE_SEEK_PENALTY_DESCRIPTOR
-{
-	ULONG	Version;
-	ULONG	Size;
-	BOOLEAN IncursSeekPenalty;
-	UCHAR	Reserved[3];
-} DEVICE_SEEK_PENALTY_DESCRIPTOR, *PDEVICE_SEEK_PENALTY_DESCRIPTOR;
-#define DEVICE_SEEK_PENALTY_DESCRIPTOR_DEFINED
-#endif
-#endif
-
-
-static std::string normalize_path(const std::string &p)
-{
-	std::string norm= p;
-	if (norm.empty())
-		return norm;
-
-
-	while (norm.length() > 1 && norm[norm.length() - 1] == '/')
-		norm.erase(norm.length() - 1);
-
-
-	if (norm.length() >= 2 && norm[1] == ':' && std::isalpha(static_cast<unsigned char>(norm[0])))
-		norm[0]= static_cast<char>(std::toupper(static_cast<unsigned char>(norm[0])));
-	return norm;
-}
-bool ishdd(const std::string &path)
-{
-	if (path.empty())
-		return true;
-
-	std::string norm_path= normalize_path(path);
-
-	bool is_rotational= true;
-
-	// Buffer per i percorsi (MAX_PATH è definito in windows.h, solitamente 260)
-	char fullPath[MAX_PATH];
-	char volumePath[MAX_PATH];
-	char devPath[32];
-
-	const char *inputPath= path.c_str();
-	/// myprintf("k1 %s\n",inputPath);
-
-	// Ottieni il percorso assoluto completo (risolve ./, ../ e nomi file semplici)
-	char *filePart= NULL;
-	if (GetFullPathNameA(inputPath, MAX_PATH, fullPath, &filePart) == 0)
-	{
-		if (flagdebug2)
-			myprintf("ishdd: GetFullPathNameA failedn");
-		return true;
-	}
-	else
-	{
-		/// myprintf("k2 %s\n",fullPath);
-
-		// Ottieni la root del volume (es. converte "C:\Users\Doc\file.zip" in "C:\")
-		if (GetVolumePathNameA(fullPath, volumePath, MAX_PATH) == 0)
-		{
-			if (flagdebug2)
-				myprintf("ishdd: GetVolumePathNameA failed.\n");
-			return true;
-		}
-		else
-		{
-			/// myprintf("k3 %s\n",volumePath);
-			// Controlliamo se abbiamo una lettera di unità (es. "C:\")
-			// volumePath[0] è la lettera, volumePath[1] è ':'
-			if (strlen(volumePath) >= 2 && volumePath[1] == ':')
-			{
-				char driveLet= volumePath[0];
-				snprintf(devPath, sizeof(devPath), "\\\\.\\%c:", driveLet);
-				if (flagdebug2)
-					myprintf("ishdd: Windows Device: %s (from %s)\n", devPath, inputPath);
-
-				HANDLE hDev= CreateFileA(devPath, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE,
-										 NULL, OPEN_EXISTING, 0, NULL);
-
-				if (hDev != INVALID_HANDLE_VALUE)
-				{
-					STORAGE_PROPERTY_QUERY query;
-					memset(&query, 0, sizeof(query));
-					query.PropertyId= StorageDeviceSeekPenaltyProperty;
-					query.QueryType = (STORAGE_QUERY_TYPE)PropertyStandardQuery;
-
-					DEVICE_SEEK_PENALTY_DESCRIPTOR desc;
-					memset(&desc, 0, sizeof(desc));
-					DWORD bytesRet= 0;
-
-					if (DeviceIoControl(hDev, IOCTL_STORAGE_QUERY_PROPERTY,
-										&query, sizeof(query), &desc, sizeof(desc),
-										&bytesRet, NULL))
-					{
-						is_rotational= (desc.IncursSeekPenalty != 0);
-						if (flagdebug2)
-							myprintf("ishdd: IncursSeekPenalty: %d -> %s\n", desc.IncursSeekPenalty, is_rotational ? "HDD" : "SSD");
-					}
-					else
-					{
-						if (flagdebug2)
-							myprintf("ishdd: DeviceIoControl failed. LastError: %lu\n", GetLastError());
-					}
-					CloseHandle(hDev);
-				}
-				else
-				{
-					if (flagdebug2)
-						myprintf("ishdd: CreateFileA failed for %s. LastError: %lu\n", devPath, GetLastError());
-				}
-			}
-			else
-			{
-				if (flagdebug2)
-					myprintf("ishdd: Path is not mapped to a drive letter (Network share?)\n");
-			}
-		}
-	}
-	return is_rotational;
-}
-*/
-
-
 class franzdisktype {
 public:
     // Constructor: pass path to analyze
     franzdisktype(const std::string& path);
-    
+
     // Distruttore
     ~franzdisktype();
-    
+
     // Restituisce true se HDD, false se SSD
     bool ishdd() const { return m_ishdd; }
 
 private:
     bool m_ishdd;
-    
+
     // Dynamic DLL loading
     static bool loadcom();
     static void unloadcom();
-    
+
     // Internal detection methods
     static char getdriveletter(const std::string& path);
     static int  getphysicaldisknumber(char driveletter);
@@ -46719,22 +45958,22 @@ private:
     static bool detect(const std::string& path);
 
     //  Inline COM/WMI definitions
-    
+
     static const GUID CLSID_WbemLocator;
     static const GUID IID_IWbemLocator;
-    
+
     struct IWbemLocator;
     struct IWbemServices;
     struct IWbemClassObject;
     struct IEnumWbemClassObject;
-    
+
     struct IWbemLocatorVtbl {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IWbemLocator*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IWbemLocator*);
         ULONG   (STDMETHODCALLTYPE *Release)(IWbemLocator*);
         HRESULT (STDMETHODCALLTYPE *ConnectServer)(IWbemLocator*, BSTR, BSTR, BSTR, BSTR, long, BSTR, void*, IWbemServices**);
     };
-    
+
     struct IWbemServicesVtbl {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IWbemServices*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IWbemServices*);
@@ -46742,7 +45981,7 @@ private:
         void* _pad[17];
         HRESULT (STDMETHODCALLTYPE *ExecQuery)(IWbemServices*, BSTR, BSTR, long, void*, IEnumWbemClassObject**);
     };
-    
+
     struct IEnumWbemClassObjectVtbl {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IEnumWbemClassObject*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IEnumWbemClassObject*);
@@ -46750,7 +45989,7 @@ private:
         HRESULT (STDMETHODCALLTYPE *Reset)(IEnumWbemClassObject*);
         HRESULT (STDMETHODCALLTYPE *Next)(IEnumWbemClassObject*, long, ULONG, IWbemClassObject**, ULONG*);
     };
-    
+
     struct IWbemClassObjectVtbl {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IWbemClassObject*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IWbemClassObject*);
@@ -46758,12 +45997,12 @@ private:
         void*   _pad[1];
         HRESULT (STDMETHODCALLTYPE *Get)(IWbemClassObject*, LPCWSTR, long, VARIANT*, long*, long*);
     };
-    
+
     struct IWbemLocator         { IWbemLocatorVtbl* lpVtbl; };
     struct IWbemServices        { IWbemServicesVtbl* lpVtbl; };
     struct IEnumWbemClassObject { IEnumWbemClassObjectVtbl* lpVtbl; };
     struct IWbemClassObject     { IWbemClassObjectVtbl* lpVtbl; };
-    
+
     typedef HRESULT (WINAPI *PFN_CoInitializeEx)(LPVOID, DWORD);
     typedef void    (WINAPI *PFN_CoUninitialize)(void);
     typedef HRESULT (WINAPI *PFN_CoCreateInstance)(REFCLSID, LPUNKNOWN, DWORD, REFIID, LPVOID*);
@@ -46776,7 +46015,7 @@ private:
     static HMODULE s_hole32;
     static HMODULE s_holeaut32;
     static bool    s_loaded;
-    
+
     static PFN_CoInitializeEx     s_coinitializeex;
     static PFN_CoUninitialize     s_couninitialize;
     static PFN_CoCreateInstance   s_cocreateinstance;
@@ -46785,7 +46024,7 @@ private:
     static PFN_SysFreeString      s_sysfreestring;
     static PFN_VariantClear       s_variantclear;
     static PFN_VariantInit        s_variantinit;
-    
+
     class wmiconn {
     public:
         wmiconn() : m_loc(NULL), m_svc(NULL), m_init(false) {}
@@ -46812,9 +46051,9 @@ private:
 #define COINIT_MULTITHREADED          0x0
 #endif
 
-const GUID franzdisktype::CLSID_WbemLocator = 
+const GUID franzdisktype::CLSID_WbemLocator =
     {0x4590f811, 0x1d3a, 0x11d0, {0x89, 0x1f, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24}};
-const GUID franzdisktype::IID_IWbemLocator = 
+const GUID franzdisktype::IID_IWbemLocator =
     {0xdc12a687, 0x737f, 0x11cf, {0x88, 0x4d, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24}};
 
 HMODULE franzdisktype::s_hole32      = NULL;
@@ -46839,31 +46078,31 @@ franzdisktype::~franzdisktype() {
 
 bool franzdisktype::loadcom() {
     if (s_loaded) return true;
-    
+
     s_hole32 = LoadLibraryA("ole32.dll");
     s_holeaut32 = LoadLibraryA("oleaut32.dll");
-    
+
     if (!s_hole32 || !s_holeaut32) {
         unloadcom();
         return false;
     }
-    
+
     s_coinitializeex    = (PFN_CoInitializeEx)GetProcAddress(s_hole32, "CoInitializeEx");
     s_couninitialize    = (PFN_CoUninitialize)GetProcAddress(s_hole32, "CoUninitialize");
     s_cocreateinstance  = (PFN_CoCreateInstance)GetProcAddress(s_hole32, "CoCreateInstance");
     s_cosetproxyblanket = (PFN_CoSetProxyBlanket)GetProcAddress(s_hole32, "CoSetProxyBlanket");
-    
+
     s_sysallocstring = (PFN_SysAllocString)GetProcAddress(s_holeaut32, "SysAllocString");
     s_sysfreestring  = (PFN_SysFreeString)GetProcAddress(s_holeaut32, "SysFreeString");
     s_variantclear   = (PFN_VariantClear)GetProcAddress(s_holeaut32, "VariantClear");
     s_variantinit    = (PFN_VariantInit)GetProcAddress(s_holeaut32, "VariantInit");
-    
+
     if (!s_coinitializeex || !s_couninitialize || !s_cocreateinstance || !s_cosetproxyblanket ||
         !s_sysallocstring || !s_sysfreestring || !s_variantclear || !s_variantinit) {
         unloadcom();
         return false;
     }
-    
+
     s_loaded = true;
     return true;
 }
@@ -46876,20 +46115,20 @@ void franzdisktype::unloadcom() {
 
 bool franzdisktype::wmiconn::connect(const wchar_t* ns) {
     if (!loadcom()) return false;
-    
+
     HRESULT hr = s_coinitializeex(NULL, COINIT_MULTITHREADED);
     if (FAILED(hr) && hr != (HRESULT)0x80010106L) return false;
     m_init = true;
-    
+
     hr = s_cocreateinstance(CLSID_WbemLocator, NULL, CLSCTX_INPROC_SERVER,
                              IID_IWbemLocator, (void**)&m_loc);
     if (FAILED(hr)) return false;
-    
+
     BSTR bstrns = s_sysallocstring(ns);
     hr = m_loc->lpVtbl->ConnectServer(m_loc, bstrns, NULL, NULL, NULL, 0, NULL, NULL, &m_svc);
     s_sysfreestring(bstrns);
     if (FAILED(hr)) return false;
-    
+
     s_cosetproxyblanket((IUnknown*)m_svc, 10, 0, NULL,
                          RPC_C_AUTHN_LEVEL_DEFAULT, RPC_C_IMP_LEVEL_IMPERSONATE, NULL, EOAC_NONE);
     return true;
@@ -46903,12 +46142,12 @@ void franzdisktype::wmiconn::disconnect() {
 
 char franzdisktype::getdriveletter(const std::string& path) {
     if (path.empty()) return 0;
-    
+
     char fullpath[MAX_PATH], volumepath[MAX_PATH];
-    
+
     if (GetFullPathNameA(path.c_str(), MAX_PATH, fullpath, NULL) == 0) return 0;
     if (GetVolumePathNameA(fullpath, volumepath, MAX_PATH) == 0) return 0;
-    
+
     if (strlen(volumepath) >= 2 && volumepath[1] == ':') {
         return volumepath[0];
     }
@@ -46918,24 +46157,24 @@ char franzdisktype::getdriveletter(const std::string& path) {
 int franzdisktype::getphysicaldisknumber(char driveletter) {
     wmiconn wmi;
     if (!wmi.connect(L"ROOT\\CIMV2")) return -1;
-    
+
     wchar_t query[512];
     swprintf(query, 512,
         L"ASSOCIATORS OF {Win32_LogicalDisk.DeviceID='%c:'} "
         L"WHERE AssocClass=Win32_LogicalDiskToPartition", driveletter);
-    
+
     BSTR bstrwql   = s_sysallocstring(L"WQL");
     BSTR bstrquery = s_sysallocstring(query);
-    
+
     IEnumWbemClassObject* penum = NULL;
     HRESULT hr = wmi.svc()->lpVtbl->ExecQuery(wmi.svc(), bstrwql, bstrquery,
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY, NULL, &penum);
-    
+
     s_sysfreestring(bstrquery);
     s_sysfreestring(bstrwql);
-    
+
     int disknum = -1;
-    
+
     if (SUCCEEDED(hr) && penum) {
         IWbemClassObject* pobj = NULL;
         ULONG ret = 0;
@@ -46950,29 +46189,29 @@ int franzdisktype::getphysicaldisknumber(char driveletter) {
         }
         penum->lpVtbl->Release(penum);
     }
-    
+
     return disknum;
 }
 
 int franzdisktype::querymsftmediatype(int disknumber) {
     wmiconn wmi;
     if (!wmi.connect(L"ROOT\\Microsoft\\Windows\\Storage")) return -1;
-    
+
     wchar_t query[256];
     swprintf(query, 256, L"SELECT MediaType FROM MSFT_PhysicalDisk WHERE DeviceID='%d'", disknumber);
-    
+
     BSTR bstrwql   = s_sysallocstring(L"WQL");
     BSTR bstrquery = s_sysallocstring(query);
-    
+
     IEnumWbemClassObject* penum = NULL;
     HRESULT hr = wmi.svc()->lpVtbl->ExecQuery(wmi.svc(), bstrwql, bstrquery,
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY, NULL, &penum);
-    
+
     s_sysfreestring(bstrquery);
     s_sysfreestring(bstrwql);
-    
+
     int mediatype = -1;
-    
+
     if (SUCCEEDED(hr) && penum) {
         IWbemClassObject* pobj = NULL;
         ULONG ret = 0;
@@ -46988,43 +46227,43 @@ int franzdisktype::querymsftmediatype(int disknumber) {
         }
         penum->lpVtbl->Release(penum);
     }
-    
+
     return mediatype;
 }
 
 bool franzdisktype::querymodelnameforSSD(int disknumber) {
     wmiconn wmi;
     if (!wmi.connect(L"ROOT\\CIMV2")) return false;
-    
+
     wchar_t query[256];
     swprintf(query, 256, L"SELECT Model FROM Win32_DiskDrive WHERE Index=%d", disknumber);
-    
+
     BSTR bstrwql   = s_sysallocstring(L"WQL");
     BSTR bstrquery = s_sysallocstring(query);
-    
+
     IEnumWbemClassObject* penum = NULL;
     HRESULT hr = wmi.svc()->lpVtbl->ExecQuery(wmi.svc(), bstrwql, bstrquery,
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY, NULL, &penum);
-    
+
     s_sysfreestring(bstrquery);
     s_sysfreestring(bstrwql);
-    
+
     bool isssd = false;
-    
+
     if (SUCCEEDED(hr) && penum) {
         IWbemClassObject* pobj = NULL;
         ULONG ret = 0;
         if (SUCCEEDED(penum->lpVtbl->Next(penum, WBEM_INFINITE, 1, &pobj, &ret)) && ret > 0 && pobj) {
             VARIANT vt;
             s_variantinit(&vt);
-            if (SUCCEEDED(pobj->lpVtbl->Get(pobj, L"Model", 0, &vt, NULL, NULL)) && 
+            if (SUCCEEDED(pobj->lpVtbl->Get(pobj, L"Model", 0, &vt, NULL, NULL)) &&
                 vt.vt == VT_BSTR && vt.bstrVal) {
-                
+
                 wchar_t modellower[256];
                 wcsncpy(modellower, vt.bstrVal, 255);
                 modellower[255] = 0;
                 for (wchar_t* p = modellower; *p; p++) *p = towlower(*p);
-                
+
                 if (wcsstr(modellower, L"ssd") || wcsstr(modellower, L"nvme") ||
                     wcsstr(modellower, L"solid state") || wcsstr(modellower, L"flash")) {
                     isssd = true;
@@ -47035,26 +46274,26 @@ bool franzdisktype::querymodelnameforSSD(int disknumber) {
         }
         penum->lpVtbl->Release(penum);
     }
-    
+
     return isssd;
 }
 
 int franzdisktype::trydeviceiocontrol(char driveletter) {
     char devpath[32];
     snprintf(devpath, sizeof(devpath), "\\\\.\\%c:", driveletter);
-    
+
     HANDLE hdev = CreateFileA(devpath, 0, FILE_SHARE_READ | FILE_SHARE_WRITE,
                                NULL, OPEN_EXISTING, 0, NULL);
     if (hdev == INVALID_HANDLE_VALUE) return -1;
-    
+
     struct { DWORD PropertyId; DWORD QueryType; BYTE Additional[1]; } query = {7, 0, {0}};
     struct { DWORD Version; DWORD Size; BYTE IncursSeekPenalty; } desc = {0};
     DWORD bytesret = 0;
-    
+
     BOOL ok = DeviceIoControl(hdev, 0x002D1400, &query, sizeof(query),
                                &desc, sizeof(desc), &bytesret, NULL);
     CloseHandle(hdev);
-    
+
     if (ok) return desc.IncursSeekPenalty ? 1 : 0;
     return -1;
 }
@@ -47062,9 +46301,9 @@ int franzdisktype::trydeviceiocontrol(char driveletter) {
 bool franzdisktype::detect(const std::string& path) {
     char drive = getdriveletter(path);
     if (!drive) return true; // assume HDD
-    
+
     int disknum = getphysicaldisknumber(drive);
-    
+
     if (disknum >= 0) {
         // Method 1: MSFT_PhysicalDisk (Win8+)
         int mediatype = querymsftmediatype(disknum);
@@ -47072,19 +46311,19 @@ bool franzdisktype::detect(const std::string& path) {
             // 3=HDD, 4=SSD, 5=SCM
             return (mediatype != 4 && mediatype != 5);
         }
-        
+
         // Method 2: Model name
         if (querymodelnameforSSD(disknum)) {
             return false; // is SSD
         }
     }
-    
+
     // Method 3: DeviceIoControl
     int iores = trydeviceiocontrol(drive);
     if (iores >= 0) {
         return (iores == 1); // 1=HDD, 0=SSD
     }
-    
+
     return true; // assume HDD
 }
 
@@ -47354,40 +46593,40 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(windir + "\\Logs\\WindowsBackup", verbose);
 		add_if_exists(windir + "\\WinSxS\\Temp", verbose);
 		add_if_exists(windir + "\\WinSxS\\ManifestCache", verbose);
-		
+
 		// Crash dumps
 		add_if_exists(windir + "\\Minidump", verbose);
 		add_if_exists(windir + "\\LiveKernelReports", verbose);
-		
+
 		// Application Compatibility cache
 		add_if_exists(windir + "\\appcompat\\pca", verbose);
 		add_if_exists(windir + "\\appcompat\\Programs", verbose);
-		
+
 		// Printer spool cache
 		add_if_exists(windir + "\\System32\\spool\\PRINTERS", verbose);
-		
+
 		// SYSTEM account temp
 		add_if_exists(windir + "\\System32\\config\\systemprofile\\AppData\\Local\\Temp", verbose);
 		add_if_exists(windir + "\\SysWOW64\\config\\systemprofile\\AppData\\Local\\Temp", verbose);
-		
+
 		// Panther/setup logs
 		add_if_exists(windir + "\\Panther\\UnattendGC", verbose);
-		
+
 		// Security logs
 		add_if_exists(windir + "\\security\\logs", verbose);
-		
+
 		// Debug logs
 		add_if_exists(windir + "\\debug\\WIA", verbose);
-		
+
 		// Font cache
 		add_if_exists(windir + "\\ServiceProfiles\\LocalService\\AppData\\Local\\FontCache", verbose);
-		
+
 		// WMI/ETL logs
 		add_if_exists(windir + "\\System32\\LogFiles\\WMI", verbose);
-		
+
 		// System Resource Usage Monitor
 		add_if_exists(windir + "\\System32\\sru", verbose);
-		
+
 		// Software Protection cache
 		add_if_exists(windir + "\\System32\\spp\\store\\2.0\\cache", verbose);
 	}
@@ -47417,10 +46656,10 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(local + "\\Microsoft\\Windows\\INetCookies", verbose);
 		add_if_exists(local + "\\Microsoft\\Windows\\Temporary Internet Files", verbose);
 		add_if_exists(local + "\\Microsoft\\Windows\\Burn", verbose);
-		
+
 		// Generic crash reports
 		add_if_exists(local + "\\CrashReports", verbose);
-		
+
 		// Legacy IE cache
 		add_if_exists(local + "\\Microsoft\\Internet Explorer\\Cache", verbose);
 		add_if_exists(local + "\\Microsoft\\Internet Explorer\\Recovery", verbose);
@@ -47428,13 +46667,13 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(local + "\\Microsoft\\Windows\\IECompatCache", verbose);
 		add_if_exists(local + "\\Microsoft\\Windows\\IECompatUaCache", verbose);
 		add_if_exists(local + "\\Microsoft\\Windows\\IEDownloadHistory", verbose);
-		
+
 		// Terminal Server (RDP) cache
 		add_if_exists(local + "\\Microsoft\\Terminal Server Client\\Cache", verbose);
-		
+
 		// Windows Notifications WAL
 		add_if_exists(local + "\\Microsoft\\Windows\\Notifications", verbose);
-		
+
 		// Connected Devices Platform (Timeline)
 		add_if_exists(local + "\\ConnectedDevicesPlatform", verbose);
 
@@ -47447,7 +46686,7 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(local + "\\Microsoft\\Office\\WebCache", verbose);
 		add_if_exists(local + "\\Microsoft\\Office\\16.0\\Wef", verbose);
 		add_if_exists(local + "\\Microsoft\\Office\\OTele", verbose);
-		
+
 		// Outlook cache (NON PST/OST!)
 		add_if_exists(local + "\\Microsoft\\Outlook\\RoamCache", verbose);
 		add_if_exists(local + "\\Microsoft\\Outlook\\Offline Address Books", verbose);
@@ -47457,31 +46696,31 @@ vector<string> get_junk_folders(bool verbose = false)
 
 		// Nextcloud cache
 		add_if_exists(local + "\\Nextcloud\\cache", verbose);
-		
+
 		// Dropbox - metriche e file temporanei (NON config!)
 		add_if_exists(local + "\\Dropbox\\metrics", verbose);
 		add_if_exists(local + "\\Dropbox\\crash", verbose);
 		add_if_exists(local + "\\Dropbox\\instance1\\sync", verbose);
 		add_if_exists(local + "\\Dropbox\\instance2\\sync", verbose);
-		
+
 		// Chocolatey cache
 		add_if_exists(local + "\\chocolatey\\cache", verbose);
-		
+
 		// Edge UWP cache
 		add_if_exists(local + "\\Packages\\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\\AC", verbose);
 		add_if_exists(local + "\\Packages\\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\\TempState", verbose);
 	}
-	
+
 	// USER LOCALLOW
 	if (!userprofile.empty())
 	{
 		// CryptnetUrlCache (certificate cache)
 		add_if_exists(userprofile + "\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache", verbose);
-		
+
 		// Adobe
 		add_if_exists(userprofile + "\\AppData\\LocalLow\\Adobe\\Acrobat\\DC\\Cache", verbose);
 		add_if_exists(userprofile + "\\AppData\\LocalLow\\Adobe\\Acrobat\\DC\\ConnectorIcons", verbose);
-		
+
 		// Google Earth
 		add_if_exists(userprofile + "\\AppData\\LocalLow\\Google\\GoogleEarth\\unified_cache_leveldb_leveldb2", verbose);
 		add_if_exists(userprofile + "\\AppData\\LocalLow\\Google\\GoogleEarth\\webdata", verbose);
@@ -47492,28 +46731,28 @@ vector<string> get_junk_folders(bool verbose = false)
 	{
 		// File recenti
 		add_if_exists(roaming + "\\Microsoft\\Windows\\Recent", verbose);
-		
+
 		// Dropbox GPU cache
 		add_if_exists(roaming + "\\Dropbox\\GPUCache", verbose);
 		add_if_exists(roaming + "\\Dropbox\\Cache", verbose);
-		
+
 		// LibreOffice
 		add_if_exists(roaming + "\\LibreOffice\\4\\cache", verbose);
 		add_if_exists(roaming + "\\LibreOffice\\4\\crash", verbose);
 		add_if_exists(roaming + "\\LibreOffice\\4\\user\\backup", verbose);
 		add_if_exists(roaming + "\\LibreOffice\\4\\user\\temp", verbose);
-		
+
 		// Signal
 		add_if_exists(roaming + "\\Signal\\logs", verbose);
 		add_if_exists(roaming + "\\Signal\\GPUCache", verbose);
 		add_if_exists(roaming + "\\Signal\\DawnGraphiteCache", verbose);
 		add_if_exists(roaming + "\\Signal\\DawnWebGPUCache", verbose);
-		
+
 		// Minecraft
 		add_if_exists(roaming + "\\Minecraft\\launcher\\cache", verbose);
 		add_if_exists(roaming + "\\.minecraft\\launcher\\cache", verbose);
 		add_if_exists(roaming + "\\.minecraft\\webcache", verbose);
-		
+
 		// Surfshark logs
 		add_if_exists(roaming + "\\Surfshark", verbose);
 	}
@@ -47524,31 +46763,31 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(programdata + "\\Microsoft\\Windows\\WER", verbose);
 		add_if_exists(programdata + "\\Microsoft\\Windows\\WER\\Temp", verbose);
 		add_if_exists(programdata + "\\Microsoft\\Search\\Data", verbose);
-		
+
 		// BITS download cache
 		add_if_exists(programdata + "\\Microsoft\\Network\\Downloader", verbose);
-		
+
 		// NVIDIA timestamps e cache
 		add_if_exists(programdata + "\\NVIDIA Corporation\\Drs", verbose);
 		add_if_exists(programdata + "\\NVIDIA Corporation\\NV_Cache", verbose);
 		add_if_exists(programdata + "\\NVIDIA Corporation\\Downloader", verbose);
-		
+
 		// Logitech analytics/telemetria
 		add_if_exists(programdata + "\\Logishrd\\LogiOptionsPlus\\analytics", verbose);
 		add_if_exists(programdata + "\\Logishrd\\LogiOptionsPlus\\cache", verbose);
-		
+
 		// Microsoft Diagnosis/Telemetria
 		add_if_exists(programdata + "\\Microsoft\\Diagnosis", verbose);
-		
+
 		// Windows Update logs
 		add_if_exists(programdata + "\\USOShared\\Logs", verbose);
-		
+
 		// Edge Update logs
 		add_if_exists(programdata + "\\Microsoft\\EdgeUpdate\\Log", verbose);
-		
+
 		// Location Service cache
 		add_if_exists(programdata + "\\Microsoft\\Windows\\LfSvc\\Cache", verbose);
-		
+
 		// Windows Defender cache/backup
 		add_if_exists(programdata + "\\Microsoft\\Windows Defender\\MetaStore", verbose);
 		add_if_exists(programdata + "\\Microsoft\\Windows Defender\\Network Inspection System\\Support", verbose);
@@ -47556,18 +46795,18 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(programdata + "\\Microsoft\\Windows Defender\\Support", verbose);
 		add_if_exists(programdata + "\\Microsoft\\Windows Defender\\Definition Updates\\Backup", verbose);
 		add_if_exists(programdata + "\\Microsoft\\Windows Defender\\Definition Updates\\NisBackup", verbose);
-		
+
 		// VPN logs
 		add_if_exists(programdata + "\\Surfshark", verbose);
 		add_if_exists(programdata + "\\NordVPN\\logs", verbose);
 		add_if_exists(programdata + "\\ExpressVPN\\logs", verbose);
-		
+
 		// Chocolatey cache
 		add_if_exists(programdata + "\\chocolatey\\cache", verbose);
-		
+
 		// Retail demo
 		add_if_exists(programdata + "\\Microsoft\\Windows\\RetailDemo", verbose);
-		
+
 		// Package Cache (Visual Studio, MSI installers)
 		// ATTENZIONE: Può essere grande ma serve per riparazioni. Commentato per sicurezza.
 		// add_if_exists(programdata + "\\Package Cache", verbose);
@@ -47579,12 +46818,12 @@ vector<string> get_junk_folders(bool verbose = false)
 		// Google Updater logs
 		add_if_exists(progfiles86 + "\\Google\\GoogleUpdater", verbose);
 	}
-	
+
 	if (!progfiles.empty())
 	{
 		// Google Updater logs (64-bit)
 		add_if_exists(progfiles + "\\Google\\GoogleUpdater", verbose);
-		
+
 		// Dropbox Updater
 		add_if_exists(progfiles + "\\Dropbox\\DropboxUpdater", verbose);
 	}
@@ -47616,7 +46855,7 @@ vector<string> get_junk_folders(bool verbose = false)
 
 		// Vivaldi
 		add_chromium_cache(local + "\\Vivaldi\\User Data\\Default", verbose);
-		
+
 		// AVG Browser
 		add_chromium_cache(local + "\\AVG\\User Data\\Default", verbose);
 	}
@@ -47685,7 +46924,7 @@ vector<string> get_junk_folders(bool verbose = false)
 		// Zoom
 		add_if_exists(roaming + "\\Zoom\\data", verbose);
 		add_if_exists(roaming + "\\Zoom\\logs", verbose);
-		
+
 		// Telegram
 		add_if_exists(roaming + "\\Telegram Desktop\\tdata\\user_data", verbose);
 		add_if_exists(roaming + "\\Telegram Desktop\\tdata\\emoji", verbose);
@@ -47696,10 +46935,10 @@ vector<string> get_junk_folders(bool verbose = false)
 		// Teams (UWP)
 		add_if_exists(local + "\\Packages\\MicrosoftTeams_8wekyb3d8bbwe\\LocalCache", verbose);
 		add_if_exists(local + "\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams", verbose);
-		
+
 		// Discord (local)
 		add_chromium_cache(local + "\\Discord", verbose);
-		
+
 		// Battle.net
 		add_if_exists(local + "\\Battle.net\\BrowserCache", verbose);
 	}
@@ -47728,7 +46967,7 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(local + "\\NuGet\\Cache", verbose);
 		add_if_exists(local + "\\NuGet\\v3-cache", verbose);
 		add_if_exists(local + "\\Temp\\.net", verbose);
-		
+
 		// JetBrains IDEs
 		add_if_exists(local + "\\JetBrains\\Toolbox\\cache", verbose);
 	}
@@ -47747,7 +46986,7 @@ vector<string> get_junk_folders(bool verbose = false)
 		add_if_exists(progfiles86 + "\\Steam\\logs", verbose);
 		add_if_exists(progfiles86 + "\\Steam\\dumps", verbose);
 		add_if_exists(progfiles86 + "\\Steam\\depotcache", verbose);
-		
+
 		// EaseUS
 		add_if_exists(progfiles86 + "\\EaseUS\\ENS", verbose);
 	}
@@ -47765,32 +47004,32 @@ vector<string> get_junk_folders(bool verbose = false)
 
 		// Adobe
 		add_if_exists(local + "\\Adobe\\AcroCef\\DC\\Acrobat\\Cache", verbose);
-		
+
 		// Steam (user local)
 		add_if_exists(local + "\\Steam\\htmlcache", verbose);
-		
+
 		// GOG Galaxy
 		add_if_exists(local + "\\GOG.com\\Galaxy\\webcache", verbose);
 		add_if_exists(local + "\\GOG.com\\Galaxy\\logs", verbose);
-		
+
 		// Ubisoft
 		add_if_exists(local + "\\Ubisoft Game Launcher\\cache", verbose);
 		add_if_exists(local + "\\Ubisoft Game Launcher\\logs", verbose);
-		
+
 		// EA / Origin
 		add_if_exists(local + "\\Origin\\Logs", verbose);
 		add_if_exists(local + "\\Origin\\ThinSetup", verbose);
 		add_if_exists(local + "\\Electronic Arts\\EA Desktop\\Logs", verbose);
 		add_if_exists(local + "\\Electronic Arts\\EA Desktop\\cache", verbose);
-		
+
 		// Riot Games (LoL, Valorant)
 		add_if_exists(local + "\\Riot Games\\Riot Client\\Data\\Cache", verbose);
 		add_if_exists(local + "\\Riot Games\\Riot Client\\Logs", verbose);
-		
+
 		// Blizzard / Battle.net
 		add_if_exists(local + "\\Blizzard Entertainment\\Battle.net\\Cache", verbose);
 		add_if_exists(local + "\\Blizzard Entertainment\\Battle.net\\Logs", verbose);
-		
+
 		// Tor Browser
 		add_if_exists(local + "\\Tor Browser\\Browser\\TorBrowser\\Data\\Browser\\profile.default\\cache2", verbose);
 	}
@@ -47812,23 +47051,23 @@ vector<string> get_junk_folders(bool verbose = false)
 	if (!userprofile.empty())
 	{
 		add_if_exists(userprofile + "\\.oracle_jre_usage", verbose);
-		
+
 		// Gradle (Android/Java dev)
 		add_if_exists(userprofile + "\\.gradle\\caches", verbose);
 		add_if_exists(userprofile + "\\.gradle\\daemon", verbose);
 		add_if_exists(userprofile + "\\.gradle\\wrapper\\dists", verbose);
-		
+
 		// Maven - commentato perché potrebbe servire per build offline
 		// add_if_exists(userprofile + "\\.m2\\repository", verbose);
-		
+
 		// Rust (Cargo)
 		add_if_exists(userprofile + "\\.cargo\\registry\\cache", verbose);
 		add_if_exists(userprofile + "\\.cargo\\registry\\src", verbose);
 		add_if_exists(userprofile + "\\.rustup\\tmp", verbose);
-		
+
 		// Go
 		add_if_exists(userprofile + "\\go\\pkg\\mod\\cache", verbose);
-		
+
 		// Node.js (alternative location)
 		add_if_exists(userprofile + "\\.node-gyp", verbose);
 		add_if_exists(userprofile + "\\.npm\\_cacache", verbose);
@@ -48061,19 +47300,19 @@ class franzimager
 	// Input: vettore di path UTF-8 con / (file singoli o cartelle con / finale)
 	// Esempio: "c:/users/temp/", "c:/pagefile.sys"
 	void setExclusions(const std::vector<std::string>& i_esclusioni);
-	
+
 	// Get list of files to delete (da chiamare DOPO aprivhd/chiudivhd)
 	// Returns reference to internal vector (UTF-8 con /)
 	const std::vector<std::string>& getFilesToDelete() const { return m_filesToDelete; }
-	
+
 	// Get list of files to delete come array di bytes (per compressione zpaq)
 	// Formato: testo UTF-8, un path per riga
 	std::vector<uint8_t> getFilesToDeleteAsBytes() const;
-	
+
 	// Set list of files to delete da array di bytes (dopo decompressione zpaq)
 	// Ritorna true se ok, false se formato invalid
 	bool setFilesToDeleteFromBytes(const std::vector<uint8_t>& i_data);
-	
+
 	// RESTORE: delete excluded files dopo restore dei cluster
 	// Input: lista UTF-8 con / (quella decompressa da zpaq)
 	// i_targetVolume: 0 = usa lettera originale, 'D' = rimappa su D:, ecc.
@@ -48082,13 +47321,13 @@ class franzimager
 		const std::vector<std::string>& i_fileDaCancellare,
 		char i_targetVolume = 0
 	);
-	
+
 	// RESTORE: delete excluded files (versione con bytes)
 	bool deleteExcludedFiles(
 		const std::vector<uint8_t>& i_fileDaCancellareBytes,
 		char i_targetVolume = 0
 	);
-	
+
 	// Statistiche cancellazione (valide dopo deleteExcludedFiles)
 	int64_t getExcludedExpectedDeleted() const { return m_excludedExpectedDeleted; }
 	int64_t getExcludedCannotDelete() const { return m_excludedCannotDelete; }
@@ -48097,11 +47336,11 @@ class franzimager
 	// Getter: serializza m_excludedclusters in array di bytes
 	// Formato binario: [uint32_t count][start1:uint64_t][end1:uint64_t][start2:uint64_t][end2:uint64_t]...
 	std::vector<uint8_t> getExcludedClustersAsBytes() const;
-	
+
 	// Setter: deserializza array di bytes in m_excludedclusters
 	// Returns true if ok, false if invalid format
 	bool setExcludedClustersFromBytes(const std::vector<uint8_t>& i_data);
-	
+
 	// Zero (fill with 0x03 for debug) all excluded clusters on target partition
 	// i_targetVolume: target volume letter (e.g. 'G')
 	// Returns: true if success, false if error
@@ -48152,7 +47391,7 @@ class franzimager
 		if (m_usingvss)
 			deletevss();
 	}
-	
+
 	// getters per informazioni
 	uint64_t getusedblocks() const
 	{
@@ -48374,7 +47613,7 @@ class franzimager
 	// data for extraction/restore
 	std::vector<uint8_t>	  m_headerarray;
 	std::vector<clusterrange> m_excludedclusters;
-	
+
 	// user exclusions (file/cartelle da escludere)
 	std::vector<std::string>  m_userExclusions;      // exclusion pattern (UTF-8 with /)
 	std::vector<std::string>  m_filesToDelete;       // files to delete post-restore
@@ -49542,7 +48781,7 @@ bool franzimager::readmftbitmap()
 		return false;
 	}
 
-	// 5. Apply fixup 
+	// 5. Apply fixup
 	if (!ntfs_apply_fixup(mft_record, mft_record_size, m_bytespersector))
 	{
 		myprintf("44066: error fixup $Bitmap\n");
@@ -49904,7 +49143,7 @@ bool franzimager::writeinitialvhddata(uint64_t i_partitionstartsector)
 	{
 		myprintf("44068: readed %lu bytes for first block\n", mbrread);
 	}
-	
+
 	// DEBUG: verify NTFS boot sector
 	if (flagdebug || flagverbose)
 	{
@@ -49916,7 +49155,7 @@ bool franzimager::writeinitialvhddata(uint64_t i_partitionstartsector)
 			bootsector[4], bootsector[5], bootsector[6], bootsector[7]);
 		myprintf("  signature 510-511: %02X %02X (expected 55 AA)\n",
 			bootsector[510], bootsector[511]);
-		
+
 		// Check if it looks like NTFS
 		if (bootsector[0] == 0xEB && bootsector[3] == 'N' && bootsector[4] == 'T' &&
 			bootsector[5] == 'F' && bootsector[6] == 'S')
@@ -49945,7 +49184,7 @@ static std::wstring pathToLongWide(const std::string& i_path)
 {
 	// convert UTF-8 -> wstring usando utow (definita esternamente)
 	std::wstring wpath = utow(i_path.c_str(), L'\\');
-	
+
 	// se inizia con lettera:\ aggiungi prefisso per path lunghi
 	if (wpath.length() >= 2 && wpath[1] == L':')
 	{
@@ -49958,15 +49197,15 @@ static std::wstring pathToLongWide(const std::string& i_path)
 static std::string wideToPathUtf8(const std::wstring& i_wpath)
 {
 	std::wstring cleanpath = i_wpath;
-	
+
 	// rimuovi prefisso lungo se presente
-	if (cleanpath.length() >= 4 && 
-		cleanpath[0] == L'\\' && cleanpath[1] == L'\\' && 
+	if (cleanpath.length() >= 4 &&
+		cleanpath[0] == L'\\' && cleanpath[1] == L'\\' &&
 		cleanpath[2] == L'?' && cleanpath[3] == L'\\')
 	{
 		cleanpath = cleanpath.substr(4);
 	}
-	
+
 	// convert wstring -> UTF-8 usando wtou (definita esternamente)
 	return wtou(cleanpath.c_str());
 }
@@ -49989,11 +49228,11 @@ static bool wildcardMatch(const wchar_t* i_pattern, const wchar_t* i_str)
 			// salta asterischi consecutivi
 			while (*i_pattern == L'*')
 				i_pattern++;
-			
+
 			// asterisk at the end matches everything
 			if (*i_pattern == L'\0')
 				return true;
-			
+
 			// try matching rest of pattern da ogni posizione
 			while (*i_str)
 			{
@@ -50020,7 +49259,7 @@ static bool wildcardMatch(const wchar_t* i_pattern, const wchar_t* i_str)
 			i_str++;
 		}
 	}
-	
+
 	return (*i_str == L'\0');
 }
 
@@ -50039,7 +49278,7 @@ static void splitWildcardPath(const std::string& i_fullpath, std::string& o_dir,
 		o_pattern = "";
 		return;
 	}
-	
+
 	// find last separator prima del wildcard
 	size_t lastSlash = std::string::npos;
 	for (size_t i = wildcardPos; i > 0; i--)
@@ -50050,7 +49289,7 @@ static void splitWildcardPath(const std::string& i_fullpath, std::string& o_dir,
 			break;
 		}
 	}
-	
+
 	if (lastSlash == std::string::npos)
 	{
 		// no slash before wildcard - everything is a pattern
@@ -50079,11 +49318,11 @@ static int64_t enumerateWildcardPattern(
 	bool i_recursive)
 {
 	int64_t count = 0;
-	
+
 	// verifica se il pattern inizia con ** (ricorsione)
 	bool recurseSubdirs = i_recursive;
 	std::wstring currentPattern = i_pattern;
-	
+
 	if (i_pattern.length() >= 2 && i_pattern[0] == L'*' && i_pattern[1] == L'*')
 	{
 		recurseSubdirs = true;
@@ -50093,7 +49332,7 @@ static int64_t enumerateWildcardPattern(
 		else
 			currentPattern = i_pattern.substr(2);
 	}
-	
+
 	// In Windows, *.* historically means "tutti i file"
     if (currentPattern == L"*.*")
 	{
@@ -50104,25 +49343,25 @@ static int64_t enumerateWildcardPattern(
 	if (!searchpath.empty() && searchpath.back() != L'\\')
 		searchpath += L'\\';
 	searchpath += L"*";
-	
+
 	WIN32_FIND_DATAW finddata;
 	HANDLE hfind = FindFirstFileW(searchpath.c_str(), &finddata);
-	
+
 	if (hfind == INVALID_HANDLE_VALUE)
 		return 0;
-	
+
 	do
 	{
 		// salta . e ..
 		if (wcscmp(finddata.cFileName, L".") == 0 || wcscmp(finddata.cFileName, L"..") == 0)
 			continue;
-		
+
 		// build full path
 		std::wstring fullpath = i_basedir;
 		if (!fullpath.empty() && fullpath.back() != L'\\')
 			fullpath += L'\\';
 		fullpath += finddata.cFileName;
-		
+
 		if (finddata.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 		{
 			// e' una directory: ricorri se richiesto
@@ -50140,20 +49379,20 @@ static int64_t enumerateWildcardPattern(
 				uint64_t filesize = ((uint64_t)finddata.nFileSizeHigh << 32) | finddata.nFileSizeLow;
 				io_totalSize += filesize;
 				count++;
-				
+
 				// progress every second
 				int64_t now = mtime();
 				if (now - i_lastProgressTime >= 1000)
 				{
 					myprintf("44150: Wildcard search: %s files found, %s total...\r",
-						migliaia(o_files.size()), 
+						migliaia(o_files.size()),
 						tohuman(io_totalSize));
 				}
 			}
 		}
-		
+
 	} while (FindNextFileW(hfind, &finddata));
-	
+
 	FindClose(hfind);
 	return count;
 }
@@ -50168,31 +49407,31 @@ static int64_t enumerateDirectoryRecursive(
 	int64_t& i_lastProgressTime)
 {
 	int64_t count = 0;
-	
+
 	// prepare search pattern
 	std::wstring searchpath = i_dirpath;
 	if (searchpath.back() != L'\\')
 		searchpath += L'\\';
 	searchpath += L"*";
-	
+
 	WIN32_FIND_DATAW finddata;
 	HANDLE hfind = FindFirstFileW(searchpath.c_str(), &finddata);
-	
+
 	if (hfind == INVALID_HANDLE_VALUE)
 		return 0;
-	
+
 	do
 	{
 		// salta . e ..
 		if (wcscmp(finddata.cFileName, L".") == 0 || wcscmp(finddata.cFileName, L"..") == 0)
 			continue;
-		
+
 		// build full path
 		std::wstring fullpath = i_dirpath;
 		if (fullpath.back() != L'\\')
 			fullpath += L'\\';
 		fullpath += finddata.cFileName;
-		
+
 		if (finddata.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 		{
 			// è una sottocartella: aggiungi e ricorri
@@ -50208,21 +49447,21 @@ static int64_t enumerateDirectoryRecursive(
 			io_totalSize += filesize;
 			count++;
 		}
-		
+
 		// progress every second
 		int64_t now = mtime();
 		if (now - i_lastProgressTime >= 1000)
 		{
 			myprintf("44200: Enumerating: %12s files, %12s dirs, %12s total size...\r",
-				migliaia(o_files.size()), 
-				migliaia2(o_dirs.size()), 
+				migliaia(o_files.size()),
+				migliaia2(o_dirs.size()),
 				tohuman(io_totalSize));
 				i_lastProgressTime=now;
-				
+
 		}
-		
+
 	} while (FindNextFileW(hfind, &finddata));
-	
+
 	FindClose(hfind);
 	return count;
 }
@@ -50250,18 +49489,18 @@ void franzimager::setExclusions(const std::vector<std::string>& i_esclusioni)
 std::vector<uint8_t> franzimager::getFilesToDeleteAsBytes() const
 {
 	std::vector<uint8_t> result;
-	
+
 	for (size_t i = 0; i < m_filesToDelete.size(); i++)
 	{
 		const std::string& path = m_filesToDelete[i];
 		result.insert(result.end(), path.begin(), path.end());
 		result.push_back('\n');
 	}
-	
+
 	if (flagdebug)
-		myprintf("44702: getFilesToDeleteAsBytes: %zu strings -> %zu bytes\n", 
+		myprintf("44702: getFilesToDeleteAsBytes: %zu strings -> %zu bytes\n",
 			m_filesToDelete.size(), result.size());
-	
+
 	return result;
 }
 
@@ -50270,16 +49509,16 @@ std::vector<uint8_t> franzimager::getFilesToDeleteAsBytes() const
 bool franzimager::setFilesToDeleteFromBytes(const std::vector<uint8_t>& i_data)
 {
 	m_filesToDelete.clear();
-	
+
 	if (i_data.empty())
 	{
 		if (flagdebug)
 			myprintf("44717: setFilesToDeleteFromBytes: empty data\n");
 		return true; // vuoto è valido, significa nessun file da cancellare
 	}
-	
+
 	std::string current;
-	
+
 	for (size_t i = 0; i < i_data.size(); i++)
 	{
 		char c = (char)i_data[i];
@@ -50296,17 +49535,17 @@ bool franzimager::setFilesToDeleteFromBytes(const std::vector<uint8_t>& i_data)
 			current += c;
 		}
 	}
-	
+
 	// last line without newline finale
 	if (!current.empty())
 	{
 		m_filesToDelete.push_back(current);
 	}
-	
+
 	if (flagdebug)
-		myprintf("44747: setFilesToDeleteFromBytes: %zu bytes -> %zu strings\n", 
+		myprintf("44747: setFilesToDeleteFromBytes: %zu bytes -> %zu strings\n",
 			i_data.size(), m_filesToDelete.size());
-	
+
 	return true;
 }
 
@@ -50322,7 +49561,7 @@ bool franzimager::deleteExcludedFiles(
 		m_excludedCannotDelete = 0;
 		return false;
 	}
-	
+
 	return deleteExcludedFiles(m_filesToDelete, i_targetVolume);
 }
 
@@ -50372,20 +49611,20 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			color_restore();
 		}
 	}
-	
-	//  PART 2: user exclusions (if any) 
+
+	//  PART 2: user exclusions (if any)
 	if (!m_userExclusions.empty())
 	{
 		if (flagdebug)
 			myprintf("44120: Processing %s user exclusions...\n", migliaia(m_userExclusions.size()));
-		
+
 		std::vector<std::wstring> allFiles;   // all files to exclude (wide)
 		std::vector<std::wstring> allDirs;    // all folders to exclude (wide)
 		int64_t totalSize = 0;
 		int64_t userClusters = 0;
 		int64_t startTime = mtime();
 		int64_t lastProgressTime = startTime;
-		
+
 		// determine base prefix (VSS or drive letter)
 		std::string basePrefix;
 		if (m_usingvss && !m_vsspath.empty())
@@ -50396,15 +49635,15 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 		{
 			basePrefix = std::string(1, i_driveletter) + ":";
 		}
-		
+
 		// phase 1: enumerate all files and folders
 		for (size_t i = 0; i < m_userExclusions.size(); i++)
 		{
 			std::string pattern = m_userExclusions[i];
-			
+
 			if (pattern.empty())
 				continue;
-			
+
 			// if pattern starts with la lettera del drive, sostituisci con basePrefix
 			// otherwise consider as path relative to volume root
 			std::string fullpath;
@@ -50423,26 +49662,26 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 				// relative path: temp/ -> basePrefix/ + pattern
 				fullpath = basePrefix + "/" + pattern;
 			}
-			
+
 			bool isDir = (pattern.back() == '/');
 			bool isWildcard = hasWildcards(pattern);
-			
+
 			if (isWildcard)
 			{
 				// pattern with wildcards: c:/temp/*.mp4 o c:/temp/**/*.mp4
 				std::string dirPart, patternPart;
 				splitWildcardPath(fullpath, dirPart, patternPart);
-				
-				
+
+
 				// se dirPart e' solo "X:" aggiungi backslash per renderlo valido
 				if (dirPart.length() == 2 && dirPart[1] == ':')
 				{
 					dirPart += "/";
 				}
-				
+
 				std::wstring wdir = pathToLongWide(dirPart);
 				std::wstring wpattern = utow(patternPart.c_str(), L'\\');
-				
+
 				// verifica che la directory base esista
 				DWORD attrs = GetFileAttributesW(wdir.c_str());
 				if (attrs == INVALID_FILE_ATTRIBUTES || !(attrs & FILE_ATTRIBUTE_DIRECTORY))
@@ -50451,22 +49690,22 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 						myprintf("44151: Warning: base directory not found: %s (attrs=%lu)\n", dirPart.c_str(), attrs);
 					continue;
 				}
-				
+
 				// enumera con wildcard
 				int64_t found = enumerateWildcardPattern(wdir, wpattern, allFiles, totalSize, lastProgressTime, false);
-				
+
 				if (flagverbose || found > 0)
 					myprintf("44152: Wildcard %s: %s files matched\n", pattern.c_str(), migliaia(found));
 			}
 			else if (isDir)
 			{
 				std::wstring wpath = pathToLongWide(fullpath);
-				
-				
+
+
 				// remove trailing / convertito in backslash
 				if (wpath.back() == L'\\')
 					wpath.pop_back();
-				
+
 				// check that it exists
 				DWORD attrs = GetFileAttributesW(wpath.c_str());
 				if (attrs == INVALID_FILE_ATTRIBUTES)
@@ -50475,20 +49714,20 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 						myprintf("44121: Warning: directory not found: %s\n", pattern.c_str());
 					continue;
 				}
-				
+
 				if (!(attrs & FILE_ATTRIBUTE_DIRECTORY))
 				{
 					if (flagverbose)
 						myprintf("44122: Warning: not a directory: %s\n", pattern.c_str());
 					continue;
 				}
-				
+
 				// add the folder itself
 				allDirs.push_back(wpath);
-				
+
 				// enumerate content recursively
 				int64_t found = enumerateDirectoryRecursive(wpath, allFiles, allDirs, totalSize, lastProgressTime);
-				
+
 				if (flagverbose)
 					myprintf("44123: Directory %s: %s entries\n", pattern.c_str(), migliaia(found));
 			}
@@ -50496,7 +49735,7 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			{
 				// è un file singolo
 				std::wstring wpath = pathToLongWide(fullpath);
-				
+
 				DWORD attrs = GetFileAttributesW(wpath.c_str());
 				if (attrs == INVALID_FILE_ATTRIBUTES)
 				{
@@ -50504,16 +49743,16 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 						myprintf("44124: Warning: file not found: %s\n", pattern.c_str());
 					continue;
 				}
-				
+
 				if (attrs & FILE_ATTRIBUTE_DIRECTORY)
 				{
 					if (flagverbose)
 						myprintf("44125: Warning: is a directory, add / at end: %s\n", pattern.c_str());
 					continue;
 				}
-				
+
 				allFiles.push_back(wpath);
-				
+
 				// get size
 				WIN32_FILE_ATTRIBUTE_DATA fad;
 				if (GetFileAttributesExW(wpath.c_str(), GetFileExInfoStandard, &fad))
@@ -50521,37 +49760,37 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 					totalSize += ((uint64_t)fad.nFileSizeHigh << 32) | fad.nFileSizeLow;
 				}
 			}
-			
+
 			// progress
 			int64_t now = mtime();
 			if (flagverbose)
 				if (now - lastProgressTime >= 1000)
 				{
 					myprintf("44126: Enumerating: %s files, %s dirs, %s total...\r",
-						migliaia(allFiles.size()), 
-						migliaia2(allDirs.size()), 
+						migliaia(allFiles.size()),
+						migliaia2(allDirs.size()),
 						tohuman(totalSize));
 					lastProgressTime = now;
 				}
 		}
 		eol();
 		myprintf("44127: User exclusions: %s files, %s directories, %s total size\n",
-			migliaia(allFiles.size()), 
-			migliaia2(allDirs.size()), 
+			migliaia(allFiles.size()),
+			migliaia2(allDirs.size()),
 			tohuman(totalSize));
-		
+
 		// phase 2: collect clusters of all files
 		if (allFiles.size() > 0)
 		{
 			if (flagverbose)
 				myprintf("44128: Collecting clusters from %s user files...\n", migliaia(allFiles.size()));
 			lastProgressTime = mtime();
-			
+
 			for (size_t i = 0; i < allFiles.size(); i++)
 			{
 				int64_t fileClusters = enumeratefileclusters(allFiles[i].c_str(), m_excludedclusters);
 				userClusters += fileClusters;
-				
+
 				// progress every second
 				int64_t now = mtime();
 				if (now - lastProgressTime >= 1000)
@@ -50559,8 +49798,8 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 					double pct = 100.0 * (i + 1) / allFiles.size();
 					if (flagverbose)
 					myprintf("44129: Clusters: %12s/%12s files (%5.1f%%), %12s clusters...\r",
-						migliaia(i + 1), 
-						migliaia2(allFiles.size()), 
+						migliaia(i + 1),
+						migliaia2(allFiles.size()),
 						pct,
 						migliaia3(userClusters));
 					lastProgressTime = now;
@@ -50571,16 +49810,16 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			if (flagverbose)
 				myprintf("44130: User clusters: %s additional ranges, %s clusters (%s)\n",
 					migliaia(m_excludedclusters.size()),
-					migliaia2(userClusters), 
+					migliaia2(userClusters),
 				tohuman(userClusters * m_clustersize));
-			
+
 			excludedspace += userClusters;
 		}
-		
+
 		// phase 3: prepare list of files to delete (UTF-8 con /)
 		// IMPORTANT: here we save ORIGINAL paths (with drive letter), not VSS ones
 		// first files, then folders ordinate bottom-up
-		
+
 		for (size_t i = 0; i < allFiles.size(); i++)
 		{
 			std::string utf8path = wideToPathUtf8(allFiles[i]);
@@ -50590,12 +49829,12 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 				// m_vsspath contiene qualcosa come: \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2
 				// utf8path dopo wideToPathUtf8 contiene: GLOBALROOT/Device/HarddiskVolumeShadowCopy2/...
 				// (il prefisso \\?\ viene rimosso da wideToPathUtf8)
-				
+
 				// Prepare VSS prefix senza \\?\ per il confronto
 				std::string vssprefix = m_vsspath;
 				// rimuovi \\?\ se presente
-				if (vssprefix.length() >= 4 && 
-					vssprefix[0] == '\\' && vssprefix[1] == '\\' && 
+				if (vssprefix.length() >= 4 &&
+					vssprefix[0] == '\\' && vssprefix[1] == '\\' &&
 					vssprefix[2] == '?' && vssprefix[3] == '\\')
 				{
 					vssprefix = vssprefix.substr(4);
@@ -50603,7 +49842,7 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 				// normalize separators
 				for (size_t j = 0; j < vssprefix.size(); j++)
 					if (vssprefix[j] == '\\') vssprefix[j] = '/';
-				
+
 				if (utf8path.find(vssprefix) == 0)
 				{
 					utf8path = std::string(1, i_driveletter) + ":" + utf8path.substr(vssprefix.length());
@@ -50611,13 +49850,13 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			}
 			m_filesToDelete.push_back(utf8path);
 		}
-		
+
 		// folders go in reverse order (dal più profondo al meno profondo)
-		std::sort(allDirs.begin(), allDirs.end(), 
+		std::sort(allDirs.begin(), allDirs.end(),
 			[](const std::wstring& a, const std::wstring& b) {
 				return a.length() > b.length();
 			});
-		
+
 		for (size_t i = 0; i < allDirs.size(); i++)
 		{
 			std::string utf8path = wideToPathUtf8(allDirs[i]);
@@ -50627,15 +49866,15 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 				// stessa logica di sopra
 				std::string vssprefix = m_vsspath;
 				// rimuovi \\?\ se presente
-				if (vssprefix.length() >= 4 && 
-					vssprefix[0] == '\\' && vssprefix[1] == '\\' && 
+				if (vssprefix.length() >= 4 &&
+					vssprefix[0] == '\\' && vssprefix[1] == '\\' &&
 					vssprefix[2] == '?' && vssprefix[3] == '\\')
 				{
 					vssprefix = vssprefix.substr(4);
 				}
 				for (size_t j = 0; j < vssprefix.size(); j++)
 					if (vssprefix[j] == '\\') vssprefix[j] = '/';
-				
+
 				if (utf8path.find(vssprefix) == 0)
 				{
 					utf8path = std::string(1, i_driveletter) + ":" + utf8path.substr(vssprefix.length());
@@ -50643,26 +49882,26 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			}
 			m_filesToDelete.push_back(utf8path);
 		}
-		
+
 		int64_t elapsed = mtime() - startTime;
 		if (flagverbose)
 			myprintf("44131: User exclusions complete: %s entries to delete, processed in %s ms\n",
-			migliaia(m_filesToDelete.size()), 
+			migliaia(m_filesToDelete.size()),
 			migliaia2(elapsed));
 	}
-	
+
 	// DEBUG: print excluded ranges
 	if (m_excludedclusters.size() >0)
 	{
 		if (flagverbose)
 			myprintf("44135: Detail - Excluded cluster ranges (%zu total):\n", m_excludedclusters.size());
-		
+
 		// IMPORTANT: check that we are not excluding critical clusters
 		// First clusters contain: boot sector, MFT, MFT mirror, ecc.
 		// NON dovremmo mai escludere cluster < 100 circa
 		bool hasLowClusters = false;
 		uint64_t lowestCluster = UINT64_MAX;
-		
+
 		for (size_t i = 0; i < m_excludedclusters.size(); i++)
 		{
 			const clusterrange& range = m_excludedclusters[i];
@@ -50671,7 +49910,7 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			if (range.start_cluster < 995)
 				hasLowClusters = true;
 		}
-		
+
 		for (size_t i = 0; i < m_excludedclusters.size() && i < 20; i++)
 		{
 			const clusterrange& range = m_excludedclusters[i];
@@ -50687,10 +49926,10 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 		if (flagverbose)
 			if (m_excludedclusters.size() > 20)
 				myprintf("  ... and %zu more ranges\n", m_excludedclusters.size() - 20);
-		
+
 		if (flagverbose)
 			myprintf("44136: Lowest excluded cluster: %s\n", migliaia(lowestCluster));
-		
+
 		if (hasLowClusters)
 		{
 			color_yellow();
@@ -50699,21 +49938,21 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			color_restore();
 		}
 	}
-	
+
 	int64_t lastProgressTime=0;
-	
+
 	// RICALCOLA m_usedblocks e m_usedbytes considerando le esclusioni
 	if (m_excludedclusters.size() > 0)
 	{
 		if (flagverbose)
 			myprintf("44140: Recalculating used blocks after exclusions...\n");
-		
+
 		uint64_t newUsedBlocks = 1;  // MBR block sempre presente
 		uint64_t newUsedBytes = FRANZIMAGER_SECTOR_SIZE + m_blocksize;  // MBR block
 		uint64_t skippedBlocks = 0;
-		
+
 		uint64_t tempoffset = m_blocksize;
-		
+
 		while (tempoffset < m_disksize)
 		{
 			// salta blocchi fuori dalla partizione
@@ -50723,14 +49962,14 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 				tempoffset += m_blocksize;
 				continue;
 			}
-			
+
 			uint64_t partitionoffset = tempoffset - m_partitionstart;
 			uint64_t startcluster = partitionoffset / m_clustersize;
 			uint64_t endcluster = (partitionoffset + m_blocksize - 1) / m_clustersize;
-			
+
 			if (endcluster >= m_totalclusters)
 				endcluster = m_totalclusters - 1;
-			
+
 			// controlla se il blocco contiene clusters used
 			bool blockisused = false;
 			for (uint64_t c = startcluster; c <= endcluster; ++c)
@@ -50743,13 +49982,13 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 					break;
 				}
 			}
-			
+
 			if (blockisused)
 			{
 				// verifica se il blocco è completamente escluso
 				uint64_t clustersInBlock = endcluster - startcluster + 1;
 				uint64_t excludedClustersCount = 0;
-				
+
 				for (size_t i = 0; i < m_excludedclusters.size(); ++i)
 				{
 					const clusterrange& range = m_excludedclusters[i];
@@ -50760,7 +49999,7 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 						excludedClustersCount += (overlapend - overlapstart + 1);
 					}
 				}
-				
+
 				// se non è completamente escluso, conta come usato
 				if (excludedClustersCount < clustersInBlock)
 				{
@@ -50769,7 +50008,7 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 						? m_blocksize
 						: (m_disksize - tempoffset);
 					newUsedBytes += FRANZIMAGER_SECTOR_SIZE + bytesinblock;
-					
+
 					int64_t now = mtime();
 					if (now - lastProgressTime >= 1000)
 					{
@@ -50782,7 +50021,7 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 					skippedBlocks++;
 				}
 			}
-			
+
 			tempoffset += m_blocksize;
 		}
 		eol();
@@ -50791,11 +50030,11 @@ int64_t franzimager::enumerateexcludedfiles(char i_driveletter)
 			migliaia(m_usedblocks), tohuman(m_usedbytes),
 			migliaia2(newUsedBlocks), tohuman2(newUsedBytes),
 			migliaia3(skippedBlocks));
-		
+
 		m_usedblocks = newUsedBlocks;
 		m_usedbytes = newUsedBytes;
 	}
-	
+
 	return excludedspace * 4096;
 }
 
@@ -51044,7 +50283,7 @@ int franzimager::elaboravhd(char *o_buffer, size_t i_buffersize)
 	static uint64_t s_blocksSkippedExcluded = 0;
 	static uint64_t s_blocksWritten = 0;
 	static bool s_initialized = false;
-	
+
 	if (!s_initialized)
 	{
 		s_blocksProcessed = 0;
@@ -51053,7 +50292,7 @@ int franzimager::elaboravhd(char *o_buffer, size_t i_buffersize)
 		s_blocksWritten = 0;
 		s_initialized = true;
 	}
-	
+
 	// checks exact buffer size
 	if (i_buffersize != FRANZIMAGER_BUFFER_SIZE)
 	{
@@ -51137,7 +50376,7 @@ int franzimager::elaboravhd(char *o_buffer, size_t i_buffersize)
 				excludedClustersCount += (overlapend - overlapstart + 1);
 			}
 		}
-		
+
 		// verifica se il blocco è completamente escluso
 		if (blockisexcluded && excludedClustersCount >= clustersInBlock)
 		{
@@ -51231,7 +50470,7 @@ int franzimager::elaboravhd(char *o_buffer, size_t i_buffersize)
 					   blockidx, (unsigned long long)m_currentoffset, bytesread,
 					   (unsigned long long)startcluster, (unsigned long long)endcluster,
 					   blockisexcluded ? " (con zone escluse)" : "");
-			
+
 			s_blocksWritten++;
 		}
 
@@ -51248,11 +50487,11 @@ int franzimager::elaboravhd(char *o_buffer, size_t i_buffersize)
 		myprintf("  Blocks skipped unused: %s\n", migliaia(s_blocksSkippedUnused));
 		myprintf("  Blocks skipped excl  : %s\n", migliaia(s_blocksSkippedExcluded));
 		myprintf("  Blocks written       : %s\n", migliaia(s_blocksWritten));
-		
+
 		// reset per prossimo utilizzo
 		s_initialized = false;
 	}
-	
+
 	return -1; // end reading
 }
 
@@ -51500,14 +50739,14 @@ bool franzimager::caricametamemory(const std::vector<uint8_t> &i_data)
 		myprintf("45923:   bitmap: %llu bytes\n", (unsigned long long)m_bitmapsize);
 		myprintf("45923:   blockmap: %u entries\n", blockmapsize);
 	}
-	
+
 	// DEBUG: stampa primi elementi della blockmap
 	if ((flagdebug || flagverbose) && m_blockmap.size() > 0)
 	{
 		myprintf("44190: Loaded blockmap with %zu entries. First 20:\n", m_blockmap.size());
 		for (size_t i = 0; i < m_blockmap.size() && i < 20; i++)
 		{
-			myprintf("  [%zu] -> block %u (offset %s)\n", i, m_blockmap[i], 
+			myprintf("  [%zu] -> block %u (offset %s)\n", i, m_blockmap[i],
 				migliaia((uint64_t)m_blockmap[i] * m_blocksize));
 		}
 	}
@@ -51849,7 +51088,7 @@ bool franzimager::lavoraestraicompressothin(const char *i_frammento, size_t i_di
 		// DEBUG: first 10 blocks
 		if (flagdebug && m_estraithin.blockindex < 10)
 		{
-			myprintf("00331: Block seq %u -> original idx %u\n", 
+			myprintf("00331: Block seq %u -> original idx %u\n",
 				m_estraithin.blockindex, originalblockidx);
 		}
 
@@ -51866,15 +51105,15 @@ bool franzimager::lavoraestraicompressothin(const char *i_frammento, size_t i_di
 				// e un boot sector NTFS valido all'offset 512+m_partitionstart
 				uint8_t* mbrcheck = (uint8_t*)(m_estraithin.blockbuffer + FRANZIMAGER_SECTOR_SIZE);
 				uint8_t* bootcheck = (uint8_t*)(m_estraithin.blockbuffer + FRANZIMAGER_SECTOR_SIZE + m_partitionstart);
-				
+
 				// Verify MBR signature (AA55 at sector end)
 				bool mbrvalid = (mbrcheck[510] == 0x55 && mbrcheck[511] == 0xAA);
-				
+
 				// Verify NTFS boot sector (EB 52 90 at start, NTFS at bytes 3-6)
-				bool ntfsvalid = (bootcheck[0] == 0xEB && 
-								  bootcheck[3] == 'N' && bootcheck[4] == 'T' && 
+				bool ntfsvalid = (bootcheck[0] == 0xEB &&
+								  bootcheck[3] == 'N' && bootcheck[4] == 'T' &&
 								  bootcheck[5] == 'F' && bootcheck[6] == 'S');
-				
+
 				if (flagdebug || flagverbose)
 				{
 					myprintf("12345: Block seq 0 -> orig 0 (MBR special handling)\n");
@@ -51882,28 +51121,28 @@ bool franzimager::lavoraestraicompressothin(const char *i_frammento, size_t i_di
 						migliaia(m_partitionstart), migliaia2(dataoffset), migliaia3(datasize));
 					myprintf("12345: MBR: reading from blockbuffer+%s, writing to partition offset 0\n",
 						migliaia(FRANZIMAGER_SECTOR_SIZE + dataoffset));
-					
+
 					// DEBUG: show first RAW bytes of buffer to understand structure
 					uint8_t* rawbuf = (uint8_t*)m_estraithin.blockbuffer;
 					myprintf("12345: RAW buffer first 16 bytes: ");
 					for (int i = 0; i < 16; i++) myprintf("%02X ", rawbuf[i]);
 					myprintf("\n");
-					
+
 					// Mostra i byte all'offset 512 (dopo sector bitmap, inizio dati MBR)
 					myprintf("12345: Buffer at offset 512 (MBR start): ");
 					for (int i = 0; i < 16; i++) myprintf("%02X ", mbrcheck[i]);
 					myprintf("\n");
 					myprintf("12345: MBR signature at 510-511: %02X %02X (%s)\n",
 						mbrcheck[510], mbrcheck[511], mbrvalid ? "VALID" : "INVALID");
-					
+
 					// Mostra i byte all'offset 512+m_partitionstart (dove dovrebbe essere boot sector)
-					myprintf("12345: Buffer at offset %llu (partition start): ", 
+					myprintf("12345: Buffer at offset %llu (partition start): ",
 						(unsigned long long)(FRANZIMAGER_SECTOR_SIZE + m_partitionstart));
 					for (int i = 0; i < 16; i++) myprintf("%02X ", bootcheck[i]);
 					myprintf("\n");
 					myprintf("12345: NTFS signature: %s\n", ntfsvalid ? "VALID" : "INVALID");
 				}
-				
+
 				// Se il blocco non è valido, stampa errore ma continua
 				if (!mbrvalid || !ntfsvalid)
 				{
@@ -51926,11 +51165,11 @@ bool franzimager::lavoraestraicompressothin(const char *i_frammento, size_t i_di
 				SetFilePointerEx(m_estraithin.hdest, destoffset, NULL, FILE_BEGIN);
 
 				char *partdata= m_estraithin.blockbuffer + FRANZIMAGER_SECTOR_SIZE + dataoffset;
-				
+
 				DWORD written = writewithfallback(m_estraithin.hdest, partdata, (DWORD)datasize,
 												  0, m_estraithin.destsize);
 				m_estraithin.totalbyteswritten+= written;
-				
+
 				if (flagdebug || flagverbose)
 					myprintf("12345: MBR block: wrote %lu bytes at offset 0\n", written);
 			}
@@ -51944,15 +51183,15 @@ bool franzimager::lavoraestraicompressothin(const char *i_frammento, size_t i_di
 		else
 		{
 			uint64_t blockoffsetindisk= (uint64_t)originalblockidx * m_blocksize;
-			
+
 			// DEBUG: show offset calculation for first blocks
 			if ((flagdebug || flagverbose) && m_estraithin.blockswritten < 15)
 			{
 				myprintf("12345: Block seq %u -> orig %u: diskoffset=%s, partstart=%s\n",
-					m_estraithin.blockindex, originalblockidx, 
+					m_estraithin.blockindex, originalblockidx,
 					migliaia(blockoffsetindisk), migliaia2(m_partitionstart));
 			}
-			
+
 			if (blockoffsetindisk >= m_partitionstart)
 			{
 				uint64_t partitionoffset= blockoffsetindisk - m_partitionstart;
@@ -52943,7 +52182,7 @@ bool franzimager::prepararawrestore(char i_target)
 		return false;
 	}
 	m_rawdiskstate.accumsize= 0;
-	
+
 	// lock volume
 	DWORD bytesreturned= 0;
 	if (!DeviceIoControl(m_rawdiskstate.hdest, FSCTL_LOCK_VOLUME, NULL, 0, NULL, 0, &bytesreturned, NULL))
@@ -52955,7 +52194,7 @@ bool franzimager::prepararawrestore(char i_target)
 
 	// unmount volume
 	DeviceIoControl(m_rawdiskstate.hdest, FSCTL_DISMOUNT_VOLUME, NULL, 0, NULL, 0, &bytesreturned, NULL);
-	
+
 
 	m_rawdiskstate.attivo= true;
 
@@ -53159,7 +52398,7 @@ static bool EnablePrivilege(LPCWSTR privilegeName)
     BOOL ok = AdjustTokenPrivileges(hToken, FALSE, &tp, sizeof(TOKEN_PRIVILEGES), NULL, NULL);
     DWORD err = GetLastError();
     CloseHandle(hToken);
-    
+
     return ok && (err != ERROR_NOT_ALL_ASSIGNED);
 }
 #endif
@@ -53176,8 +52415,8 @@ static bool forceFilePermissions(const std::wstring& path)
     PSID pSidAdmins = NULL;
     SID_IDENTIFIER_AUTHORITY SIDAuthNT = SECURITY_NT_AUTHORITY;
 
-    if (!AllocateAndInitializeSid(&SIDAuthNT, 2, 
-            SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_ADMINS, 
+    if (!AllocateAndInitializeSid(&SIDAuthNT, 2,
+            SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_ADMINS,
             0, 0, 0, 0, 0, 0, &pSidAdmins))
         return false;
 
@@ -53185,9 +52424,9 @@ static bool forceFilePermissions(const std::wstring& path)
 
     // Prendi Ownership
     DWORD res = SetNamedSecurityInfoW(
-        const_cast<LPWSTR>(path.c_str()), 
-        SE_FILE_OBJECT, 
-        OWNER_SECURITY_INFORMATION, 
+        const_cast<LPWSTR>(path.c_str()),
+        SE_FILE_OBJECT,
+        OWNER_SECURITY_INFORMATION,
         pSidAdmins, NULL, NULL, NULL);
 
     if (res == ERROR_SUCCESS)
@@ -53205,9 +52444,9 @@ static bool forceFilePermissions(const std::wstring& path)
         if (SetEntriesInAclW(1, &ea, NULL, &pNewDacl) == ERROR_SUCCESS)
         {
             if (SetNamedSecurityInfoW(
-                    const_cast<LPWSTR>(path.c_str()), 
-                    SE_FILE_OBJECT, 
-                    DACL_SECURITY_INFORMATION | UNPROTECTED_DACL_SECURITY_INFORMATION, 
+                    const_cast<LPWSTR>(path.c_str()),
+                    SE_FILE_OBJECT,
+                    DACL_SECURITY_INFORMATION | UNPROTECTED_DACL_SECURITY_INFORMATION,
                     NULL, NULL, pNewDacl, NULL) == ERROR_SUCCESS)
             {
                 result = true;
@@ -53215,7 +52454,7 @@ static bool forceFilePermissions(const std::wstring& path)
             LocalFree(pNewDacl);
         }
     }
-    
+
     FreeSid(pSidAdmins);
     return result;
 }
@@ -53255,7 +52494,7 @@ static bool deleteFileAggressive(const std::wstring& i_filepath)
     if (MoveFileW(path.c_str(), tempName.c_str()))
     {
         if (DeleteFileW(tempName.c_str())) return true;
-        path = tempName; 
+        path = tempName;
     }
 
     // ATTEMPT 5: Schedule deletion at Reboot
@@ -53270,13 +52509,13 @@ static bool deleteFileAggressive(const std::wstring& i_filepath)
 static bool deleteDirectoryAggressive(const std::wstring& i_dirpath)
 {
     std::wstring path = fixLongPath(i_dirpath);
-    
+
     // TENTATIVO 1: Prima prova diretta (funziona solo se vuota e senza intoppi)
     if (RemoveDirectoryW(path.c_str())) return true;
-    
+
     DWORD err = GetLastError();
     if (err == ERROR_FILE_NOT_FOUND || err == ERROR_PATH_NOT_FOUND) return true;
-    
+
     // Preparazione: Forza permessi e rimuovi ReadOnly sulla root della cartella
     forceFilePermissions(path);
     DWORD attrs = GetFileAttributesW(path.c_str());
@@ -53284,22 +52523,22 @@ static bool deleteDirectoryAggressive(const std::wstring& i_dirpath)
     {
         SetFileAttributesW(path.c_str(), attrs & ~FILE_ATTRIBUTE_READONLY);
     }
-    
+
     // Enumerate and empty content
     std::wstring searchPath = path;
     if (searchPath.back() != L'\\') searchPath += L'\\';
     searchPath += L'*';
-    
+
     WIN32_FIND_DATAW fd;
     HANDLE hFind = FindFirstFileW(searchPath.c_str(), &fd);
-    
+
     if (hFind != INVALID_HANDLE_VALUE)
     {
         do
         {
             if (wcscmp(fd.cFileName, L".") == 0 || wcscmp(fd.cFileName, L"..") == 0)
                 continue;
-            
+
             std::wstring childPath = path;
             if (childPath.back() != L'\\') childPath += L'\\';
             childPath += fd.cFileName;
@@ -53309,7 +52548,7 @@ static bool deleteDirectoryAggressive(const std::wstring& i_dirpath)
             {
                 // È un Junction/Symlink. NON ENTRARE (evita danni al target).
                 // Remove it directly. Per le junction directory si usa RemoveDirectory.
-                
+
                 // Remove any read-only attributes from the link itself
                 if (fd.dwFileAttributes & FILE_ATTRIBUTE_READONLY)
                     SetFileAttributesW(childPath.c_str(), fd.dwFileAttributes & ~FILE_ATTRIBUTE_READONLY);
@@ -53318,7 +52557,7 @@ static bool deleteDirectoryAggressive(const std::wstring& i_dirpath)
                 if (!RemoveDirectoryW(childPath.c_str()))
                 {
                     // Fallback: se è un symlink a file, RemoveDirectory fallisce, usiamo DeleteFile
-                    if (GetLastError() == ERROR_DIRECTORY) 
+                    if (GetLastError() == ERROR_DIRECTORY)
                          deleteFileAggressive(childPath);
                     else
                          // If it fails again, try a forzare permessi sul link stesso e riprova
@@ -53338,13 +52577,13 @@ static bool deleteDirectoryAggressive(const std::wstring& i_dirpath)
             // ---------------------------------------------
 
         } while (FindNextFileW(hFind, &fd));
-        
+
         FindClose(hFind);
     }
-    
+
     // TENTATIVO 2: Riprova a rimuovere la directory (ora dovrebbe essere vuota)
     if (RemoveDirectoryW(path.c_str())) return true;
-    
+
     // TENTATIVO 3: Ownership sulla cartella stessa (se fallita prima) e riprova
     if (forceFilePermissions(path))
     {
@@ -53356,7 +52595,7 @@ static bool deleteDirectoryAggressive(const std::wstring& i_dirpath)
     {
         return true;
     }
-    
+
     return false;
 }
 
@@ -53390,13 +52629,13 @@ bool franzimager::deleteExcludedFiles(
 		return true;
 	}
 	if (flagdebug)
-		myprintf("47827: >>> deleteExcludedFiles(count=%zu, target=%c)\n", 
+		myprintf("47827: >>> deleteExcludedFiles(count=%zu, target=%c)\n",
 			i_fileDaCancellare.size(), i_targetVolume ? i_targetVolume : '?');
 	color_cyan();
 	myprintf("47924: Enabling privileges\n");
 	color_restore();
 	enableAllPrivileges();
-	
+
 	/*
 	EnablePrivilege(SE_TAKE_OWNERSHIP_NAME);
 	EnablePrivilege(SE_RESTORE_NAME);
@@ -53407,43 +52646,43 @@ bool franzimager::deleteExcludedFiles(
 	// initialize statistics
 	m_excludedExpectedDeleted = (int64_t)i_fileDaCancellare.size();
 	m_excludedCannotDelete = 0;
-	
+
 	if (i_fileDaCancellare.empty())
 	{
 		myprintf("44250: No files to delete\n");
 		return true;  // nothing to do = successo
 	}
-	
+
 	int64_t deletedCount = 0;
 	int64_t totalCount = m_excludedExpectedDeleted;
 	int64_t startTime = mtime();
 	int64_t lastProgressTime = startTime;
-	
+
 	myprintf("44251: Deleting %s excluded files/directories...\n", migliaia(totalCount));
-	
+
 	for (size_t i = 0; i < i_fileDaCancellare.size(); i++)
 	{
 		std::string path = i_fileDaCancellare[i];
-		
+
 		// remap volume if requested
 		if (i_targetVolume != 0 && path.length() >= 1)
 		{
 			path[0] = i_targetVolume;
 		}
-		
+
 		///path=toLongPath(path);
 		if (flagdebug3)
 			myprintf("47912: Try to delete |%s|\n",path.c_str());
-		
+
 		// convert to wide with long path prefix
 		std::wstring wpath = pathToLongWide(path);
-		
+
 		// verifica se è file o directory
 		DWORD attrs = GetFileAttributesW(wpath.c_str());
-		
+
 		bool success = false;
 ///		bool isdir = false;
-		
+
 		if (attrs == INVALID_FILE_ATTRIBUTES)
 		{
 			// does not exist, consider success
@@ -53458,7 +52697,7 @@ bool franzimager::deleteExcludedFiles(
 		{
 			success = deleteFileAggressive(wpath);
 		}
-		
+
 		if (success)
 		{
 			deletedCount++;
@@ -53468,31 +52707,31 @@ bool franzimager::deleteExcludedFiles(
 			m_excludedCannotDelete++;
 			if (flagverbose)
 			{
-				myprintf("44252: Failed to delete: %s (error %lu)\n", 
+				myprintf("44252: Failed to delete: %s (error %lu)\n",
 					path.c_str(), GetLastError());
 			}
 		}
-		
+
 		// progress every second with ETA
 		int64_t now = mtime();
 		if (now - lastProgressTime >= 1000)
 		{
 			double elapsed = (now - startTime) / 1000.0;
 			if (elapsed < 0.001) elapsed = 0.001;
-			
+
 			double pct = 100.0 * (i + 1) / totalCount;
 			double itemspersec = (i + 1) / elapsed;
-			
+
 			int64_t remaining = totalCount - (i + 1);
 			int etaseconds = 0;
 			if (itemspersec > 0)
 				etaseconds = (int)(remaining / itemspersec);
-			
+
 			int etahours = etaseconds / 3600;
 			int etamins = (etaseconds % 3600) / 60;
 			int etasecs = etaseconds % 60;
 			if (etahours > 99) etahours = 99;
-			
+
 			myprintf("44253: Deleting: ETA %02d:%02d:%02d %10s/%s (%5.1f%%) OK:%10s FAIL:%10s\r",
 				etahours, etamins, etasecs,
 				migliaia(i + 1),
@@ -53500,22 +52739,22 @@ bool franzimager::deleteExcludedFiles(
 				pct,
 				migliaia3(deletedCount),
 				migliaia4(m_excludedCannotDelete));
-			
+
 			lastProgressTime = now;
 		}
 	}
-	
+
 	// newline finale dopo progress
 	myprintf("\n");
-	
+
 	int64_t elapsed = mtime() - startTime;
 	double elapsedsec = elapsed / 1000.0;
-	
+
 	myprintf("44254: Deletion complete in %.1f seconds:\n", elapsedsec);
 	myprintf("  Total items     : %21s\n", migliaia(totalCount));
 	myprintf("  Deleted OK      : %21s\n", migliaia(deletedCount));
 	myprintf("  Failed          : %21s\n", migliaia(m_excludedCannotDelete));
-	
+
 	if (m_excludedCannotDelete > 0)
 	{
 		color_yellow();
@@ -53528,10 +52767,10 @@ bool franzimager::deleteExcludedFiles(
 		myprintf("44256: All excluded files deleted successfully\n");
 		color_restore();
 	}
-	
+
 	if (flagdebug)
 		myprintf("47672: <<< deleteExcludedFiles = %s\n", (m_excludedCannotDelete == 0) ? "true" : "false");
-	
+
 	return (m_excludedCannotDelete == 0);
 }
 
@@ -53541,29 +52780,29 @@ bool franzimager::deleteExcludedFiles(
 std::vector<uint8_t> franzimager::getExcludedClustersAsBytes() const
 {
 	std::vector<uint8_t> result;
-	
+
 	uint32_t count = (uint32_t)m_excludedclusters.size();
-	
+
 	// write count
 	const uint8_t* countptr = (const uint8_t*)&count;
 	result.insert(result.end(), countptr, countptr + sizeof(count));
-	
+
 	// write each range (start_cluster, end_cluster)
 	for (size_t i = 0; i < m_excludedclusters.size(); i++)
 	{
 		const clusterrange& range = m_excludedclusters[i];
-		
+
 		const uint8_t* startptr = (const uint8_t*)&range.start_cluster;
 		result.insert(result.end(), startptr, startptr + sizeof(range.start_cluster));
-		
+
 		const uint8_t* endptr = (const uint8_t*)&range.end_cluster;
 		result.insert(result.end(), endptr, endptr + sizeof(range.end_cluster));
 	}
-	
+
 	if (flagdebug)
-		myprintf("44842: getExcludedClustersAsBytes: %u ranges -> %zu bytes\n", 
+		myprintf("44842: getExcludedClustersAsBytes: %u ranges -> %zu bytes\n",
 			count, result.size());
-	
+
 	return result;
 }
 
@@ -53571,27 +52810,27 @@ std::vector<uint8_t> franzimager::getExcludedClustersAsBytes() const
 bool franzimager::setExcludedClustersFromBytes(const std::vector<uint8_t>& i_data)
 {
 	m_excludedclusters.clear();
-	
+
 	if (i_data.empty())
 	{
 		myprintf("44496: setExcludedClustersFromBytes: empty data\n");
 		return true; // empty = no excluded clusters
 	}
-	
+
 	// verify minimum size for count
 	if (i_data.size() < sizeof(uint32_t))
 	{
 		myprintf("44310: setExcludedClustersFromBytes: data too small for count\n");
 		return false;
 	}
-	
+
 	size_t offset = 0;
-	
+
 	// read count
 	uint32_t count = 0;
 	memcpy(&count, i_data.data() + offset, sizeof(count));
 	offset += sizeof(count);
-	
+
 	// verify size for all ranges
 	size_t expectedSize = sizeof(uint32_t) + count * (sizeof(uint64_t) * 2);
 	if (i_data.size() < expectedSize)
@@ -53600,48 +52839,48 @@ bool franzimager::setExcludedClustersFromBytes(const std::vector<uint8_t>& i_dat
 			expectedSize, i_data.size());
 		return false;
 	}
-	
+
 	// read each range
 	for (uint32_t i = 0; i < count; i++)
 	{
 		clusterrange range;
-		
+
 		memcpy(&range.start_cluster, i_data.data() + offset, sizeof(range.start_cluster));
 		offset += sizeof(range.start_cluster);
-		
+
 		memcpy(&range.end_cluster, i_data.data() + offset, sizeof(range.end_cluster));
 		offset += sizeof(range.end_cluster);
-		
+
 		m_excludedclusters.push_back(range);
 	}
-	
+
 	if (flagdebug)
-		myprintf("45432: setExcludedClustersFromBytes: %zu bytes -> %u ranges\n", 
+		myprintf("45432: setExcludedClustersFromBytes: %zu bytes -> %u ranges\n",
 			i_data.size(), count);
-	
+
 	return true;
 }
 
 // Zero (fill with 0x03 for debug) all excluded clusters on target partition
 bool franzimager::zeroExcludedClusters(char i_targetVolume)
 {
-	
+
 	if (flagdebug)
 		myprintf("44320: >>> zeroExcludedClusters(target=%c, ranges=%zu)\n", i_targetVolume, m_excludedclusters.size());
-	
+
 	if (m_excludedclusters.empty())
 	{
 		myprintf("44321: No excluded clusters to zero\n");
 		return true;
 	}
-	
+
 	// open volume for writing
 	char volumePath[16];
 	snprintf(volumePath, sizeof(volumePath), "\\\\.\\%c:", i_targetVolume);
-	
+
 	if (flagdebug)
 		myprintf("44323: Opening volume path: %s\n", volumePath);
-	
+
 	HANDLE hVolume = CreateFileA(volumePath,
 		GENERIC_READ | GENERIC_WRITE,
 		FILE_SHARE_READ | FILE_SHARE_WRITE,
@@ -53649,14 +52888,14 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 		OPEN_EXISTING,
 		FILE_FLAG_NO_BUFFERING | FILE_FLAG_WRITE_THROUGH,
 		NULL);
-	
+
 	if (hVolume == INVALID_HANDLE_VALUE)
 	{
 		myprintf("44322: ERROR: cannot open volume %c: for writing (error %lu)\n",
 			i_targetVolume, GetLastError());
 		return false;
 	}
-	
+
 	// Try to lock the volume for exclusive access
 	DWORD bytesReturned = 0;
 	BOOL lockResult = DeviceIoControl(hVolume, FSCTL_LOCK_VOLUME, NULL, 0, NULL, 0, &bytesReturned, NULL);
@@ -53672,7 +52911,7 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 		if (flagdebug)
 			myprintf("41322: Volume %c: locked successfully\n", i_targetVolume);
 	}
-	
+
 	// Dismount the volume to allow raw writes
 	BOOL dismountResult = DeviceIoControl(hVolume, FSCTL_DISMOUNT_VOLUME, NULL, 0, NULL, 0, &bytesReturned, NULL);
 	if (!dismountResult)
@@ -53687,7 +52926,7 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 		if (flagdebug)
 			myprintf("44221: Volume %c: dismounted for raw access\n", i_targetVolume);
 	}
-	
+
 	// get cluster size from boot sector or use cached value
 	uint32_t clusterSize = m_clustersize;
 	if (clusterSize == 0)
@@ -53695,11 +52934,11 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 		// try to read from boot sector
 		uint8_t bootSector[512];
 		DWORD bytesRead = 0;
-		
+
 		LARGE_INTEGER pos;
 		pos.QuadPart = 0;
 		SetFilePointerEx(hVolume, pos, NULL, FILE_BEGIN);
-		
+
 		if (ReadFile(hVolume, bootSector, 512, &bytesRead, NULL) && bytesRead == 512)
 		{
 			// NTFS: sectors per cluster at offset 0x0D, bytes per sector at offset 0x0B
@@ -53715,18 +52954,18 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 			if (flagdebug)
 				myprintf("44321: Failed to read boot sector (error %lu)\n", GetLastError());
 		}
-		
+
 		if (clusterSize == 0)
 			clusterSize = 4096; // default
 	}
-	
+
 	if (flagdebug)
 		myprintf("44325: Using cluster size: %u bytes\n", clusterSize);
-	
+
 	// allocate buffer for one cluster (filled with 0x03 for debug)
 	// NOTE: for production change 0x03 to 0x00
 	const uint8_t FILL_BYTE = 0x00; // DEBUG: use 0x03, PRODUCTION: use 0x00
-	
+
 	uint8_t* zeroBuffer = (uint8_t*)franz_malloc(clusterSize);
 	if (!zeroBuffer)
 	{
@@ -53735,30 +52974,30 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 		return false;
 	}
 	memset(zeroBuffer, FILL_BYTE, clusterSize);
-	
+
 	// statistics
 	int64_t totalClusters = 0;
 	int64_t zeroedClusters = 0;
 	int64_t failedClusters = 0;
 	int64_t startTime = mtime();
 	int64_t lastProgressTime = startTime;
-	
+
 	// calculate total clusters
 	for (size_t i = 0; i < m_excludedclusters.size(); i++)
 	{
 		totalClusters += (m_excludedclusters[i].end_cluster - m_excludedclusters[i].start_cluster + 1);
 	}
-	
+
 	if (flagverbose)
 		myprintf("44325: Zeroing %s clusters in %s ranges (fill byte 0x%02X)...\n", migliaia(totalClusters), migliaia2(m_excludedclusters.size()), FILL_BYTE);
-	
+
 	int64_t processedClusters = 0;
-	
+
 	// Allocate a larger buffer for batch writes (e.g., 2MB or 512 clusters at 4KB)
 	const uint32_t MAX_BATCH_SIZE = 2 * 1024 * 1024; // 2MB batch
 	uint32_t maxClustersPerBatch = MAX_BATCH_SIZE / clusterSize;
 	if (maxClustersPerBatch < 1) maxClustersPerBatch = 1;
-	
+
 	uint8_t* batchBuffer = (uint8_t*)franz_malloc(MAX_BATCH_SIZE);
 	if (!batchBuffer)
 	{
@@ -53770,32 +53009,32 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 	{
 		memset(batchBuffer, FILL_BYTE, MAX_BATCH_SIZE);
 	}
-	
+
 	if (flagdebug)
 		myprintf("44325: Batch size: %u clusters (%u bytes)\n", maxClustersPerBatch, maxClustersPerBatch * clusterSize);
-	
+
 	// process each range
 	for (size_t rangeIdx = 0; rangeIdx < m_excludedclusters.size(); rangeIdx++)
 	{
 		const clusterrange& range = m_excludedclusters[rangeIdx];
 		uint64_t rangeSize = range.end_cluster - range.start_cluster + 1;
 		uint64_t clustersDone = 0;
-		
+
 		while (clustersDone < rangeSize)
 		{
 			// Calculate how many clusters to write in this batch
 			uint64_t remaining = rangeSize - clustersDone;
 			uint32_t batchClusters = (remaining > maxClustersPerBatch) ? maxClustersPerBatch : (uint32_t)remaining;
 			uint32_t batchBytes = batchClusters * clusterSize;
-			
+
 			uint64_t currentCluster = range.start_cluster + clustersDone;
 			uint64_t offset = currentCluster * clusterSize;
-			
+
 			LARGE_INTEGER seekPos;
 			seekPos.QuadPart = offset;
-			
+
 			bool success = true;
-			
+
 			if (!SetFilePointerEx(hVolume, seekPos, NULL, FILE_BEGIN))
 			{
 				success = false;
@@ -53812,11 +53051,11 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 					success = false;
 					if (failedClusters < 3)
 						myprintf("44327: ERROR writing %u clusters at offset %llu (error %lu, wrote %lu/%u)\n",
-							batchClusters, (unsigned long long)offset, 
+							batchClusters, (unsigned long long)offset,
 							GetLastError(), bytesWritten, batchBytes);
 				}
 			}
-			
+
 			if (success)
 			{
 				zeroedClusters += batchClusters;
@@ -53825,27 +53064,27 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 			{
 				failedClusters += batchClusters;
 			}
-			
+
 			processedClusters += batchClusters;
 			clustersDone += batchClusters;
-			
+
 			// progress every second
 			int64_t now = mtime();
 			if (now - lastProgressTime >= 1000)
 			{
 				double elapsed = (now - startTime) / 1000.0;
 				if (elapsed < 0.001) elapsed = 0.001;
-				
+
 				double pct = 100.0 * processedClusters / totalClusters;
 				double bytesPerSec = (processedClusters * clusterSize) / elapsed;
-				
+
 				int64_t remainingClusters = totalClusters - processedClusters;
 				int etaSec = (processedClusters > 0) ? (int)(remainingClusters * elapsed / processedClusters) : 0;
 				int etaMin = etaSec / 60;
 				if (etaMin>99)
 					etaMin=99;
 				etaSec = etaSec % 60;
-				
+
 				myprintf("44328: Zeroing: ETA %02d:%02d %12s/%s (%5.1f%%) FAIL:%12s @ %s/s\r",
 					etaMin, etaSec,
 					migliaia(processedClusters),
@@ -53854,23 +53093,23 @@ bool franzimager::zeroExcludedClusters(char i_targetVolume)
 				//	migliaia3(zeroedClusters),
 					migliaia4(failedClusters),
 					tohuman(bytesPerSec));
-				
+
 				lastProgressTime = now;
 			}
 		}
 	}
-	
+
 	if (batchBuffer != zeroBuffer)
 		franz_free(batchBuffer);
 	franz_free(zeroBuffer);
 	CloseHandle(hVolume);
-	
+
 	// final newline
 	myprintf("\n");
-	
+
 	int64_t elapsed = mtime() - startTime;
 	double elapsedSec = elapsed / 1000.0;
-	
+
 	myprintf("44329: Cluster zeroing complete in %.1f seconds\n", elapsedSec);
 	if (flagverbose)
 	{
@@ -55090,7 +54329,7 @@ class franzVSS
 	}
 };
 
-#ifndef DLL 
+#ifndef DLL
 franzVSS g_myvss;
 #endif
 
@@ -55117,7 +54356,7 @@ class franzraw
 	/* puntatore a franzVSS (se usato) */
 	franzVSS *m_vss;
 
-	
+
 	/* ottiene dimensione disco fisico */
 	bool get_disk_size(HANDLE hdisk)
 	{
@@ -55433,7 +54672,7 @@ bool get_partition_info(char drive_letter)
 			{
 				if (flagverbose)
 					myprintf("47917: VSS mode on\n");
-				
+
 				if (!open_vss(m_drive_letter))
 				{
 					myprintf("47923! VSS failed, back to direct access\n");
@@ -55622,7 +54861,7 @@ bool get_partition_info(char drive_letter)
 			myprintf("42343: raw close done\n");
 	}
 
-	
+
 	/* ritorna dimensione totale in bytes */
 	ULONGLONG getsize() const
 	{
@@ -55785,7 +55024,7 @@ class Jidac
 #ifdef _WIN32
 	franzimager			 imager;
 
-#endif																	
+#endif
   private:
 #ifdef _WIN32
 	string				 imager_image;
@@ -55797,12 +55036,12 @@ class Jidac
 	std::vector<uint8_t> imager_themetafile;
 	std::vector<uint8_t> imager_excludedarray;
 	std::vector<uint8_t> imager_zeroedarray;
-	
+
 	franzraw			 rawimager;
 #endif
 // Paranoid verification methods
     std::set<std::string> extractBasePaths();
-    
+
 	char	lettera	   = 0;
 	int64_t total_size = 0;
 	int		numerodrive= -1;
@@ -56331,13 +55570,13 @@ class Jidac
 #ifdef ZPAQFULL ///NOSFTPSTART
 #ifdef SFTP
 	int				monitor();
-	void perform_single_scan(const std::wstring& volume, 
-                                 const std::wstring& program, 
-                                 const std::wstring& base_args, 
-                                 const std::wstring& monitor_folder, 
+	void perform_single_scan(const std::wstring& volume,
+                                 const std::wstring& program,
+                                 const std::wstring& base_args,
+                                 const std::wstring& monitor_folder,
                                  std::vector<unsigned char>* master_buffer_ptr,
                                  int scan_count);
-								 
+
 #endif
 #endif ///NOSFTPEND
 #endif
@@ -56346,7 +55585,7 @@ class Jidac
 	int64_t scanFilesystemPaths(const std::set<std::string>& basePaths, DTMap& edt, struct ParanoidStats& stats);
     void comparebijective(const DTMap& edt, struct ParanoidStats& stats);
     int paranoidverify();
-	
+
 	int rebuildbackupindex();
 
 };
@@ -56588,10 +55827,10 @@ bool apri(const char *path)
 		m_file = fopen(path, "rb");
 		if (!m_file)
 			return false;
-		
+
 		// Calculate real file size
 		FSEEK64(m_file, 0, SEEK_END);
-		
+
 #ifdef _WIN32
 		total_raw_size = _ftelli64(m_file);
 #else
@@ -56600,14 +55839,14 @@ bool apri(const char *path)
 		FSEEK64(m_file, 0, SEEK_SET);
 		if (flagdebug)
 			myprintf("[DEBUG apri] File opened, real size=%s bytes (%s)\n", migliaia(total_raw_size), tohuman(total_raw_size));
-		
+
 		return true;
 	}
 	else if (m_type == TIPOZPAQSTDOUT)
 	{
 		if (!m_jidac)
 			return false;
-		
+
 		printbar('-');
 		myprintf("Cerco lettera %c\n", lettera);
 
@@ -56654,7 +55893,7 @@ bool sposta(int64_t offset)
 {
 	if (flagdebug3)
 		myprintf("[DEBUG sposta] Richiesto offset=%21s, current=%21s, type=%d\n", migliaia(offset), migliaia2(m_current_global_offset), m_type);
-	
+
 	if (m_type == TIPOFILE)
 	{
 		if (!m_file)
@@ -56662,7 +55901,7 @@ bool sposta(int64_t offset)
 			myprintf("45791! ERROR: m_file is NULL\n");
 			return false;
 		}
-		
+
 		if (FSEEK64(m_file, offset, SEEK_SET) == 0)
 		{
 			m_current_global_offset = offset;
@@ -56680,7 +55919,7 @@ bool sposta(int64_t offset)
 	{
 		int64_t delta = offset - m_current_global_offset;
 		myprintf("[DEBUG sposta] ZPAQ: delta=%lld\n", (long long)delta);
-		
+
 		if (delta < 0)
 		{
 			myprintf("[DEBUG sposta] ERROR: backward seek not supported (delta=%lld)\n", (long long)delta);
@@ -56702,7 +55941,7 @@ bool sposta(int64_t offset)
 			size_t read = leggi(m_seek_buffer, to_read);
 			if (read == 0)
 			{
-				myprintf("[DEBUG sposta] ERROR: read returned 0, skipped %lld of %lld\n", 
+				myprintf("[DEBUG sposta] ERROR: read returned 0, skipped %lld of %lld\n",
 					(long long)skipped_total, (long long)(offset - m_current_global_offset + skipped_total));
 				return false;
 			}
@@ -56727,7 +55966,7 @@ size_t leggi(void *buffer, size_t size)
 			myprintf("45856! ERROR: m_file is (leggi) NULL\n");
 			return 0;
 		}
-		
+
 		// Verifica che non stiamo leggendo oltre la fine del file
 #ifdef _WIN32
 		int64_t current_pos = _ftelli64(m_file);
@@ -56736,14 +55975,14 @@ size_t leggi(void *buffer, size_t size)
 #endif
 
 		int64_t bytes_remaining = total_raw_size - current_pos;
-		
+
 		if (bytes_remaining <= 0)
 		{
 			if (flagdebug2)
 				myprintf("[DEBUG leggi] EOF reached at offset %s\n", migliaia(current_pos));
 			return 0;
 		}
-		
+
 		// Limit reading to available bytes
 		size_t can_read = size;
 		if ((int64_t)can_read > bytes_remaining)
@@ -56753,21 +55992,21 @@ size_t leggi(void *buffer, size_t size)
 			myprintf("[DEBUG leggi] Near EOF: requested=%s, available=%s, will_read=%s\n",
 				migliaia(size), migliaia2(bytes_remaining),migliaia3(can_read));
 		}
-		
+
 		size_t r = fread(buffer, 1, can_read, m_file);
 		m_current_global_offset += r;
-		
+
 		// Se abbiamo letto meno di quanto richiesto, riempi con zeri
 		if (r < size)
 		{
 			if (flagdebug)
 				myprintf("[DEBUG leggi] Short read: requested=%s, read=%s, padding %s bytes with zeros\n",
-				migliaia(size), migliaia2(r), 
+				migliaia(size), migliaia2(r),
 				migliaia3((size - r)));
 			memset((char*)buffer + r, 0, size - r);
 			return size; // Ritorna la dimensione richiesta per mantenere l'allineamento
 		}
-		
+
 		return r;
 	}
 	else if (m_type == TIPOZPAQSTDOUT)
@@ -59626,10 +58865,10 @@ OutputArchive::OutputArchive(string i_thearchive, const char *filename, const ch
 							 const char *salt_, int64_t off_) :  ptr(0)
 {
 	assert(filename);
-	buf = (char*)franz_malloc(BUFSIZE); 
-    
+	buf = (char*)franz_malloc(BUFSIZE);
+
     // Basic allocation error handling
-    if (buf == NULL) 
+    if (buf == NULL)
 	{
         error("Cannot malloc in outputarchive\n");
 		seppuku();
@@ -59844,7 +59083,7 @@ OutputArchive::OutputArchive(string i_thearchive, const char *filename, const ch
 				myprintf("******** FRANZENFILE NULL\n");
 				myprintf("******** FRANZENFILE NULL\n");
 				seppuku();
-				
+
 			}
 */
 			if (!salt_)
@@ -60652,7 +59891,7 @@ uint64_t Jidac::hashastringa(const string &i_string)
 }
 #ifdef _WIN32
 
-void changeKey(DTMap& m, const std::string& oldKey, const std::string& newKey) 
+void changeKey(DTMap& m, const std::string& oldKey, const std::string& newKey)
 {
     DTMap::iterator it = m.find(oldKey);  // iteratore esplicito
     if (it != m.end()) {
@@ -60777,7 +60016,7 @@ void Jidac::jidacreset()
 // Paranoid verification methods
 	//extractBasePaths.clear();
 
-    
+
 	lettera	   = 0;
 	total_size = 0;
 	numerodrive= -1;
@@ -60896,7 +60135,7 @@ void Array<T>::resize(size_t sz, int ex) {
   if (nb<=128 || (nb-128)/sizeof(T)!=n) unzerror("Array too big");
   data=(T*)calloc(nb, 1);
   g_allocatedram+=nb;
-  
+
   if (!data) unzerror("out of memory");
   // Align array on a 64 byte address.
   // This optimization is NOT required by the ZPAQ standard.
@@ -62684,11 +61923,11 @@ public:
   // Return number of bytes read
   uint64_t tell() {return offset;}
   int64_t getfilesize() {return filesize;}
-  ~unzInputFile() 
+  ~unzInputFile()
   {
     close();
   }
-  void close() 
+  void close()
   {
     if (f) {
       fclose(f);
@@ -62715,7 +61954,7 @@ void unzInputFile::open(const char* filename, const char* key) {
     stretchKey(stretched_key, sha256.result(), salt);
     aes=new unzAES_CTR(stretched_key, 32, salt);
 	g_allocatedram+=sizeof(unzAES_CTR);
-		
+
     if (!aes) unzerror("out of memory");
     aes->encrypt(unzBuf, end, 0);
   }
@@ -63974,7 +63213,6 @@ string help_versum(bool i_usage, bool i_example)
 		color_yellow();
 		moreprint("Educational purpose zfs-based backup of tank/d with various test on Win (-ssd for multithread)");
 		color_restore();
-		/// moreprint("Destroy the snapshot fc (if any)     zfs destroy  tank/d@fc");
 		scrivi_esempio("Take the snapshot fc of tank/d", "zfs snapshot tank/d@fc");
 		scrivi_esempio("Get the hash list with xxhash64", "sum /tank/d/.zfs/snapshot/fc -forcezfs -ssd -xxhash -noeta -silent -out /tmp/hash_xx64.txt");
 		scrivi_esempio("Create hashdeep.txt w/md5", "hashdeep -c md5 -r /tank/d/.zfs/snapshot/fc >/tmp/hashdeep.txt");
@@ -64039,7 +63277,6 @@ string help_franzencommand(bool i_usage, bool i_example)
         scrivi_riga("  -all", "  Show all blocks + nonce uniqueness check");
         scrivi_riga("  -n N", "  With -all: show first/last N blocks instead of all");
         scrivi_riga("  -memzero", "  Fill with zero sensitive data ASAP (slower)");
-///        scrivi_riga("  (no -franzen)", "  Show only public header (no password required)");
     }
     if (i_usage && i_example)
         scrivi_examples();
@@ -64052,7 +63289,6 @@ string help_franzencommand(bool i_usage, bool i_example)
         scrivi_esempio("Multi-threaded encrypt", "franzen archive.zpaq -franzen mypassword -ssd -t 8");
         scrivi_esempio("Test decryption (no output)", "franzen test archive.zpaq.franzen -franzen mypassword");
         scrivi_esempio("Check password", "franzen ispasswordok archive.zpaq.franzen -franzen mypassword");
-///        scrivi_esempio("Dump header only (no pwd)", "franzen dump archive.zpaq.franzen");
         scrivi_esempio("Dump with password analysis", "franzen dump archive.zpaq.franzen -franzen mypassword");
         scrivi_esempio("Dump + nonce uniqueness", "franzen dump archive.zpaq.franzen -franzen mypassword -all");
         scrivi_esempio("Dump first/last 20 blocks", "franzen dump archive.zpaq.franzen -franzen mypassword -all -n 20");
@@ -64871,7 +64107,7 @@ string help_pakka(bool i_usage, bool i_example)
 		scrivi_riga("-until X", "Choose version X");
 		scrivi_riga("-out", "thefile  Write output on thefile");
 		scrivi_riga("-catpaqmode", "Generate catpaq output");
-		
+
 	}
 	if (i_usage && i_example)
 		scrivi_examples();
@@ -65342,7 +64578,7 @@ string help_monitor(bool i_usage, bool i_example)
 	if (i_usage)
 	{
         scrivi_riga("CMD monitor", "Analyze NTFS USN Journal to detect background changes");
-        scrivi_riga("-n <sec>", "Set polling interval in seconds (default: 10)"); 
+        scrivi_riga("-n <sec>", "Set polling interval in seconds (default: 10)");
         scrivi_riga("NOTE:", "Audit mode only. Detects changes but does NOT archive them (yet)");
 	}
 	if (i_usage && i_example)
@@ -66732,7 +65968,7 @@ void Jidac::load_help_map()
 	help_map.insert(std::pair<string, HelpInfo>("trim", HelpInfo("Admin    ", help_trim, 7)));
 	help_map.insert(std::pair<string, HelpInfo>("franzen", HelpInfo("Admin    ", help_franzencommand, 7)));
 
-	
+
 #ifdef ZPAQFULL /// NOSFTPSTART
 #if defined(_WIN32)
 	help_map.insert(std::pair<string, HelpInfo>("monitor", HelpInfo("Admin    ", help_monitor, 7)));
@@ -67463,17 +66699,17 @@ bool Jidac::cli_filesandcommand(const string& i_opt,string i_string,char i_comma
 string get_final_part(string i_filename)
 {
 	string part0=subpart(i_filename, 0);
-	
+
 	int parts=0;
-	if (part0!=i_filename) 
+	if (part0!=i_filename)
 	{  // multi-part?
-		for (int i=1;; ++i) 
+		for (int i=1;; ++i)
 		{
 			string partname=subpart(i_filename, i);
-			if (partname==part0) 
+			if (partname==part0)
 				error("48805: too many archive parts");
 			FP fp=myfopen(partname.c_str(), RB);
-			if (fp==FPNULL) 
+			if (fp==FPNULL)
 				break;
 			++parts;
 			if (fp!=NULL)
@@ -67481,11 +66717,11 @@ string get_final_part(string i_filename)
 		}
 	}
 	return subpart(i_filename, parts);
-	
+
 }
 bool Jidac::cli_getkey	(const string& i_opt,string i_string,int argc,const char** argv, int* i_i,string* o_plain,char**	o_password,char*	o_password_string)
 {
-		
+
 	if (flagonlyupload)
 		return false;
 	if ((argv==NULL) || (i_i==NULL) || (o_plain==NULL) || (o_password_string==NULL))
@@ -67512,7 +66748,7 @@ bool Jidac::cli_getkey	(const string& i_opt,string i_string,int argc,const char*
 						sha256.put(g_keyfilehash[i]);
 						(*o_plain)+=g_keyfilehash[i];
 					}
-					
+
 				memcpy(o_password_string, sha256.result(), 32);
 				(*o_password)=o_password_string;
 			}
@@ -67532,7 +66768,7 @@ bool Jidac::cli_getkey	(const string& i_opt,string i_string,int argc,const char*
 							myprintf("\n");
 							myprintf("51852! You must enter the exact password TWICE\n");
 							seppuku();
-						}						
+						}
 					}
 				}
 				libzpaq::SHA256 sha256;
@@ -67773,9 +67009,9 @@ bool Jidac::cli_getdate(string& i_opt,string i_string,int argc,const char** argv
 				int64_t newdate=encodestringdate(mytimestamp,true);
 				if (newdate!=-1)
 				{
-					
+
 					(*o_date)=newdate;
-					
+
 					if (!do_not_print_headers())
 						if (flagdebug)
 						{
@@ -67784,7 +67020,7 @@ bool Jidac::cli_getdate(string& i_opt,string i_string,int argc,const char** argv
 							myprintf("00532: franz:%-21s   <<%s>>\n",i_string.c_str(),dateToString(true,newdate).c_str());
 						}
 					i_opt="skipme";
-					
+
 				}
 			}
 	return false;
@@ -67836,7 +67072,7 @@ bool Jidac::cli_onlystring(const string& i_opt,string i_string,string i_alias,st
 				g_keyfile=o_thefile;
 			}
 ///			myprintf("********************************************** %s\n",g_keyfilehash.c_str());
-			
+
 		}
 		return true;
 	}
@@ -67855,43 +67091,43 @@ static std::string expandenvironmentvariables(const std::string& i_path)
     // Verifica veloce: se non contiene % non c'è nulla da espandere
     if (i_path.find('%') == std::string::npos)
         return i_path;
-    
+
     // Convert to wide string for Windows APIs
     std::wstring wpath = utow(i_path.c_str());
-    
+
     // First call to get the required length
     DWORD requiredSize = ExpandEnvironmentStringsW(wpath.c_str(), nullptr, 0);
-    
+
     if (requiredSize == 0)
     {
         // Error: returns original string
         return i_path;
     }
-    
+
     // Allocate buffer and expand
     std::vector<wchar_t> buffer(requiredSize);
     DWORD result = ExpandEnvironmentStringsW(wpath.c_str(), buffer.data(), requiredSize);
-    
+
     if (result == 0 || result > requiredSize)
     {
         // Error: returns original string
         return i_path;
     }
-    
+
     // Convert result to UTF-8
     std::string expanded = wtou(buffer.data());
-    
+
     // Optional: normalize separators to /
     for (char& c : expanded)
     {
         if (c == '\\')
             c = '/';
     }
-	
+
 	printf("k1 |%s|\n",expanded.c_str());
 	expanded+='/';
 	printf("k2 |%s|\n",expanded.c_str());
-	
+
     return expanded;
 }
 
@@ -67901,20 +67137,20 @@ static std::wstring expandenvironmentvariablesw(const std::wstring& i_wpath)
     // Verifica veloce: se non contiene % non c'è nulla da espandere
     if (i_wpath.find(L'%') == std::wstring::npos)
         return i_wpath;
-    
+
     // First call to get the required length
     DWORD requiredSize = ExpandEnvironmentStringsW(i_wpath.c_str(), nullptr, 0);
-    
+
     if (requiredSize == 0)
         return i_wpath;
-    
+
     // Allocate buffer and expand
     std::vector<wchar_t> buffer(requiredSize);
     DWORD result = ExpandEnvironmentStringsW(i_wpath.c_str(), buffer.data(), requiredSize);
-    
+
     if (result == 0 || result > requiredSize)
         return i_wpath;
-    
+
     return std::wstring(buffer.data());
 }
 */
@@ -67922,7 +67158,7 @@ static std::wstring expandenvironmentvariablesw(const std::wstring& i_wpath)
 bool readfiletoarray(string i_filename, vector<string>& o_lines)
 {
     o_lines.clear();
-    
+
     if (!fileexists(i_filename))
     {
         myprintf("00535! cannot find %Z\n", i_filename.c_str());
@@ -67947,12 +67183,12 @@ bool readfiletoarray(string i_filename, vector<string>& o_lines)
 #endif
 
     std::vector<char> buffer_mem(LINE_BUFSIZE);
-    
+
     char* line = buffer_mem.data();
 #endif
 
     // Safety check (per placare compilatori molto pedanti)
-    if (line == NULL) 
+    if (line == NULL)
 	{
         fclose(myfile);
         return false;
@@ -67964,11 +67200,11 @@ bool readfiletoarray(string i_filename, vector<string>& o_lines)
         linea = line;
         if (flagdebug3)
             myprintf("00539: line %s\n", linea.c_str());
-            
+
         // Remove Line Feed (LF) and Carriage Return (CR)
         myreplaceall(linea, std::string(1, 10), "");
         myreplaceall(linea, std::string(1, 13), "");
-        
+
         o_lines.push_back(linea);
     }
 
@@ -67987,10 +67223,10 @@ bool isbigendian(void)
 }
 
 
-void replacetabs(std::string &str) 
+void replacetabs(std::string &str)
 {
     std::string::size_type pos = 0;
-    while ((pos=str.find("\\t", pos))!=std::string::npos) 
+    while ((pos=str.find("\\t", pos))!=std::string::npos)
         str.replace(pos++,2,"\t");
 }
 
@@ -68125,7 +67361,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 	g_programflags.add(&flagimage,			"-image",				"Drive image",										"");
 
 #ifdef _WIN32
-///	g_programflags.add(&flagdd,				"-dd",					"dd",												"");
 	g_programflags.add(&flagmonitoroff,		"-monitor",				"Turn off monitor",											"");
 	g_programflags.add(&flagfindzpaq,		"-findzpaq",			"Search .zpaq in every drive letter (USB device)",	"");
 	g_programflags.add(&flagfixcase,		"-fixcase",				"Fix CAse",											"");
@@ -68140,7 +67375,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 	g_programflags.add(&flaghw,				"-hw",					"Use HW SHA1",										"a;x;");
 	g_programflags.add(&flagnojit,			"-nojit",				"Do not use JIT",									"");
 	g_programflags.add(&flagturbo,			"-turbo",				"Use newer (faster) algo",							"");
-	
+
 
 	for (int i=0; i<argc; i++)
 	{
@@ -68149,14 +67384,14 @@ int Jidac::loadparameters(int argc, const char** argv)
 		if (g_programflags.exists(parametro))
 			g_programflags.settrue(parametro);
 	}
-	
+
 	if (flagdebug3)
 		flagdebug2=true;
 	if (flagdebug2)
 		flagdebug=true;
 	if (flagdebug)
 		flagverbose=true;
-	
+
 	if (flagdebug3)
 		g_programflags.debugga();
 
@@ -68298,7 +67533,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 	g_flagcreating		=false;
 	g_testifselected	=false;
 	flagrange			=false;
-	
+
 	bool flagforzarobocopy=false;
 
 	if (argc>1)
@@ -68319,7 +67554,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 	const char *no_color=getenv("NO_COLOR");
 	if ((no_color!=NULL) && (no_color[0]!='\0'))
 		flagnocolor=true;
-	
+
 
 #ifdef _WIN32
 	color_save();
@@ -68358,8 +67593,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 	const char *linkName = "/proc/self/exe";
 	if (readlink(linkName, buf, bufSize - 1)>0)
 		fullzpaqexename=buf;
-	///else
-		///myprintf("00542: something wrong!");
 #endif // corresponds to #ifdef (#ifdef __linux__)
 
 #ifdef SOLARIS
@@ -68404,7 +67637,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 #endif // corresponds to #ifdef (#ifdef unix)
 
 	if (flagdebug)
-	{	
+	{
 		if (isbigendian())
 			myprintf("00545: This seems a BIG ENDIAN CPU    (aka:'strange')\n");
 		else
@@ -68430,12 +67663,12 @@ int Jidac::loadparameters(int argc, const char** argv)
 	if (flagdebug)
 		myprintf("52820: This seems amd64/i386, turning OFF flagnojit\n");
 	flagnojit=false;
-	
+
 #ifdef unix
 	if (flagdebug)
 		myprintf("52588: UNIX: checking OS support for JIT\n");
     void* p=(void*)mmap(0,8192, PROT_READ|PROT_WRITE|PROT_EXEC,MAP_PRIVATE|MAP_ANON, -1, 0);
-	if (p==MAP_FAILED) 
+	if (p==MAP_FAILED)
 	{
 		if (flagverbose)
 			myprintf("52594$ OS unsupported, turning ON flagnojit\n");
@@ -68469,7 +67702,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 	string textnojit="-JIT,";
 	if (flagnojit)
 		textnojit="-NOJIT,";
-		
+
 #ifdef ESX
 	textnojit="-ESX,";
 #endif // corresponds to #ifdef (#ifdef ESX)
@@ -68493,15 +67726,15 @@ int Jidac::loadparameters(int argc, const char** argv)
 #ifdef _WIN64
 	if (wehaveresources())
 		textnojit+=",RES";
-		
+
 #endif
 #endif // corresponds to #ifdef (#ifdef SFTP)
 #endif ///NOSFTPEND
 
 #ifndef ZPAQFULL
-		snprintf(buffer,sizeof(buffer),"zpaqfranz-open v" ZPAQ_VERSION "%s" TEXT_BIG TEXT_ALIGN TEXT_HWPRE TEXT_HWBLAKE3 TEXT_HWSHA1 TEXT_HWSHA2 TEXT_IPV ZSFX_VERSION ZPAQ_DATE,textnojit.c_str()); 
+		snprintf(buffer,sizeof(buffer),"zpaqfranz-open v" ZPAQ_VERSION "%s" TEXT_BIG TEXT_ALIGN TEXT_HWPRE TEXT_HWBLAKE3 TEXT_HWSHA1 TEXT_HWSHA2 TEXT_IPV ZSFX_VERSION ZPAQ_DATE,textnojit.c_str());
 #else
-		snprintf(buffer,sizeof(buffer),"zpaqfranz v" ZPAQ_VERSION "%s" TEXT_BIG TEXT_ALIGN TEXT_HWPRE TEXT_HWBLAKE3 TEXT_HWSHA1 TEXT_HWSHA2 TEXT_IPV ZSFX_VERSION ZPAQ_DATE,textnojit.c_str()); 
+		snprintf(buffer,sizeof(buffer),"zpaqfranz v" ZPAQ_VERSION "%s" TEXT_BIG TEXT_ALIGN TEXT_HWPRE TEXT_HWBLAKE3 TEXT_HWSHA1 TEXT_HWSHA2 TEXT_IPV ZSFX_VERSION ZPAQ_DATE,textnojit.c_str());
 #endif
 			color_green();
 			moreprint(buffer);
@@ -68511,7 +67744,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 	if (flagdebug)
 		myprintf("00547: FULL exename <<%s>>\n",fullzpaqexename.c_str());
 
-	
+
 
 	for (int i=1;i<argc;i++)
 		if  (stringcomparei(argv[i],"-nomore"))
@@ -68519,24 +67752,24 @@ int Jidac::loadparameters(int argc, const char** argv)
 			flagnomore=true;
 			break;
 		}
-		
+
 #ifdef _WIN64
 	if (flagnomore)
 	{
 		// Enable the use of large pages
 		HANDLE hProcess=GetCurrentProcess();
 		SIZE_T largePageMinimum=GetLargePageMinimum();
-		if (largePageMinimum>0) 
+		if (largePageMinimum>0)
 		{
 			BOOL success=SetProcessWorkingSetSize(hProcess,largePageMinimum,largePageMinimum);
-			if (success) 
+			if (success)
 				myprintf("52927: Large page OK %s\n",migliaia(largePageMinimum));
-			 else 
+			 else
 				myprintf("52929! Large page KAPUTT %s\n",migliaia(largePageMinimum));
-		} 
-		else 
+		}
+		else
 			myprintf("52930$ Large page support not available on this system\n");
-	}	
+	}
 #endif // corresponds to #ifdef (#ifdef _WIN64)
 
 /// check some magic to show help in heuristic way
@@ -68604,7 +67837,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 					usageall("");
 				else
 				{
-					///myprintf("$$$$$$$$$$$$$ comando %s\n",comando.c_str());
 					usageall(comando);
 				}
 				seppuku();
@@ -68620,7 +67852,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 				examples(comando);
 				seppuku();
 			}
-			
+
 	}
   // Init archive state
 	ht.resize(1);  // element 0 not used
@@ -68726,7 +67958,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 		else if (cli_filesandcommand(opt,"rd",			'7',argc,argv,&i));
 		else if (cli_filesandcommand(opt,"drive",		'G',argc,argv,&i));
 		else if (cli_filesandcommand(opt,"drives",		'G',argc,argv,&i));
-		
+
 #endif // corresponds to #if (#if defined(_WIN32))
 	else
 		if ((
@@ -68784,7 +68016,6 @@ int Jidac::loadparameters(int argc, const char** argv)
         && i<argc-1 && argv[i+1][0]!='-' && command==0)
 		{
 			command=opt[0];
-		///myprintf("00551: comando %c\n",command);
 			if (opt=="append")
 			{
 				g_optional="ransomware";
@@ -68800,7 +68031,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 				command='q';
 			if (opt=="pp")
 				command='P';
-		
+
 			if ((opt=="g") || (opt=="q") || (opt=="g"))
 				flagvss=true;
 
@@ -68869,7 +68100,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 				g_optional="dirsize";
 			}
 			archive=argv[++i];  // append ".zpaq" to archive if no extension
-			
+
 			if (opt=="backup")
 			{
 				string percorso=extractfilepath(archive);
@@ -68883,7 +68114,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 			if ((command=='x') || (command=='t'))
 			{
 				const char* star	=strrchr(argv[i], '*');
-				///const char* qmark	=NULL; //conflict with multipart strrchr(argv[i], '?');
 				if ((star))
 				{
 					fullarchive=archive;
@@ -68898,7 +68128,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 				files.push_back(argv[i]);
 			--i;
 
-			
+
 ///zpaqfranz a z:\foo
 ///if file "./foo" or folder "./foo" does esists, create or update "z:\foo.zpaq" with the "./foo"
 			if ((opt=="a") || (opt=="add"))
@@ -68958,7 +68188,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 #endif // corresponds to #ifdef (#ifdef _WIN32)
 			if (flagforzarobocopy)
 			{
-				///myprintf("00556: i=%d  argc %d\n",(int)i,argc);
 				if (i==1)
 					i--;
 			}
@@ -69007,7 +68236,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 		else if (cli_getstring	(opt,"-p",			false,	"-p",							argc,argv,&i,"",				&g_mysql_password));
 		else if (cli_getint		(opt,"-threads",	false,	"-t",							argc,argv,&i,howmanythreads,	&howmanythreads));
 		else if (cli_getint		(opt,"-summary",	true, 	"",								argc,argv,&i,1,					&summary));
-		///else if (cli_getint		(opt,"-red4",		false, 	"",								argc,argv,&i,-1,				&red4));
 		else if (cli_onlystring	(opt,"-snapshot",			"",				snapmark,		argc,argv,&i,					NULL));
 #ifdef unix
 		else if (cli_onlystring	(opt,"-dataset",			"",				g_dataset,		argc,argv,&i,					NULL));
@@ -69025,7 +68253,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 		else if (cli_onlystring	(opt,"-keyfile",			"",				g_keyfile,		argc,argv,&i,					NULL));
 		else if (cli_onlystring	(opt,"-errorlog",			"-error",		g_error,		argc,argv,&i,					NULL));
 		else if (cli_onlystring	(opt,"-ifexist",			"-ifexists",	g_ifexist,		argc,argv,&i,					NULL));
-		///else if (cli_onlystring	(opt,"-ismounted",			"",	g_ismounted,		argc,argv,&i,					NULL));
 		else if (cli_onlystring	(opt,"-script",				"",				g_script,		argc,argv,&i,					NULL));
 #ifdef ZPAQFULL ///NOSFTPSTART
 		else if (cli_onlystring	(opt,"-sfx",				"",				g_sfx,			argc,argv,&i,					&flagsfx));
@@ -69063,12 +68290,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 #endif ///NOSFTPEND
 		else if (cli_getarray	(opt,"-only",												argc,argv,&i,					&onlyfiles,		NULL));
 		else if (cli_getarray	(opt,"-always",												argc,argv,&i,					&alwaysfiles,	NULL));
-		///else if (cli_getarray	(opt,"-level0",												argc,argv,&i,					&level0,		NULL));
-		///else if (cli_getarray	(opt,"-level1",												argc,argv,&i,					&level1,		NULL));
-		///else if (cli_getarray	(opt,"-level2",												argc,argv,&i,					&level2,		NULL));
-		///else if (cli_getarray	(opt,"-level3",												argc,argv,&i,					&level3,		NULL));
-		///else if (cli_getarray	(opt,"-level4",												argc,argv,&i,					&level4,		NULL));
-		///else if (cli_getarray	(opt,"-level5",												argc,argv,&i,					&level5,		NULL));
 		else if (cli_getstring	(opt,"-range",		false,	"",								argc,argv,&i,"",				&myrange))
 		{
 			flagrange=true;
@@ -69104,8 +68325,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 		}
 		else if (cli_getkey		(opt,"-key",												argc,argv,&i,&plainpassword,	&g_password,		g_password_string))
 		{
-	///
-		///	myprintf("\n\n\n g_keyfile %s\n",g_keyfile.c_str());
 			if (flagdebug3)
 			{
 				myprintf("00558: Password        %s\n",	g_password);
@@ -69136,7 +68355,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 			{
 	// fix to (on windows) -to "z:\pippo pluto" going to a mess
 				string mytemp=mytrim(argv[i]);
-///				string fixedstring=windows_fixbackslash("-to",mytemp);
 				myreplaceall(mytemp,"\"","");
 				tofiles.push_back(mytemp);
 				if (!do_not_print_headers())
@@ -69276,7 +68494,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 		notfiles.push_back("*/@recycle/*");
 		notfiles.push_back("*/#recycle/*");
 		notfiles.push_back("*/#snapshot/*");
-		
+
 		notfiles.push_back("*/@ActiveBackup/*");
 		notfiles.push_back("*/@sharebin/*");
 		notfiles.push_back("*/@appconf/*");
@@ -69300,7 +68518,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 		notfiles.push_back("*/@tmp/*");
 		notfiles.push_back("*/@USBCopy/*");
 		notfiles.push_back("*/@userpreference/*");
-		
+
 	}
 	if (g_rangefrom>0)
 	{
@@ -69315,13 +68533,13 @@ int Jidac::loadparameters(int argc, const char** argv)
 	if (!method.empty())
 		if ((method[0]-48)>5)
 			myprintf("54209$ method >5 not different of method 5\n");
-	
+
 	myreplaceall(g_csvstring,"/","\\");
 	replacetabs(g_csvstring);
 
 	myreplaceall(g_csvhf,"/","\\");
 	replacetabs(g_csvhf);
-	
+
 #ifdef _WIN32
 	if (flagimage && flagstdin)
 	{
@@ -69469,7 +68687,7 @@ int Jidac::loadparameters(int argc, const char** argv)
 				g_sftp_key="";
 				myprintf("49049$ -ssh keyfile does not exists, but -password setted => falling back!\n");
 			}
-		}	
+		}
 #endif
 #endif ///NOSFTPEND
 
@@ -69527,7 +68745,6 @@ int Jidac::loadparameters(int argc, const char** argv)
 		flagutf				=false;
 		flagflat			=false;
 		flagparanoid		=false;
-		///flagpaq				=false;
 		flagcollision		=false;
 		flagnodedup			=false;
 		flagstdout			=false;
@@ -69590,7 +68807,7 @@ int Jidac::doCommand()
 			myprintf("00582! -chunk works only with a command\n");
 			return 2;
 		}
-		
+
 		if (!iswildcards(archive))
 		{
 			myprintf("00583! the archive must be multipart (with some ?) for -chunk\n");
@@ -69627,7 +68844,7 @@ int Jidac::doCommand()
 		else
 			myprintf("00587: -input file DOES NOT EXISTS! %s\n",g_input.c_str());
 	}
-	
+
 	if (flagexclude)
 	{
 		if (fileexists(g_exclude))
@@ -69681,7 +68898,7 @@ int Jidac::doCommand()
 		}
 	}
 
-	
+
 	theonlyone(command,archive);
 #ifdef ZPAQFULL ///NOSFTPSTART
 	if (flagslow)
@@ -69719,7 +68936,6 @@ int Jidac::doCommand()
 		g_franzotypelen=16;
 		for (MAPPATIPOHASH::iterator p=g_mappatipohash.begin(); p!=g_mappatipohash.end(); ++p)
 		{
-	///		myprintf("00588: iterator %d\n",p->first);
 			if (p->second.switchflag!=NULL)
 				if (*(p->second.switchflag))
 					if (p->second.flagiszpaq)
@@ -69896,8 +69112,6 @@ bool Jidac::getfoldersize(string i_folder, uint64_t &o_totalsize, uint32_t &o_to
 	}
 	scandir(true, mydestinationdir, i_folder);
 	eol();
-	/// printbar(' ',false);
-	/// myprintf("\r");
 	for (DTMap::iterator p= mydestinationdir.begin(); p != mydestinationdir.end(); ++p)
 	{
 		string fn= p->first;
@@ -70235,11 +69449,6 @@ bool Jidac::isselected(const char *filename, bool rn, int64_t i_size)
 	if (flagnomac)
 		if (ismac(filename))
 			return false;
-	/*
-		if (flagnosynology)
-			if (issynology(filename))
-				return false;
-	*/
 
 	if (flagnoqnap) // this is an "automagically" exclude for qnap's snapshots
 		if (
@@ -70502,7 +69711,6 @@ bool getFileAttributesFromMFT(HANDLE hVolume, DWORDLONG frn, NTFSFileInfo &fi, c
 	BYTE  outputBuffer[10240];
 	DWORD bytesReturned;
 
-	//  bool isDebugFile = (frn == 2814749767436488) || (frn == 5629499534540560);
 	bool isDebugFile= false;
 	if (isDebugFile)
 	{
@@ -70519,7 +69727,7 @@ bool getFileAttributesFromMFT(HANDLE hVolume, DWORDLONG frn, NTFSFileInfo &fi, c
 	}
 
 	if (bytesReturned < 12)
-	{ 
+	{
 		return false;
 	}
 
@@ -70527,13 +69735,13 @@ bool getFileAttributesFromMFT(HANDLE hVolume, DWORDLONG frn, NTFSFileInfo &fi, c
 	BYTE *mftRecord		 = outputBuffer + 12;
 
 	if (bytesReturned < (12 + mftRecordLength) || mftRecordLength < sizeof(FILE_RECORD_SEGMENT_HEADER))
-	{ 
+	{
 		return false;
 	}
 
 	PFILE_RECORD_SEGMENT_HEADER record= (PFILE_RECORD_SEGMENT_HEADER)mftRecord;
 	if (memcmp(record->MultiSectorHeader, "FILE", 4) != 0)
-	{ 
+	{
 		return false;
 	}
 
@@ -71160,7 +70368,7 @@ void Jidac::scandir(bool i_checkifselected, DTMap &i_edt, string filename, bool 
 			color_restore();
 			return;
 		}
-	
+
 		printbar('-');
 		myprintf("Scaning NTFS %s\n", filename.c_str());
 		printbar('-');
@@ -76027,12 +75235,7 @@ string filecopy(bool i_singlefile, bool i_append, const string &i_infile, const 
 	int64_t startcopy = mtime();
 	bool	hostampato= false;
 
-	/*
-		if (g_ioBUFSIZE==4096)
-			g_ioBUFSIZE=1048576;
-	*/
 	unsigned char *buffer= (unsigned char *)franz_malloc(g_ioBUFSIZE);
-	/// g_allocatedram+=g_ioBUFSIZE;
 
 	if (buffer == NULL)
 	{
@@ -76126,7 +75329,6 @@ string filecopy(bool i_singlefile, bool i_append, const string &i_infile, const 
 	{
 		if (!flagnoeta)
 		{
-			/// printbar('=');
 			myprintf("01064: XXH3 verify of %Z\n", filedefinitivo.c_str());
 		}
 		if (i_append)
@@ -76259,19 +75461,16 @@ int Jidac::trim()
 	if (!exists(arcname))
 	{
 		myprintf("01076! archive does not seems to exists %Z\n", arcname.c_str());
-		/// fclose(fp);
 		return 2;
 	}
 	if (header_pos + offset > archivesize)
 	{
 		myprintf("01078! invalid offset %s vs filesize %s\n", migliaia(header_pos + offset), migliaia2(archivesize));
-		/// fclose(fp);
 		return 2;
 	}
 	if (header_pos + offset == archivesize)
 	{
 		myprintf("01079: TRIM seems not necessary on size %s\n", migliaia(header_pos + offset));
-		/// fclose(fp);
 		return 1;
 	}
 	if (tofiles.size() == 1)
@@ -76432,7 +75631,7 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 		return false;
 	if (!fileexists(i_destination))
 		return false;
-	
+
 	FILE *source_file= freadopen(i_source.c_str());
 	if (source_file == NULL)
 	{
@@ -76445,11 +75644,11 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 		myprintf("01098: ERR <%s> kind %d\n", i_source.c_str(), err);
 		return false;
 	}
-	
+
 	fseeko(source_file, 0, SEEK_END);
 	int64_t sorgente_dimensione= ftello(source_file);
 	fseeko(source_file, 0, SEEK_SET);
-	
+
 	FILE *destination_file= freadopen(i_destination.c_str());
 	if (destination_file == NULL)
 	{
@@ -76463,11 +75662,11 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 		fclose(source_file);
 		return false;
 	}
-	
+
 	fseeko(destination_file, 0, SEEK_END);
 	int64_t destinazione_dimensione= ftello(destination_file);
 	fseeko(destination_file, 0, SEEK_SET);
-	
+
 	if (i_flagfast)
 	{
 		if (sorgente_dimensione < destinazione_dimensione)
@@ -76488,12 +75687,12 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 			return false;
 		}
 	}
-	
+
 	// Allocate buffers on the heap instead of the stack
 	size_t const blockSize= 65536;
 	unsigned char *buffersource= new(std::nothrow) unsigned char[blockSize];
 	unsigned char *bufferdestination= new(std::nothrow) unsigned char[blockSize];
-	
+
 	if (!buffersource || !bufferdestination)
 	{
 		myprintf("01097: Memory allocation failed\n");
@@ -76503,19 +75702,19 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 		fclose(destination_file);
 		return false;
 	}
-	
+
 	size_t readsource;
 	size_t readdestination;
 	bool result= true; // Assume success, change if it fails
-	
+
 	if ((uint64_t)sorgente_dimensione < blockSize * 4)
 		i_flagfast= false;
-	
+
 	if (i_flagfast)
 	{
 		if (flagdebug2)
 			myprintf("01101: Do a fast check!\n");
-		
+
 		// Check head
 		readsource= fread(buffersource, 1, blockSize, source_file);
 		readdestination= fread(bufferdestination, 1, blockSize, destination_file);
@@ -76533,7 +75732,7 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 			result= false;
 			goto cleanup;
 		}
-		
+
 		// Check body
 		fseeko(source_file, blockSize / 2, SEEK_SET);
 		fseeko(destination_file, blockSize / 2, SEEK_SET);
@@ -76553,7 +75752,7 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 			result= false;
 			goto cleanup;
 		}
-		
+
 		// Check tail
 		fseeko(source_file, destinazione_dimensione - blockSize, SEEK_SET);
 		fseeko(destination_file, destinazione_dimensione - blockSize, SEEK_SET);
@@ -76598,16 +75797,16 @@ bool isfilesequal(string i_source, string i_destination, bool i_flagfast= false)
 			}
 		}
 	}
-	
+
 cleanup:
 	delete[] buffersource;
 	delete[] bufferdestination;
 	fclose(source_file);
 	fclose(destination_file);
-	
+
 	if (flagdebug && result && i_flagfast)
 		myprintf("01110: fast files ==\n");
-	
+
 	return result;
 }
 int Jidac::mycopy()
@@ -76801,7 +76000,7 @@ ULONGLONG getwifesize()
 	return 0;
 }
 #else
-	
+
 ULONGLONG getwifesize()
 {
 	MEMORYSTATUSEX statex;
@@ -77137,20 +76336,6 @@ int64_t getramdisksize()
 	return internal_getramdisksize(); /// if you get an error HERE substitute with return 0;
 									  /// return 0;
 }
-/*
-int contabit(unsigned int u)
-{
-	unsigned int uCount;
-	uCount=u-((u >> 1) & 033333333333)-((u >> 2) & 011111111111);
-	return ((uCount + (uCount >> 3)) & 030707070707) % 63;
-}
-
-int bittino(int i)
-{
-	i=~i;
-	return contabit((i&(-i))-1);
-}
-*/
 
 #ifdef ZPAQFULL /// NOSFTPSTART
 
@@ -77219,44 +76404,10 @@ int Jidac::pause()
 		while ((!iskeypressed(thekey)))
 			sleep(1);
 
-		///	mygetch(false);
 	}
 	return 0;
 }
 
-/*
-bool debugwritebuffertofile(string i_filename, const void *i_buffer, size_t i_size)
-{
-	if (i_buffer == NULL)
-	{
-		myprintf("01143: i_buffer null\n");
-		seppuku();
-		return false;
-	}
-	if (i_size == 0)
-	{
-		myprintf("01144: i_size 0\n");
-		seppuku();
-		return false;
-	}
-	if (i_filename.size() < 1)
-	{
-		myprintf("01145: i_filenamesize <1\n");
-		seppuku();
-		return false;
-	}
-	FILE *myfile= fopen(i_filename.c_str(), "wb");
-	if (myfile == NULL)
-	{
-		myprintf("01146: cannot write on %s\n", i_filename.c_str());
-		seppuku();
-		return false;
-	}
-	fwrite(i_buffer, i_size, 1, myfile);
-	fclose(myfile);
-	return true;
-}
-*/
 int Jidac::autotest()
 {
 	myprintf("01147: Self-test for correct internal functioning\n"); // for non-Intel CPU
@@ -77285,7 +76436,6 @@ int Jidac::autotest()
 		if (menoenne >= 200000)
 			chunksize= menoenne;
 	uint8_t *buffer8bit= (uint8_t *)franz_malloc(chunksize * sizeof(uint8_t));
-	/// g_allocatedram+=chunksize*sizeof(uint8_t);
 	if (buffer8bit == 0)
 	{
 		myprintf("01148! GURU cannot alloc the buffer8bit\n");
@@ -77297,7 +76447,6 @@ int Jidac::autotest()
 #endif
 	// why this strange thing? Because we want to debug on BIG ENDIAN, of course
 	uint32_t *buffer32bit= (uint32_t *)franz_malloc(chunksize * sizeof(uint32_t));
-	/// g_allocatedram+=chunksize*sizeof(uint32_t);
 	if (buffer32bit == 0)
 	{
 		franz_free(buffer8bit);
@@ -77364,8 +76513,6 @@ int Jidac::autotest()
 	myblock.ok5= "E47599E7C7CEF609";
 	myblock.ok = "996D383079195E18";
 	myautocheck_map.insert(std::pair<string, hash_autocheck>("XXHASH64Y", myblock));
-	/// myblock.ok="EMPTY";
-	/// myautocheck_map.insert(std::pair<string, hash_autocheck>("WHYHASH",myblock));
 	if (flagdebug3)
 		myprintf("01152: end of insert\n");
 
@@ -77498,7 +76645,6 @@ int Jidac::autotest()
 
 			char *the_file;
 			the_file= (char *)franz_malloc(the_file_len);
-			/// g_allocatedram+=the_file_len;
 			if (the_file == NULL)
 			{
 				myprintf("01169! error in malloc\n");
@@ -77626,16 +76772,8 @@ int Jidac::autotest()
 			/// double-check for a fake gcc warning. Not my fault...
 			for (int j= chunksize - 8; j < chunksize; j++)
 			{
-				///				buffer8bit[j]=(uint8_t)77; /// You can get a fake compiler warning here
 				memset(&buffer8bit[j], 77, 1);
 			}
-			/*
-						char dummyname[200];
-						snprintf(dummyname,sizeof(dummyname),"z:\\parte_%i.bin",i);
-						string ttemp=dummyname;
-						if (debugwritebuffertofile(ttemp,buffer8bit,chunksize))
-							myprintf("01204: written on %s\n",ttemp.c_str());
-			*/
 			if (flagverbose)
 			{
 				printbar('=');
@@ -77676,8 +76814,6 @@ int Jidac::autotest()
 				sha256write2.write((const char *)buffer8bit, chunksize);
 				for (int64_t l= 0; l < chunksize; l++)
 					sha256put.put(*(buffer8bit + l));
-				/// for (int64_t l=0;l<chunksize;l++)
-				/// sha256write2.put(*(buffer8bit+l));
 				md5.add((const char *)buffer8bit, chunksize);
 				sha3.add((const char *)buffer8bit, chunksize);
 				NESSIEadd((const unsigned char *)buffer8bit, chunksize * 8, &hasher);
@@ -77736,15 +76872,12 @@ int Jidac::autotest()
 		sha256write2.write((const char *)buffer8bit, chunksize);
 		for (int64_t l= 0; l < chunksize; l++)
 			sha256put.put(*(buffer8bit + l));
-		/// for (int64_t l=0;l<chunksize;l++)
-		///	sha256write2.put(*(buffer8bit+l));
 		sha1.write((const char *)buffer8bit, chunksize);
 		for (int64_t l= 0; l < chunksize; l++)
 			sha1put.put(*(buffer8bit + l));
 		XXH64_update(state, buffer8bit, chunksize);
 		HighwayHashCatAppend((const uint8_t *)buffer8bit, chunksize, &highway64state);
 
-		//		mywyhash=wyhash(buffer8bit,chunksize,0,_wyp);
 	}
 	if (flagdebug)
 		myprintf("01210: myautocheck start\n");
@@ -78122,13 +77255,13 @@ int Jidac::autotest()
 				myzpaqexe.c_str(), outfolder.c_str(), outfolder.c_str(), acapo.c_str());
 
 		fprintf(batch, "\"%s\" pp \"%sthebigone.zpaq\" -out \"%sout22.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), outfolder.c_str(), acapo.c_str());
-		
+
 		string temp= excludetrailingbackslash(outfolder);
 
 
 		if (g_franzen != "")
 		{
-			
+
 			// 1. AES + FRANZEN (Doppia criptazione)
 			// Creazione archivio incrementale (out23 - out26)
 			fprintf(batch, "\"%s\" a \"%saesfranzen\" \"%sbigone01.big\" -key pippo -franzen \"%s\" -timestamp 20250101000000 -out \"%sout23.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), outfolder.c_str(), g_franzen.c_str(), outfolder.c_str(), acapo.c_str());
@@ -78155,11 +77288,11 @@ int Jidac::autotest()
 			fprintf(batch, "\"%s\" a \"%sonlyfranzen\" \"%sbigone01.big\"  -franzen \"%s\" -timestamp 20250104000000 -out \"%sout34.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), outfolder.c_str(), g_franzen.c_str(), outfolder.c_str(), acapo.c_str());
 
 			fprintf(batch, "\"%s\" pp \"%sonlyfranzen\" -franzen \"%s\" -verify -out \"%sout35.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), g_franzen.c_str(), outfolder.c_str(), acapo.c_str());
-			
+
 			fprintf(batch, "\"%s\" franzen test \"%sonlyfranzen.zpaq.franzen\" -franzen \"%s\" -out \"%sout36.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), g_franzen.c_str(), outfolder.c_str(), acapo.c_str());
-			
+
 			fprintf(batch, "\"%s\" franzen \"%sonlyfranzen.zpaq.franzen\" -to \"%sonlyfranzen_decoded.zpaq\" -franzen \"%s\" -out \"%sout37.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), outfolder.c_str(), g_franzen.c_str(), outfolder.c_str(), acapo.c_str());
-			
+
 			fprintf(batch, "\"%s\" work fc \"%sonlyfranzen.zpaq\" \"%sonlyfranzen_decoded.zpaq\" -out \"%sout38.txt\" %s", myzpaqexe.c_str(), outfolder.c_str(), outfolder.c_str(), outfolder.c_str(), acapo.c_str());
 
 
@@ -78187,7 +77320,7 @@ int Jidac::autotest()
 			fprintf(batch, "\"%s\" autotest -checktxt \"%s\" -franzen pluto%s", myzpaqexe.c_str(), temp.c_str(), acapo.c_str());
 		else
 			fprintf(batch, "\"%s\" autotest -checktxt \"%s\" %s", myzpaqexe.c_str(), temp.c_str(), acapo.c_str());
-		
+
 
 		if (flagdebug3)
 			myprintf("01224: before fclose\n");
@@ -78347,7 +77480,7 @@ void my_handler(int s)
 	fflush(stdout);
 	myprintf("\n\n");
 	myprintf("01250: CONTROL-C detected, try some housekeeping...\n");
-	
+
 #ifdef _WIN32
 	if (flagimage)
 		if (flagvss)
@@ -78593,26 +77726,26 @@ extern "C" {
     __declspec(dllexport) void Zpaq_SetOutputCallback(OutputCallback callback) {
         g_outputCallback = callback;
     }
-    
+
     // Set callback for stderr output
     __declspec(dllexport) void Zpaq_SetErrorCallback(OutputCallback callback) {
         g_errorCallback = callback;
     }
-    
+
     // Reset callbacks to default (console output)
     __declspec(dllexport) void Zpaq_ResetCallbacks() {
         g_outputCallback = nullptr;
         g_errorCallback = nullptr;
     }
-    
+
     __declspec(dllexport) int Zpaq_RunCommand(const char* lpCmdLine) {
-        
+
         // Parsing command line
         std::vector<std::string> args;
         std::string current_arg;
         bool in_quotes = false;
         const char* p = lpCmdLine;
-        
+
         // argv[0] = nome programma
         args.push_back("zpaqfranz.dll");
 
@@ -79044,8 +78177,6 @@ int Jidac::utf()
 	for (unsigned i= 0; i < files.size(); ++i)
 		scandir(true, edt, files[i].c_str());
 	eol();
-	/// printbar(' ');
-	/// myprintf("\r");
 	vector<string> mydirs;
 	unsigned int   howmanyfiles= 0;
 	unsigned int   longfiles   = 0;
@@ -79233,8 +78364,6 @@ int Jidac::utf()
 			for (unsigned ii= 0; ii < files.size(); ++ii)
 				scandir(true, edt, files[ii].c_str());
 			eol();
-			/// printbar(' ');
-			/// myprintf("\r");
 			myprintf("01333: Stage 3: fix filenames\n");
 			unsigned int filerenamed= 0;
 
@@ -79300,7 +78429,6 @@ int unz(const char *archive, const char *key)
 	int64_t			total_size= in.getfilesize();
 	unzDecompresser d;
 	d.setInput(&in);
-	////unzOutputFile out;   // streaming output
 	bool done		 = false; // stop reading?
 	bool firstSegment= true;
 	while (!done && d.findBlock())
@@ -79336,15 +78464,7 @@ int unz(const char *archive, const char *key)
 				if (index)
 					unzerror("streaming block in index");
 				streaming= true;
-				/// d.setOutput(&out);
-				/// d.setOutput();
 			}
-			/*
-			if (streaming)
-			myprintf("01337: Streaming\n");
-			if (journaling)
-			myprintf("01338: journaling\n");
-			*/
 			// Test journaling filename. The format must be
 			// jDC[YYYYMMDDHHMMSS][t][NNNNNNNNNN]
 			// where YYYYMMDDHHMMSS is the date, t is the type {c,d,h,i}, and
@@ -79384,10 +78504,7 @@ int unz(const char *archive, const char *key)
 			}
 			// Select streaming output file
 			if (streaming && (firstSegment || filename.s != ""))
-			{
-				/// std::string fn=filename.s;
-				///  out.open(fn.c_str());
-			}
+			{}
 			firstSegment= false;
 			// Decompress
 			fflush(stdout);
@@ -79402,13 +78519,10 @@ int unz(const char *archive, const char *key)
 			// Verify checksum
 			char checksum[21];
 			d.readSegmentEnd(checksum);
-			//		if (!noeta)
-			///		myprintf("");
 			if (checksum[0] == 1)
 			{
 				if (memcmp(checksum + 1, sha1.result(), 20))
 					unzerror("unzSHA1 mismatch");
-				//  else myprintf("01339: OK");
 			}
 			else if (checksum[0] == 0)
 				myprintf("01340: not checked");
@@ -79425,7 +78539,6 @@ int unz(const char *archive, const char *key)
 				}
 				csize= 0;
 			}
-			/// myprintf("=======================================\n");
 			// Get csize from c block
 			const size_t len= seg.s.size();
 			if (type == 'c')
@@ -79463,7 +78576,6 @@ int unz(const char *archive, const char *key)
 				if (index)
 					unzerror("d block in index");
 				bsize[id]= in.tell() + 1 - unzoffset; // compressed size
-				///     myprintf("    %u -> %1.0f ", bsize[id], double(seg.s.size()));
 				// Test frag size list at end. The format is f[id..id+n-1] fid n
 				// where fid may be id or 0. sizes must sum to the rest of block.
 				if (len < 8)
@@ -79473,9 +78585,6 @@ int unz(const char *archive, const char *key)
 				const uint32_t n  = unzget4(end - 4);	// number of frags
 				if (fid == 0)
 					fid= id;
-				/// if (!noeta)
-				/// myprintf(".");
-				/// myprintf("[%u..%u) ", fid, fid+n);
 				if (fid != id)
 					unzerror("missing ID");
 				if (n > (len - 8) / 4)
@@ -79483,9 +78592,6 @@ int unz(const char *archive, const char *key)
 				uint64_t sum= 0; // computed sum of frag sizes
 				for (unsigned j= 0; j < n; ++j)
 					sum+= unzget4(end - 12 - 4 * j);
-				// if (!noeta)
-				// myprintf("");	//myprintf("");
-				/// myprintf("= %1.0f ", double(sum));
 				if (sum + n * 4 + 8 != len)
 					unzerror("bad frag size list");
 				// Save frag hashes and sizes. For output, save data too.
@@ -79520,12 +78626,8 @@ int unz(const char *archive, const char *key)
 			{
 				if (len % 24 != 4)
 					unzerror("bad h block size");
-				/// uint32_t b=unzget4(seg.s.data());
-				/// b++;
-				/// myprintf("    [%u..%u) %u ", uint32_t(id), uint32_t(id+len/24), b);
 				// Compare hashes and sizes
 				const char *p= seg.s.data() + 4; // next hash, size
-												 ///			uint32_t sum=0;  // uncompressed size of all frags
 				for (uint32_t i= 0; i < len / 24; ++i)
 				{
 					if (index)
@@ -79540,10 +78642,8 @@ int unz(const char *archive, const char *key)
 						unzerror("no matching d block");
 					else if (frag[id + i].substr(0, 24) != std::string(p, p + 24))
 						unzerror("frag size or hash mismatch");
-					///				sum+=unzget4(p+20);
 					p+= 24;
 				}
-				/// myprintf("-> %u OK\n", sum);
 			}
 			// Test i blocks and save files to extract. Format is:
 			//   date filename 0 na attr[0..na) ni ptr[0..ni)   (to update)
@@ -79567,8 +78667,6 @@ int unz(const char *archive, const char *key)
 
 					while (p < end && *p)
 					{
-						///		if (*p>=0 && *p<32) myprintf("^%c", *p+64);
-						///     else putchar(*p);
 						fn+= *p++;
 					}
 					if (p == end)
@@ -79590,7 +78688,6 @@ int unz(const char *archive, const char *key)
 						p+= 4;
 						if (na > 65535)
 							unzerror("attr size > 65535");
-						/// myprintf("2 NA VALE %d\n",na);
 						if (na > FRANZOFFSETV1) // houston we have a FRANZBLOCK?
 						{
 							assert((na - 8) < FRANZOFFSETV3); // cannot work on too small buffer
@@ -79598,12 +78695,10 @@ int unz(const char *archive, const char *key)
 							for (unsigned int i= 0; i < (na - 8); i++)
 								f.sha1hex[i]= *(p + (na - (na - 8)) + i);
 							f.sha1hex[(na - 8)]= 0x0;
-							/// myprintf("---FRANZ OFFSET---\n");
 						}
 						else
 						{
 							f.sha1hex[0]= 0x0;
-							/// myprintf("---NORMAL OFFSET---\n");
 						}
 						for (unsigned i= 0; i < na; ++i)
 						{
@@ -79638,11 +78733,8 @@ int unz(const char *archive, const char *key)
 					/// UBUNTU
 					if (!isvirtual)
 						unzdt[fn]= f;
-					///			unzdt.insert(std::pair<string, unzDT>(fn,f));
 				}
 			}
-			/// myprintf("\r");
-			/// print_datetime();
 			myprintf("01344: Remaining %3s %% frags %12s (RAM used ~ %15s)\r", migliaia2(100 - (unzoffset * 100 / (total_size + 1))), migliaia(frag.size()), migliaia2(ramsize));
 		} // end while findFilename
 		unzoffset= in.tell();
@@ -79737,7 +78829,6 @@ int unz(const char *archive, const char *key)
 								}
 						char sha256result[32];
 						memcpy(sha256result, mysha256.result(), 32);
-						///	sha256result[43]='C';
 
 						for (int j= 0; j <= 31; j++)
 							snprintf(p->second.sha1decompressedhex + j * 2, FRANZOFFSETV3 - j * 2, "%02X", (unsigned char)sha256result[j]);
@@ -79885,7 +78976,6 @@ int unz(const char *archive, const char *key)
 	unsigned int status_filenotfound= 0;
 	unsigned int status_1			= 0;
 	unsigned int status_2			= 0;
-	/// int64_t rihashati=0;
 	g_dimensione= 0;
 
 	std::string hashfromfile;
@@ -79920,7 +79010,6 @@ int unz(const char *archive, const char *key)
 				for (MAPPATIPOHASH::iterator pp= g_mappatipohash.begin(); pp != g_mappatipohash.end(); ++pp)
 					if (myhashtype == pp->second.hashname)
 					{
-						///						myprintf("01352: Faccio test 1 %s\n",pp->second.hashname.c_str());
 						a= pp;
 						break;
 					}
@@ -80023,7 +79112,7 @@ int unz(const char *archive, const char *key)
 	}
 	return 0;
 }
-			
+
 /// LICENSE_END.3
 
 ///
@@ -80051,7 +79140,6 @@ const uint32_t zero_block_crc32[54]=
 		0xD7978EEB, 0x7EE8CDCD, 0xE20EEA22, 0x75660AAC, 0xA738EA1C, 0x8D89877E};
 uint32_t crc32ofzeroblock(uint64_t i_size)
 {
-	///	assert(i_size<9.007.199.254.740.992); //8D89877E 2^53 9.007.199.254.740.992
 	if (i_size == 0)
 		return 0;
 	uint32_t	 mycrc= 0;
@@ -80077,7 +79165,6 @@ uint32_t crc32zeros(int64_t i_size)
 /// check for freespace and (optionally) hash check
 int Jidac::consolidate(string i_archive)
 {
-	///	assert(i_archive);
 	myprintf("01373: *** Merge (consolidate) ***\n");
 	vector<string>	chunk_name;
 	vector<int64_t> chunk_size;
@@ -80230,7 +79317,6 @@ int Jidac::consolidate(string i_archive)
 
 		string hashreloaded= dummy.filehash(0, outfile, false, startverify, total_size);
 
-		/// string hashreloaded=xxhash_calc_file(outfile.c_str(),false,dummycrc32,startverify,total_size,io_lavorati,thefilesize);
 		myprintf("01395: Expected   XXH3 hash of the output file %s\n", risultato);
 		myprintf("01396: Calculated XXH3 hash of the output file %s\n", hashreloaded.c_str());
 		if (hashreloaded != risultato)
@@ -80505,13 +79591,6 @@ void *thread_worker(void *arg)
 {
 	ThreadData *data= (ThreadData *)arg;
 	// Calculate the total work for this thread
-	/*
-	uint64_t dalavorare = 0;
-
-	for (int j = data->start_index; j < data->end_index; j++) {
-		dalavorare += (*data->blocks)[j].crc32size;
-	}
-	*/
 	// Group blocks by filename
 	std::map<std::string, std::vector<int> > file_groups;
 
@@ -80607,7 +79686,6 @@ int Jidac::test()
 		if (p->second.date && p->first != "")
 		{
 			const string fn= rename(p->first);
-			///			myprintf("--------------------> %s\n",fn.c_str());
 			const bool isdir= p->first[p->first.size() - 1] == '/';
 			if (isdir) // update directories later
 				p->second.data= 0;
@@ -80618,7 +79696,6 @@ int Jidac::test()
 				for (unsigned i= 0; p->second.data >= 0 && i < p->second.ptr.size(); ++i)
 				{
 					unsigned j= p->second.ptr[i]; // fragment index
-					/// myprintf("01404: Fragment index %lld\n",j);
 					if (j == 0 || j >= ht.size() || ht[j].usize < -1)
 					{
 						fflush(stdout);
@@ -80653,7 +79730,6 @@ int Jidac::test()
 					if (block[lo].files.size() == 0 || block[lo].files.back() != p)
 					{
 						block[lo].files.push_back(p);
-						///	myprintf("+++++++++++Pushato %s\n",p->first.c_str());
 					}
 				}
 				++total_files;
@@ -80661,7 +79737,6 @@ int Jidac::test()
 			}
 		} // end if selected
 	} // end for
-	///	dimtotalefile=job.total_size;
 	myprintf("01405: To be checked %s (%s) in %s files (%d threads)\n", migliaia(job.total_size), tohuman(job.total_size), migliaia2(total_files), howmanythreads);
 	vector<ThreadID> tid(howmanythreads);
 	if (howmanythreads == 1)
@@ -80766,8 +79841,6 @@ int Jidac::test()
 
 		// Convert to vector for distribution
 		std::vector< std::pair<std::string, std::vector<int> > > files_list;
-		/// for (auto& pair : file_groups)
-		/// files_list.push_back(pair);
 		for (std::map<std::string, std::vector<int> >::iterator it= file_groups.begin(); it != file_groups.end(); ++it)
 			files_list.push_back(*it);
 		// Prepare the threads
@@ -80785,11 +79858,6 @@ int Jidac::test()
 		for (unsigned int t= 0; t < (unsigned)howmanythreads; t++)
 		{
 			size_t files_for_this_thread= files_per_thread + (t < remaining_files ? 1 : 0);
-			/*
-			for (size_t f = 0; f < files_for_this_thread && file_idx < files_list.size(); f++, file_idx++)
-				for (int block_idx : files_list[file_idx].second)
-					thread_indices[t].push_back(block_idx);
-			*/
 			for (size_t f= 0; f < files_for_this_thread && file_idx < files_list.size(); f++, file_idx++)
 				for (size_t i= 0; i < files_list[file_idx].second.size(); i++)
 				{
@@ -80816,9 +79884,6 @@ int Jidac::test()
 		for (int t= 0; t < howmanythreads; t++)
 			if (!thread_indices[t].empty())
 				pthread_join(threads[t], NULL);
-
-		///	if ((!flagpakka) && (!flagnoeta))
-		///	myprintf("01413: Block %05uK %16s\r", g_crc32.size() / 1000, tohuman(dalavorare));
 
 		for (int t= 0; t < howmanythreads; t++)
 		{
@@ -80855,9 +79920,6 @@ int Jidac::test()
 		unsigned int i= 0;
 		while (i < g_crc32.size())
 		{
-			///			if (flagdebug6)
-			///			myprintf("%08d  size %08d\n", i, g_crc32.size());
-
 			int secondi= (mtime() - g_test_start) / 1000;
 			if ((!flagpakka) && (!flagnoeta))
 				if (secondi != g_test_seconds)
@@ -80910,8 +79972,6 @@ int Jidac::test()
 
 			if ((i + 1) < g_crc32.size())
 			{
-				///
-				/// while (i < g_crc32.size() && g_crc32[i].filename == g_crc32[i + 1].filename)
 				while (((i + 1) < g_crc32.size()) && (g_crc32[i].filename == g_crc32[i + 1].filename))
 				{
 					if ((g_crc32[i].crc32start + g_crc32[i].crc32size) != g_crc32[i + 1].crc32start)
@@ -81049,8 +80109,6 @@ int Jidac::test()
 		franzparallelhashfiles("CRC-32", dalavorare + zeroedblocks, filestobecrced, false, crc32_pair);
 		printbar(' ');
 		myprintf("01434: Time doing CRC-32 %14.2fs\n", (mtime() - starttriple) / 1000.0);
-		///	for (int i=0;i<filestobecrced.size();i++)
-		///	myprintf("01435: To be CRC-ed %s\n",filestobecrced[i].c_str());
 
 		if ((searchfrom != "") || (replaceto != ""))
 		{
@@ -81066,8 +80124,6 @@ int Jidac::test()
 			{
 				triple_error++;
 				myprintf("01437: GURU cannot find thefilename in crc32_pair %s\n", thefilename.c_str());
-				/// myprintf("%s\n",dt.begin()->first.c_str());
-				/// seppuku();
 			}
 			else
 			{
@@ -81126,7 +80182,7 @@ int Jidac::test()
 	}
 	if (flagcollision)
 		collision(true);
-	
+
 	if (read_errors)
 		return 2;
 	if (status_e != 0)
@@ -81191,7 +80247,6 @@ void myaddfile(uint32_t i_tnumber, DTMap &i_edt, string i_filename, int64_t i_da
 
 			d.hexhash= dummy.filehash(0, i_filename, false, 0, prendidimensionefile(i_filename.c_str()));
 
-			///			d.hexhash=hash_calc_file(flag2algo(),i_filename.c_str(),false,dummycrc,mtime(),prendidimensionefile(i_filename.c_str()),dummy,thefilesize);
 			if (flagverbose)
 			{
 				myprintf("%s: |%s| [%d] %6.3f %Z\n", g_thechosenhash_str.c_str(), d.hexhash.c_str(), i_tnumber, (mtime() - starthash) / 1000.0, i_filename.c_str());
@@ -81324,15 +80379,12 @@ void myscandir(uint32_t i_tnumber, DTMap &i_edt, string filename, bool i_recursi
 	// Expand wildcards
 	WIN32_FIND_DATA ffd;
 	string			t= filename;
-	///	myprintf("01477:   %s\n",t.c_str());
 	if (t.size() > 0 && t[t.size() - 1] == '/')
 		t+= "*";
-	/// myprintf("01478:   %s\n",t.c_str());
 	HANDLE h= FindFirstFile(utow(t.c_str()).c_str(), &ffd);
 	if (h == INVALID_HANDLE_VALUE && GetLastError() != ERROR_FILE_NOT_FOUND && GetLastError() != ERROR_PATH_NOT_FOUND)
 		if (!flagignore)
 			printerr("myscan", t.c_str(), 0);
-	///	myprintf("01479: 22:   %s\n",t.c_str());
 	while (h != INVALID_HANDLE_VALUE)
 	{
 		// For each file, get name, date, size, attributes
@@ -81429,7 +80481,6 @@ bool isbackuppart(string i_partname, string i_mask)
 		if (flagdebug)
 		{
 			myprintf("01487: i_mask empty\n");
-			/// string onlyname=extractfilename(i_partname);
 			if (i_partname.size() > 14)
 				i_mask= i_partname.substr(0, i_partname.size() - 14);
 			myprintf("01488: new i_mask =>|%s|\n", i_mask.c_str());
@@ -81581,11 +80632,10 @@ class multipart
 			++parts;
 		}
 		std::sort(partarray.begin(), partarray.end(), comparefilename);
-		isgood= (thehole == ""); // filenamearray.size()==partarray.size();
+		isgood= (thehole == "");
 
 		if (thehole != "")
 		{
-			///	myprintf("01501: PART NUMBER MISMATCH: disk %s vs part %s (HOLE IN %s)\n",migliaia(filenamearray.size()),migliaia2(partarray.size()),thehole.c_str());
 			myprintf("01502: [1] AT LEAST ONE HOLE DETECTED! <<%Z>>\n", thehole.c_str());
 
 			if (filenamearray.size() > partarray.size()) // this should be
@@ -81641,8 +80691,6 @@ class multipart
 
 		myscandir(0, thedt, temppath, false, false);
 		eol();
-		/// printbar(' ',false);
-		/// myprintf("\r");
 
 		if (flagdebug)
 			myprintf("01507: scanned %s\n", migliaia(thedt.size()));
@@ -81670,7 +80718,6 @@ class multipart
 					myblock.isdir		  = false;
 					myblock.flaghashstored= false;
 					filenamearray.push_back(myblock);
-					///				myprintf("01508: %s %s\n",estensione.c_str(),p->first.c_str());
 				}
 			}
 			else
@@ -81771,7 +80818,6 @@ int Jidac::listfolders(string i_path, vector<string> *o_thelist)
 		if ((t != ".") && (t != ".."))
 		{
 			std::wstring wfilepath;
-			/// wfilepath=utow(i_path.c_str())/*+L"\\"*/+findfiledata.cFileName;
 			wfilepath= findfiledata.cFileName;
 			const std::string s_wfilepath(wfilepath.begin(), wfilepath.end());
 			if (flagdebug3)
@@ -81892,8 +80938,6 @@ int Jidac::multisomething()
 #else
 	scandir(false, thedt, fullarchive, false);
 	eol();
-	/// printbar(' ',false);
-	/// myprintf("\r");
 #endif // corresponds to #ifdef (#ifdef unix)
 
 	if (thedt.size() == 0)
@@ -82088,9 +81132,6 @@ string Jidac::secure_copy_file(
 	bool	destinazione_esiste	   = false;
 	/*
 	hopefully the source is ALWAYS existing!
-	int64_t start_sorgente_esiste=mtime();
-	sorgente_esiste		=getfileinfo(i_filename,sorgente_dimensione,sorgente_data,sorgente_attr);
-	g_robocopy_check_sorgente+=mtime()-start_sorgente_esiste;
 	*/
 	sorgente_esiste	   = true; // trust in caller
 	sorgente_dimensione= i_sorgente_size;
@@ -82281,7 +81322,6 @@ string Jidac::secure_copy_file(
 	/// to fix excluded myaddfiles()
 
 	int64_t s6= mtime();
-	///	makepath(i_outfilename);
 	string percorso= extractfilepath(i_outfilename);
 	if (!direxists(percorso))
 		makepath(i_outfilename);
@@ -82483,16 +81523,7 @@ string Jidac::secure_copy_file(
 			}
 		}
 		else
-		{
-			/*
-			static bool bypass_shown = false;
-			if (!bypass_shown)
-			{
-				myprintf("\n[SPEED CONTROL] Going FULL!\n");
-				bypass_shown = true;
-			}
-			*/
-		}
+		{}
 
 		if (!flagnoeta)
 		{
@@ -82533,7 +81564,6 @@ string Jidac::secure_copy_file(
 	/// note: this is a "touch" for the attr
 	int64_t s10= mtime();
 	close(i_outfilename.c_str(), sorgente_data, sorgente_attr);
-	/// touch(i_outfilename.c_str(),sorgente_data,sorgente_attr);
 
 	g_robocopy_touch+= mtime() - s10;
 
@@ -82898,10 +81928,9 @@ int Jidac::zfsadd()
 			string percorso = prima_chiocciola + "/.zfs/snapshot/" + dopo_chiocciola + "/";
 			string timestamp= dopo_chiocciola;
 			myreplace(timestamp, footer, "");
-			int64_t testdate= -1; //=encodestringdate(timestamp,true);
+			int64_t testdate= -1;
 			if (testdate == -1)
 			{
-				///	myprintf("01607: timestamp is strange %s\n",timestamp.c_str());
 				testdate= getdatefromsnapshot(tutto);
 				if (testdate != -1)
 					if (flagverbose)
@@ -83126,12 +82155,7 @@ int Jidac::robocopy()
 	int64_t timelocalexists2 = 0;
 	int64_t timelocalmakepath= 0;
 
-	/*
-		if (g_ioBUFSIZE==4096)
-			g_ioBUFSIZE=1048576;
-	*/
 	unsigned char *buf= (unsigned char *)franz_malloc(g_ioBUFSIZE);
-	/// g_allocatedram+=g_ioBUFSIZE;
 	if (buf == NULL)
 	{
 		myprintf("01632! GURU allocating io buf of size %s\n", g_ioBUFSIZE);
@@ -83198,7 +82222,6 @@ int Jidac::robocopy()
 					else
 					{
 						string temp= p->first;
-						///	myprintf("01635: AAAAAAAAAAAAAAAAAAAAA %s\n",temp.c_str());
 						bool riuscito= true;
 						if (isdirectory(temp))
 						{
@@ -83240,10 +82263,7 @@ int Jidac::robocopy()
 				int64_t			dest_date= -1;
 				int64_t			dest_attr= -1;
 				if (cerca == files_edt[i].end())
-				{
-					/// the file does not exists, maintain default -1 (=>secure_copy_file do yourself)
-					/// myprintf("01638: NON ! %s\n",filenamei.c_str());
-				}
+				{}
 				else
 				{
 					/// the destination exists, get data from the scanned-data
@@ -83730,7 +82750,6 @@ int64_t Jidac::franzparallelscandir(bool i_flaghash, bool i_recursive, bool i_fo
 			vettoreparametri.push_back(myblock);
 		}
 		int rc;
-		///		pthread_t* threads = new pthread_t[files.size()];
 
 		std::vector<pthread_t> threads(files.size(), 0); // Initialize all to 0
 
@@ -83784,7 +82803,6 @@ int64_t Jidac::franzparallelscandir(bool i_flaghash, bool i_recursive, bool i_fo
 					myprintf("61734! Unable to join thread %d\n", i);
 					exit(-1);
 				}
-				// myprintf("01697: Thread completed %d status %d\n", (int)i, status);
 			}
 			else
 			{
@@ -83811,12 +82829,10 @@ int64_t Jidac::franzparallelscandir(bool i_flaghash, bool i_recursive, bool i_fo
 			for (DTMap::iterator p= vettoreparametri[i].theDT.begin(); p != vettoreparametri[i].theDT.end(); ++p)
 			{
 				string filename= rename(p->first);
-				/// filename=makelongpath(filename);
 				if (p->second.date && p->first != "" && (!isdirectory(p->first)) && (!isads(filename)))
 				{
 					sizeofdir+= p->second.size;
 					dircount++;
-					///					quantifiles++;
 				}
 				if (flagdebug3)
 				{
@@ -83850,13 +82866,11 @@ int64_t Jidac::franzparallelscandir(bool i_flaghash, bool i_recursive, bool i_fo
 			for (DTMap::iterator p= myblock.begin(); p != myblock.end(); ++p)
 			{
 				string filename= rename(p->first);
-				/// filename=makelongpath(filename);
 
 				if (p->second.date && p->first != "" && (!isdirectory(p->first)) && (!isads(filename)))
 				{
 					sizeofdir+= p->second.size;
 					dircount++;
-					///					quantifiles++;
 				}
 				if (flagdebug3)
 				{
@@ -83903,7 +82917,6 @@ int Jidac::fillami()
 	if (!getcaptcha("ok", "Fill (wipe) free space"))
 		return 1;
 	string outputdir= files[0] + "ztempdir/";
-	/// printf("Z1 makepath %s\n",outputdir.c_str());
 	makepath(outputdir);
 	if (!direxists(outputdir))
 	{
@@ -83937,7 +82950,6 @@ int Jidac::fillami()
 	}
 	myprintf("%d chunks of (%s) will be written\n", chunks, tohuman(chunksize * sizeof(uint32_t)));
 	uint32_t *buffer32bit= (uint32_t *)franz_malloc(chunksize * sizeof(uint32_t));
-	/// g_allocatedram+=chunksize*sizeof(uint32_t);
 	if (buffer32bit == 0)
 	{
 		myprintf("01709! GURU cannot alloc the buffer\n");
@@ -84208,11 +83220,11 @@ char parseorderoption(const string &i_option, bool &o_descending)
 {
 	o_descending = false;
 	string opt = i_option;
-	
+
 	// convert to lowercase
 	for (unsigned int i = 0; i < opt.size(); i++)
 		opt[i] = tolower(opt[i]);
-	
+
 	// skip leading /o or /o:
 	size_t start = 0;
 	if (opt.size() >= 2 && opt[0] == '/' && opt[1] == 'o')
@@ -84221,27 +83233,27 @@ char parseorderoption(const string &i_option, bool &o_descending)
 		if (start < opt.size() && opt[start] == ':')
 			start++;
 	}
-	
+
 	if (start >= opt.size())
 		return '0';
-	
+
 	// check for - prefix (descending)
 	if (opt[start] == '-')
 	{
 		o_descending = true;
 		start++;
 	}
-	
+
 	if (start >= opt.size())
 		return '0';
-	
+
 	char sortchar = opt[start];
 	if (sortchar == 'n') return 'n';
 	if (sortchar == 's') return 's';
 	if (sortchar == 'd') return 'd';
 	if (sortchar == 'e') return 'e';
 	if (sortchar == 'g') return 'g';
-	
+
 	return '0';
 }
 
@@ -84251,20 +83263,20 @@ char parseorderoption(const string &i_option, bool &o_descending)
 int parseageoption(const string &i_option)
 {
 	string opt = i_option;
-	
+
 	// convert to lowercase
 	for (unsigned int i = 0; i < opt.size(); i++)
 		opt[i] = tolower(opt[i]);
-	
+
 	// find /age
 	size_t pos = opt.find("/age");
 	if (pos == string::npos)
 		return 0;
-	
+
 	pos += 4; // skip "/age"
 	if (pos >= opt.size())
 		return 0;
-	
+
 	bool negative = false;
 	if (opt[pos] == '-')
 	{
@@ -84275,14 +83287,14 @@ int parseageoption(const string &i_option)
 	{
 		pos++;
 	}
-	
+
 	if (pos >= opt.size())
 		return 0;
-	
+
 	int days = atoi(opt.substr(pos).c_str());
 	if (negative)
 		days = -days;
-	
+
 	return days;
 }
 
@@ -84293,27 +83305,27 @@ bool matchesagefilter(int64_t i_filedate, int i_agedays)
 {
 	if (i_agedays == 0)
 		return true;
-	
+
 	// get current time as YYYYMMDDHHMMSS
 	time_t now = time(NULL);
 	struct tm *t = localtime(&now);
-	int64_t currentdate = 
+	int64_t currentdate =
 		(int64_t)(t->tm_year + 1900) * 10000000000LL +
 		(int64_t)(t->tm_mon + 1) * 100000000LL +
 		(int64_t)t->tm_mday * 1000000LL +
 		(int64_t)t->tm_hour * 10000LL +
 		(int64_t)t->tm_min * 100LL +
 		(int64_t)t->tm_sec;
-	
+
 	// calculate threshold date (approximate, using 86400 seconds per day)
 	int64_t thresholddate = currentdate;
 	int absdays = (i_agedays < 0) ? -i_agedays : i_agedays;
-	
+
 	// subtract days from current date (simplified calculation)
 	int year = (int)(thresholddate / 10000000000LL);
 	int month = (int)((thresholddate / 100000000LL) % 100);
 	int day = (int)((thresholddate / 1000000LL) % 100);
-	
+
 	// simple day subtraction
 	for (int i = 0; i < absdays; i++)
 	{
@@ -84335,12 +83347,12 @@ bool matchesagefilter(int64_t i_filedate, int i_agedays)
 				day = 31;
 		}
 	}
-	
-	thresholddate = 
+
+	thresholddate =
 		(int64_t)year * 10000000000LL +
 		(int64_t)month * 100000000LL +
 		(int64_t)day * 1000000LL;
-	
+
 	if (i_agedays > 0)
 	{
 		// file must be older than threshold
@@ -84438,7 +83450,7 @@ struct treenode
     int64_t size;  // cumulative size of folder contents
     int64_t date;  // newest date in folder (for /od sorting)
     vector<treenode> children;
-    
+
     treenode() : name(""), fullpath(""), isdir(false), size(0), date(0) {}
 };
 
@@ -84460,13 +83472,13 @@ void buildtree(treenode &root, const vector<s_fileandsize> &files)
     {
         if (!files[i].isdir)
             continue;
-        
+
         string path = files[i].filename;
-        
+
         // remove trailing slash
         while (path.size() > 0 && (path[path.size()-1] == '/' || path[path.size()-1] == '\\'))
             path = path.substr(0, path.size() - 1);
-        
+
         // split path into parts
         vector<string> parts;
         string current = "";
@@ -84485,7 +83497,7 @@ void buildtree(treenode &root, const vector<s_fileandsize> &files)
         }
         if (current.size() > 0)
             parts.push_back(current);
-        
+
         // navigate/create tree structure
         treenode *node = &root;
         string builtpath = "";
@@ -84494,7 +83506,7 @@ void buildtree(treenode &root, const vector<s_fileandsize> &files)
             if (builtpath.size() > 0)
                 builtpath += "/";
             builtpath += parts[j];
-            
+
             bool found = false;
             for (unsigned int k = 0; k < node->children.size(); k++)
             {
@@ -84518,17 +83530,17 @@ void buildtree(treenode &root, const vector<s_fileandsize> &files)
             }
         }
     }
-    
+
     // second pass: add file sizes and dates to directories
     for (unsigned int i = 0; i < files.size(); i++)
     {
         if (files[i].isdir)
             continue;
-        
+
         string path = files[i].filename;
         int64_t filesize = files[i].size;
         int64_t filedate = files[i].date;
-        
+
         // split path into parts
         vector<string> parts;
         string current = "";
@@ -84547,12 +83559,12 @@ void buildtree(treenode &root, const vector<s_fileandsize> &files)
         }
         if (current.size() > 0)
             parts.push_back(current);
-        
+
         // add size and date to root
         root.size += filesize;
         if (filedate > root.date)
             root.date = filedate;
-        
+
         // traverse and add size/date to each directory in the path
         treenode *node = &root;
         for (unsigned int j = 0; j + 1 < parts.size(); j++)  // skip last part (filename)
@@ -84570,7 +83582,7 @@ void buildtree(treenode &root, const vector<s_fileandsize> &files)
                     break;
                 }
             }
-            
+
             // If directory not found, create it
             if (!found)
             {
@@ -84666,7 +83678,7 @@ void sorttree(treenode &node, TreeSortMode mode)
             sort(node.children.begin(), node.children.end(), comparetreenode_name_asc);
             break;
     }
-    
+
     // Recurse into children
     for (unsigned int i = 0; i < node.children.size(); i++)
         sorttree(node.children[i], mode);
@@ -84690,16 +83702,16 @@ void printtree(const treenode &node, const string &prefix, bool islast, int i_su
             myprintf("%s", "\xE2\x94\x94\xE2\x94\x80\xE2\x94\x80\xE2\x94\x80"); // └───
         else
             myprintf("%s", "\xE2\x94\x9C\xE2\x94\x80\xE2\x94\x80\xE2\x94\x80"); // ├───
-        
+
         // show size if i_summary > 0
         if (i_summary > 0)
             myprintf("(%9s) ", tohuman(node.size));
-        
+
         color_blue();
         myprintf("%s\n", node.name.c_str());
         color_restore();
     }
-    
+
     // build prefix for children
     string childprefix = prefix;
     if (node.name.size() > 0)
@@ -84709,7 +83721,7 @@ void printtree(const treenode &node, const string &prefix, bool islast, int i_su
         else
             childprefix += "\xE2\x94\x82   "; // │
     }
-    
+
     // print children
     for (unsigned int i = 0; i < node.children.size(); i++)
     {
@@ -84728,30 +83740,30 @@ int Jidac::dir(bool flagtreeview)
     bool flagorderbysizeasc = false; // /os (legacy, kept for compatibility)
     bool flagorderbydateasc = false; // /od (legacy, kept for compatibility)
     bool flagshowhidden = false;     // /a
-    
+
     // /O ordering options
     char sorttype = '0';             // n=name, s=size, d=date, e=ext, g=dirfirst, 0=none
     bool sortdescending = false;
-    
+
     // /age filter
     int agefilterdays = 0;
-    
+
     // Collect folders and parse options separately
     vector<string> folders;
     string filepattern = "";
-    
+
     // First pass: identify options vs folders
     for (unsigned int i = 0; i < files.size(); i++)
     {
         string arg = files[i];
-        
+
         // check for /s (recursive)
         if (stringcomparei(arg, "/s"))
         {
             flagrecursive = true;
             continue;
         }
-        
+
         // check for /os (order by size, legacy)
         if (stringcomparei(arg, "/os"))
         {
@@ -84760,7 +83772,7 @@ int Jidac::dir(bool flagtreeview)
             sortdescending = false;
             continue;
         }
-        
+
         // check for /od (order by date, legacy)
         if (stringcomparei(arg, "/od"))
         {
@@ -84769,28 +83781,28 @@ int Jidac::dir(bool flagtreeview)
             sortdescending = false;
             continue;
         }
-        
+
         // check for /a (show hidden)
         if (stringcomparei(arg, "/a"))
         {
             flagshowhidden = true;
             continue;
         }
-        
+
         // check for /tree
         if (stringcomparei(arg, "/tree"))
         {
             flagtreeview = true;
             continue;
         }
-        
+
         // check for /o ordering options (but not paths starting with /o on Unix)
         if (startswithci(arg, "/o") && arg.size() <= 4)
         {
             sorttype = parseorderoption(arg, sortdescending);
             continue;
         }
-        
+
         // check for /age filter
         if (startswithci(arg, "/age"))
         {
@@ -84799,7 +83811,7 @@ int Jidac::dir(bool flagtreeview)
                 myprintf("01761: age filter = %d days\n", agefilterdays);
             continue;
         }
-        
+
         // Check if it's a wildcard pattern
         if (haswildcard(arg))
         {
@@ -84812,20 +83824,20 @@ int Jidac::dir(bool flagtreeview)
                 filepattern = name;
             continue;
         }
-        
+
         // It's a folder path
         string folder = arg;
-        
+
         // Normalize drive letter (e.g., "c:" -> "c:/")
         if (folder.size() == 2 &&
             std::isalpha(static_cast<unsigned char>(folder[0])) && folder[1] == ':')
         {
             folder += "/";
         }
-        
+
         folders.push_back(folder);
     }
-    
+
     // Default folder if none specified
     if (folders.size() == 0)
     {
@@ -84833,24 +83845,24 @@ int Jidac::dir(bool flagtreeview)
             myprintf("01725: push ./\n");
         folders.push_back("./");
     }
-    
+
     // if we orderby, in tree, we want size!
     if (flagtreeview)
         if (flagorderbysizeasc)
             summary = 1;
-    
+
     // handle patterns from onlyfiles or extracted pattern
     if (filepattern != "")
     {
         onlyfiles.clear();
         onlyfiles.push_back(filepattern);
     }
-    
+
     // Normalize all folder paths
     for (unsigned int f = 0; f < folders.size(); f++)
     {
         string &folder = folders[f];
-        
+
         // handle wildcard in folder path (legacy support)
         int starpos = mypos("*", folder);
         if (starpos >= 0)
@@ -84869,13 +83881,13 @@ int Jidac::dir(bool flagtreeview)
                 onlyfiles.push_back(partend);
             }
         }
-        
+
         // normalize folder path
         if (folder == "")
             folder = "./";
         if (folder == ".")
             folder += '/';
-        
+
 #ifdef unix
         if (flagdebug2)
             myprintf("01728: folder before %s\n", folder.c_str());
@@ -84901,13 +83913,13 @@ int Jidac::dir(bool flagtreeview)
                 if (direxists(folder))
                     folder += '/';
     }
-    
+
     // IMPORTANT: Update files vector with normalized folders
     // This is needed because scandir and other functions may use files[]
     files.clear();
     for (unsigned int f = 0; f < folders.size(); f++)
         files.push_back(folders[f]);
-    
+
     // print scan header
     if (!flagterse)
     {
@@ -84941,7 +83953,7 @@ int Jidac::dir(bool flagtreeview)
             myprintf(" pattern %s ", onlyfiles[0].c_str());
         myprintf("\n");
     }
-    
+
     // initialize counters
     bool flagduplicati = false;
     int64_t total_size = 0;
@@ -84951,63 +83963,57 @@ int Jidac::dir(bool flagtreeview)
     int64_t hash_calcolati = 0;
     uint64_t iniziohash = 0;
     uint64_t finehash = 0;
-    
+
     flagduplicati = ischecksum();
     if (flagchecksum)
         flagduplicati = false;
-    
+
     g_bytescanned = 0;
     g_filescanned = 0;
     g_worked = 0;
     flagskipzfs = true;
-    
+
     // getfilesize in tree!
     if (flagtreeview)
         flagrecursive = true;
-    
+
     // Scan ALL folders and collect files
     vector<s_fileandsize> fileandsize;
 
     for (unsigned int f = 0; f < folders.size(); f++)
     {
         string &folder = folders[f];
-        
+
         // Clear edt for each folder scan
         edt.clear();
-        /*
-		// Subito prima di chiamare scandir
-myprintf("VEDIAMO: files[0] = %s, folder = %s\n", 
-         files.size() > 0 ? files[0].c_str() : "EMPTY", 
-         folder.c_str());
-		 */
         // scan directory
         scandir(true, edt, folder, flagrecursive);
-        
+
         // build file list with filters applied
         for (DTMap::iterator p = edt.begin(); p != edt.end(); ++p)
         {
             bool flagadd = true;
-            
+
 #ifdef _WIN32
             // hide hidden files unless /a specified
             if (!flagshowhidden)
                 flagadd = ((int)attrToString(p->second.attr).find("H") < 0);
             flagadd &= (!isads(p->first));
 #endif
-            
+
             // apply search filter
             if (searchfrom != "")
                 flagadd &= (stristr(p->first.c_str(), searchfrom.c_str()) != 0);
-            
+
             // apply nodir filter
             if (flagnodir)
                 if (isdirectory(p->first.c_str()))
                     flagadd = false;
-            
+
             // apply age filter
             if (agefilterdays != 0)
                 flagadd &= matchesagefilter(p->second.date, agefilterdays);
-            
+
             if (flagadd)
             {
                 s_fileandsize myblock;
@@ -85017,7 +84023,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                 myblock.date = p->second.date;
                 myblock.isdir = isdirectory(p->first);
                 myblock.flaghashstored = false;
-                
+
                 if (flagduplicati)
                 {
                     if (!myblock.isdir)
@@ -85051,9 +84057,9 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
         root.isdir = true;
         root.size = 0;
         root.date = 0;
-        
+
         buildtree(root, fileandsize);
-        
+
         // Determine tree sort mode based on sorttype
         TreeSortMode treesortmode = TREE_SORT_NAME;
         if (sorttype == 's')
@@ -85062,13 +84068,13 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
             treesortmode = sortdescending ? TREE_SORT_DATE_ASC : TREE_SORT_DATE;
         else if (sorttype == 'n')
             treesortmode = sortdescending ? TREE_SORT_NAME : TREE_SORT_NAME;
-        
+
         sorttree(root, treesortmode);
-        
+
         // print root info
         if (summary > 0)
             myprintf("(%9s) ", tohuman(root.size));
-        
+
         // If multiple folders, show generic root
         if (folders.size() > 1)
         {
@@ -85082,19 +84088,19 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
             myprintf("%s\n", folders[0].c_str());
             color_restore();
         }
-        
+
         // print tree
         for (unsigned int i = 0; i < root.children.size(); i++)
         {
             bool islast = (i == root.children.size() - 1);
             printtree(root.children[i], "", islast, summary);
         }
-        
+
         // count files, directories and total size
         int treefiles = 0;
         int treedirs = 0;
         int64_t treesize = 0;
-        
+
         for (unsigned int i = 0; i < fileandsize.size(); i++)
         {
             if (fileandsize[i].isdir)
@@ -85105,15 +84111,15 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                 treesize += fileandsize[i].size;
             }
         }
-        
+
         // print summary
         myprintf("\n");
         myprintf("    %10s File %20s byte\n", migliaia(treefiles), migliaia2(treesize));
         myprintf("    %10s Dir\n", migliaia(treedirs));
-        
+
         return 0;
     }
-    
+
     // handle duplicate detection mode
     if (flagduplicati)
     {
@@ -85123,19 +84129,19 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
             for (unsigned int i = 0; i < fileandsize.size(); i++)
                 myprintf("01733: PRE %08d  %s %s\n", (int)i, migliaia(fileandsize[i].size), fileandsize[i].filename.c_str());
         }
-        
+
         sort(fileandsize.begin(), fileandsize.end(), comparefilenamesize);
-        
+
         if (flagdebug3)
         {
             myprintf("01734: Post-sort\n");
             for (unsigned int i = 0; i < fileandsize.size(); i++)
                 myprintf("01735: POST %08d  %s %s\n", (int)i, migliaia(fileandsize[i].size), fileandsize[i].filename.c_str());
         }
-        
+
         iniziohash = mtime();
         int64_t dalavorare = 0;
-        
+
         // calculate work to do
         for (unsigned int i = 0; i < fileandsize.size(); i++)
         {
@@ -85156,19 +84162,19 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                 }
             }
         }
-        
+
         myprintf("\n");
         myprintf("01736: Start checksumming %s / %s bytes ...\n", migliaia(fileandsize.size()), migliaia2(dalavorare));
-        
+
         int larghezzaconsole = terminalwidth() - 2;
         if (larghezzaconsole < 10)
             larghezzaconsole = 80;
-        
+
         int64_t ultimapercentuale = 0;
         int64_t rapporto;
         int64_t percentuale;
         g_dimensione = 0;
-        
+
         // compute hashes for potential duplicates
         for (unsigned int i = 0; i < fileandsize.size(); i++)
         {
@@ -85183,20 +84189,20 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                         flagnoeta = true;
                         if (flagdebug3)
                             myprintf("01737: franz_do_hash\n");
-                        
+
                         franz_do_hash dummy(g_thechosenhash);
                         if (flagdebug3)
                             myprintf("01738: filehash on %s\n", fileandsize[i].filename.c_str());
-                        
+
                         string temp = dummy.filehash(0, fileandsize[i].filename, false, -1, -1);
-                        
+
                         flagnoeta = saveeta;
                         fileandsize[i].hashhex = temp;
                         fileandsize[i].flaghashstored = true;
                         quantihash++;
                         hash_calcolati += fileandsize[i].size;
                         entrato = true;
-                        
+
                         if (flagdebug3)
                             myprintf("01739: %08d HASH %s %s %19s %s\n", (int)i, fileandsize[i].hashhex.c_str(), dateToString(flagutc, fileandsize[i].date).c_str(), migliaia(fileandsize[i].size), fileandsize[i].filename.c_str());
                         else
@@ -85219,7 +84225,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                             }
                         }
                     }
-                    
+
                     bool saveeta = flagnoeta;
                     flagnoeta = true;
                     if (flagdebug3)
@@ -85227,15 +84233,15 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                     franz_do_hash dummy(g_thechosenhash);
                     if (flagdebug3)
                         myprintf("01742: filehash on %s\n", fileandsize[i + 1].filename.c_str());
-                    
+
                     string temp = dummy.filehash(0, fileandsize[i + 1].filename, false, -1, -1);
-                    
+
                     flagnoeta = saveeta;
                     fileandsize[i + 1].hashhex = temp;
                     fileandsize[i + 1].flaghashstored = true;
                     quantihash++;
                     hash_calcolati += fileandsize[i + 1].size;
-                    
+
                     if (flagdebug3)
                         myprintf("01743: %08d HASH-2 %s %s %19s %s\n", i + 1, fileandsize[i + 1].hashhex.c_str(), dateToString(flagutc, fileandsize[i + 1].date).c_str(), migliaia(fileandsize[i + 1].size), fileandsize[i + 1].filename.c_str());
                     else
@@ -85263,12 +84269,12 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                 }
             }
         }
-        
+
         finehash = mtime();
         myprintf("\n");
-        
+
         sort(fileandsize.begin(), fileandsize.end(), comparecrc32);
-        
+
         if (flagdebug3)
         {
             myprintf("01745: Hash taken %08d %s\n", quantihash, migliaia(hash_calcolati));
@@ -85277,7 +84283,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
             for (unsigned int i = 0; i < fileandsize.size(); i++)
                 myprintf("01748: before shrink %08d  %s %s\n", (int)i, fileandsize[i].hashhex.c_str(), fileandsize[i].filename.c_str());
         }
-        
+
         int limite = -1;
         for (unsigned int i = 0; i < fileandsize.size(); i++)
         {
@@ -85289,23 +84295,23 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                 break;
             }
         }
-        
+
         if (flagverbose)
             myprintf("01750: Limit founded %d\n", limite);
-        
+
         if (limite > -1)
             for (int i = fileandsize.size() - 1; i >= limite; i--)
                 fileandsize.pop_back();
-        
+
         if (flagdebug3)
         {
             myprintf("01751: After shrink %s\n", migliaia(fileandsize.size()));
             for (unsigned int i = 0; i < fileandsize.size(); i++)
                 myprintf("01752: After shrinking %08d  %s %s\n", (int)i, fileandsize[i].hashhex.c_str(), fileandsize[i].filename.c_str());
         }
-        
+
         sort(fileandsize.begin(), fileandsize.end(), comparesizehash);
-        
+
         if (flagdebug3)
         {
             myprintf("01753: After re-sort %s\n", migliaia(fileandsize.size()));
@@ -85317,7 +84323,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
     {
         // normal mode - apply sorting based on /O option
         g_sortdescending = sortdescending;
-        
+
         if (sorttype == 'n')
             sort(fileandsize.begin(), fileandsize.end(), comparename);
         else if (sorttype == 's')
@@ -85333,15 +84339,15 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
         else if (flagorderbysizeasc)
             sort(fileandsize.begin(), fileandsize.end(), comparefilenamesize);
     }
-    
+
     // handle -n limit
     unsigned int inizio = 0;
     if (menoenne)
         if (menoenne < fileandsize.size())
             inizio = fileandsize.size() - menoenne;
-    
+
     int64_t tot_duplicati = 0;
-    
+
     // clean up filenames (remove leading ./)
     for (unsigned int i = inizio; i < fileandsize.size(); i++)
     {
@@ -85356,7 +84362,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
             }
         }
     }
-    
+
     // print output
     for (unsigned int i = inizio; i < fileandsize.size(); i++)
     {
@@ -85371,7 +84377,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
         {
             total_size += fileandsize[i].size;
             quantifiles++;
-            
+
             if (flagduplicati)
             {
                 if (i < fileandsize.size() - 1)
@@ -85384,7 +84390,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
                         myprintf("%s %19s ", dateToString(flagutc, fileandsize[i].date, !flagutc).c_str(), migliaia(fileandsize[i].size));
                         printcoloredfilename(fileandsize[i].filename, false);
                         myprintf("\n");
-                        
+
                         while (fileandsize[i].hashhex == fileandsize[i + 1].hashhex)
                         {
                             if (flagverbose)
@@ -85409,26 +84415,26 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
             else
             {
                 myprintf("%s %22s ", dateToString(flagutc, fileandsize[i].date, !flagutc).c_str(), migliaia(fileandsize[i].size));
-                
+
                 if (flagchecksum)
                 {
                     if (flagdebug3)
                         myprintf("01755: franz_do_hash\n");
-                    
+
                     franz_do_hash dummy(g_thechosenhash);
                     if (flagdebug3)
                         myprintf("01756: filehash on %s\n", fileandsize[i].filename.c_str());
-                    
+
                     string temp = dummy.filehash(0, fileandsize[i].filename, false, -1, -1);
                     myprintf("   %s:%s ", g_thechosenhash_str.c_str(), temp.c_str());
                 }
-                
+
                 printcoloredfilename(fileandsize[i].filename, false);
                 myprintf("\n");
             }
         }
     }
-    
+
     // print summary
     if (!flagterse)
     {
@@ -85438,7 +84444,7 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
         else
             myprintf("                   ");
     }
-    
+
     // get free space (use first folder)
     string firstfolder = folders.size() > 0 ? folders[0] : "./";
     if (!isdirectory(firstfolder))
@@ -85449,26 +84455,26 @@ myprintf("VEDIAMO: files[0] = %s, folder = %s\n",
         else
             firstfolder = percorso;
     }
-    
+
     int64_t spazio = getfreespace(firstfolder);
     if (!flagterse)
     {
         myprintf(" %20s bytes (%s) free", migliaia(spazio), tohuman(spazio));
         myprintf("\n");
     }
-    
+
     // print duplicate summary
     if (flagduplicati)
     {
         myprintf("\n");
         myprintf("01758: Duplicated %19s byte\n", migliaia(tot_duplicati));
-        myprintf("01759: Hashed %8s files %18s bytes in %f s %s /s\n", 
-            migliaia(quantihash), 
-            migliaia2((int64_t)hash_calcolati), 
-            (finehash - iniziohash) / 1000.0, 
+        myprintf("01759: Hashed %8s files %18s bytes in %f s %s /s\n",
+            migliaia(quantihash),
+            migliaia2((int64_t)hash_calcolati),
+            (finehash - iniziohash) / 1000.0,
             migliaia3((int64_t)(hash_calcolati / ((finehash - iniziohash + 1) / 1000.0))));
     }
-    
+
     return 0;
 }
 
@@ -85996,7 +85002,6 @@ int Jidac::rebuildcrc32(string i_filename, string &o_prezpaqcrc32, int64_t &o_pr
 	if (flagdebug3)
 		myprintf("01827: filehash CRC-32 on %s\n", i_filename.c_str());
 
-	/// myprintf("01828: 4444444444444 %s\n",tohuman(prendidimensionefile(i_filename.c_str())));
 	g_dimensione			 = 0;
 	string o_initialzpaqcrc32= dummyquick2.filehash(0, i_filename, false, startverify, prendidimensionefile(i_filename.c_str()));
 	if (o_initialzpaqcrc32 == "")
@@ -86181,25 +85186,6 @@ void Jidac::updatehash(DTMap::iterator *i_p, char *i_buf, int i_buflen)
 #ifdef _WIN32
 string win_getlong(const string &i_file)
 {
-	/*
-	symlink
-
-	CreateFile(c_str(),
-		0,
-		0,
-		0,
-		OPEN_EXISTING,
-		FILE_FLAG_BACKUP_SEMANTICS,
-		0);
-	 GetFinalPathNameByHandle(hFile, path, MAX_PATH, FILE_NAME_NORMALIZED);
-		if (rcode)
-		{
-			if (path[0] == '\\' && path[1] == '\\' && path[2] == '?' && path[3] == '\\')
-				return std::wstring(path + 4, path + rcode);
-			else
-				return std::wstring(path, path + rcode);
-		}
-	*/
 	if (iswindowsxp())
 		return i_file;
 
@@ -86311,7 +85297,6 @@ int Jidac::handle_vhd_read(char *buf, int g_ioBUFSIZE,
 	if (bytesletti == -2)
 	{
 		myprintf("74187: Hard error on elaboravhd, guru!\n");
-	///	seppuku();
 		return -1;
 	}
 
@@ -86323,7 +85308,7 @@ int Jidac::handle_vhd_read(char *buf, int g_ioBUFSIZE,
 			myprintf("74315: VHD NTFS data done, starting finalizing...\n");
 		}
 		chiudivhd();
-	
+
 		*brutalexit= true;
 		return 0;
 	}
@@ -86348,7 +85333,6 @@ int64_t array_to_ramfile(const std::vector<uint8_t> &i_thearray, franzfs *i_pram
 	}
 	i_pramfile->init(memtobecompressed);
 	i_pramfile->append((const char *)&i_thearray[0], i_thearray.size());
-	///i_pramfile->append((const char *)i_thearray.data(), i_thearray.size());
 	i_pramfile->seekstart();
 	eol();
 	if (flagverbose)
@@ -86720,13 +85704,6 @@ void Jidac::pc_info()
 #ifdef _WIN32
 	if (iswindowsxp())
 		myprintf("72945: This seems Windows XP!\n");
-	/*
-	#ifdef _WIN64
-		int64_t wifemem=getwifesize();
-		myprintf("70177: Windows-executable wifesize %s\n",tohuman(wifemem));
-		provaAllocazioneAdattiva(wifemem);
-	#endif
-	*/
 	WindowsVersionInfo mywin;
 	std::string		   windowsver= getwinver(mywin);
 
@@ -86950,7 +85927,7 @@ std::string codifica_franzhash(const std::string &input)
 	{
 		std::string encoded_hash= encode_base85(final_hash);
 		std::string result		= prefix + ":" + algo + ":" + myto_string(block_count) + ":c:";
-		
+
 		if (block_count == 1)
 		{
 			result+= encoded_hash;
@@ -87399,7 +86376,7 @@ int Jidac::cercapartizione(char i_lettera, franzdriveinfo &o_drive)
 
 int Jidac::benchmark()
 {
-	
+
 	pc_info();
 
 	vector<string> array_cpu;
@@ -87495,7 +86472,6 @@ int Jidac::benchmark()
 		}
 	}
 	uint32_t *buffer32bit= (uint32_t *)franz_malloc(chunksize * sizeof(uint32_t));
-	/// g_allocatedram+=chunksize*sizeof(uint32_t);
 	if (buffer32bit == NULL)
 	{
 		myprintf("02284: GURU cannot alloc the buffer32bit\n");
@@ -87508,7 +86484,6 @@ int Jidac::benchmark()
 		franz_free(buffer32bit);
 		return 2;
 	}
-	/// g_allocatedram+=chunksize*sizeof(uint8_t);
 
 	vector<string> thehashes;
 	string		   hashes= "";
@@ -88512,7 +87487,6 @@ int Jidac::decompress_sfx_to_file(FILE *i_outfile)
 	size_t zsfx_exe_len= mimesize(zsfx_mime64);
 	char  *zsfx_exe;
 	zsfx_exe= (char *)franz_malloc(zsfx_exe_len);
-	/// g_allocatedram+=zsfx_exe_len;
 	if (zsfx_exe == NULL)
 	{
 		myprintf("02367: error in malloc zsfx\n");
@@ -88879,7 +87853,6 @@ int Jidac::decompress_mime64_to_file(FILE *i_outfile, const char *i_mime64)
 	size_t the_exe_len= mimesize(i_mime64);
 	char  *the_exe;
 	the_exe= (char *)franz_malloc(the_exe_len);
-	/// g_allocatedram+=the_exe_len;
 	if (the_exe == NULL)
 	{
 		myprintf("02402: error in malloc\n");
@@ -90514,7 +89487,7 @@ int Jidac::windowsc()
 		if (flagfrugal)
 		{
 			int64_t saved=gestiscispaz(false);
-	
+
 			for (unsigned int i=0;i<notfiles.size();i++)
 			{
 				myreplace(notfiles[i],"c:/",g_franzsnap+"/");
@@ -92592,7 +91565,7 @@ int Jidac::backup()
 		myprintf("02735! Sorry, franzen not supported (yet) for backup\n");
 		return 2;
 	}
-	
+
 	if (archive == "")
 	{
 		myprintf("02795! You need a non-empty archive name\n");
@@ -92721,11 +91694,11 @@ bool is_same_path(const std::string &i_old, const std::string &i_new)
 	myreplaceall(percorso_new, "/", "\\");
 	std::wstring old_wstr(percorso_old.begin(), percorso_old.end());
 	std::wstring new_wstr(percorso_new.begin(), percorso_new.end());
-	
+
 	// Usa heap invece di stack per i buffer grandi
 	wchar_t *old_resolved = new(std::nothrow) wchar_t[32768];
 	wchar_t *new_resolved = new(std::nothrow) wchar_t[32768];
-	
+
 	if (!old_resolved || !new_resolved)
 	{
 		myprintf("96037! Memory allocation failed\n");
@@ -92733,17 +91706,17 @@ bool is_same_path(const std::string &i_old, const std::string &i_new)
 		delete[] new_resolved;
 		return false;
 	}
-	
+
 	wchar_t *old_full = _wfullpath(old_resolved, old_wstr.c_str(), 32768);
 	wchar_t *new_full = _wfullpath(new_resolved, new_wstr.c_str(), 32768);
-	
+
 	if (flagdebug3)
 	{
 		myprintf("\n");
 		myprintf("96024: old_full %s\n", old_full ? wtou(old_full).c_str() : "NULL");
 		myprintf("96024: new_full %s\n", new_full ? wtou(new_full).c_str() : "NULL");
 	}
-	
+
 	bool result = false;
 	if (old_full && new_full)
 	{
@@ -92753,16 +91726,16 @@ bool is_same_path(const std::string &i_old, const std::string &i_new)
 	{
 		myprintf("96038! old_full or new_full KAPUTT\n");
 	}
-	
+
 	delete[] old_resolved;
 	delete[] new_resolved;
 	return result;
-	
+
 #else
 	// Usa heap invece di stack per i buffer grandi
 	char *old_resolved = new(std::nothrow) char[32768];
 	char *new_resolved = new(std::nothrow) char[32768];
-	
+
 	if (!old_resolved || !new_resolved)
 	{
 		myprintf("96037! Memory allocation failed\n");
@@ -92770,10 +91743,10 @@ bool is_same_path(const std::string &i_old, const std::string &i_new)
 		delete[] new_resolved;
 		return false;
 	}
-	
+
 	const char *old_full = realpath(i_old.c_str(), old_resolved);
 	const char *new_full = realpath(i_new.c_str(), new_resolved);
-	
+
 	bool result = false;
 	if (old_full && new_full)
 	{
@@ -92783,11 +91756,11 @@ bool is_same_path(const std::string &i_old, const std::string &i_new)
 	{
 		myprintf("96022! old_full or new_full KAPUTT\n");
 	}
-	
+
 	delete[] old_resolved;
 	delete[] new_resolved;
 	return result;
-	
+
 #endif
 }
 
@@ -93097,11 +92070,11 @@ int Jidac::rebuildbackupindex()
     files.clear();
 	flagrecover=false; // DO NOT recover!!!!
     int risultato=extract();
-	
+
 	color_magenta();
 	myprintf("92893: You should use zpaqfranz testbackup %s -verify -paranoid\n",backuparchive.c_str());
 	myprintf("92894: with optional -ssd (on non-spinning drives)\n");
-	
+
 	color_restore();
 	return risultato;
 }
@@ -93109,8 +92082,8 @@ int Jidac::rebuildbackupindex()
 
 int Jidac::consolidatebackup()
 {
-	
-	
+
+
 	if (flagbackupzeta)
 	{
 		myprintf("95459! Cannot consolidate with -backupzeta, sorry. Try -backupxxh3\n");
@@ -93134,8 +92107,8 @@ int Jidac::consolidatebackup()
 
 	if (flagrecover)
 		return rebuildbackupindex();
-	
-	
+
+
 	if (flagdestination)
 		if (g_destination != "")
 		{
@@ -94796,7 +93769,7 @@ int64_t Jidac::read_archive(callback_function i_advance, const char *arc, int *e
 			myprintf("\n");
 */
 	g_incomplete_version= 0;
-	
+
 	int64_t expectedfilesize= in.get_totalsize();
 	int		lastperc		= 0;
 	int last_dec_percent = -1;
@@ -94811,27 +93784,27 @@ int64_t Jidac::read_archive(callback_function i_advance, const char *arc, int *e
 			double mem= 0;
 			while (d.findBlock(&mem))
 			{
-				if (flagcatpaqmode) 
+				if (flagcatpaqmode)
                 {
                     int64_t i_lavorati = in.tell();
                     int64_t i_totali = list_g_dimensione;
-                    if (i_totali <= 0) i_totali = 1; 
-                    
+                    if (i_totali <= 0) i_totali = 1;
+
                     int percentuale = (int)((i_lavorati * 100.0) / i_totali);
                     if (percentuale > 100) percentuale = 100;
                     if (percentuale < 0) percentuale = 0;
-                    
-                    if (percentuale > last_dec_percent) 
+
+                    if (percentuale > last_dec_percent)
                     {
                         int eta = 0;
                         int64_t elapsed = mtime() - list_global_start;
                         if (i_lavorati > 0) {
                             eta = (int)(((double)elapsed * (i_totali - i_lavorati) / i_lavorati) / 1000.0);
                         }
-                        
+
                         printf("@DEC@DEC@%d@%lld@%lld@%d\n", percentuale, (long long)i_lavorati, (long long)i_totali, eta);
-                        fflush(stdout); 
-                        last_dec_percent = percentuale; 
+                        fflush(stdout);
+                        last_dec_percent = percentuale;
                     }
                 }
 
@@ -94917,25 +93890,25 @@ int64_t Jidac::read_archive(callback_function i_advance, const char *arc, int *e
 											{
 												double elapsed = (mtime() - startblock) / 1000.0; // seconds elapsed
 												double rate = block_offset / (elapsed + 1);       // blocks/second (correct!)
-												
+
 												// ETA Calculation
 												int64_t remaining_blocks = expectedfilesize - block_offset;
 												int eta_seconds = (int)(remaining_blocks / (rate + 0.001)); // +0.001 to avoid division by zero
-												
+
 												int eta_h = eta_seconds / 3600;
 												if (eta_h > 99)
 													eta_h = 99;
 												int eta_m = (eta_seconds % 3600) / 60;
 												int eta_s = eta_seconds % 60;
-											
-												myprintf("02972: Scan %03d%% ETA %02d:%02d:%02d %10s/%s @ %7s (block/s)\r", 
+
+												myprintf("02972: Scan %03d%% ETA %02d:%02d:%02d %10s/%s @ %7s (block/s)\r",
 													percentuale,
 													eta_h, eta_m, eta_s,
 													tohuman(block_offset),
 													tohuman2(expectedfilesize),
 													migliaia2((int64_t)(parts / (((mtime() - startblock) + 1) / 1000.0))));
-													
-												
+
+
 												lastperc = percentuale;
 											}
 
@@ -95760,7 +94733,6 @@ int reduz(vector<string> *i_files, DTMap *i_myedt, vector<DTMap::iterator> *i_vf
 	libzpaq::Array<char> fragbuf(MAX_FRAGMENT);
 
 	char *buf= (char *)franz_malloc(g_ioBUFSIZE);
-	/// g_allocatedram+=g_ioBUFSIZE;
 	if (buf == NULL)
 	{
 		myprintf("03063! GURU allocating io buf of size %s\n", g_ioBUFSIZE);
@@ -95828,7 +94800,6 @@ int reduz(vector<string> *i_files, DTMap *i_myedt, vector<DTMap::iterator> *i_vf
 							h= (h + c + 1) * 271828182u;
 						o1[c1]= c;
 						c1	  = c;
-						/// fragbuf[sz++]=c;
 						sz++;
 					}
 					if (c == EOF || sz >= MAX_FRAGMENT || (myfragment <= 22 && h < (1u << (22 - myfragment)) && sz >= MIN_FRAGMENT))
@@ -96044,7 +95015,6 @@ int Jidac::read_archive2(int64_t i_starthere, string i_filename)
 	int64_t		 block_offset= 32 * (g_password != 0);	   // start of last block of any type
 	int64_t		 data_offset = block_offset;			   // start of last block of d fragments
 	bool		 found_data	 = false;					   // exit if nothing found
-	///StringBuffer os(32832);								   // decompressed block
 #if defined(ANCIENT) || defined(ESX)
 	StringBuffer os(32832);  // decompressed block
 #else
@@ -96159,8 +95129,6 @@ int Jidac::read_archive2(int64_t i_starthere, string i_filename)
 							data_offset	   = in.tell() + 1 - d.buffered();
 							const char *s  = os.c_str();
 							int64_t		jmp= btol(s);
-							/// if (jmp<0)
-							/// myprintf("03074: Incomplete transaction ignored\n");
 							if (jmp < 0 || (version < 19000000000000LL && int64_t(ver.size()) > version) || (version >= 19000000000000LL && version < fdate))
 							{
 								done= true; // roll back to here
@@ -96202,8 +95170,6 @@ int Jidac::read_archive2(int64_t i_starthere, string i_filename)
 							dhsize+= bsize;
 							assert(ver.size() > 0);
 
-							/// if (int64_t(ht.size())>num)
-							/// myprintf("03075: Unordered fragment tables: expected >= %d found %1.0f\n",int(ht.size()), double(num));
 
 							for (unsigned i= 0; i < n; ++i)
 							{
@@ -96313,12 +95279,6 @@ int Jidac::read_archive2(int64_t i_starthere, string i_filename)
 	if (in.tell() > 32 * (g_password != 0) && !found_data)
 		error("88187: archive contains no data");
 
-	/*
-	if ((command=='l') && (flag715))
-	printf("%d versions, %u files, %u fragments, %1.6f MB\n",
-	  int(ver.size()-1), files, unsigned(ht.size())-1,
-	  block_offset/1000000.0);
-*/
 	// Calculate file sizes
 	for (DTMap::iterator p= dt.begin(); p != dt.end(); ++p)
 		for (unsigned i= 0; i < p->second.ptr.size(); ++i)
@@ -96406,8 +95366,6 @@ int Jidac::ads()
 
 	scandir(false, thedt, fullarchive, false);
 	eol();
-	// printbar(' ',false);
-	// myprintf("\r");
 	if (thedt.size() == 0)
 	{
 		myprintf("03088: no archive founded => quit\n");
@@ -96492,7 +95450,6 @@ int Jidac::listfast()
 
 	int64_t		 block_offset= 32 * (g_password != 0); // start of last block of any type
 	bool		 found_data	 = false;				   // exit if nothing found
-	///StringBuffer os(32832);							   // decompressed block
 
 #if defined(ANCIENT) || defined(ESX)
 	StringBuffer os(32832);  // decompressed block
@@ -96551,7 +95508,6 @@ int Jidac::listfast()
 		std::unique_ptr<libzpaq::Decompresser> d_ptr(new libzpaq::Decompresser());
 #endif
 		libzpaq::Decompresser &d = *d_ptr;
-		//libzpaq::Decompresser d;
 		try
 		{
 			d.setInput(&in);
@@ -97082,11 +96038,7 @@ int Jidac::listfast()
 				myprintf("%s", data);
 			}
 		}
-
-		//		while ((fread(data,sizeof(char),sizeof(data),myfile)) > 0)
-		//			myprintf("%s",data);
 		fclose(myfile);
-		///		delete_file(kunfile.c_str());
 		myprintf("\n");
 		myprintf("03135: Fast file list for version %s\n", migliaia(theversion));
 	}
@@ -97219,7 +96171,6 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 	bool				 found_data	   = false;					 // exit if nothing found
 	bool				 first		   = true;					 // first segment in archive?
 	int					 pass		   = LIST_NORMAL;			 // recover ht from data blocks?
-	//list_StringBuffer	 os(32832);								 // decompressed block
 #if defined(ANCIENT) || defined(ESX)
 	list_StringBuffer os(32832);  // decompressed block
 #else
@@ -97262,9 +96213,6 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 					if (((list_size(list_ver) - 1) % 2))
 					{
 						int64_t startprintf= mtime();
-
-						/// printf( "V %06d (%08d) ", list_size(list_ver)-1, list_size(list_dt));
-						/// list_progress(list_g_dimensione,  block_offset);
 						list_progress(list_size(list_ver) - 1, list_size(list_dt), list_g_dimensione, block_offset);
 						fflush(stdout);
 						total_time+= mtime() - startprintf;
@@ -97278,31 +96226,31 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 			int				  segs= 0;
 			while (d.findFilename(&filename))
 			{
-				if (flagcatpaqmode) 
+				if (flagcatpaqmode)
                 {
                     int64_t i_lavorati = in.tell();
                     int64_t i_totali = list_g_dimensione;
                     if (i_totali <= 0) i_totali = 1; // Evita divisioni per zero
-                    
+
                     int percentuale = (int)((i_lavorati * 100.0) / i_totali);
                     if (percentuale > 100) percentuale = 100;
                     if (percentuale < 0) percentuale = 0;
-                    
+
                     // Stampa SOLO se la percentuale è scattata in avanti!
-                    if (percentuale > last_spk_percent) 
+                    if (percentuale > last_spk_percent)
                     {
                         int eta = 0;
                         int64_t elapsed = mtime() - list_global_start;
                         if (i_lavorati > 0) {
                             eta = (int)(((double)elapsed * (i_totali - i_lavorati) / i_lavorati) / 1000.0);
                         }
-                        
+
               			printf("@SPK@DEC@%d@%lld@%lld@%d\n", percentuale, (long long)i_lavorati, (long long)i_totali, eta);	                        fflush(stdout); // Svuota il buffer verso Lazarus
-                        
+
                         last_spk_percent = percentuale; // Aggiorna la memoria
                     }
                 }
-				
+
 				if (filename.s.size())
 				{
 					for (unsigned i= 0; i < filename.s.size(); ++i)
@@ -97657,8 +96605,6 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 				first		  = false;
 				segment_offset= in.tell();
 
-				/// printf("04966: segment_offset  %d\n",segment_offset);
-
 			} // end while findFilename
 			if (!done)
 				segment_offset= block_offset= in.tell();
@@ -97666,7 +96612,6 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 		catch (std::exception &e)
 		{
 			block_offset= in.tell();
-			///printf("100918 Skipping block at %1.0f: %s\n", double(block_offset),e.what());
 		}
 	} // end while !done
 	if (in.tell() > 32 * (g_password != 0) && !found_data)
@@ -97696,7 +96641,6 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 	}
 
 	fprintf(list_outputlog, "!%d\n", list_size(list_ver) - 1);
-	///	fprintf(list_outputlog, "$%s\n", atoi(block_offset));
 	list_print_datetime();
 	printf("OUTPUT...V %d, F %d, %s bytes %d blocks Otime %1.3f s\n",
 		   list_size(list_ver) - 1, list_size(list_dt), migliaia(block_offset), blocchini, (total_time / 1000.0));
@@ -97709,7 +96653,7 @@ int64_t Jidac::pakka_read_archive(const char *arc)
 
 
 // pakka for ... catpaq DLL
-#ifdef DLL 
+#ifdef DLL
 int Jidac::pakkalist()
 {
 	// Init archive state
@@ -97758,7 +96702,7 @@ int Jidac::pakkalist()
 	myprintf("+%d\n", (int)righe);
 
 	unsigned int blocco		= (filelist.size() / 10) + 1;
-	
+
 	for (unsigned fi= 0; fi < filelist.size(); ++fi)
 	{
 		if ((fi + 1) % blocco == 0)
@@ -101107,9 +100051,9 @@ int Jidac::checkautotest(string i_path)
         myprintf("03367! autotest path does not exist %s\n", i_path.c_str());
         return 2;
     }
-    
+
     vector<TestCase> test_cases;
-    
+
     // Test base sempre presenti
     test_cases.push_back({"out01.txt", "NOT renamed files  256", "Extracting pre-computed data"});
     test_cases.push_back({"out02.txt", "67708591460BCE3BC45AE086A342F9F390AD2913A22639EC7AF3646B7D2AEA78", "Adding and/or extracting data"});
@@ -101133,7 +100077,7 @@ int Jidac::checkautotest(string i_path)
     test_cases.push_back({"out20.txt", "GLOBAL SHA256: 9C443D84B87B678E4506AD5F6A2FC89B83546E286F19998899DC4461BB9F97D0", "Testing that extract is OK (b)"});
     test_cases.push_back({"out21.txt", "GLOBAL SHA256: EEBFFD8399E88CE05BCFD1AAE65C4A118E57638511AF18255C5A295A6378F437", "Creating & extracting big file"});
     test_cases.push_back({"out22.txt", "(all OK)", "Testing with sequential algo"});
-    
+
     // Test aggiuntivi Franzen
     if (g_franzen != "")
     {
@@ -101142,25 +100086,25 @@ int Jidac::checkautotest(string i_path)
         test_cases.push_back({"out24.txt", "(all OK)", "Updating archive 2"});
         test_cases.push_back({"out25.txt", "(all OK)", "Updating archive 2"});
         test_cases.push_back({"out26.txt", "(all OK)", "Discarded update 2"});
-        
+
         // AES + Franzen Verify & Decode
         test_cases.push_back({"out27.txt", "(all OK)", "PP test 2"});
         test_cases.push_back({"out28.txt", "(all OK)", "Franzen test 2"});
         test_cases.push_back({"out29.txt", "(all OK)", "Decoding 2"});
         test_cases.push_back({"out30.txt", "Binary ==", "fc decoding/plain 2"});
-        
+
         // Only Franzen Creation
         test_cases.push_back({"out31.txt", "(all OK)", "Creating archive 1"});
         test_cases.push_back({"out32.txt", "(all OK)", "Updating archive 1"});
         test_cases.push_back({"out33.txt", "(all OK)", "Updating archive 1"});
         test_cases.push_back({"out34.txt", "(all OK)", "Discarded update 1"});
-        
+
         // Only Franzen Verify & Decode
         test_cases.push_back({"out35.txt", "(all OK)", "PP test 1"});
         test_cases.push_back({"out36.txt", "(all OK)", "Franzen test 1"});
         test_cases.push_back({"out37.txt", "(all OK)", "Decoding 1"});
         test_cases.push_back({"out38.txt", "Binary ==", "fc decoding/plain 1"});
-        
+
         // Extraction
         test_cases.push_back({"out39.txt", "(all OK)", "extract big1 2"});
         test_cases.push_back({"out40.txt", "(all OK)", "extract big3 2"});
@@ -101168,7 +100112,7 @@ int Jidac::checkautotest(string i_path)
         test_cases.push_back({"out42.txt", "(all OK)", "extract big1 1"});
         test_cases.push_back({"out43.txt", "(all OK)", "extract big2 1"});
         test_cases.push_back({"out44.txt", "(all OK)", "extract big3 1"});
-        
+
         // Final multi-file compare
         test_cases.push_back({"out45.txt", "Binary ==", "fc big1 2"});
         test_cases.push_back({"out46.txt", "Binary ==", "fc big2 2"});
@@ -101177,17 +100121,17 @@ int Jidac::checkautotest(string i_path)
         test_cases.push_back({"out49.txt", "Binary ==", "fc big2 1"});
         test_cases.push_back({"out50.txt", "Binary ==", "fc big3 1"});
     }
-    
+
     i_path = wintolinuxpath(i_path);
     i_path = includetrailingbackslash(i_path);
     myprintf("03368: Checking results (in %Z)\n", i_path.c_str());
-    
+
     int errori = 0;
     for (size_t i = 0; i < test_cases.size(); i++)
     {
         const TestCase& tc = test_cases[i];
         myprintf("03370: %03d (out%02d.txt) :", (int)i,(int)i+1);
-        
+
         bool trovato = grep(i_path + tc.filename, tc.expected_content);
         if (trovato)
         {
@@ -101202,7 +100146,7 @@ int Jidac::checkautotest(string i_path)
         }
         color_restore();
     }
-    
+
     if (errori > 0)
     {
         myprintf("03371! ERRORS %s\n", migliaia(errori));
@@ -101221,7 +100165,7 @@ bool Jidac::isjitable()
 	return true;
 }
 #else
-	
+
 bool Jidac::isjitable()
 {
 	bool risultato= false;
@@ -102219,7 +101163,7 @@ int64_t Jidac::gestiscispaz(bool i_silent)
 		myprintf("Disposable space checker...\n");
 		color_restore();
     }
-	
+
     franzspaz cleaner;
     vector<string> junk = cleaner.get_junk_folders(false);
     if (junk.empty())
@@ -102227,7 +101171,7 @@ int64_t Jidac::gestiscispaz(bool i_silent)
         myprintf("94078: No trash folder found\n");
         return 0;
     }
-    
+
     // Collect all info
     vector<folder_info> infos;
     int64_t totale_spazzatura = 0;
@@ -102242,22 +101186,22 @@ int64_t Jidac::gestiscispaz(bool i_silent)
             totale_spazzatura += fi.size;
         }
     }
-    
+
     // Sort by descending size
     sort(infos.begin(), infos.end(), compare_desc);
-    
-	
+
+
     if (infos.empty())
     {
 		if (i_silent)
 			myprintf("94102: All folders empty or below threshold\n");
         return 0;
     }
-    
+
     // Add to notfiles for potential other uses
     for (size_t i = 0; i < infos.size(); i++)
         notfiles.push_back(infos[i].path);
-    
+
     if (flagverbose || flagkill)
     {
         for (size_t i = 0; i < infos.size(); i++)
@@ -102270,16 +101214,16 @@ int64_t Jidac::gestiscispaz(bool i_silent)
 		myprintf("%12s    TOTAL SPACE in %s folders\n", tohuman(totale_spazzatura), migliaia(infos.size()));
 		color_restore();
     }
-	
+
     if (flagkill)
     {
 		vector<string> filetodelete;
-		
+
         printbar('=');
         color_yellow();
         myprintf("KILL MODE ENABLED - Deleting junk files...\n");
         color_restore();
-        
+
         int64_t deleted_size = 0;
         int64_t deleted_count = 0;
         int64_t failed_count = 0;
@@ -102288,11 +101232,11 @@ int64_t Jidac::gestiscispaz(bool i_silent)
 		g_arrayfilescanned.clear();
 		g_arraybytescanned.push_back(0);
 		g_arrayfilescanned.push_back(0);
-		
+
         for (size_t i = 0; i < infos.size(); i++)
         {
             const string& filepath = infos[i].path;
-			
+
 			if (isdirectory(filepath))
 			{
 				DTMap myblock;
@@ -102311,13 +101255,13 @@ int64_t Jidac::gestiscispaz(bool i_silent)
 		for (unsigned int i=0;i<filetodelete.size();i++)
 		{
 			int64_t filesize = prendidimensionefile(filetodelete[i].c_str());
-                
+
 			if (delete_file(filetodelete[i].c_str()))
             {
 				deleted_count++;
 				if (filesize > 0)
 					deleted_size += filesize;
-				
+
 				if (flagdebug)
 					myprintf("  DEL: %s\n", filetodelete[i].c_str());
 			}
@@ -102337,41 +101281,41 @@ int64_t Jidac::gestiscispaz(bool i_silent)
 			if (now - last_progress_time >= 1000)
 			{
 				last_progress_time = now;
-				myprintf("  Deleted %12s files (%12s)...\r", 
+				myprintf("  Deleted %12s files (%12s)...\r",
 						 migliaia(deleted_count), tohuman(deleted_size));
 			}
         }
-        
+
         // Final result
         eol();
         printbar('-');
-        
+
         if (deleted_count > 0)
         {
             color_green();
             myprintf("Deleted: %s files (%s)\n", migliaia(deleted_count), tohuman(deleted_size));
             color_restore();
         }
-        
+
         if (failed_count > 0)
         {
             color_red();
             myprintf("Failed:  %s files (permission denied or locked)\n", migliaia(failed_count));
             color_restore();
         }
-        
+
         if (deleted_count == 0 && failed_count == 0)
         {
             myprintf("No files to delete\n");
         }
-        
+
 		files.clear();
 		for (size_t i = 0; i < infos.size(); i++)
 			if (isdirectory(infos[i].path))
 				removeemptydirs(infos[i].path, true);
         return deleted_size;
     }
-    
+
     return totale_spazzatura;
 }
 #endif
@@ -102402,7 +101346,7 @@ std::string trova_e_estrai(const std::string& filename, const std::string& patte
     while (fgets(buffer, sizeof(buffer), f)) {
         // Cerca il pattern nella riga corrente
         char* pos = strstr(buffer, pattern.c_str());
-        
+
         if (pos != NULL) {
             // Pattern trovato!
             // Spostiamo il puntatore alla fine del pattern
@@ -102427,12 +101371,12 @@ std::string trova_e_estrai(const std::string& filename, const std::string& patte
     }
 
     fclose(f);
-    
+
     if (!found) {
         // Opzionale: stampa di debug se il pattern non viene trovato
         // myprintf("Warning: Pattern '%s' not found in %s\n", pattern.c_str(), filename.c_str());
     }
-    
+
     return result;
 }
 
@@ -103081,12 +102025,6 @@ int Jidac::work()
 			return 2;
 		}
 		return 2;
-
-		/*
-		franz_do_hash dummy("CRC-32");
-		string crc32_reloaded=dummy.filehash(128,output_filename,false,0,prendidimensionefile(output_filename.c_str()));
-		myprintf("CRC32 reloaded %s\n",crc32_reloaded.c_str());
-		*/
 	}
 
 	if ((mycommand == "test"))
@@ -103221,7 +102159,7 @@ int Jidac::work()
 		vssmenu();
 		return 0;
 	}
-	
+
 	if (mycommand == "frugal")
 	{
 		flagverbose=true; //get the output
@@ -103302,7 +102240,7 @@ int Jidac::work()
 		return 0;
 	}
 
-	
+
 	myprintf("03441! Do not understand the command\n");
 	return 2;
 }
@@ -103494,7 +102432,6 @@ int Jidac::sumhome()
 
 	vector<string>		 outcome;
 	vector<s_stringpair> risultati;
-	/// string 	basearchive		=archive;
 	int64_t starthome	   = mtime();
 	int64_t totaldalavorare= 0;
 	int		totalfiles	   = 0;
@@ -103691,7 +102628,6 @@ int Jidac::list715()
 		{
 			DTMap::const_iterator p1= filelist[fi + 1];
 
-			/// bool 		equal(DTMap::const_iterator p, const char* filename, uint32_t &o_crc32,string i_myhashtype,string i_myhash,string& o_hash);// compare file contents with p
 			uint32_t thecrc32= 0;
 			string	 dummy;
 			if ((flagforce && equal(p, p1->first.c_str(), thecrc32, "", "", dummy)) || (!flagforce && p->second.date == p1->second.date && p->second.size == p1->second.size && (!p->second.attr || !p1->second.attr || p->second.attr == p1->second.attr)))
@@ -103829,7 +102765,7 @@ bool isvhdimage(const std::string &filename)
 
 char get_lettera(const std::string &filename)
 {
-    if (isvhdimage(filename)) 
+    if (isvhdimage(filename))
 	    return filename[6];
     if (isvhdmeta(filename))
         return filename[6];
@@ -103846,7 +102782,7 @@ bool israwimage(const std::string &filename)
 
 char get_lettera_raw(const std::string &filename)
 {
-    if (israwimage(filename)) 
+    if (israwimage(filename))
 	    return filename[6];
     return '\0';  // Non valido
 }
@@ -103997,15 +102933,13 @@ int Jidac::repackfunction(int64_t i_size)
 }
 void Jidac::extractstreaming()
 {
-	
+
 	// Extract streaming files
 	unsigned	 segments= 0; // count
 	InputArchive in(archive.c_str());
-	/// myprintf();
 	if (in.isopen())
 	{
 		FP outf= FPNULL;
-		////myprintf(");
 		DTMap::iterator dtptr= dt.end();
 		for (unsigned i= 0; i < block.size(); ++i)
 		{
@@ -104029,7 +102963,6 @@ void Jidac::extractstreaming()
 						if (filename.s != "" || segments == 0)
 						{
 							unsigned k;
-							/// myprintf(");
 							for (k= 0; k < b.files.size(); ++k)
 							{ // find in dt
 								if (b.files[k]->second.ptr.size() > 0 && b.files[k]->second.ptr[0] == b.start + j && b.files[k]->second.date > 0 && b.files[k]->second.data == 0)
@@ -104037,29 +102970,21 @@ void Jidac::extractstreaming()
 							}
 							if (k < b.files.size())
 							{ // found new file
-								/// myprintf();
 								if (outf != FPNULL)
 									myfclose(&outf);
 								outf		  = FPNULL;
 								string outname= rename(b.files[k]->first);
 								dtptr		  = b.files[k];
-						///		lock(job.mutex);
 								myprintf("> %Z\n", outname.c_str());
 								if (!flagtest)
 								{
-									/// myprintf();
-									/// myprintf("00956: makepath %s\n",outname.c_str());
-
 									makepath(outname);
-									/// myprintf();
-
 									outf= myfopen(outname.c_str(), WB);
 									if (outf == FPNULL)
 									{
 										printerr("18330", outname.c_str(), 0);
 									}
 								}
-							///	release(job.mutex);
 							}
 							else
 							{ // end of file
@@ -104094,9 +103019,7 @@ void Jidac::extractstreaming()
 				}
 				catch (std::exception &e)
 				{
-					///lock(job.mutex);
 					myprintf("00957: Skipping block: %s\n", e.what());
-					///release(job.mutex);
 				}
 			}
 		}
@@ -104106,7 +103029,7 @@ void Jidac::extractstreaming()
 	if (segments > 0)
 		myprintf("%u streaming segments extracted\n", segments);
 
-}	
+}
 int Jidac::extract()
 {
 	archive= getbackupnameifany(archive);
@@ -104227,7 +103150,6 @@ int Jidac::extract()
 				myprintf("00877! Cannot write on <<-to %s>>\n", tofiles[0].c_str());
 				myprintf("00878: Aborting. Use -space to bypass and enforcing.\n");
 				return 2;
-				/// error("Path seems not writeable");
 			}
 		}
 	if (flagzero)
@@ -104277,7 +103199,7 @@ int Jidac::extract()
 	// Encrypt or decrypt whole archive
 	if ((repack != "") && all)
 		return repackall();
-	
+
 	decodelastversion();
 
 	int		errors= 0;
@@ -104541,7 +103463,7 @@ int Jidac::extract()
 	string vhd_image_name;
 	string vhd_header_name;
 	string vhd_footer_name;
-	
+
 	int header_count= 0;
 	int image_count = 0;
 	int footer_count =0;
@@ -104570,7 +103492,6 @@ int Jidac::extract()
 
 	if (flagntfs || flagvhd )
 	{
-		///printf("dt vale %s\n",migliaia(dt.size()));
 		for (DTMap::iterator p= dt.begin(); p != dt.end(); ++p)
 		{
 			string fileinlavoro= p->first;
@@ -104595,7 +103516,7 @@ int Jidac::extract()
 			}
 			else
 				p->second.donotextractme= true; /// <<< we really do not want to extract on disk the header
-				
+
 		}
 		if ((vhd_image_name == "") || (vhd_header_name == "") || (vhd_footer_name==""))
 		{
@@ -104619,12 +103540,10 @@ int Jidac::extract()
 		if (entra)
 		{
 			string fn= rename(p->first);
-			///	myprintf("sono entrato con %s\n",fn.c_str());
 			const bool isdir= isdirectory(p->first);
 			if (isdir)
 				real_dirs++;
 			string dummy= "";
-			/// myprintf("49911\n");
 			if ((!flagstdout) && (repack == "") && !flagtest && flagforce && !isdir && equal(p, fn.c_str(), crc32fromfile, "", "", dummy))
 			{
 				// identical
@@ -104696,7 +103615,6 @@ int Jidac::extract()
 				isstdourordered= p->second.isordered;
 
 				job.total_size+= p->second.size;
-				/// myprintf("00913: FACCIO QUALCOSA SU %s per size %d\n",fn.c_str(),p->second.size);
 				if ((!flagtest) && (!flagstdout) && (repack == ""))
 					if (fileexists(fn))
 					{
@@ -104758,7 +103676,6 @@ int Jidac::extract()
 		myprintf("00928: Extract %s bytes (%s) in %s files (%s folders) / %d T\n", migliaia(job.total_size), tohuman(job.total_size), migliaia2(total_files), migliaia4(real_dirs), howmanythreads);
 
 	int64_t freeramdisk= getramdisksize() * 75 / 100;
-	/// freeramdisk=1000;
 
 	if (flaghdd)
 		if (!flagspace)
@@ -104807,7 +103724,6 @@ int Jidac::extract()
 					if (!isdirectory(tofiles[0]))
 						myprintf("00934: -to is a single file, NOT a folder. Maybe you miss the final /?\n");
 					myprintf("00935! Not enough free space. Use -space to bypass and enforcing.\n");
-					/// error("Not enough free space");
 					return 2;
 				}
 			}
@@ -104882,7 +103798,6 @@ int Jidac::extract()
 					myprintf("00945: Done %8sK / %s\r", migliaia(fatti / 1000), migliaia2(totaledt));
 			string fn= rename(p->first);
 			fn		 = makelongpath(fn);
-			/// myprintf("00946: makepath %s\n",fn.c_str());
 
 			makepath(fn);
 			if (!isdirectory(fn))
@@ -104930,16 +103845,11 @@ int Jidac::extract()
 		DTMap::iterator it_header= dt.end();
 		DTMap::iterator it_target= dt.end();
 		DTMap::iterator it_footer= dt.end();
-		
-	
+
+
 		// Find the two elements
 		for (DTMap::iterator p= dt.begin(); p != dt.end(); ++p)
 		{
-			/*
-			printf("memmone |%s| vhd head |%s|\n",p->first.c_str(),vhd_header_name.c_str());
-			printf("memmone |%s| vhd foot |%s|\n",p->first.c_str(),vhd_footer_name.c_str());
-			printf("memmone |%s| vhd imag |%s|\n",p->first.c_str(),vhd_image_name.c_str());
-			*/
 			if (p->first==vhd_footer_name)
 			{
 				if (flagdebug2)
@@ -104987,7 +103897,7 @@ int Jidac::extract()
 
 			searchfrom=".fhd";
 			replaceto=".vhd";
-	
+
 		}
 		else
 			myprintf("93819! GURU cannot find header & footer & target\n");
@@ -105010,7 +103920,7 @@ int Jidac::extract()
 	}
 
 	extractstreaming();
-	
+
 
 
 	// Wait for threads to finish
@@ -105287,7 +104197,7 @@ int Jidac::extract()
 					const int DATALEN=16384;
 #else
 					const int DATALEN=65536 * 16;
-#endif 
+#endif
 					std::vector<char> data_buffer(DATALEN);
 					char* data = data_buffer.data();
 #endif
@@ -105613,14 +104523,13 @@ bool Jidac::is_incomplete_trans(const char *arc)
 	bool				 found_data	   = false;					 // exit if nothing found
 	bool				 first		   = true;					 // first segment in archive?
 	int					 pass		   = LIST_NORMAL;			 // recover ht from data blocks?
-	///list_StringBuffer	 os(32832);								 // decompressed block
 #if defined(ANCIENT) || defined(ESX)
 	list_StringBuffer os(32832);  // decompressed block
 #else
 	std::unique_ptr<list_StringBuffer> os_ptr(new list_StringBuffer(32832));
 	list_StringBuffer &os = *os_ptr;
 #endif
-	
+
 	map<int64_t, double> compressionRatio;						 // block offset -> compression ratio
 
 	int blocchini= 0;
@@ -105643,7 +104552,6 @@ bool Jidac::is_incomplete_trans(const char *arc)
 				if (!d.findBlock())
 					break;
 				pass= LIST_RECOVER;
-				/// myprintf("Attempting to recover fragment tables...\n");
 			}
 			else
 				break;
@@ -105731,14 +104639,10 @@ bool Jidac::is_incomplete_trans(const char *arc)
 						d.readSegmentEnd(sha1result);
 						if (usize != int64_t(sha1.usize()))
 						{
-							/// printf( "%s size should be %1.0f, is %1.0f\n",
-							///   filename.s.c_str(), double(usize),
-							/// double(sha1.usize()));
 							libzpaq::error("incorrect block size");
 						}
 						if (sha1result[0] && memcmp(sha1result + 1, sha1.result(), 20))
 						{
-							/// printf( "%s checksum error\n", filename.s.c_str());
 							libzpaq::error("bad checksum");
 						}
 					}
@@ -106857,7 +105761,7 @@ int Jidac::sftp_doupload()
 		color_yellow();
 
 		myprintf("83111: APPEND, checking...");
-		
+
 		string thequickhash= sftp_get_quick(remotefile, thefilesize, thetime);
 		color_restore();
 
@@ -106903,7 +105807,7 @@ int Jidac::sftp_doupload()
 	}
 
 	bool   flagdeep= flagsha1deep || flagmd5deep || flagsha256deep;
-	
+
 	color_yellow();
 	myprintf("08363: Quick ... ");
 	int64_t thefilesize;
@@ -106927,7 +105831,7 @@ int Jidac::sftp_doupload()
 
 	string thealgo;
 
-		
+
 	if (flagdeep)
 	{
 		if (flagmd5deep)
@@ -106937,19 +105841,19 @@ int Jidac::sftp_doupload()
 		else if (flagsha256deep)
 			thealgo= "sha256";
 		color_cyan();
-	
+
 		string estensione=prendiestensione(localfile);
 		if (flagdebug2)
 			myprintf("Extension %s\n",estensione.c_str());
 		string loc1=extractfilepath(localfile)+"*."+estensione;
 		if (flagdebug2)
 			myprintf("Loc1 %s\n",loc1.c_str());
-		
+
 		string rem1=extractfilepath(remotefile)+"*."+estensione;
 		if (flagdebug2)
 			myprintf("Rem1 %s\n",rem1.c_str());
-		
-		
+
+
 		myprintf("43613: ::::::::::::::::::::: 	Full cloud hash check with %s\n", thealgo.c_str());
 		color_restore();
 		color_cyan();
@@ -106961,10 +105865,10 @@ int Jidac::sftp_doupload()
 		flagverbose= true;
 		string saveme=g_sftp_remote;
 		g_sftp_remote=rem1;
-		
+
 		int result_deep= ssh_dohasha(thealgo);
 		g_sftp_remote=saveme;
-		
+
 		flagverbose= false;
 		if (result_deep==0)
 		{
@@ -108557,7 +107461,7 @@ class franzfilesystem
 
         int chars_printed = 0;
         long long current_item = 0;
-        
+
         // Per lo spinner
         const char spinner[] = {'|', '/', '-', '\\'};
         int spin_idx = 0;
@@ -108568,12 +107472,12 @@ class franzfilesystem
         {
             current_item++;
             int expected_chars = (int)((current_item * larghezza) / total_items);
-            
+
             if (expected_chars > chars_printed)
             {
                 while (chars_printed < expected_chars)
                 {
-                    myprintf("="); 
+                    myprintf("=");
                     chars_printed++;
                 }
                 // Stampa lo spinner e torna indietro di 1 colonna con \b
@@ -108588,7 +107492,7 @@ class franzfilesystem
 
         // Fine: sovrascriviamo lo spinner con la chiusura della barra
         myprintf("] OK\n\n");
-	
+
 		dirprimolivello();
 	}
 
@@ -108677,7 +107581,7 @@ class franzfilesystem
             }
             return first_level;
         }
-        
+
         // Windows path: C:/folder/file.txt
         if (path.size() > 2 && path[1] == ':' &&
             (path[2] == '/' || path[2] == '\\'))
@@ -108688,7 +107592,7 @@ class franzfilesystem
                               : path.substr(0, 3); // FIX: Return "C:/" not full file path
             return first_level;
         }
-        
+
         // Unix path: /folder/...
         if (path[0] == '/')
         {
@@ -108698,7 +107602,7 @@ class franzfilesystem
                               : "/"; // FIX: Return "/" not full file path
             return first_level;
         }
-        
+
         // Relative path starting with ./
         if (path.size() >= 2 && path[0] == '.' && path[1] == '/')
         {
@@ -108709,7 +107613,7 @@ class franzfilesystem
                 first_level = "./"; // FIX: Return "./" not full file path
             return first_level;
         }
-        
+
         // Plain relative path: folder/file.txt OR temp.txt
         size_t first_slash = path.find('/');
         if (first_slash != std::string::npos)
@@ -108719,7 +107623,7 @@ class franzfilesystem
 
         return first_level;
     }
-	
+
 	// CHECK IF FILE IS AT FIRST LEVEL
 	bool isfirstlevel(const std::string &i_file)
 	{
@@ -108945,7 +107849,7 @@ class franzfilesystem
                 // Se è un file, stampalo SOLO se è nella root (nessuno slash nel nome)
                 // Nota: take_first_level_folder restituisce "" per i file root con la fix sopra
                 if (file->first.find('/') != std::string::npos)
-                    continue; 
+                    continue;
             }
 
             // Skip pure roots
@@ -110742,10 +109646,10 @@ class franztui
 			bool is_dir= ends_with_char_tui(pair->first, '/');
 			entries.push_back(fileentry(pair->first, pair->second.date, pair->second.size, is_dir));
 		}
-		
-		
+
+
 		bool wehaveslash = false, wehaveother = false;
-		
+
 		string myhead = "Analyzing: ";
         myprintf("%s", myhead.c_str());
 
@@ -110758,7 +109662,7 @@ class franztui
 
         int chars_printed = 0;
         long long current_item = 0;
-        
+
         // Per lo spinner
         const char spinner[] = {'|', '/', '-', '\\'};
         int spin_idx = 0;
@@ -110769,12 +109673,12 @@ class franztui
         {
             current_item++;
             int expected_chars = (int)((current_item * larghezza) / total_items);
-            
+
             if (expected_chars > chars_printed)
             {
                 while (chars_printed < expected_chars)
                 {
-                    myprintf("="); 
+                    myprintf("=");
                     chars_printed++;
                 }
                 // Stampa lo spinner e torna indietro di 1 colonna con \b
@@ -110795,7 +109699,7 @@ class franztui
 
         // Fine: sovrascriviamo lo spinner con la chiusura della barra
         myprintf("] OK\n");
-		
+
 		if (wehaveslash && !wehaveother)
 			current_path= "/";
 		else
@@ -113682,7 +112586,6 @@ int stringToInt(const string &str)
 
 bool Jidac::parsediskunit(string i_stringa, char &o_char, int &o_number)
 {
-///	printf("i_stringa |%s|\n",i_stringa.c_str());
 	// Initialize output values
 	o_char	= '\0';
 	o_number= -1;
@@ -114458,7 +113361,7 @@ int Jidac::cloud()
 	files.push_back(g_sftp_remote);
 	/*
 		remove flag hashcheck, run later
-		
+
 	*/
 	bool temp1=flagsha1deep;
 	bool temp2=flagmd5deep;
@@ -114466,9 +113369,9 @@ int Jidac::cloud()
 	temp1=false;
 	temp2=false;
 	temp3=false;
-	
+
 	result_checksum= sftp_doupload();
-		
+
 	flagsha1deep=temp1;
 	flagmd5deep=temp2;
 	flagsha256deep=temp3;
@@ -115120,7 +114023,6 @@ int eseguicomandossh(uint64_t i_expectedtime, std::string &comando, const std::s
 			{
 				// Calculate remaining time based on i_expectedtime
 				int64_t tempo_rimanente= i_expectedtime - seconds;
-				/// myprintf("00600: i_expected %s rimanente_ms %s\n",migliaia(i_expectedtime),migliaia2(tempo_rimanente_ms));
 
 				if (tempo_rimanente > 0)
 				{
@@ -115188,10 +114090,7 @@ int eseguicomandossh(uint64_t i_expectedtime, std::string &comando, const std::s
 			data_read= true;
 		}
 		else if (nbytes < 0)
-		{
-			///     myprintf("\n");
-			///	myprintf("96935! Error reading STDOUT %s\n", ssh_get_error(session));
-		}
+		{}
 
 		// Attempt to read from STDERR (critical to prevent deadlock)
 		nbytes= ssh_channel_read_nonblocking(channel, buffer, sizeof(buffer), 1);
@@ -115201,10 +114100,7 @@ int eseguicomandossh(uint64_t i_expectedtime, std::string &comando, const std::s
 			data_read= true;
 		}
 		else if (nbytes < 0)
-		{
-			/// myprintf("\n");
-			///	myprintf("96940$ No stderr\n");
-		}
+		{}
 
 		// If there is no data on either channel, increment the counter
 		if (!data_read)
@@ -115654,7 +114550,7 @@ int Jidac::ssh_dohasha(std::string i_algo)
 	g_arraybytescanned.push_back(0);
 	g_arrayfilescanned.push_back(0);
 	edt.clear();
-	
+
 	if (flagdebug)
 		myprintf("posizionelocale %s\n", posizionelocale.c_str());
 	scandir(false, edt, posizionelocale.c_str(), false);
@@ -115669,7 +114565,7 @@ int Jidac::ssh_dohasha(std::string i_algo)
 			totallocalsize+= a->second.size;
 		}
 	}
-	
+
 	if (flagdebug3)
 		for (unsigned int i= 0; i < localfiles.size(); i++)
 			myprintf("97127: Local <<%Z>>\n", localfiles[i].c_str());
@@ -115683,7 +114579,7 @@ int Jidac::ssh_dohasha(std::string i_algo)
 	string hashtype= localalgo;
 	g_dimensione= 0; // for avanzamento
 	myprintf("97129: %s files for %s, now hashing with %s...\n", migliaia2(localfiles.size()),migliaia(totallocalsize), hashtype.c_str());
-	
+
 	vector<std::pair<string, string> > local_hash_array;
 	int64_t							  hashtime= franzparallelhashfiles(hashtype, totallocalsize, localfiles, false, local_hash_array);
 	eol();
@@ -117019,19 +115915,19 @@ bool Jidac::get_letters_from_dt(std::vector<char>& o_fhd, std::vector<char>& o_r
 {
     o_fhd.clear();
     o_raw.clear();
-    
+
     // Vettori per tracciare le lettere trovate per ogni tipo di estensione
     std::vector<char> letters_raw;
     std::vector<char> letters_fhd;
     std::vector<char> letters_footer;
     std::vector<char> letters_header;
     std::vector<char> letters_meta;
-    
-    for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p) 
+
+    for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p)
     {
         std::string fileinlavoro = p->first;
-		
-        
+
+
         // Extract only filename (senza path)
         size_t last_slash = fileinlavoro.find_last_of("/\\");
         std::string filename;
@@ -117043,15 +115939,15 @@ bool Jidac::get_letters_from_dt(std::vector<char>& o_fhd, std::vector<char>& o_r
 
 		if (flagdebug)
 			myprintf("05421: filename %s\n",filename.c_str());
-        
+
 		///printf("Filename %s\n",filename.c_str());
         // Cerca il pattern: qualcosa_X.estensione
         // dove X è una singola lettera
         size_t underscore_pos = filename.find_last_of('_');
         size_t dot_pos = filename.find_last_of('.');
-        
-        if (underscore_pos != std::string::npos && 
-            dot_pos != std::string::npos && 
+
+        if (underscore_pos != std::string::npos &&
+            dot_pos != std::string::npos &&
             dot_pos > underscore_pos &&
             dot_pos - underscore_pos == 2)  // esattamente una lettera tra _ e .
         {
@@ -117076,15 +115972,15 @@ bool Jidac::get_letters_from_dt(std::vector<char>& o_fhd, std::vector<char>& o_r
             }
         }
     }
-    
+
     // Add .raw letters to the output vector
     for (size_t i = 0; i < letters_raw.size(); i++) {
         o_raw.push_back(letters_raw[i]);
     }
-	
+
     // Raccogli tutte le lettere candidate per i quartetti (senza duplicati)
     std::vector<char> all_quartet_letters;
-    
+
     for (size_t i = 0; i < letters_fhd.size(); i++) {
         vector_add_unique(all_quartet_letters, letters_fhd[i]);
     }
@@ -117097,17 +115993,17 @@ bool Jidac::get_letters_from_dt(std::vector<char>& o_fhd, std::vector<char>& o_r
     for (size_t i = 0; i < letters_meta.size(); i++) {
         vector_add_unique(all_quartet_letters, letters_meta[i]);
     }
-    
+
     // Verifica che ogni lettera abbia tutti e 4 i file
     for (size_t i = 0; i < all_quartet_letters.size(); i++)
     {
         char letter = all_quartet_letters[i];
-        
+
         bool has_fhd    = vector_contains(letters_fhd, letter);
         bool has_footer = vector_contains(letters_footer, letter);
         bool has_header = vector_contains(letters_header, letter);
         bool has_meta   = vector_contains(letters_meta, letter);
-        
+
         if (has_fhd && has_footer && has_header && has_meta) {
             // Quartetto completo
             o_fhd.push_back(letter);
@@ -117139,65 +116035,65 @@ char Jidac::take_letter_from_filename(char i_sourceletter)
 
 	if (!flagntfs)
 	{
-		for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p) 
+		for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p)
 		{
 			std::string fileinlavoro = p->first;
 			if (israwimage(fileinlavoro))
 				return get_lettera_raw(fileinlavoro);
-		}	
+		}
 		return 0;
 	}
 	else // not raw
 	{
-		if (i_sourceletter != 0) 
+		if (i_sourceletter != 0)
 		{
 		// Modalità filtrata: solo file con la lettera specificata
 			char expected_letter = i_sourceletter;
-			for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p) 
+			for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p)
 			{
 				std::string fileinlavoro = p->first;
-				if (isvhdmeta(fileinlavoro) && get_lettera(fileinlavoro) == expected_letter) 
+				if (isvhdmeta(fileinlavoro) && get_lettera(fileinlavoro) == expected_letter)
 					bitmap_count++;
-				if (isvhdimage(fileinlavoro) && get_lettera(fileinlavoro) == expected_letter) 
+				if (isvhdimage(fileinlavoro) && get_lettera(fileinlavoro) == expected_letter)
 					image_count++;
-			}	
-			if (bitmap_count == 1 && image_count == 1) 
+			}
+			if (bitmap_count == 1 && image_count == 1)
 			{
 				bitmap_letter = expected_letter;
 				///image_letter = expected_letter;
-			} 
-			else 
+			}
+			else
 			{
 				color_red();
 				myprintf("99322: Cannot find expected files for letter '%c' (meta %d image %d)\n", expected_letter,bitmap_count,image_count);
 				color_restore();
 				return 0;
 			}
-		} 
-		else 
+		}
+		else
 		{
 			// Modalità auto-detect: esattamente un bitmap e un raw con stessa lettera
 			char detected_bitmap_letter = 0;
 			char detected_image_letter = 0;
-			for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p) 
+			for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p)
 			{
 				std::string fileinlavoro = p->first;
-				if (isvhdmeta(fileinlavoro)) 
+				if (isvhdmeta(fileinlavoro))
 				{
 					char let = get_lettera(fileinlavoro);
-					if (let != 0) 
+					if (let != 0)
 					{
-						if (detected_bitmap_letter == 0) 
+						if (detected_bitmap_letter == 0)
 						{
 							detected_bitmap_letter = let;
 							bitmap_count = 1;
-						} 
-						else 
-						if (let == detected_bitmap_letter) 
+						}
+						else
+						if (let == detected_bitmap_letter)
 						{
 							bitmap_count++;
-						} 
-						else 
+						}
+						else
 						{
 							// Multiple lettere per bitmap
 							color_red();
@@ -117207,22 +116103,22 @@ char Jidac::take_letter_from_filename(char i_sourceletter)
 						}
 					}
 				}
-				if (isvhdimage(fileinlavoro)) 
+				if (isvhdimage(fileinlavoro))
 				{
 					char let = get_lettera(fileinlavoro);
-					if (let != 0) 
+					if (let != 0)
 					{
-						if (detected_image_letter == 0) 
+						if (detected_image_letter == 0)
 						{
 							detected_image_letter = let;
 							image_count = 1;
-						} 
-						else 
-						if (let == detected_image_letter) 
+						}
+						else
+						if (let == detected_image_letter)
 						{
 							image_count++;
-						} 
-						else 
+						}
+						else
 						{
 							// Multiple lettere per raw
 							color_red();
@@ -117233,19 +116129,19 @@ char Jidac::take_letter_from_filename(char i_sourceletter)
 					}
 				}
 			}
-			if (bitmap_count == 1 && image_count == 1 && detected_bitmap_letter == detected_image_letter) 
+			if (bitmap_count == 1 && image_count == 1 && detected_bitmap_letter == detected_image_letter)
 			{
 				bitmap_letter = detected_bitmap_letter;
 	//			image_letter = detected_image_letter;
-			} 
-			else 
+			}
+			else
 			{
 				color_red();
-				if (bitmap_count != 1 || image_count != 1) 
+				if (bitmap_count != 1 || image_count != 1)
 				{
 					myprintf("99322: Expected exactly one bitmap and one raw file\n");
-				} 
-				else 
+				}
+				else
 				{
 					myprintf("99322: Bitmap and raw letters mismatch\n");
 				}
@@ -117655,7 +116551,7 @@ struct ParanoidStats {
     int64_t dirs_in_archive_not_on_disk;
     int64_t files_size_mismatch;
     int64_t warnings_printed;
-    
+
     // Summary counts
     int64_t archive_files_count;
     int64_t archive_dirs_count;
@@ -117663,8 +116559,8 @@ struct ParanoidStats {
     int64_t filesystem_files_count;
     int64_t filesystem_dirs_count;
     int64_t filesystem_total_size;
-    
-    ParanoidStats() : 
+
+    ParanoidStats() :
         paths_not_accessible(0),
         files_on_disk_not_in_archive(0),
         files_in_archive_not_on_disk(0),
@@ -117678,7 +116574,7 @@ struct ParanoidStats {
         filesystem_files_count(0),
         filesystem_dirs_count(0),
         filesystem_total_size(0) {}
-    
+
     bool allOk() const {
         return paths_not_accessible == 0 &&
                files_on_disk_not_in_archive == 0 &&
@@ -117687,7 +116583,7 @@ struct ParanoidStats {
                dirs_in_archive_not_on_disk == 0 &&
                files_size_mismatch == 0;
     }
-    
+
     int64_t totalIssues() const {
         return paths_not_accessible +
                files_on_disk_not_in_archive +
@@ -117723,16 +116619,16 @@ static std::string extractBasePath(const std::string& fullpath)
 {
     if (fullpath.empty())
         return "./";
-    
+
     // Find last separator
     size_t lastSep = fullpath.rfind('/');
-    
+
     if (lastSep == std::string::npos)
     {
         // No separator found - file is in current directory
         return "./";
     }
-    
+
     // Return path including trailing slash
     return fullpath.substr(0, lastSep + 1);
 }
@@ -117754,15 +116650,15 @@ static bool isDirectoryPath(const std::string& path)
 std::set<std::string> Jidac::extractBasePaths()
 {
     std::set<std::string> basePaths;
-    
+
     for (DTMap::iterator p = dt.begin(); p != dt.end(); ++p)
     {
         std::string filename = rename(p->first);
         if (filename.empty())
             continue;
-        
+
         std::string basePath;
-        
+
         if (isDirectoryPath(filename))
         {
             // It's a directory - use it directly as a potential base
@@ -117773,19 +116669,19 @@ std::set<std::string> Jidac::extractBasePaths()
             // It's a file - extract its parent directory
             basePath = extractBasePath(filename);
         }
-        
+
         // Normalize for comparison
         std::string normalizedBase = normalizePathForCompare(basePath);
-        
+
         // Add to set (duplicates automatically handled)
         if (!normalizedBase.empty())
             basePaths.insert(normalizedBase);
     }
-    
+
     // Now reduce the set - remove paths that are subdirectories of other paths
     // For example, if we have both "c:/data/" and "c:/data/subdir/", keep only "c:/data/"
     std::set<std::string> reducedPaths;
-    
+
     for (std::set<std::string>::iterator it = basePaths.begin(); it != basePaths.end(); ++it)
     {
         bool isSubdir = false;
@@ -117793,20 +116689,20 @@ std::set<std::string> Jidac::extractBasePaths()
         {
             if (it == other)
                 continue;
-            
+
             // Check if *it starts with *other (meaning *it is a subdirectory of *other)
-            if (it->size() > other->size() && 
+            if (it->size() > other->size() &&
                 it->substr(0, other->size()) == *other)
             {
                 isSubdir = true;
                 break;
             }
         }
-        
+
         if (!isSubdir)
             reducedPaths.insert(*it);
     }
-    
+
     return reducedPaths;
 }
 
@@ -117819,18 +116715,18 @@ std::set<std::string> Jidac::extractBasePaths()
 int64_t Jidac::scanFilesystemPaths(const std::set<std::string>& basePaths, DTMap& edt, ParanoidStats& stats)
 {
     edt.clear();
-    
+
     for (std::set<std::string>::const_iterator it = basePaths.begin(); it != basePaths.end(); ++it)
     {
         std::string path = *it;
-        
+
         if (flagdebug)
             myprintf("Paranoid: scanning path %s\n", path.c_str());
-        
+
         // Check if path is accessible
         // For current directory, always try
         bool accessible = false;
-        
+
         if (path == "./")
         {
             accessible = true;
@@ -117846,7 +116742,7 @@ int64_t Jidac::scanFilesystemPaths(const std::set<std::string>& basePaths, DTMap
             accessible = (stat(path.c_str(), &st) == 0 && S_ISDIR(st.st_mode));
 #endif
         }
-        
+
         if (!accessible)
         {
             stats.paths_not_accessible++;
@@ -117859,7 +116755,7 @@ int64_t Jidac::scanFilesystemPaths(const std::set<std::string>& basePaths, DTMap
             }
             continue;
         }
-        
+
         // Add the base path itself as a directory entry
         // (scandir does not include the scanned directory itself)
         if (path != "./")
@@ -117867,23 +116763,23 @@ int64_t Jidac::scanFilesystemPaths(const std::set<std::string>& basePaths, DTMap
             DT dummy;
             edt[path] = dummy;
         }
-        
+
         // Scan the directory
         g_arraybytescanned.clear();
         g_arrayfilescanned.clear();
         g_arraybytescanned.push_back(0);
         g_arrayfilescanned.push_back(0);
-        
+
         DTMap tempDt;
         scandir(false, tempDt, path.c_str(), true);  // FIXED: true for recursive scan
-        
+
         // Merge into edt
         for (DTMap::iterator a = tempDt.begin(); a != tempDt.end(); ++a)
         {
             edt[a->first] = a->second;
         }
     }
-    
+
     return stats.paths_not_accessible;
 }
 void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
@@ -117893,24 +116789,24 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
     std::set<std::string> archiveDirs;       // directories in archive (normalized)
     std::set<std::string> filesystemFiles;   // files on filesystem (normalized)
     std::set<std::string> filesystemDirs;    // directories on filesystem (normalized)
-    
+
     // Map from normalized path to original path (for display)
     std::map<std::string, std::string> archiveOriginal;
     std::map<std::string, std::string> filesystemOriginal;
-    
+
     // Map from normalized path to size (for size comparison)
     std::map<std::string, int64_t> archiveSizes;
     std::map<std::string, int64_t> filesystemSizes;
-    
+
     // Populate archive sets from dt
     for (DTMap::const_iterator p = dt.begin(); p != dt.end(); ++p)
     {
         std::string filename = rename(p->first);
         if (filename.empty())
             continue;
-        
+
         std::string normalized = normalizePathForCompare(filename);
-        
+
         if (isDirectoryPath(filename))
         {
             archiveDirs.insert(normalized);
@@ -117925,16 +116821,16 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
         }
         archiveOriginal[normalized] = filename;
     }
-    
+
     // Populate filesystem sets from edt
     for (DTMap::const_iterator a = edt.begin(); a != edt.end(); ++a)
     {
         std::string filename = a->first;
         if (filename.empty())
             continue;
-        
+
         std::string normalized = normalizePathForCompare(filename);
-        
+
         if (isDirectoryPath(filename))
         {
             filesystemDirs.insert(normalized);
@@ -117949,7 +116845,7 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
         }
         filesystemOriginal[normalized] = filename;
     }
-    
+
     // Find files on filesystem but not in archive
     for (std::set<std::string>::iterator it = filesystemFiles.begin(); it != filesystemFiles.end(); ++it)
     {
@@ -117966,7 +116862,7 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
             }
         }
     }
-    
+
     // Find files in archive but not on filesystem, and check size mismatches
     for (std::set<std::string>::iterator it = archiveFiles.begin(); it != archiveFiles.end(); ++it)
     {
@@ -117987,7 +116883,7 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
             // File exists in both - check size
             int64_t archiveSize = archiveSizes[*it];
             int64_t filesystemSize = filesystemSizes[*it];
-            
+
             if (archiveSize != filesystemSize)
             {
                 stats.files_size_mismatch++;
@@ -117995,7 +116891,7 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
                 {
                     color_yellow();
                     std::string displayPath = archiveOriginal[*it];
-                    myprintf("WARNING: size mismatch: %s (archive: %s, disk: %s)\n", 
+                    myprintf("WARNING: size mismatch: %s (archive: %s, disk: %s)\n",
                              displayPath.c_str(),
                              migliaia(archiveSize),
                              migliaia2(filesystemSize));
@@ -118005,7 +116901,7 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
             }
         }
     }
-    
+
     // Find directories on filesystem but not in archive
     for (std::set<std::string>::iterator it = filesystemDirs.begin(); it != filesystemDirs.end(); ++it)
     {
@@ -118022,7 +116918,7 @@ void Jidac::comparebijective(const DTMap& edt, ParanoidStats& stats)
             }
         }
     }
-    
+
     // Find directories in archive but not on filesystem
     for (std::set<std::string>::iterator it = archiveDirs.begin(); it != archiveDirs.end(); ++it)
     {
@@ -118047,22 +116943,22 @@ int Jidac::paranoidverify()
 {
     myprintf("\n");
     myprintf("11196: Paranoid verification: checking archive vs filesystem\n");
-    
+
     ParanoidStats stats;
-    
+
     // Extract base paths from archive
     if (flagdebug)
         myprintf("Paranoid: extracting base paths from archive...\n");
-    
+
     std::set<std::string> basePaths = extractBasePaths();
-    
+
     if (flagdebug)
     {
         myprintf("Paranoid: found %d base paths to scan:\n", (int)basePaths.size());
         for (std::set<std::string>::iterator it = basePaths.begin(); it != basePaths.end(); ++it)
             myprintf("  %s\n", it->c_str());
     }
-    
+
     if (basePaths.empty())
     {
         color_yellow();
@@ -118070,23 +116966,23 @@ int Jidac::paranoidverify()
         color_restore();
         return 1;
     }
-    
+
     // Scan filesystem
     if (flagdebug)
         myprintf("Paranoid: scanning filesystem...\n");
-    
+
     DTMap edt;
     scanFilesystemPaths(basePaths, edt, stats);
-    
+
     if (flagdebug)
         myprintf("Paranoid: found %d items on filesystem\n", (int)edt.size());
-    
+
     // Step 3: Bijective comparison
     if (flagdebug)
         myprintf("Paranoid: performing bijective comparison...\n");
-    
+
     comparebijective(edt, stats);
-    
+
     myprintf("\n");
     myprintf("11239: Paranoid verification dashboard\n");
     myprintf("  Archive:    %12s files, %12s folders, %21s bytes (%10s)\n",
@@ -118099,7 +116995,7 @@ int Jidac::paranoidverify()
              migliaia2(stats.filesystem_dirs_count),
              migliaia3(stats.filesystem_total_size),
              tohuman(stats.filesystem_total_size));
-    
+
     if (!stats.allOk())
     {
         myprintf("\n");
@@ -118116,15 +117012,15 @@ int Jidac::paranoidverify()
             myprintf("  Dirs on disk but not in archive:   %12s\n", migliaia(stats.dirs_on_disk_not_in_archive));
         if (stats.dirs_in_archive_not_on_disk > 0)
             myprintf("  Dirs in archive but not on disk:   %12s\n", migliaia(stats.dirs_in_archive_not_on_disk));
-        
+
         if (menoenne > 0 && stats.warnings_printed >= menoenne)
         {
             myprintf("  (output limited to %s warnings, total issues: %s)\n", migliaia2(menoenne), migliaia(stats.totalIssues()));
         }
     }
-    
+
     myprintf("\n");
-    
+
     if (stats.allOk())
     {
         color_green();
@@ -118135,7 +117031,7 @@ int Jidac::paranoidverify()
     else
     {
         color_yellow();
-        myprintf("11286: Paranoid test: COMPLETED WITH WARNINGS - %s issue(s) found\n", 
+        myprintf("11286: Paranoid test: COMPLETED WITH WARNINGS - %s issue(s) found\n",
                  migliaia(stats.totalIssues()));
         color_restore();
 		return 1;
@@ -118927,7 +117823,7 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 			if (myhashtype != "" && handler->needs_hash_check())
 			{
 				hashstringato= myhashcheck.finalize();
-				
+
 				if (flagverify)
 				{
 					franz_do_hash dummy(myhashtype);
@@ -118946,7 +117842,7 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 							hashstringato.c_str(), file_it->first.c_str());
 					}
 				}
-				
+
 				if (all)
 					myprintf("10192: Calc %s stored %s for %s\n",
 							 hashstringato.c_str(), file_it->second.hexhash.c_str(), file_it->first.c_str());
@@ -118958,7 +117854,7 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 							 migliaia2(file_it->second.size), file_it->first.c_str());
 				}
 
-			
+
 				if (hashstringato == file_it->second.hexhash)
 				{
 					hash_ok++;
@@ -119049,7 +117945,7 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 	}
 
 	int risultato=0;
-	
+
 	for (unsigned int i= 0; i < nohash.size(); i++)
 		myprintf("05551: %08d No hash for        <<%Z>>\n", i + 1, nohash[i]->first.c_str());
 
@@ -119109,7 +118005,7 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 			myprintf("04321: Hash match   %08d (ALMOST SURE)\n",(double_ok));
 			color_restore();
 		}
-			
+
 		if (double_ko)
 		{
 			color_red();
@@ -119118,7 +118014,7 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 			risultato=2;
 		}
 		printbar('-');
-			
+
 	}
 	color_cyan();
 	if (flagtest)
@@ -119147,9 +118043,9 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
         int pararisultato=paranoidverify();
 		if (pararisultato==2)
 			risultato=2;
-		
+
     }
-	
+
 
 	return risultato;
 }
@@ -119969,7 +118865,7 @@ int Jidac::testparametriadd()
 			color_restore();
 			return 2;
 		}
-	
+
 #ifdef _WIN32
 	if (flaglongpath && (tofiles.size() > 0))
 		if (!do_not_print_headers())
@@ -120065,7 +118961,7 @@ int Jidac::testparametriadd()
 #endif
 
 #ifdef _WIN32
-	
+
 	if (flagimage)
 	{
 		if (!isadmin())
@@ -120092,12 +118988,12 @@ int Jidac::testparametriadd()
 
 
 		if (all)
-			if ((lettera!=0) && (numerodrive==-1))	
+			if ((lettera!=0) && (numerodrive==-1))
 			{
 				color_cyan();
 				myprintf("07465: Due to -all getting drive number for partition %c\n",lettera);
 				color_restore();
-				franzraw getthedisk;	
+				franzraw getthedisk;
 				if (!getthedisk.get_partition_info(lettera))
 				{
 					myprintf("07470! Guru getting partition info for %c\n",lettera);
@@ -120107,7 +119003,7 @@ int Jidac::testparametriadd()
 				lettera		=0;
 				///myprintf("07469: Drive number %d\n",numerodrive);
 			}
-			
+
 		lettera= toupper(lettera);
 	}
 #endif // corresponds to #ifdef (#ifdef _WIN32)
@@ -120875,17 +119771,17 @@ int Jidac::gestisciflagimage()
 			{
 				if (numerodrive!=-1)
 					lettera=numerodrive;
-				
-				if (!rawimager.apriraw(lettera,flagvss)) 
+
+				if (!rawimager.apriraw(lettera,flagvss))
 				{
 					myprintf("04380: error: apriraw() %03d failed\n",(int)lettera);
 					return 2;
 				}
 				total_size= rawimager.getsize();
-			
+
 				if (numerodrive!=-1)
 					lettera=numerodrive+'0';
-				
+
 				snprintf(tempo, sizeof(tempo), "image_%c.raw", lettera);
 				solonome= tempo;
 			}
@@ -120898,7 +119794,7 @@ int Jidac::gestisciflagimage()
 			}
 			else
 				myprintf("03994: NTFS used partition size %s (%s)\n", migliaia(total_size), tohuman(total_size));
-				
+
 
 			if (!flagspace)
 				if (total_size == 0)
@@ -120906,7 +119802,7 @@ int Jidac::gestisciflagimage()
 					myprintf("01990! something wrong with size detection. Use -space to bypass\n");
 					return 2;
 				}
-		
+
 		}
 #endif // corresponds to #ifdef (#ifdef _WIN32)
 		DT	   &d	 = edt[solonome];
@@ -121299,7 +120195,7 @@ int Jidac::gestiscisingleormultipart()
 		FP fp= myfopen(subpart(archive, 1).c_str(), RB);
 		if (fp == FPNULL)
 		{
-	
+
 			if (header_pos > 32)
 				error("archive first part not found");
 			header_pos= 32;
@@ -121358,7 +120254,7 @@ void Jidac::gestiscimultipart()
 			color_magenta();
 			myprintf("Franzen start size %s\n",migliaia(g_starting_franzenfile));
 			color_restore();
-		}	
+		}
 	}
 #endif /// NOSFTPEND
 #endif
@@ -122296,7 +121192,7 @@ int Jidac::finalemultiparttmp()
 				}
 				g_archive= sto;
 			}
-			
+
 			// Gestione file .tmp.franzen
 			string franzen_tmp = arcname + ".franzen";
 			if (fileexists(franzen_tmp))
@@ -122366,10 +121262,7 @@ void Jidac::preparahashtobewritten(const string &i_filename, const DTMap::iterat
 	{
 		///				zpaqfranz: write hashes and/or CRC-32
 		if (g_franzotype == FRANZO_CRC_32) /// store only CRC-32
-		{
-			/// if (flagdebug3)
-			/// myprintf("02109: Mode1: CRC32 by frag <<%08X>> for %s\n", currentcrc32, i_p->first.c_str());
-		}
+		{}
 		else if (g_franzotype == FRANZO_XXHASH64)
 			i_hashtobewritten= finalizza_xxhash64(i_p->second.pfile_xxhash64);
 		else if (g_franzotype == FRANZO_WINHASH64)
@@ -122936,7 +121829,7 @@ int Jidac::add()
 	franzfs thefranzfs_meta;
 	franzfs thefranzfs_excluded;
 	franzfs thefranzfs_zeroed;
-	
+
 	memfilehash= "";
 
 #ifdef _WIN32
@@ -123021,7 +121914,7 @@ int Jidac::add()
 			if (p != edt.end())
 				vf.push_back(p);
 		}
-		
+
 		if (notfiles.size()>0)
 		{
 			thefranzfs_excluded.init(1);
@@ -123054,7 +121947,7 @@ int Jidac::add()
 			if (p != edt.end())
 				vf.push_back(p);
 		}
-		
+
 	}
 
 	else
@@ -123133,7 +122026,7 @@ int Jidac::add()
 		int64_t workedsofar= 0;
 		int		blocchi	   = 0;
 		bool	brutalexit = false;
-		
+
 		// OPTIMIZED MAIN LOOP
 
 		for (unsigned fj= 0; true; ++fj)
@@ -123169,22 +122062,10 @@ int Jidac::add()
 									if (vf[fi]->second.date == 0)
 									{
 										imager.chiudivhd();
-										std::vector<uint8_t> zeroeddarray = imager.getExcludedClustersAsBytes();		
-/*
-										color_cyan();
-										myprintf("zeroeddarray.size() = %zu\n", zeroeddarray.size());
-										if (zeroeddarray.size() >= 4) {
-											uint32_t count;
-											memcpy(&count, zeroeddarray.data(), 4);
-											myprintf("cluster ranges count = %u\n", count);
-										}
-										color_restore();
-										myprintf("\narray_to_ramfile 1\n");
-*/
-
+										std::vector<uint8_t> zeroeddarray = imager.getExcludedClustersAsBytes();
 										int64_t zeroedsize   = array_to_ramfile(zeroeddarray, vf[fi]->second.pramfile);
 										vf[fi]->second.size= zeroedsize;
-												
+
 										if (flagdebug2)
 										{
 											color_cyan();
@@ -123201,13 +122082,11 @@ int Jidac::add()
 									if (vf[fi]->second.date == 0)
 									{
 										imager.chiudivhd();
-										
+
 										std::vector<uint8_t> excludedarray = imager.getFilesToDeleteAsBytes();
-										///myprintf("\narray_to_ramfile 2\n");
-										///myprintf("Excluded array size %s\n",migliaia(excludedarray.size()));
 										int64_t excludedsize   = array_to_ramfile(excludedarray, vf[fi]->second.pramfile);
 										vf[fi]->second.size= excludedsize;
-												
+
 										if (flagdebug2)
 										{
 											color_cyan();
@@ -123225,7 +122104,6 @@ int Jidac::add()
 									{
 										imager.chiudivhd();
 										const std::vector<uint8_t> &headerarray= imager.getheaderarray();
-										///myprintf("\narray_to_ramfile 3\n");
 
 										g_thememfilelength					   = array_to_ramfile(headerarray, vf[fi]->second.pramfile);
 										if (g_thememfilelength <= 0)
@@ -123245,7 +122123,6 @@ int Jidac::add()
 										if (temp.size() > 512)
 										{
 											temp.resize(512); // reduces vector to first 512 bytes
-											///myprintf("\narray_to_ramfile 4\n");
 
 											array_to_ramfile(temp, vf[fi]->second.pramfile);
 											vf[fi]->second.size= 512;
@@ -123263,14 +122140,10 @@ int Jidac::add()
 										imager.chiudivhd();
 										std::vector<uint8_t> metaarray;
 										imager.salvametamemory(metaarray);
-										///	color_cyan();
-										/// myprintf("Metaarraysize %d\n",metaarray.size());
-										/// color_restore();
-										///myprintf("\narray_to_ramfile 5\n");
 
 										int64_t metasize   = array_to_ramfile(metaarray, vf[fi]->second.pramfile);
 										vf[fi]->second.size= metasize;
-										vf[fi]->second.date= nowutc(); 
+										vf[fi]->second.date= nowutc();
 									}
 									buflen= vf[fi]->second.pramfile->ramread(g_ioBUFSIZE, buf);
 								}
@@ -123300,12 +122173,10 @@ int Jidac::add()
 							{
 								myprintf("\n");
 								myprintf("02932! READ LINUX FAIL!!\n");
-								// c = EOF;
 							}
 							else
 							{
 								buflen= bytesletti;
-								// workedsofar += bytesletti;
 							}
 							if (!flagnoeta)
 								print_eta_image("DD", 100.0f * imagereaded / (total_size + 1),
@@ -123641,10 +122512,8 @@ int Jidac::add()
 				{
 					assert(frags > 0);
 					assert(frags < ht.size());
-					/// uint64_t theblocksize=0;
 					for (unsigned i= ht.size() - frags; i < ht.size(); ++i)
 					{
-						// theblocksize+=ht[i].usize;
 						puti(sb, ht[i].usize, 4); // list of frag sizes
 					}
 					puti(sb, 0, 4);		// omit first frag ID to make block movable
@@ -123654,8 +122523,6 @@ int Jidac::add()
 					{
 						int redz= redundancy / (sb.size() / 256 + 1);
 						m+= "," + itos(redz) + "," + itos((exe > frags) * 2 + (text > frags));
-
-						/// m[0]='0';
 					}
 
 					string fn= "jDC" + itos(date, 14) + "d" + itos(ht.size() - frags, 10);
@@ -123673,7 +122540,6 @@ int Jidac::add()
 #ifdef _WIN32
 							// kane
 
-							/// if (fi == (vf.size() - 1))
 							if (flagimage && (flagvhd || flagntfs))
 								if (fi > 0)		   /// skip over image file
 									m= "36,207,0"; // packing the .header with method 3
@@ -123753,9 +122619,6 @@ int Jidac::add()
 					fsize+= sz;
 				}
 				vf[fi]->second.ptr.push_back(htptr);
-				/// OK store the crc. Very dirty (to be fixed in future)
-				// crckanz++;
-				/// crc=crc32_16bytes(&fragbuf[0],(uint32_t) sz);
 				uint32_t crc= 0;
 				if (flagverify || flagcollision)
 					if (g_franzotype > 0)
@@ -123852,9 +122715,7 @@ int Jidac::add()
 			if (flagfast)
 			{
 				g_thememfilefragend= blocklist[i + 1];
-				/// myprintf("02096: g_themenend  %s\n",migliaia(g_thememfilefragend));
 				string hblockname= ("jDC" + itos(date, 14) + "h" + itos(blocklist[i], 10)).c_str();
-				/// myprintf("02097: hblockname _h  %s  %s @ |%s|\n",hblockname.c_str(),g_thememfileblock_h.c_str(),migliaia(out.tell()));
 				if (hblockname == g_thememfileblock_h)
 				{
 					if (g_thememfilestart_h == 0)
@@ -123941,7 +122802,6 @@ int Jidac::add()
 				{
 					if (flagdebug3)
 						myprintf("02102: ************************MEMFILE FIXING\n");
-					/// filename+=":$DATA";
 				}
 
 				///				we want to strip the path of VLIST
@@ -123975,8 +122835,6 @@ int Jidac::add()
 				string hashname;
 
 				preparahashtobewritten(filename, p, hashtobewritten, hasherror, hashname);
-
-				/// myprintf("02119: hastobewritten ............. %s %s |%08X|\n",p->first.c_str(),hashtobewritten.c_str(),p->second.file_crc32);
 
 				struct franz_posix *themetadata= NULL;
 #ifdef unix
@@ -124022,7 +122880,6 @@ int Jidac::add()
 						writefranzattr(p, is, p->second.attr, 3, filename, currentcrc32, p->second.file_crc32, hashtobewritten, p->second.creationdate, 0, themetadata, p->second.filework == WORK_ADDED);
 					else if ((p->second.attr & 255) == 'w')
 					{
-						/// myprintf("02120: WINDOWS writefranz attr |%s|\n",hashtobewritten.c_str());
 						writefranzattr(p, is, p->second.attr, 5, filename, currentcrc32, p->second.file_crc32, hashtobewritten, p->second.creationdate, p->second.accessdate, themetadata, p->second.filework == WORK_ADDED);
 					}
 					else
@@ -124046,10 +122903,8 @@ int Jidac::add()
 
 				string fakefile= "VCOMMENT " + versioni8 + " " + versioncomment + ":$DATA"; // hidden windows file
 				puti(is, 0, 8);																// this is the "date". 0 is good, but do not pass paranoid compliance test. damn
-				is.write(fakefile.c_str(), fakefile.size());								/// strlen(fakefile.c_str()));
+				is.write(fakefile.c_str(), fakefile.size());
 				is.put(0);
-				///	puti(is, 0, 4);  // no attributes
-				///	puti(is, 0, 4);  // list of frag pointers
 			}
 		}
 		if (is.size() > 16000 || (is.size() > 0 && p == edt.end()))
@@ -124102,7 +122957,6 @@ int Jidac::add()
 	assert(is.size() == 0);
 
 	outi.close();
-	///int64_t 
 	archive_end= out.tell();
 
 	if (flagdebug3)
@@ -124119,9 +122973,6 @@ int Jidac::add()
 	{
 		if (flagdebug3)
 			myprintf("02125: writeJidacHeader last cdata %s htsize %s header_pos %s\n", migliaia(cdatasize), migliaia2(htsize), migliaia3(header_pos));
-		/// g_skipsocket=true;
-		/// string avviso="AVVISOOOOOO 42192     ";
-		/// send(g_socket,avviso.c_str(),avviso.size(),0);
 		if (g_chunk_size > 0)
 		{
 			if (flagdebug3)
@@ -124233,7 +123084,7 @@ int Jidac::add()
 			{
 				if (archive_end > 0)
 				{
-					
+
 					if (flagverbose)
 						myprintf("02141: truncating archive from %s to %s\n", migliaia(archive_size), migliaia2(archive_end));
 					if (truncate(arcname.c_str(), archive_end))
@@ -124245,7 +123096,6 @@ int Jidac::add()
 						fasttxt	   = "";
 					}
 
-					///					myprintf("0000000000000000000000000000 %s\n",migliaia(g_starting_zpaqdate));
 					if (g_starting_zpaqdate > 0)
 					{
 						if (flagverbose)
@@ -124254,17 +123104,17 @@ int Jidac::add()
 							myprintf("02144$ WARNING trouble in touching\n");
 					}
 #ifndef NOFRANZEN
-#ifdef ZPAQFULL /// NOSFTPSTART					
+#ifdef ZPAQFULL /// NOSFTPSTART
 					if (g_franzen_filename!="")
 					{
 						if (fileexists(g_franzen_filename))
 						{
-		
+
 							int64_t newfranzen=prendidimensionefile(g_franzen_filename.c_str());
-							
+
 							if (newfranzen>g_starting_franzenfile)
 							{
-								
+
 								if (g_p_franzenfile)
 								{
 									myprintf("22032: Closing g_p_franzenfile\n");
@@ -124279,7 +123129,7 @@ int Jidac::add()
 								if (truncate(g_franzen_filename.c_str(), g_starting_franzenfile))
 									printerr("trunc-franz", g_franzen_filename.c_str(), 0);
 							}
-							
+
 							if (g_starting_zpaqdate > 0)
 							{
 								if (!touch(g_franzen_filename.c_str(), g_starting_zpaqdate, g_starting_zpaqattr))
@@ -124341,14 +123191,13 @@ int Jidac::add()
 						myarchive_end+= prendidimensionefile(out.filepartnames[i].c_str());
 				}
 			}
-		/// myprintf("02148: ZZZ %21s myarchive_end initial_archive_size %s\n",migliaia4(myarchive_end),migliaia(initial_archive_size));
 
 		if (flagverbose)
 		{
 			myprintf("02149:  %21s starting size\n", migliaia(initial_archive_size));
 			myprintf("02150:  %21s data to be added\n", migliaia2(total_size));
 			myprintf("02151:  %21s after deduplication\n", migliaia3(dedupesize));
-			myprintf("02152: +%21s after compression\n", migliaia4(myarchive_end)); //-initial_archive_size),inchunks.c_str());
+			myprintf("02152: +%21s after compression\n", migliaia4(myarchive_end));
 			myprintf("02153:  %21s total size %s\n", migliaia5(myarchive_end), inchunks.c_str());
 			myprintf("02154:  Total speed %s/s\n", tohuman(speed));
 			myprintf("02155:  IO buffer %s\n", migliaia6(g_ioBUFSIZE));
@@ -124365,7 +123214,7 @@ int Jidac::add()
 				if (g_stdinsize>0)
 					if (total_size>(int64_t)g_stdinsize)
 						total_size-=g_stdinsize;	//fix back the output
-		
+
 				int64_t global_file_len= prendidimensionefile(g_archive.c_str());
 				if (global_file_len <= 0)
 					global_file_len= myarchive_end;
@@ -124461,13 +123310,12 @@ int Jidac::add()
 
 	dimensione_garchive= prendidimensionefile(g_archive.c_str());
 
-///	myprintf("dimensione g_archive %s\n",migliaia(dimensione_garchive));
 	gestiscibackupzeta();
 
 	if (gestiscicalcolifinali() != 0)
 		return 2;
 
-	franz_free(buf); // mem leak, but who cares??
+	franz_free(buf); // mem leak, but who cares??   // I care, but not enough to fix it.
 
 	bool isfirstrun= false;
 
@@ -124509,8 +123357,6 @@ int Jidac::add()
 		return 2;
 
 	rilasciasnapshot();
-
-	///	checksha1collision(dt,true);
 
 #ifdef _WIN32
 	if ((flagads) && (!flagfasttxt))
@@ -124636,7 +123482,7 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 	}
 
 	// Mapping Fragments -> Blocks
-	// È necessario sapere in quale blocco compresso si trova ogni frammento.
+	// È necessario sapere in quale blocco compresso si trova ogni frammento.   // English Translation: You need to know which compressed block each fragment is in.
 	f_info.block_for_ptr.resize(f_info.ptr.size());
 	int cached_block_idx= 0;
 
@@ -124678,7 +123524,7 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 					break;
 				}
 			}
-			// Fallback ricerca lineare
+			// Fallback ricerca lineare     // English Translation: Linear search
 			if (block_idx == -1)
 			{
 				for (unsigned k= 0; k < block.size(); ++k)
@@ -124708,10 +123554,10 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 
 	// Local cache for decompressed blocks
 	std::map<int, string>	   block_cache;
-	std::map<unsigned, string> fragment_cache; // Cache per i singoli frammenti
+	std::map<unsigned, string> fragment_cache; // Cache per i singoli frammenti     // English Translation: Cache for individual fragments
 
-	// Configurazione memoria cache (ridotta rispetto all'estrazione globale, o fissa)
-	uint64_t MAX_BLOCK_CACHE_SIZE	= 100 * 1024 * 1024; // Esempio: 100MB limit
+	// Configurazione memoria cache (ridotta rispetto all'estrazione globale, o fissa)  // English Translation: Cache memory configuration (reduced compared to global extraction, or fixed
+	uint64_t MAX_BLOCK_CACHE_SIZE	= 100 * 1024 * 1024; // Esempio: 100MB limit    // English Translation: Example: 100MB limit
 	int64_t	 current_block_cache_mem= 0;
 
 	int		last_used_block_idx= -1;
@@ -124719,7 +123565,7 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 	string	temp_block_storage;
 
 	uint64_t  current_buffer_offset= 0;
-	const int LOOKAHEAD_WINDOW	   = 50; // Finestra di lookahead (puoi aggiustarla)
+	const int LOOKAHEAD_WINDOW	   = 50; // Finestra di lookahead (puoi aggiustarla)    // English Translation: Lookahead window (you can fix it)
 
 	// 5. Extraction loop
 	for (unsigned i= 0; i < f_info.ptr.size(); ++i)
@@ -124730,8 +123576,8 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 		// Empty/invalid fragment management
 		if (block_idx < 0 || frag_id >= ht.size())
 		{
-			// If fragment does not exist, avanziamo l'offset se previsto,
-			// or we skip. Qui assumiamo che ht[frag_id].usize sia 0 o gestito.
+			// If fragment does not exist, avanziamo l'offset se previsto,      // English Translation: we advance the offset if provided
+			// or we skip. Qui assumiamo che ht[frag_id].usize sia 0 o gestito. // English Translation: Here we assume that ht[frag_id].usize is 0 or managed.
 			if (frag_id < ht.size())
 				current_buffer_offset+= ht[frag_id].usize;
 			continue;
@@ -124947,11 +123793,11 @@ bool Jidac::extract_ntfs_meta(char source)
 	if (flagverbose)
 		myprintf("17441: The meta size is %s\n", migliaia(imager_themetafile.size()));
 	imager_excludedarray.clear();
-	
+
 	string imager_excluded	 	= "image_" + std::string(1, source) + ".exclud";
 	if (flagverbose)
 		myprintf("13767: Looking for exclusions %s\n",imager_excluded.c_str());
-	
+
 	int howmanyexcluded= extracttobuffer(imager_excluded, imager_excludedarray);
 	if (howmanyexcluded != 0)
 		myprintf("10432: No excluded founded\n");
@@ -124964,19 +123810,19 @@ bool Jidac::extract_ntfs_meta(char source)
 			color_restore();
 		}
 	}
-	
-	
+
+
 	imager_zeroedarray.clear();
-	
+
 	string imager_zeroed	 	= "image_" + std::string(1, source) + ".zeroed";
 	if (flagverbose)
 		myprintf("13764: Looking for zeroed %s\n",imager_zeroed.c_str());
-	
+
 	int howmanyzeroed= extracttobuffer(imager_zeroed, imager_zeroedarray);
 	if (howmanyzeroed != 0)
 		myprintf("10433: No zeroed founded\n");
 	else
-	{	
+	{
 		if (flagverbose)
 		{
 			color_cyan();
@@ -124987,8 +123833,8 @@ bool Jidac::extract_ntfs_meta(char source)
 		{
 			myprintf("13445: GURU LOADING zeroed array!\n");
 		}
-		
-		
+
+
 		if (flagdebug2)
 		{
 			myprintf("DEBUG LOAD: imager_zeroedarray.size() = %zu\n", imager_zeroedarray.size());
@@ -125002,7 +123848,7 @@ bool Jidac::extract_ntfs_meta(char source)
 				myprintf("\n");
 			}
 		}
-		
+
 	}
 	return true;
 }
@@ -125095,15 +123941,15 @@ int Jidac::restore_ntfs_to_disk(char i_source, char i_destination)
 			color_restore();
 			estrazione=2;
 		}
-		
+
 	}
-	
+
 	if (flagzero)
 	{
 		myprintf("15306: Do not delete excluded files due to -zero\n");
 		return estrazione;
 	}
-	
+
 	if (imager_excludedarray.size()>0)
 	{
 		myprintf("13386: Deleting excluded %c\n",i_destination);
@@ -125463,7 +124309,7 @@ int Jidac::restoreimage()
 		myprintf("15643: Nothing to do: no -image, -ntfs or -raw\n");
 		return 1;
 	}
-		
+
 	lettera= getwindowsdriveletter(files[0]);
 
 	// Helper lambda per validare destinazione fisica
@@ -125590,9 +124436,9 @@ int Jidac::franzencommand()
     }
 
     string mycommand = files[0];
-    
-	
-		
+
+
+
 	if (mycommand == "compare")
     {
         if (files.size() != 3)
@@ -125631,13 +124477,13 @@ int Jidac::franzencommand()
         }
 
         string input_filename = files[1];
-        
+
         if (!fileexists(input_filename))
         {
             myprintf("83220! File not found: %s\n", input_filename.c_str());
             return 2;
         }
-        
+
         if (!is_file_franzen(input_filename))
         {
             myprintf("83221! File is not a valid Franzen file: %s\n", input_filename.c_str());
@@ -125652,7 +124498,7 @@ int Jidac::franzencommand()
 		}
 		fc.dumpa(all,menoenne);
 		fc.close();
-		
+
 		return 0;
     }
 
@@ -125670,13 +124516,13 @@ int Jidac::franzencommand()
         }
 
         string input_filename = files[1];
-        
+
         if (!fileexists(input_filename))
         {
             myprintf("83220! File not found: %s\n", input_filename.c_str());
             return 2;
         }
-        
+
         if (!is_file_franzen(input_filename))
         {
             myprintf("83221! File is not a valid Franzen file: %s\n", input_filename.c_str());
@@ -125686,7 +124532,7 @@ int Jidac::franzencommand()
         return do_franzen_operation(input_filename, "", false, true);  // decode, test_only=true
     }
 
-   
+
 
 	if (mycommand == "autotest")
 	{
@@ -125707,9 +124553,9 @@ int Jidac::franzencommand()
             myprintf("16662! You need to specify -franzen <password>\n");
             return 2;
         }
-        
+
         const string& input_filename = files[1];
-        
+
         if (!fileexists(input_filename))
         {
             myprintf("83220! File not found: %s\n", input_filename.c_str());
@@ -125732,35 +124578,35 @@ int Jidac::franzencommand()
     }
 
     // Auto-detect: encode o decode in base al magic del file
-    
+
     // Se mycommand non è un comando noto, è il file sorgente
     string input_filename = mycommand;
-    
+
     if (!fileexists(input_filename))
     {
         myprintf("83230! File not found: %s\n", input_filename.c_str());
         return 2;
     }
-    
+
     if (g_franzen == "")
     {
         myprintf("16662! You need to specify -franzen <password>\n");
         return 2;
     }
-    
+
     // Determina operazione in base al magic
     bool is_franzen = is_file_franzen(input_filename);
     bool is_encode = !is_franzen;  // Se non è franzen, lo criptiamo
-    
+
     // Determine output file
     string output_filename = "";
-    
+
     if (tofiles.size() > 1)
     {
         myprintf("15634! You can specify at most one -to destination\n");
         return 2;
     }
-    
+
     if (tofiles.size() == 1)
     {
         output_filename = tofiles[0];
@@ -125781,7 +124627,7 @@ int Jidac::franzencommand()
             else
                 output_filename = input_filename + ".decrypted";
         }
-        
+
         // Se il nome generato esiste già, prova con suffisso .decrypted / .encrypted
         if (fileexists(output_filename))
         {
@@ -125791,7 +124637,7 @@ int Jidac::franzencommand()
                 output_filename = input_filename + ".decrypted";
         }
     }
-    
+
     // Controlla che il file di output non esista già
     if (fileexists(output_filename))
     {
@@ -125799,13 +124645,13 @@ int Jidac::franzencommand()
         myprintf("       Use -to to specify a different destination, or delete the existing file\n");
         return 2;
     }
-    
+
     return do_franzen_operation(input_filename, output_filename, is_encode, false);
 }
 
 // Helper function per eseguire encode/decode
 
-int Jidac::do_franzen_operation(const string& input_filename, const string& output_filename, 
+int Jidac::do_franzen_operation(const string& input_filename, const string& output_filename,
                                  bool is_encode, bool test_only)
 {
     int threads = howmanythreads;
@@ -125824,18 +124670,18 @@ int Jidac::do_franzen_operation(const string& input_filename, const string& outp
     const char* op_name = is_encode ? "Encrypting" : "Decrypting";
     const char* thread_mode = (threads == 1) ? "Single thread" : "Multi thread";
     const char* ssd_hint = (threads == 1) ? " (use -ssd for multi-thread)" : "";
-    
+
     if (test_only)
     {
-        myprintf("86183: %s %s testing%s: %s\n", 
+        myprintf("86183: %s %s testing%s: %s\n",
                  thread_mode, op_name, ssd_hint, input_filename.c_str());
         success = fc.decode_parallela(input_filename.c_str(), NULL, threads);
     }
     else
     {
-        myprintf("86183: %s %s%s: %s -> %s\n", 
+        myprintf("86183: %s %s%s: %s -> %s\n",
                  thread_mode, op_name, ssd_hint, input_filename.c_str(), output_filename.c_str());
-        
+
         if (is_encode)
             success = fc.encode_parallela(input_filename.c_str(), output_filename.c_str(), threads);
         else
@@ -125843,15 +124689,15 @@ int Jidac::do_franzen_operation(const string& input_filename, const string& outp
     }
 
     double tempo = (mtime() - startenc) / 1000.0;
-    if (tempo < 0.001) 
+    if (tempo < 0.001)
         tempo = 0.001;  // Evita divisione per zero
 
     eol();
-    
+
     if (success)
     {
         color_green();
-        myprintf("OK: %s (%s) in %.2fs @ %s/s\n", 
+        myprintf("OK: %s (%s) in %.2fs @ %s/s\n",
                  migliaia(dimensione), tohuman(dimensione), tempo, tohuman2((int64_t)(dimensione / tempo)));
         color_restore();
         return 0;
@@ -125861,14 +124707,14 @@ int Jidac::do_franzen_operation(const string& input_filename, const string& outp
         color_red();
         myprintf("FAILED!\n");
         color_restore();
-        
+
         // Se encode fallito, rimuovi il file parziale
         if (is_encode && !test_only && fileexists(output_filename))
         {
             myprintf("83250: Removing partial output file: %s\n", output_filename.c_str());
             remove(output_filename.c_str());
         }
-        
+
         return 2;
     }
 }
