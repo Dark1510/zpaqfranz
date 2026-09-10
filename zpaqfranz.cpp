@@ -3764,7 +3764,8 @@ CURL_EXTERN CURLcode curl_easy_upkeep(CURL *curl);
 #ifndef CURLINC_MULTI_H
 #define CURLINC_MULTI_H
 typedef void CURLM;
-typedef enum {
+typedef enum
+{
   CURLM_CALL_MULTI_PERFORM = -1,
   CURLM_OK,
   CURLM_BAD_HANDLE,
@@ -3781,21 +3782,25 @@ typedef enum {
   CURLM_UNRECOVERABLE_POLL,
   CURLM_LAST
 } CURLMcode;
-typedef enum {
+typedef enum
+{
   CURLMSG_NONE,
   CURLMSG_DONE,
   CURLMSG_LAST
 } CURLMSG;
-struct CURLMsg {
+struct CURLMsg
+{
   CURLMSG msg;
   CURL *easy_handle;
-  union {
+  union
+  {
     void *whatever;
     CURLcode result;
   } data;
 };
 typedef struct CURLMsg CURLMsg;
-struct curl_waitfd {
+struct curl_waitfd
+{
   curl_socket_t fd;
   short events;
   short revents;
@@ -3849,7 +3854,8 @@ curl_multi_socket_all(CURLM *multi_handle, int *running_handles);
 #endif
 CURL_EXTERN CURLMcode curl_multi_timeout(CURLM *multi_handle,
                                          long *milliseconds);
-typedef enum {
+typedef enum
+{
   CURLOPT(CURLMOPT_SOCKETFUNCTION, CURLOPTTYPE_FUNCTIONPOINT, 1),
   CURLOPT(CURLMOPT_SOCKETDATA, CURLOPTTYPE_OBJECTPOINT, 2),
   CURLOPT(CURLMOPT_PIPELINING, CURLOPTTYPE_LONG, 3),
@@ -3890,7 +3896,8 @@ CURL_EXTERN CURLMcode curl_multi_waitfds(CURLM *multi,
 #endif
 #ifndef CURLINC_URLAPI_H
 #define CURLINC_URLAPI_H
-typedef enum {
+typedef enum
+{
   CURLUE_OK,
   CURLUE_BAD_HANDLE,
   CURLUE_BAD_PARTPOINTER,
@@ -3925,7 +3932,8 @@ typedef enum {
   CURLUE_TOO_LARGE,
   CURLUE_LAST
 } CURLUcode;
-typedef enum {
+typedef enum
+{
   CURLUPART_URL,
   CURLUPART_SCHEME,
   CURLUPART_USER,
@@ -3950,7 +3958,8 @@ CURL_EXTERN const char *curl_url_strerror(CURLUcode);
 #endif
 #ifndef CURLINC_OPTIONS_H
 #define CURLINC_OPTIONS_H
-typedef enum {
+typedef enum
+{
   CURLOT_LONG,
   CURLOT_VALUES,
   CURLOT_OFF_T,
@@ -3961,7 +3970,8 @@ typedef enum {
   CURLOT_BLOB,
   CURLOT_FUNCTION
 } curl_easytype;
-struct curl_easyoption {
+struct curl_easyoption
+{
   const char *name;
   CURLoption id;
   curl_easytype type;
@@ -3976,7 +3986,8 @@ curl_easy_option_next(const struct curl_easyoption *prev);
 #endif
 #ifndef CURLINC_HEADER_H
 #define CURLINC_HEADER_H
-struct curl_header {
+struct curl_header
+{
   char *name;
   char *value;
   size_t amount;
@@ -3984,7 +3995,8 @@ struct curl_header {
   unsigned int origin;
   void *anchor;
 };
-typedef enum {
+typedef enum
+{
   CURLHE_OK,
   CURLHE_BADINDEX,
   CURLHE_MISSING,
@@ -4007,7 +4019,8 @@ CURL_EXTERN struct curl_header *curl_easy_nextheader(CURL *easy,
 #endif
 #ifndef CURLINC_WEBSOCKETS_H
 #define CURLINC_WEBSOCKETS_H
-struct curl_ws_frame {
+struct curl_ws_frame
+{
   int age;
   int flags;
   curl_off_t offset;
@@ -6150,7 +6163,6 @@ class Fonts
 					lastspace= j;
 					break;
 				}
-			/// for (unsigned int j = 0; j < letters[0].size(); j++)
 			for (unsigned int j= 0; j < lastspace; j++)
 				myprintf("%c", letters[i][j]);
 			myprintf("\n");
@@ -9131,7 +9143,6 @@ https://github.com/embeddedartistry/embedded-resources/blob/master/examples/c/ma
 	(((num) + ((align) - 1)) & ~((align) - 1))
 #endif // corresponds to #ifndef (#ifndef align_up)
 // Convenience macro for memalign, the linux API
-/// #define memalign(align, size) aligned_malloc(align, size)
 // Number of bytes we're using for storing the aligned pointer offset
 typedef uint16_t myoffset_t;
 #define PTR_OFFSET_SZ sizeof(myoffset_t)
@@ -9145,7 +9156,6 @@ void *aligned_malloc(size_t align, size_t size)
 {
 	void *ptr= NULL;
 	// We want it to be a power of two since align_up operates on powers of two
-	///	assert((align & (align - 1)) == 0);
 	if ((align & (align - 1)) != 0 || align < sizeof(void *))
 		return NULL;
 
@@ -9164,9 +9174,6 @@ void *aligned_malloc(size_t align, size_t size)
 			 * Then align the resulting value to the arget alignment
 			 */
 			ptr= (void *)align_up(((uintptr_t)p + PTR_OFFSET_SZ), align);
-
-			// Calculate the offset and store it behind our aligned pointer
-			///*((myoffset_t *)ptr - 1) = (myoffset_t)((uintptr_t)ptr - (uintptr_t)p);
 
 			if (ptr)
 			{
@@ -9195,7 +9202,6 @@ void *aligned_malloc(size_t align, size_t size)
  */
 void aligned_free(void *ptr)
 {
-	/// return;
 	if (flagdebug5)
 		myprintf("72252: aligned_free [1]\n");
 
@@ -9204,7 +9210,6 @@ void aligned_free(void *ptr)
 	if (flagdebug5)
 		myprintf("72254: aligned_free [2]\n");
 
-	// assert(ptr);
 	/*
 	 * Walk backwards from the passed-in pointer to get the pointer offset
 	 * We convert to an offset_t pointer and rely on pointer math to get the data
@@ -10723,7 +10728,8 @@ read_variable_length(const BYTE** ip, const BYTE* ilimit,
         return rvl_error;
     }
     /* accumulator overflow detection (32-bit mode only) */
-    if ((sizeof(length) < 8) && unlikely(length > ((Rvl_t)(-1)/2)) ) {
+    if ((sizeof(length) < 8) && unlikely(length > ((Rvl_t)(-1)/2)) )
+    {
         return rvl_error;
     }
     if (likely(s != 255)) return length;
@@ -10731,11 +10737,13 @@ read_variable_length(const BYTE** ip, const BYTE* ilimit,
         s = **ip;
         (*ip)++;
         length += s;
-        if (unlikely((*ip) > ilimit)) {    /* read limit reached */
+        if (unlikely((*ip) > ilimit))
+        {    /* read limit reached */
             return rvl_error;
         }
         /* accumulator overflow detection (32-bit mode only) */
-        if ((sizeof(length) < 8) && unlikely(length > ((Rvl_t)(-1)/2)) ) {
+        if ((sizeof(length) < 8) && unlikely(length > ((Rvl_t)(-1)/2)) )
+        {
             return rvl_error;
         }
     } while (s == 255);
@@ -10791,12 +10799,17 @@ LZ4_decompress_generic(
 
         /* Special cases */
         assert(lowPrefix <= op);
-        if (unlikely(outputSize==0)) {
+        if (unlikely(outputSize==0))
+        {
             /* Empty output buffer */
-            if (partialDecoding) return 0;
+            if (partialDecoding)
+                return 0;
             return ((srcSize==1) && (*ip==0)) ? 0 : -1;
         }
-        if (unlikely(srcSize==0)) { return -1; }
+        if (unlikely(srcSize==0))
+        {
+            return -1;
+        }
 
     /* LZ4_FAST_DEC_LOOP:
      * designed for modern OoO performance cpus,
@@ -12659,7 +12672,8 @@ int toU16(const char* p);
 // a(i) - index mod n, n must be a power of 2
 // a.size() - gets n
 template <typename T>
-class Array {
+class Array
+{
   T *data;     // user location of [0] on a 64 byte boundary
   size_t n;    // user size
   int offset;  // distance back in bytes to start of actual allocation
@@ -12668,26 +12682,46 @@ class Array {
 public:
   Array(size_t sz=0, int ex=0): data(0), n(0), offset(0)
   {
-    resize(sz, ex);} // [0..sz-1] = 0
+    resize(sz, ex); // [0..sz-1] = 0
+  }
   void resize(size_t sz, int ex=0); // change size, erase content to zeros
-  ~Array() {resize(0);}  // free memory
-  size_t size() const {return n;}  // get size
-  int isize() const {return int(n);}  // get size as an int
-  T& operator[](size_t i) {assert(n>0 && i<n); if (!(n>0 && i<n))
-	  {
-		    error("09386: operator[] kaputt");
-	  }
-  return data[i];}
-  T& operator()(size_t i) {assert(n>0 && (n&(n-1))==0); return data[i&(n-1)];}
+  ~Array()
+  {
+      resize(0);  // free memory
+  }
+  size_t size() const
+  {
+      return n;  // get size
+  }
+  int isize() const
+  {
+      return int(n);  // get size as an int
+  }
+  T& operator[](size_t i)
+  {
+      assert(n>0 && i<n);
+      if (!(n>0 && i<n))
+      {
+          error("09386: operator[] kaputt");
+      }
+      return data[i];
+  }
+  T& operator()(size_t i)
+  {
+      assert(n>0 && (n&(n-1))==0);
+      return data[i&(n-1)];
+  }
 };
 // Change size to sz<<ex elements of 0
 template<typename T>
 void Array<T>::resize(size_t sz, int ex)
 {
   assert(size_t(-1)>0);  // unsigned type?
-  while (ex>0) {
-    if (sz>sz*2) error("Array too big");
-    sz*=2, --ex;
+  while (ex>0)
+  {
+      if (sz>sz*2)
+          error("Array too big");
+      sz*=2, --ex;
   }
   if (n>0) {
     assert(offset>0 && offset<=64);
@@ -12720,9 +12754,15 @@ class SHA1
 public:
 	void put(int c);
 	void write(const char* buf, int64_t n);
-	uint64_t usize() const {return len/8;}
+	uint64_t usize() const
+	{
+		return len/8;
+	}
 	const char* result();
-	SHA1() {init();}
+	SHA1()
+	{
+	    init();
+	}
 private:
 #ifdef HWSHA1
 	int				bufpos;				// 7-Zip SHA1 is rather different from
@@ -13138,10 +13178,15 @@ public:
   int step(U32 input, int mode);  // Trace execution (defined externally)
   Writer* output;         // Destination for OUT instruction, or 0 to suppress
   SHA1* sha1;             // Points to checksum computer
-  U32 H(int i) {return h(i);}  // get element of h
+  U32 H(int i)
+  {
+      return h(i);        // get element of h
+  }
   void flush();           // write outbuf[0..bufptr-1] to output and sha1
-  void outc(int ch) {     // output byte ch (0..255) or -1 at EOS
-    if (ch<0 || (outbuf[bufptr]=ch, ++bufptr==outbuf.isize())) flush();
+  void outc(int ch)
+  {     // output byte ch (0..255) or -1 at EOS
+    if (ch<0 || (outbuf[bufptr]=ch, ++bufptr==outbuf.isize()))
+        flush();
   }
   // ZPAQ1 block header
   Array<U8> header;   // hsize[2] hh hm ph pm n COMP (guard) HCOMP (guard)
@@ -13175,7 +13220,8 @@ private:
 // fixed weight mixer, adaptive 2 input mixer without or with current
 // partial byte as context, adaptive m input mixer (without or with),
 // or SSE (without or with).
-struct Component {
+struct Component
+{
   size_t limit;   // max count for cm
   size_t cxt;     // saved context
   size_t a, b, c; // multi-purpose variables
@@ -13183,11 +13229,15 @@ struct Component {
   Array<U8> ht;   // ICM/ISSE hash table[0..size1][0..15] and MATCH buf
   Array<U16> a16; // MIX weights
   void init();    // initialize to all 0
-  Component() {init();}
+  Component()
+  {
+      init();
+  }
 };
 ////////////////////////// StateTable ////////////////////////
 // Next state table
-class StateTable {
+class StateTable
+{
 public:
   U8 ns[1024]; // state*4 -> next state if 0, if 1, n0, n1
   int next(int state, int y)
@@ -13262,17 +13312,24 @@ private:
     return stretcht[x];
   }
   // bound x to a 12 bit signed int
-  int clamp2k(int x) {
-    if (x<-2048) return -2048;
-    else if (x>2047) return 2047;
-    else return x;
+  int clamp2k(int x)
+  {
+    if (x<-2048)
+        return -2048;
+    else if (x>2047)
+        return 2047;
+    else
+        return x;
   }
   // bound x to a 20 bit signed int
   int clamp512k(int x)
   {
-    if (x<-(1<<19)) return -(1<<19);
-    else if (x>=(1<<19)) return (1<<19)-1;
-    else return x;
+    if (x<-(1<<19))
+        return -(1<<19);
+    else if (x>=(1<<19))
+        return (1<<19)-1;
+    else
+        return x;
   }
   // Get cxt in ht, creating a new row if needed
   size_t find(Array<U8>& ht, int sizebits, U32 cxt);
@@ -13289,8 +13346,12 @@ public:
   int decompress();  // return a byte or EOF
   int skip();        // skip to the end of the segment, return next byte
   void init();       // initialize at start of block
-  int stat(int x) {return pr.stat(x);}
-  int get() {        // return 1 byte of buffered input or EOF
+  int stat(int x)
+  {
+      return pr.stat(x);
+  }
+  int get()
+  {        // return 1 byte of buffered input or EOF
     if (rpos==wpos)
     {
       rpos=0;
@@ -13398,12 +13459,16 @@ private:
     size_t top;
   public:
     Stack(int n): s(n), top(0) {}
-    void push(const U16& x) {
-      if (top>=s.size()) error("IF or DO nested too deep");
+    void push(const U16& x)
+    {
+      if (top>=s.size())
+          error("IF or DO nested too deep");
       s[top++]=x;
     }
-    U16 pop() {
-      if (top<=0) error("unmatched IF or DO");
+    U16 pop()
+    {
+      if (top<=0)
+          error("unmatched IF or DO");
       return s[--top];
     }
   };
@@ -15885,12 +15950,12 @@ void Compiler::next()
 }
 // convert to lower case
 int tolower(int c) {return (c>='A' && c<='Z') ? c+'a'-'A' : c;}
-// return true if in==word up to white space or '(', case insensitive
 bool Compiler::matchToken(const char* word)
 {
   const char* a=in;
   for (; (*a>' ' && *a!='(' && *word); ++a, ++word)
-    if (tolower(*a)!=tolower(*word)) return false;
+    if (tolower(*a)!=tolower(*word))
+        return false;
   return !*word && (*a<=' ' || *a=='(');
 }
 // Print error message and exit
@@ -16638,7 +16703,8 @@ static void put4lsb(U8* rcode, int n, int& o, U32 x) {
 // bytes output or that would have been output.
 // Execution starts at rcode[0] and returns 1 if successful or 0
 // in case of a ZPAQL execution error.
-int ZPAQL::assemble() {
+int ZPAQL::assemble()
+{
   // x86? (not foolproof)
   const int S=sizeof(char*);      // 4 = x86, 8 = x86-64
   U32 t=0x12345678;
@@ -16654,7 +16720,8 @@ int ZPAQL::assemble() {
   int o=5;  // rcode output index, reserve space for jmp
   // Code for the halt instruction (restore registers and return)
   const int halt=o;
-  if (S==8) {
+  if (S==8)
+  {
     put2l(0x48b9, &a);        // mov rcx, a
     put2(0x8911);             // mov [rcx], edx
     put2l(0x48b9, &b);        // mov rcx, b
@@ -16720,7 +16787,8 @@ int ZPAQL::assemble() {
     put1(0x5f);               // pop rdi
     put1(0x5d);               // pop rbp
   }
-  else {
+  else
+  {
     put1a(0xb8, &outbuf[0]);  // mov eax, outbuf.p
     put2a(0x8b0d, &bufptr);   // mov ecx, [bufptr]
     put3(0x881408);           // mov [eax+ecx], dl
@@ -16747,21 +16815,32 @@ int ZPAQL::assemble() {
   {
     done=0;
     const int NONE=0x80000000;
-    for (int i=0; i<hlen; ++i) {
+    for (int i=0; i<hlen; ++i)
+    {
       int op=hcomp[i];
-      if (it[i]) {
+      if (it[i])
+      {
         int next1=i+oplen(hcomp+i), next2=NONE; // next and jump targets
-        if (iserr(op)) next1=NONE;  // error
-        if (op==56) next1=NONE, next2=0;  // halt
-        if (op==255) next1=NONE, next2=hcomp[i+1]+256*hcomp[i+2]; // lj
-        if (op==39||op==47||op==63)next2=i+2+(hcomp[i+1]<<24>>24);// jt,jf,jmp
-        if (op==63) next1=NONE;  // jmp
-        if ((next2<0 || next2>=hlen) && next2!=NONE) next2=hlen-1; // error
-        if (next1>=0 && next1<hlen && !(it[next1]&1)) it[next1]|=1, ++done;
-        if (next2>=0 && next2<hlen && !(it[next2]&2)) it[next2]|=2, ++done;
+        if (iserr(op))
+            next1=NONE;  // error
+        if (op==56)
+            next1=NONE, next2=0;  // halt
+        if (op==255)
+            next1=NONE, next2=hcomp[i+1]+256*hcomp[i+2]; // lj
+        if (op==39||op==47||op==63)
+            next2=i+2+(hcomp[i+1]<<24>>24);// jt,jf,jmp
+        if (op==63)
+            next1=NONE;  // jmp
+        if ((next2<0 || next2>=hlen) && next2!=NONE)
+            next2=hlen-1; // error
+        if (next1>=0 && next1<hlen && !(it[next1]&1))
+            it[next1]|=1, ++done;
+        if (next2>=0 && next2<hlen && !(it[next2]&2))
+            it[next2]|=2, ++done;
       }
     }
-  } while (done>0);
+  }
+  while (done>0);
   // Set it[i] bits 2-3 to 4, 8, or 12 if a comparison
   //  (==, <, > respectively) does not need to save the result in f,
   // or if a conditional jump (jt, jf) does not need to read f.
@@ -16777,22 +16856,34 @@ int ZPAQL::assemble() {
     const int i2=i+1+(op1%8==7);  // address of next instruction
     const int op2=hcomp[i2];  // 39,47 = jt,jf
     if (it[i] && op1>=216 && op1<240 && (op2==39 || op2==47)
-        && it[i2]==1 && (i2==i+1 || it[i+1]==0)) {
+        && it[i2]==1 && (i2==i+1 || it[i+1]==0))
+    {
       int code=(op1-208)/8*4; // 4,8,12 is ==,<,>
       it[i2]+=code;  // OK to test CF, ZF instead of f
-      for (int j=0; j<2 && code; ++j) {  // trace each path from i2
+      for (int j=0; j<2 && code; ++j) // trace each path from i2
+      {
         int k=i2+2; // branch not taken
-        if (j==1) k=i2+2+(hcomp[i2+1]<<24>>24);  // branch taken
-        for (int l=0; l<hlen && code; ++l) {  // trace at most hlen steps
-          if (k<0 || k>=hlen) break;  // out of bounds, pass
+        if (j==1)   // branch taken
+            k=i2+2+(hcomp[i2+1]<<24>>24);
+        for (int l=0; l<hlen && code; ++l) // trace at most hlen steps
+        {
+          if (k<0 || k>=hlen) // out of bounds, pass
+              break;
           const int op=hcomp[k];
-          if (op==39 || op==47) code=0;  // jt,jf, fail
-          else if (op>=216 && op<240) break;  // ==,<,>, pass
-          else if (iserr(op)) break;  // error, pass
-          else if (op==255) k=hcomp[k+1]+256*hcomp[k+2]; // lj
-          else if (op==63) k=k+2+(hcomp[k+1]<<24>>24);  // jmp
-          else if (op==56) k=0;  // halt
-          else k=k+1+(op%8==7);  // ordinary instruction
+          if (op==39 || op==47)  // jt,jf, fail
+              code=0;
+          else if (op>=216 && op<240)   // ==,<,>, pass
+              break;
+          else if (iserr(op))  // error, pass
+              break;
+          else if (op==255)  // lj
+              k=hcomp[k+1]+256*hcomp[k+2];
+          else if (op==63)   // jmp
+              k=k+2+(hcomp[k+1]<<24>>24);
+          else if (op==56)   // halt
+              k=0;
+          else
+              k=k+1+(op%8==7);  // ordinary instruction
         }
       }
       it[i]+=code;  // if > 0 then OK to not save flags in f (bl)
@@ -16837,9 +16928,11 @@ int ZPAQL::assemble() {
     put2a(0x8b1d, &f); // mov ebx, [f]
   }
   // Assemble in multiple passes until every byte of hcomp has a translation
-  for (int istart=0; istart<hlen; ++istart) {
+  for (int istart=0; istart<hlen; ++istart)
+  {
     int inc=0;
-    for (int i=istart; i<hlen && it[i]; i+=inc) {
+    for (int i=istart; i<hlen && it[i]; i+=inc)
+    {
       const int code=it[i];
       inc=oplen(hcomp+i);
       // If already assembled, then assemble a jump to it
@@ -16859,7 +16952,8 @@ int ZPAQL::assemble() {
         break;
       }
       // Else assemble the instruction at hcomp[i] to rcode[o]
-      else {
+      else
+      {
         assert(i>=0 && i<it.isize());
         assert(it[i]>0 && it[i]<16);
         assert(o>=16);
@@ -16878,45 +16972,65 @@ int ZPAQL::assemble() {
         // Load source *b, *c, *d, or hash (*b) into eax except:
         // {a,b,c,d}=*d, a{+,-,*,&,|,^,=,==,>,>}=*d: load address to eax
         // {a,b,c,d}={*b,*c}: load source into ddd
-        if (op==59 || (op>=64 && op<240 && op%8>=4 && op%8<7)) {
+        if (op==59 || (op>=64 && op<240 && op%8>=4 && op%8<7))
+        {
           put2(0x89c0+8*regcode[sss-3+(op==59)]);  // mov eax, {esi,edi,ebp}
           const int sz=(sss==6?hsize:msize)-1;
-          if (sz>=128) put1a(0x25, sz);            // and eax, dword msize-1
-          else put3(0x83e000+sz);                  // and eax, byte msize-1
+          if (sz>=128)
+              put1a(0x25, sz);            // and eax, dword msize-1
+          else
+              put3(0x83e000+sz);                  // and eax, byte msize-1
           const int move=(op>=64 && op<112); // = or else ddd is eax
-          if (sss<6) { // ddd={a,b,c,d,*b,*c}
-            if (S==8) put5(0x410fb604+8*move*regcode[ddd],0x07);
+          if (sss<6) // ddd={a,b,c,d,*b,*c}
+          {
+            if (S==8)
+                put5(0x410fb604+8*move*regcode[ddd],0x07);
                                                    // movzx ddd, byte [r15+rax]
-            else put3a(0x0fb680+8*move*regcode[ddd], &m[0]);
+            else
+                put3a(0x0fb680+8*move*regcode[ddd], &m[0]);
                                                    // movzx ddd, byte [m+eax]
           }
-          else if ((0x06587000>>(op/8))&1) {// {*b,*c,*d,a/,a%,a&~,a<<,a>>}=*d
-            if (S==8) put4(0x418b0484);            // mov eax, [r12+rax*4]
-            else put3a(0x8b0485, &h[0]);           // mov eax, [h+eax*4]
+          else if ((0x06587000>>(op/8))&1) // {*b,*c,*d,a/,a%,a&~,a<<,a>>}=*d
+          {
+            if (S==8)
+                put4(0x418b0484);            // mov eax, [r12+rax*4]
+            else
+                put3a(0x8b0485, &h[0]);      // mov eax, [h+eax*4]
           }
         }
         // Load destination address *b, *c, *d or hashd (*d) into ecx
-        if ((op>=32 && op<56 && op%8<5) || (op>=96 && op<120) || op==60) {
-          put2(0x89c1+8*regcode[op/8%8-3-(op==60)]);// mov ecx,{esi,edi,ebp}
+        if ((op>=32 && op<56 && op%8<5) || (op>=96 && op<120) || op==60)
+        {
+          put2(0x89c1+8*regcode[op/8%8-3-(op==60)]);    // mov ecx,{esi,edi,ebp}
           const int sz=(ddd==6||op==60?hsize:msize)-1;
-          if (sz>=128) put2a(0x81e1, sz);   // and ecx, dword sz
-          else put3(0x83e100+sz);           // and ecx, byte sz
-          if (op/8%8==6 || op==60) { // *d
-            if (S==8) put4(0x498d0c8c);     // lea rcx, [r12+rcx*4]
-            else put3a(0x8d0c8d, &h[0]);    // lea ecx, [ecx*4+h]
+          if (sz>=128)
+              put2a(0x81e1, sz);           // and ecx, dword sz
+          else
+              put3(0x83e100+sz);           // and ecx, byte sz
+          if (op/8%8==6 || op==60)         // *d
+          {
+            if (S==8)
+                put4(0x498d0c8c);          // lea rcx, [r12+rcx*4]
+            else
+                put3a(0x8d0c8d, &h[0]);    // lea ecx, [ecx*4+h]
           }
-          else { // *b, *c
-            if (S==8) put4(0x498d0c0f);     // lea rcx, [r15+rcx]
-            else put2a(0x8d89, &m[0]);      // lea ecx, [ecx+h]
+          else                             // *b, *c
+          {
+            if (S==8)
+                put4(0x498d0c0f);          // lea rcx, [r15+rcx]
+            else
+                put2a(0x8d89, &m[0]);      // lea ecx, [ecx+h]
           }
         }
         // Translate by opcode
-        switch((op/8)&31) {
+        switch((op/8)&31)
+        {
           case 0:  // ddd = a
           case 1:  // ddd = b
           case 2:  // ddd = c
           case 3:  // ddd = d
-            switch(sss) {
+            switch(sss)
+            {
               case 0:  // ddd<>a (swap)
                 put2(0x87d0+regcode[ddd]);   // xchg edx, ddd
                 break;
@@ -16942,7 +17056,8 @@ int ZPAQL::assemble() {
             break;
           case 4:  // ddd = *b
           case 5:  // ddd = *c
-            switch(sss) {
+            switch(sss)
+            {
               case 0:  // ddd<>a (swap)
                 put2(0x8611);                // xchg dl, [ecx]
                 break;
@@ -16964,7 +17079,8 @@ int ZPAQL::assemble() {
                 assert(code>=0 && code<16);
                 static const unsigned char jtab[2][4]={{5,4,2,7},{4,5,3,6}};
                                // jnz,je,jb,ja, jz,jne,jae,jbe
-                if (code<4) put2(0x84db);    // test bl, bl
+                if (code<4)
+                    put2(0x84db);    // test bl, bl
                 if (arg>=128 && arg-257-i>=0 && o-it[arg-257-i]<120)
                   put2(0x7000+256*jtab[op==47][code/4]); // jx short 0
                 else
@@ -17000,7 +17116,8 @@ int ZPAQL::assemble() {
             }
             break;
           case 7:  // special
-            switch(op) {
+            switch(op)
+            {
               case 56: // halt
                 put2(0x31c0);             // xor eax, eax  ; return 0
                 put1a(0xe9, halt-o-4);    // jmp near halt
@@ -17032,7 +17149,8 @@ int ZPAQL::assemble() {
           case 11:  // d=
             if (sss==7)  // n
               put1a(0xb8+regcode[ddd], arg);         // mov ddd, n
-            else if (sss==6) { // *d
+            else if (sss==6) // *d
+            {
               if (S==8)
                 put4(0x418b0484+(regcode[ddd]<<11)); // mov ddd, [r12+rax*4]
               else
@@ -17043,100 +17161,145 @@ int ZPAQL::assemble() {
             break;
           case 12:  // *b=
           case 13:  // *c=
-            if (sss==7) put3(0xc60100+arg);          // mov byte [ecx], n
-            else if (sss==0) put2(0x8811);           // mov byte [ecx], dl
-            else {
-              if (sss<4) put2(0x89c0+8*regcode[sss]);// mov eax, sss
+            if (sss==7)
+                put3(0xc60100+arg);          // mov byte [ecx], n
+            else if (sss==0)
+                put2(0x8811);           // mov byte [ecx], dl
+            else
+            {
+              if (sss<4)
+                  put2(0x89c0+8*regcode[sss]);// mov eax, sss
               put2(0x8801);                          // mov byte [ecx], al
             }
             break;
           case 14:  // *d=
-            if (sss<7) put2(0x8901+8*regcode[sss]);  // mov [ecx], sss
-            else put2a(0xc701, arg);                 // mov dword [ecx], n
+            if (sss<7)
+                put2(0x8901+8*regcode[sss]);  // mov [ecx], sss
+            else
+                put2a(0xc701, arg);                 // mov dword [ecx], n
             break;
-          case 15: break; // not used
+          case 15:
+              break; // not used
           case 16:  // a+=
-            if (sss==6) {
-              if (S==8) put4(0x41031484);            // add edx, [r12+rax*4]
-              else put3a(0x031485, &h[0]);           // add edx, [h+eax*4]
+            if (sss==6)
+            {
+              if (S==8)
+                  put4(0x41031484);            // add edx, [r12+rax*4]
+              else
+                  put3a(0x031485, &h[0]);           // add edx, [h+eax*4]
             }
-            else if (sss<7) put2(0x01c2+8*regcode[sss]);// add edx, sss
-            else if (arg>=128) put2a(0x81c2, arg);   // add edx, n
-            else put3(0x83c200+arg);                 // add edx, byte n
+            else if (sss<7)
+                put2(0x01c2+8*regcode[sss]);// add edx, sss
+            else if (arg>=128)
+                put2a(0x81c2, arg);   // add edx, n
+            else
+                put3(0x83c200+arg);                 // add edx, byte n
             break;
           case 17:  // a-=
-            if (sss==6) {
-              if (S==8) put4(0x412b1484);            // sub edx, [r12+rax*4]
-              else put3a(0x2b1485, &h[0]);           // sub edx, [h+eax*4]
+            if (sss==6)
+            {
+              if (S==8)
+                  put4(0x412b1484);            // sub edx, [r12+rax*4]
+              else
+                  put3a(0x2b1485, &h[0]);           // sub edx, [h+eax*4]
             }
             else if (sss<7) put2(0x29c2+8*regcode[sss]);// sub edx, sss
             else if (arg>=128) put2a(0x81ea, arg);   // sub edx, n
             else put3(0x83ea00+arg);                 // sub edx, byte n
             break;
           case 18:  // a*=
-            if (sss==6) {
-              if (S==8) put5(0x410faf14,0x84);       // imul edx, [r12+rax*4]
-              else put4a(0x0faf1485, &h[0]);         // imul edx, [h+eax*4]
+            if (sss==6)
+            {
+              if (S==8)
+                  put5(0x410faf14,0x84);       // imul edx, [r12+rax*4]
+              else
+                  put4a(0x0faf1485, &h[0]);         // imul edx, [h+eax*4]
             }
-            else if (sss<7) put3(0x0fafd0+regcode[sss]);// imul edx, sss
-            else if (arg>=128) put2a(0x69d2, arg);   // imul edx, n
-            else put3(0x6bd200+arg);                 // imul edx, byte n
+            else if (sss<7)
+                put3(0x0fafd0+regcode[sss]);// imul edx, sss
+            else if (arg>=128)
+                put2a(0x69d2, arg);   // imul edx, n
+            else
+                put3(0x6bd200+arg);                 // imul edx, byte n
             break;
           case 19:  // a/=
           case 20:  // a%=
-            if (sss<7) put2(0x89c1+8*regcode[sss]);  // mov ecx, sss
-            else put1a(0xb9, arg);                   // mov ecx, n
+            if (sss<7)
+                put2(0x89c1+8*regcode[sss]);         // mov ecx, sss
+            else
+                put1a(0xb9, arg);                    // mov ecx, n
             put2(0x85c9);                            // test ecx, ecx
             put3(0x0f44d1);                          // cmovz edx, ecx
             put2(0x7408-2*(op/8==20));               // jz (over rest)
             put2(0x89d0);                            // mov eax, edx
             put2(0x31d2);                            // xor edx, edx
             put2(0xf7f1);                            // div ecx
-            if (op/8==19) put2(0x89c2);              // mov edx, eax
+            if (op/8==19)
+                put2(0x89c2);                        // mov edx, eax
             break;
           case 21:  // a&=
-            if (sss==6) {
-              if (S==8) put4(0x41231484);            // and edx, [r12+rax*4]
-              else put3a(0x231485, &h[0]);           // and edx, [h+eax*4]
+            if (sss==6)
+            {
+              if (S==8)
+                  put4(0x41231484);                  // and edx, [r12+rax*4]
+              else
+                  put3a(0x231485, &h[0]);            // and edx, [h+eax*4]
             }
-            else if (sss<7) put2(0x21c2+8*regcode[sss]);// and edx, sss
-            else if (arg>=128) put2a(0x81e2, arg);   // and edx, n
-            else put3(0x83e200+arg);                 // and edx, byte n
+            else if (sss<7)
+                put2(0x21c2+8*regcode[sss]);         // and edx, sss
+            else if (arg>=128)
+                put2a(0x81e2, arg);                  // and edx, n
+            else
+                put3(0x83e200+arg);                  // and edx, byte n
             break;
           case 22:  // a&~
-            if (sss==7) {
+            if (sss==7)
+            {
               if (arg<128) put3(0x83e200+(~arg&255));// and edx, byte ~n
               else put2a(0x81e2, ~arg);              // and edx, ~n
             }
-            else {
+            else
+            {
               if (sss<4) put2(0x89c0+8*regcode[sss]);// mov eax, sss
               put2(0xf7d0);                          // not eax
               put2(0x21c2);                          // and edx, eax
             }
             break;
-          case 23:  // a|=
-            if (sss==6) {
-              if (S==8) put4(0x410b1484);            // or edx, [r12+rax*4]
-              else put3a(0x0b1485, &h[0]);           // or edx, [h+eax*4]
+          case 23:      // a|=
+            if (sss==6)
+            {
+              if (S==8)
+                  put4(0x410b1484);             // or edx, [r12+rax*4]
+              else
+                  put3a(0x0b1485, &h[0]);           // or edx, [h+eax*4]
             }
-            else if (sss<7) put2(0x09c2+8*regcode[sss]);// or edx, sss
-            else if (arg>=128) put2a(0x81ca, arg);   // or edx, n
-            else put3(0x83ca00+arg);                 // or edx, byte n
+            else if (sss<7)
+                put2(0x09c2+8*regcode[sss]);// or edx, sss
+            else if (arg>=128)
+                put2a(0x81ca, arg);   // or edx, n
+            else
+                put3(0x83ca00+arg);                 // or edx, byte n
             break;
           case 24:  // a^=
-            if (sss==6) {
-              if (S==8) put4(0x41331484);            // xor edx, [r12+rax*4]
-              else put3a(0x331485, &h[0]);           // xor edx, [h+eax*4]
+            if (sss==6)
+            {
+              if (S==8)
+                  put4(0x41331484);            // xor edx, [r12+rax*4]
+              else
+                  put3a(0x331485, &h[0]);           // xor edx, [h+eax*4]
             }
-            else if (sss<7) put2(0x31c2+8*regcode[sss]);// xor edx, sss
-            else if (arg>=128) put2a(0x81f2, arg);   // xor edx, byte n
+            else if (sss<7)
+                put2(0x31c2+8*regcode[sss]);// xor edx, sss
+            else if (arg>=128)
+                put2a(0x81f2, arg);   // xor edx, byte n
             else put3(0x83f200+arg);                 // xor edx, n
             break;
           case 25:  // a<<=
           case 26:  // a>>=
             if (sss==7)  // sss = n
-              put3(0xc1e200+8*256*(op/8==26)+arg);   // shl/shr n
-            else {
+                put3(0xc1e200+8*256*(op/8==26)+arg);   // shl/shr n
+            else
+            {
               put2(0x89c1+8*regcode[sss]);           // mov ecx, sss
               put2(0xd3e2+8*(op/8==26));             // shl/shr edx, cl
             }
@@ -17144,23 +17307,31 @@ int ZPAQL::assemble() {
           case 27:  // a==
           case 28:  // a<
           case 29:  // a>
-            if (sss==6) {
-              if (S==8) put4(0x413b1484);            // cmp edx, [r12+rax*4]
-              else put3a(0x3b1485, &h[0]);           // cmp edx, [h+eax*4]
+            if (sss==6)
+            {
+              if (S==8)
+                  put4(0x413b1484);            // cmp edx, [r12+rax*4]
+              else
+                  put3a(0x3b1485, &h[0]);           // cmp edx, [h+eax*4]
             }
             else if (sss==7)  // sss = n
               put2a(0x81fa, arg);                    // cmp edx, dword n
             else
               put2(0x39c2+8*regcode[sss]);           // cmp edx, sss
-            if (code<4) {
-              if (op/8==27) put3(0x0f94c3);          // setz bl
-              if (op/8==28) put3(0x0f92c3);          // setc bl
-              if (op/8==29) put3(0x0f97c3);          // seta bl
+            if (code<4)
+            {
+              if (op/8==27)
+                  put3(0x0f94c3);          // setz bl
+              if (op/8==28)
+                  put3(0x0f92c3);          // setc bl
+              if (op/8==29)
+                  put3(0x0f97c3);          // seta bl
             }
             break;
           case 30:  // not used
           case 31:  // 255 = lj
-            if (op==255) put1a(0xe9, 0);             // jmp near
+            if (op==255)
+                put1a(0xe9, 0);             // jmp near
             break;
         }
       }
@@ -17173,23 +17344,29 @@ int ZPAQL::assemble() {
   for (int i=0; i<hlen; ++i) {
     if (it[i]<16) continue;
     int op=hcomp[i];
-    if (op==39 || op==47 || op==63 || op==255) {  // jt, jf, jmp, lj
+    if (op==39 || op==47 || op==63 || op==255)
+    {  // jt, jf, jmp, lj
       int target=hcomp[i+1];
-      if (op==255) target+=hcomp[i+2]*256;  // lj
-      else {
+      if (op==255)
+          target+=hcomp[i+2]*256;  // lj
+      else
+      {
         if (target>=128) target-=256;
         target+=i+2;
       }
       if (target<0 || target>=hlen) target=hlen-1;  // runtime ZPAQL error
       o=it[i];
       assert(o>=16 && o<rcode_size);
-      if ((op==39 || op==47) && rcode[o]==0x84) o+=2;  // jt, jf -> skip test
+      if ((op==39 || op==47) && rcode[o]==0x84)
+          o+=2;  // jt, jf -> skip test
       assert(o>=16 && o<rcode_size);
-      if (rcode[o]==0x0f) ++o;  // first byte of jz near, jnz near
+      if (rcode[o]==0x0f)
+          ++o;  // first byte of jz near, jnz near
       assert(o<rcode_size);
       op=rcode[o++];  // x86 opcode
       target=it[target]-o;
-      if ((op>=0x72 && op<0x78) || op==0xeb) {  // jx, jmp short
+      if ((op>=0x72 && op<0x78) || op==0xeb)
+      {  // jx, jmp short
         --target;
         if (target<-128 || target>127)
           error("Cannot code x86 short jump");
@@ -17201,7 +17378,8 @@ int ZPAQL::assemble() {
         target-=4;
         puta(target);
       }
-      else assert(false);  // not a x86 jump
+      else
+          assert(false);  // not a x86 jump
     }
   }
   // Jump to start
@@ -17239,7 +17417,8 @@ int Predictor::assemble_p() {
   put1(0x57);                 // push edi/rdi
   if (S==4)
     put4(0x8b7c2414);         // mov edi,[esp+0x14] ; pr
-  else {
+  else
+  {
 #if !defined(unix) || defined(__CYGWIN__)
     put3(0x4889cf);           // mov rdi, rcx (1st arg in Win64)
 #endif // corresponds to #if (#if !defined(unix) || defined(__CYGWIN__))
@@ -17247,11 +17426,15 @@ int Predictor::assemble_p() {
   // Code predict() for each component
   const int n=hcomp[6];  // number of components
   U8* cp=hcomp+7;
-  for (int i=0; i<n; ++i, cp+=compsize[cp[0]]) {
-    if (cp-hcomp>=pr.z.cend) error("comp too big");
-    if (cp[0]<1 || cp[0]>9) error("invalid component");
+  for (int i=0; i<n; ++i, cp+=compsize[cp[0]])
+  {
+    if (cp-hcomp>=pr.z.cend)
+        error("comp too big");
+    if (cp[0]<1 || cp[0]>9)
+        error("invalid component");
     assert(compsize[cp[0]]>0 && compsize[cp[0]]<8);
-    switch (cp[0]) {
+    switch (cp[0])
+    {
       case CONS:  // c
         break;
       case CM:  // sizebits limit
@@ -17262,7 +17445,8 @@ int Predictor::assemble_p() {
         put2a(0x3387, off(hmap4));             // xor eax, [edi+&hmap4]
         put1a(0x25, (1<<cp[1])-1);             // and eax, size-1
         put2a(0x8987, offc(cxt));              // mov [edi+cxt], eax
-        if (S==8) put1(0x48);                  // rex.w (esi->rsi)
+        if (S==8)
+            put1(0x48);                        // rex.w (esi->rsi)
         put2a(0x8bb7, offc(cm));               // mov esi, [edi+&cm]
         put3(0x8b0486);                        // mov eax, [esi+eax*4]
         put3(0xc1e811);                        // shr eax, 17
@@ -17303,7 +17487,8 @@ int Predictor::assemble_p() {
         //  else
         //    return memset(&ht[h2], 0, 16), ht[h2]=chk, h2;
         // }
-        if (S==8) put1(0x48);                  // rex.w
+        if (S==8)
+            put1(0x48);                        // rex.w
         put2a(0x8bb7, offc(ht));               // mov esi, [edi+&ht]
         put2(0x8b07);                          // mov eax, edi ; c8
         put2(0x89c1);                          // mov ecx, eax ; c8
@@ -17363,7 +17548,8 @@ int Predictor::assemble_p() {
         put2(0x01d0);                          // add eax, edx ; c+(hmap4&15)
         put4(0x0fb61406);                      // movzx edx, byte [esi+eax]
         put2a(0x8997, offc(cxt));              // mov [edi+&cxt], edx ; cxt=bh
-        if (S==8) put1(0x48);                  // rex.w
+        if (S==8)
+            put1(0x48);                        // rex.w
         put2a(0x8bb7, offc(cm));               // mov esi, [edi+&cm] ; cm
         // esi points to cm[256] (ICM) or cm[512] (ISSE) with 23 bit
         // prediction (ICM) or a pair of 20 bit signed weights (ISSE).
@@ -17404,7 +17590,8 @@ int Predictor::assemble_p() {
         //   cr.c=(cr.ht(cr.limit-cr.b)>>(7-cr.cxt))&1; // predicted bit
         //   p[i]=stretch(dt2k[cr.a]*(cr.c*-2+1)&32767);
         // }
-        if (S==8) put1(0x48);          // rex.w
+        if (S==8)
+            put1(0x48);          // rex.w
         put2a(0x8bb7, offc(ht));       // mov esi, [edi+&ht]
         // If match length (a) is 0 then p[i]=0
         put2a(0x8b87, offc(a));        // mov eax, [edi+&a]
@@ -17451,7 +17638,8 @@ int Predictor::assemble_p() {
         put2a(0x0387, off(h[i]));      // add eax, [edi+&h[i]]
         put1a(0x25, (1<<cp[1])-1);     // and eax, size-1
         put2a(0x8987, offc(cxt));      // mov [edi+&cxt], eax ; cxt
-        if (S==8) put1(0x48);          // rex.w
+        if (S==8)
+            put1(0x48);                // rex.w
         put2a(0x8bb7, offc(a16));      // mov esi, [edi+&a16]
         put4(0x0fb70446);              // movzx eax, word [edi+eax*2] ; w
         put2a(0x8b8f, off(p[cp[2]]));  // mov ecx, [edi+&p[j]]
@@ -17481,9 +17669,11 @@ int Predictor::assemble_p() {
         put1a(0x25, (1<<cp[1])-1);             // and eax, size-1
         put2a(0x69c0, cp[3]);                  // imul eax, m
         put2a(0x8987, offc(cxt));              // mov [edi+&cxt], eax ; cxt
-        if (S==8) put1(0x48);                  // rex.w
+        if (S==8)
+            put1(0x48);                        // rex.w
         put2a(0x8bb7, offc(cm));               // mov esi, [edi+&cm]
-        if (S==8) put1(0x48);                  // rex.w
+        if (S==8)
+            put1(0x48);                        // rex.w
         put3(0x8d3486);                        // lea esi, [esi+eax*4] ; wt
         // Unroll summation loop: esi=wt[0..m-1]
         for (int k=0; k<cp[3]; k+=8)
@@ -17561,7 +17751,8 @@ int Predictor::assemble_p() {
         put3(0x83e23f);                // and edx, 63  ; wt in 0..63
         put3(0xc1e806);                // shr eax, 6   ; pq in 0..30
         put2(0x01c1);                  // add ecx, eax ; cxt in 0..size*32-2
-        if (S==8) put1(0x48);          // rex.w
+        if (S==8)
+            put1(0x48);                // rex.w
         put2a(0x8bb7, offc(cm));       // mov esi, [edi+cm]
         put3(0x8b048e);                // mov eax, [esi+ecx*4] ; cm[cxt]
         put4(0x8b5c8e04);              // mov ebx, [esi+ecx*4+4] ; cm[cxt+1]
@@ -17635,11 +17826,13 @@ int Predictor::assemble_p() {
         //   U32 count=pn&0x3ff;
         //   int error=y*32767-(cr.cm(cr.cxt)>>17);
         //   pn+=(error*dt[count]&-1024)+(count<cr.limit);
-        if (S==8) put1(0x48);          // rex.w (esi->rsi)
+        if (S==8)
+            put1(0x48);                // rex.w (esi->rsi)
         put2a(0x8bb7, offc(cm));       // mov esi,[edi+cm]  ; cm
         put2a(0x8b87, offc(cxt));      // mov eax,[edi+cxt] ; cxt
         put1a(0x25, pr.comp[i].cm.size()-1);  // and eax, size-1
-        if (S==8) put1(0x48);          // rex.w
+        if (S==8)
+            put1(0x48);                // rex.w
         put3(0x8d3486);                // lea esi,[esi+eax*4] ; &cm[cxt]
         put2(0x8b06);                  // mov eax,[esi] ; cm[cxt]
         put2(0x89c2);                  // mov edx, eax  ; cm[cxt]
@@ -17670,19 +17863,22 @@ int Predictor::assemble_p() {
         put3(0x8b4700+off(hmap4));     // mov eax, [edi+&hmap4]
         put3(0x83e00f);                // and eax, 15
         put2a(0x0387, offc(c));        // add eax [edi+&c] ; cxt
-        if (S==8) put1(0x48);          // rex.w
+        if (S==8)
+            put1(0x48);                // rex.w
         put2a(0x8bb7, offc(ht));       // mov esi, [edi+&ht]
         put4(0x0fb61406);              // movzx edx, byte [esi+eax] ; bh
         put4(0x8d5c9500);              // lea ebx, [ebp+edx*4] ; index to st
         put4a(0x0fb69c1f, off(st));    // movzx ebx,byte[edi+ebx+st]; next bh
         put3(0x881c06);                // mov [esi+eax], bl ; save next bh
-        if (S==8) put1(0x48);          // rex.w
+        if (S==8)
+            put1(0x48);                // rex.w
         put2a(0x8bb7, offc(cm));       // mov esi, [edi+&cm]
         // ICM: update cm[cxt=edx=bit history] to reduce prediction error
         // esi = &cm
         if (cp[0]==ICM)
         {
-          if (S==8) put1(0x48);        // rex.w
+          if (S==8)
+              put1(0x48);              // rex.w
           put3(0x8d3496);              // lea esi, [esi+edx*4] ; &cm[bh]
           put2(0x8b06);                // mov eax, [esi] ; pn
           put3(0xc1e808);              // shr eax, 8 ; pn>>8
@@ -19684,34 +19880,43 @@ void LZBuffer::fill() {
   // LZ77: scan the input
   unsigned lit=0;  // number of output literals pending
   const unsigned mask=(1<<checkbits)-1;
-  while (i<n && wpos*2<BUFSIZE) {
+  while (i<n && wpos*2<BUFSIZE)
+  {
     // Search for longest match, or pick closest in case of tie
     unsigned blen=minMatch-1;  // best match length
     unsigned bp=0;  // pointer to best match
     unsigned blit=0;  // literals before best match
     int bscore=0;  // best cost
     // Look up contexts in suffix array
-    if (isa) {
+    if (isa)
+    {
       if (sa[isa[i&mask]]!=i) // rebuild ISA
         for (unsigned j=0; j<n; ++j)
           if ((sa[j]&~mask)==(i&~mask))
             isa[sa[j]&mask]=j;
-      for (unsigned h=0; h<=lookahead; ++h) {
+      for (unsigned h=0; h<=lookahead; ++h)
+      {
         unsigned q=isa[(h+i)&mask];  // location of h+i in SA
         assert(q<n);
-        if (sa[q]!=h+i) continue;
+        if (sa[q]!=h+i)
+            continue;
         for (int j=-1; j<=1; j+=2) {  // search backward and forward
-          for (unsigned k=1; k<=bucket; ++k) {
+          for (unsigned k=1; k<=bucket; ++k)
+          {
             unsigned p;  // match to be tested
-            if (q+j*k<n && (p=sa[q+j*k]-h)<i) {
+            if (q+j*k<n && (p=sa[q+j*k]-h)<i)
+            {
               assert(p<n);
               unsigned l, l1;  // length of match, leading literals
               for (l=h; i+l<n && l<maxMatch && in[p+l]==in[i+l]; ++l);
               for (l1=h; l1>0 && in[p+l1-1]==in[i+l1-1]; --l1);
               int score=int(l-l1)*8-lg(i-p)-4*(lit==0 && l1>0)-11;
-              for (unsigned a=0; a<h; ++a) score=score*5/8;
-              if (score>bscore) blen=l, bp=p, blit=l1, bscore=score;
-              if (l<blen || l<minMatch || l>255) break;
+              for (unsigned a=0; a<h; ++a)
+                  score=score*5/8;
+              if (score>bscore)
+                  blen=l, bp=p, blit=l1, bscore=score;
+              if (l<blen || l<minMatch || l>255)
+                  break;
             }
           }
         }
@@ -19721,41 +19926,54 @@ void LZBuffer::fill() {
     // Look up contexts in a hash table.
     // Try the longest context orders first. If a match is found, then
     // skip the lower order as a speed optimization.
-    else if (level==1 || minMatch<=64) {
+    else if (level==1 || minMatch<=64)
+    {
       if (minMatch2>0) {
-        for (unsigned k=0; k<=bucket; ++k) {
+        for (unsigned k=0; k<=bucket; ++k)
+        {
           unsigned p=ht[h2^k];
-          if (p && (p&mask)==(in[i+3]&mask)) {
+          if (p && (p&mask)==(in[i+3]&mask))
+          {
             p>>=checkbits;
-            if (p<i && i+blen<=n && in[p+blen-1]==in[i+blen-1]) {
+            if (p<i && i+blen<=n && in[p+blen-1]==in[i+blen-1])
+            {
               unsigned l;  // match length from lookahead
               for (l=lookahead; i+l<n && l<maxMatch && in[p+l]==in[i+l]; ++l);
-              if (l>=minMatch2+lookahead) {
+              if (l>=minMatch2+lookahead)
+              {
                 int l1;  // length back from lookahead
                 for (l1=lookahead; l1>0 && in[p+l1-1]==in[i+l1-1]; --l1);
                 assert(l1>=0 && l1<=int(lookahead));
                 int score=int(l-l1)*8-lg(i-p)-8*(lit==0 && l1>0)-11;
-                if (score>bscore) blen=l, bp=p, blit=l1, bscore=score;
+                if (score>bscore)
+                    blen=l, bp=p, blit=l1, bscore=score;
               }
             }
           }
-          if (blen>=128) break;
+          if (blen>=128)
+              break;
         }
       }
       // Search the lower order context
-      if (!minMatch2 || blen<minMatch2) {
-        for (unsigned k=0; k<=bucket; ++k) {
+      if (!minMatch2 || blen<minMatch2)
+      {
+        for (unsigned k=0; k<=bucket; ++k)
+        {
           unsigned p=ht[h1^k];
-          if (p && i+3<n && (p&mask)==(in[i+3]&mask)) {
+          if (p && i+3<n && (p&mask)==(in[i+3]&mask))
+          {
             p>>=checkbits;
-            if (p<i && i+blen<=n && in[p+blen-1]==in[i+blen-1]) {
+            if (p<i && i+blen<=n && in[p+blen-1]==in[i+blen-1])
+            {
               unsigned l;
               for (l=0; i+l<n && l<maxMatch && in[p+l]==in[i+l]; ++l);
               int score=l*8-lg(i-p)-2*(lit>0)-11;
-              if (score>bscore) blen=l, bp=p, blit=0, bscore=score;
+              if (score>bscore)
+                  blen=l, bp=p, blit=0, bscore=score;
             }
           }
-          if (blen>=128) break;
+          if (blen>=128)
+              break;
         }
       }
     }
@@ -19764,26 +19982,32 @@ void LZBuffer::fill() {
     assert(i>=bp);
     const unsigned off=i-bp;  // offset
     if (off>0 && bscore>0
-        && blen-blit>=minMatch+(level==2)*((off>=(1<<16))+(off>=(1<<24)))) {
+        && blen-blit>=minMatch+(level==2)*((off>=(1<<16))+(off>=(1<<24))))
+    {
       lit+=blit;
       write_literal(i+blit, lit);
       write_match(blen-blit, off);
     }
     // Otherwise add to literal length
-    else {
+    else
+    {
       blen=1;
       ++lit;
     }
     // Update index, advance blen bytes
     if (isa)
       i+=blen;
-    else {
-      while (blen--) {
-        if (i+minMatchBoth<n) {
+    else
+    {
+      while (blen--)
+      {
+        if (i+minMatchBoth<n)
+        {
           unsigned ih=((i*1234547)>>19)&bucket;
           const unsigned p=(i<<checkbits)|(in[i+3]&mask);
           assert(ih<=bucket);
-          if (minMatch2) {
+          if (minMatch2)
+          {
             ht[h2^ih]=p;
             h2=(((h2*9)<<shift2)
                 +(in[i+minMatch2+lookahead]+1)*23456789u)&(htsize-1);
@@ -19801,32 +20025,39 @@ void LZBuffer::fill() {
   }
   // Write pending literals at end of input
   assert(i<=n);
-  if (i==n) {
+  if (i==n)
+  {
     write_literal(n, lit);
     flush();
   }
 }
 // Write literal sequence in[i-lit..i-1], set lit=0
-void LZBuffer::write_literal(unsigned i, unsigned& lit) {
+void LZBuffer::write_literal(unsigned i, unsigned& lit)
+{
   assert(lit>=0);
   assert(i>=0 && i<=n);
   assert(i>=lit);
-  if (level==1) {
-    if (lit<1) return;
+  if (level==1)
+  {
+    if (lit<1)
+        return;
     int ll=lg(lit);
     assert(ll>=1 && ll<=24);
     putb(0, 2);
     --ll;
-    while (--ll>=0) {
+    while (--ll>=0)
+    {
       putb(1, 1);
       putb((lit>>ll)&1, 1);
     }
     putb(0, 1);
     while (lit) putb(in[i-lit--], 8);
   }
-  else {
+  else
+  {
     assert(level==2);
-    while (lit>0) {
+    while (lit>0)
+    {
       unsigned lit1=lit;
       if (lit1>64) lit1=64;
       put(lit1-1);
@@ -19836,9 +20067,11 @@ void LZBuffer::write_literal(unsigned i, unsigned& lit) {
   }
 }
 // Write match sequence of given length and offset
-void LZBuffer::write_match(unsigned len, unsigned off) {
+void LZBuffer::write_match(unsigned len, unsigned off)
+{
   // mm,mmm,n,ll,r,q[mmmmm-8] = match n*4+ll, offset ((q-1)<<rb)+r+1
-  if (level==1) {
+  if (level==1)
+  {
     assert(len>=minMatch && len<=maxMatch);
     assert(off>0);
     assert(len>=4);
@@ -19850,7 +20083,8 @@ void LZBuffer::write_match(unsigned len, unsigned off) {
     assert(lo>=0 && lo<=23);
     putb((lo+8)>>3, 2);// mm
     putb(lo&7, 3);     // mmm
-    while (--ll>=2) {  // n
+    while (--ll>=2)
+    {  // n
       putb(1, 1);
       putb((len>>ll)&1, 1);
     }
@@ -19860,11 +20094,13 @@ void LZBuffer::write_match(unsigned len, unsigned off) {
     putb(off>>rb, lo); // q
   }
   // x[2]:len[6] off[x-1]
-  else {
+  else
+  {
     assert(level==2);
     assert(minMatch>=1 && minMatch<=64);
     --off;
-    while (len>0) {  // Split long matches to len1=minMatch..minMatch+63
+    while (len>0)
+    {  // Split long matches to len1=minMatch..minMatch+63
       const unsigned len1=len>minMatch*2+63 ? minMatch+63 :
           len>minMatch+63 ? len-minMatch : len;
       assert(wpos<BUFSIZE-5);
@@ -29466,7 +29702,6 @@ char *mytohuman(int64_t i_bytes, char *i_buffer, int i_buffersize)
 	if (i_bytes > 1024)
 		for (i= 0; (i_bytes / 1024) > 0 && (i < length - 1); i++, i_bytes/= 1024)
 			mybytes= i_bytes / 1024.0;
-	///	snprintf(i_buffer,sizeof(i_buffer),"%.02lf %s",mybytes,myappend[i]);
 	snprintf(i_buffer, i_buffersize, "%.02f %s", mybytes, myappend[i]);
 	return i_buffer;
 }
@@ -29576,10 +29811,7 @@ int64_t myatoll(const char *i_str)
 			risultato*= 1099511627776LL;
 	}
 	else
-	{
-		///		if (flagdebug)
-		///		myprintf("00045! ERROR string size not 1 or 2, ignoring [%s]\n",migliaia(thestring.size()));
-	}
+	{}
 
 	if (flagdebug)
 		myprintf("00046: final from %s to %s (%s)\n", i_str, migliaia(risultato), tohuman(risultato));
@@ -29785,9 +30017,7 @@ string internalutctolocal(const string &i_date)
 #ifdef _WIN64
 	time_t tt= _mkgmtime64(&t);
 #else
-
 	time_t tt= -1;
-///	time_t tt = _mkgmtime32(&t);
 #endif // corresponds to #ifdef (#ifdef _WIN64)
 	if (tt == -1)
 		return i_date;
@@ -29815,7 +30045,6 @@ string internalutctolocal(const string &i_date)
 			 t2->tm_min,
 			 t2->tm_sec);
 
-	/// snprintf(ds,sizeof(ds),"%.4d-%.2d-%.2d %.2d:%.2d:%.2d", t2->tm_year + 1900,t2->tm_mon + 1, t2->tm_mday, t2->tm_hour, t2->tm_min, t2->tm_sec);
 	if (flagdebug)
 		myprintf("00061: localtime is %s\n", ds);
 	return ds;
@@ -30004,13 +30233,11 @@ bool isdospath(const string &i_filename)
 
 bool iswindowspath(const string &i_filename)
 {
-	///	printf("Y1 |%s|\n",i_filename.c_str());
 	if (i_filename.size() > 3)
 		if (isalpha(i_filename[0]))
 			if (i_filename[1] == ':')
 				if ((i_filename[2] == '\\') || (i_filename[2] == '/'))
 				{
-					//	printf("trueeeeeeeeeeeeeee\n");
 					return true;
 				}
 	return false;
@@ -30193,8 +30420,6 @@ int64_t getfreespace(string i_path)
 		return 0;
 	}
 	return (int64_t)stat.f_frsize * (int64_t)stat.f_bfree;
-
-	/// return (int64_t)stat.f_bsize * (int64_t)stat.f_bfree;
 #else
 	if (flagdebug)
 		myprintf("00073: BSD: getfreespace\n");
@@ -34176,7 +34401,6 @@ int esamina_password(const string &password, bool i_dooutput= false)
 			myprintf("Password too short (minimum 8 characters)!\n");
 			color_restore();
 		}
-		//return 2;
 	}
 
 	// Contatori per analisi caratteri
@@ -44605,6 +44829,8 @@ class franzfs
 	char	 space[16];
 	uint64_t filesize;
 	uint64_t position;
+	uint64_t windowoffset;
+	bool	 windowed;
 
 	void seekstart()
 	{
@@ -44641,6 +44867,23 @@ class franzfs
 	}
 	size_t ramwrite(uint64_t i_offset, const char *i_ptr, size_t i_size)
 	{
+	    if (windowed)
+		{
+			uint64_t inputend= i_offset + i_size;
+			uint64_t windowend= windowoffset + filesize;
+			if (inputend <= windowoffset || i_offset >= windowend)
+				return 0;
+			uint64_t copystart= i_offset > windowoffset ? i_offset : windowoffset;
+			uint64_t copyend= inputend < windowend ? inputend : windowend;
+			size_t sourceoffset= (size_t)(copystart - i_offset);
+			size_t copysize= (size_t)(copyend - copystart);
+			if (i_ptr == NULL || data == NULL || copysize == 0)
+				return 0;
+			position= copystart - windowoffset;
+			memcpy(data + position, i_ptr + sourceoffset, copysize);
+			position+= copysize;
+			return copysize;
+		}
 		if (i_offset > filesize)
 		{
 			myprintf("00308: i_offset greater then filesize %s %s\n", migliaia((int64_t)i_offset), migliaia2((int64_t)filesize));
@@ -44668,13 +44911,29 @@ class franzfs
 		position+= i_size;
 		return i_size;
 	}
+	size_t mappedsize(uint64_t i_offset, size_t i_size) const
+	{
+		if (!windowed)
+			return i_size;
+		uint64_t inputend= i_offset + i_size;
+		uint64_t windowend= windowoffset + filesize;
+		if (inputend <= windowoffset || i_offset >= windowend)
+			return 0;
+		uint64_t copystart= i_offset > windowoffset ? i_offset : windowoffset;
+		uint64_t copyend= inputend < windowend ? inputend : windowend;
+		return (size_t)(copyend - copystart);
+	}
 	franzfs()
 	{
-		data	= NULL;
-		position= 0;
+	data		= NULL;
+	position	= 0;
+	windowoffset= 0;
+	windowed	= false;
 	}
 	bool init(int64_t i_size)
 	{
+	    windowoffset= 0;
+	    windowed= false;
 		data= (char *)franz_malloc(i_size);
 		if (data == NULL)
 		{
@@ -44691,6 +44950,14 @@ class franzfs
 #endif
 		return true;
 	}
+	bool initwindow(int64_t i_size, uint64_t i_offset)
+	{
+		if (!init(i_size))
+			return false;
+		windowoffset= i_offset;
+		windowed= true;
+		return true;
+	}
 	bool reset()
 	{
 		if (data == NULL)
@@ -44705,7 +44972,11 @@ class franzfs
 		}
 		franz_free(data);
 		g_ramdisksize-= filesize;
+		data= NULL;
 		filesize= 0;
+		position= 0;
+		windowoffset= 0;
+		windowed= false;
 #ifndef ESX
 		if (flagdebug2)
 			myprintf("00319: Deallocated  %s\n", migliaia((int64_t)filesize));
@@ -45453,10 +45724,12 @@ string list_dateToString(int64_t date)
   if (date<=0) return "                   ";
   string s="0000-00-00 00:00:00";
   static const int t[]={18,17,15,14,12,11,9,8,6,5,3,2,1,0};
-  for (int i=0; i<14; ++i) s[t[i]]+=int(date%10), date/=10;
+  for (int i=0; i<14; ++i)
+      s[t[i]]+=int(date%10), date/=10;
   return s;
 }
-string list_mydateToString(int64_t date) {
+string list_mydateToString(int64_t date)
+{
   if (date<=0) return "                   ";
   ///        0123456789012345678
   string  s="0000-00-00 00:00:00";
@@ -45464,7 +45737,8 @@ string list_mydateToString(int64_t date) {
 
 
   static const int t[]={18,17,15,14,12,11,9,8,6,5,3,2,1,0};
-  for (int i=0; i<14; ++i) s[t[i]]+=int(date%10), date/=10;
+  for (int i=0; i<14; ++i)
+      s[t[i]]+=int(date%10), date/=10;
 
 /// convert in european date format dd/mm/yyyy hh:mm:ss
   s2[0]=s[8];
@@ -46243,7 +46517,8 @@ static bool matchWildcard(const std::string &pattern, const std::string &text)
 
 void gotoxy(int x, int y)
 {
-    if (isAnyOutputRedirected()) return;
+    if (isAnyOutputRedirected())
+        return;
     COORD coord;
     coord.X = x;
     coord.Y = y;
@@ -46252,7 +46527,8 @@ void gotoxy(int x, int y)
 
 void clear_line()
 {
-    if (isAnyOutputRedirected()) return;
+    if (isAnyOutputRedirected())
+        return;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     HANDLE                     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     GetConsoleScreenBufferInfo(hConsole, &csbi);
@@ -46266,7 +46542,8 @@ void clear_line()
 
 int get_console_height()
 {
-    if (isAnyOutputRedirected()) return 0;
+    if (isAnyOutputRedirected())
+        return 0;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
@@ -46274,7 +46551,8 @@ int get_console_height()
 
 void hide_cursor()
 {
-    if (isAnyOutputRedirected()) return;
+    if (isAnyOutputRedirected())
+        return;
     CONSOLE_CURSOR_INFO cursorInfo;
     GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
     cursorInfo.bVisible = false;
@@ -46283,7 +46561,8 @@ void hide_cursor()
 
 void show_cursor()
 {
-    if (isAnyOutputRedirected()) return;
+    if (isAnyOutputRedirected())
+        return;
     CONSOLE_CURSOR_INFO cursorInfo;
     GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
     cursorInfo.bVisible = true;
@@ -46370,7 +46649,10 @@ public:
     ~franzdisktype();
 
     // Restituisce true se HDD, false se SSD
-    bool ishdd() const { return m_ishdd; }
+    bool ishdd() const
+    {
+        return m_ishdd;
+    }
 
 private:
     bool m_ishdd;
@@ -46397,14 +46679,16 @@ private:
     struct IWbemClassObject;
     struct IEnumWbemClassObject;
 
-    struct IWbemLocatorVtbl {
+    struct IWbemLocatorVtbl
+    {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IWbemLocator*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IWbemLocator*);
         ULONG   (STDMETHODCALLTYPE *Release)(IWbemLocator*);
         HRESULT (STDMETHODCALLTYPE *ConnectServer)(IWbemLocator*, BSTR, BSTR, BSTR, BSTR, long, BSTR, void*, IWbemServices**);
     };
 
-    struct IWbemServicesVtbl {
+    struct IWbemServicesVtbl
+    {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IWbemServices*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IWbemServices*);
         ULONG   (STDMETHODCALLTYPE *Release)(IWbemServices*);
@@ -46412,7 +46696,8 @@ private:
         HRESULT (STDMETHODCALLTYPE *ExecQuery)(IWbemServices*, BSTR, BSTR, long, void*, IEnumWbemClassObject**);
     };
 
-    struct IEnumWbemClassObjectVtbl {
+    struct IEnumWbemClassObjectVtbl
+    {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IEnumWbemClassObject*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IEnumWbemClassObject*);
         ULONG   (STDMETHODCALLTYPE *Release)(IEnumWbemClassObject*);
@@ -46420,7 +46705,8 @@ private:
         HRESULT (STDMETHODCALLTYPE *Next)(IEnumWbemClassObject*, long, ULONG, IWbemClassObject**, ULONG*);
     };
 
-    struct IWbemClassObjectVtbl {
+    struct IWbemClassObjectVtbl
+    {
         HRESULT (STDMETHODCALLTYPE *QueryInterface)(IWbemClassObject*, REFIID, void**);
         ULONG   (STDMETHODCALLTYPE *AddRef)(IWbemClassObject*);
         ULONG   (STDMETHODCALLTYPE *Release)(IWbemClassObject*);
@@ -46428,10 +46714,22 @@ private:
         HRESULT (STDMETHODCALLTYPE *Get)(IWbemClassObject*, LPCWSTR, long, VARIANT*, long*, long*);
     };
 
-    struct IWbemLocator         { IWbemLocatorVtbl* lpVtbl; };
-    struct IWbemServices        { IWbemServicesVtbl* lpVtbl; };
-    struct IEnumWbemClassObject { IEnumWbemClassObjectVtbl* lpVtbl; };
-    struct IWbemClassObject     { IWbemClassObjectVtbl* lpVtbl; };
+    struct IWbemLocator
+    {
+        IWbemLocatorVtbl* lpVtbl;
+    };
+    struct IWbemServices
+    {
+        IWbemServicesVtbl* lpVtbl;
+    };
+    struct IEnumWbemClassObject
+    {
+        IEnumWbemClassObjectVtbl* lpVtbl;
+    };
+    struct IWbemClassObject
+    {
+        IWbemClassObjectVtbl* lpVtbl;
+    };
 
     typedef HRESULT (WINAPI *PFN_CoInitializeEx)(LPVOID, DWORD);
     typedef void    (WINAPI *PFN_CoUninitialize)(void);
@@ -46455,13 +46753,20 @@ private:
     static PFN_VariantClear       s_variantclear;
     static PFN_VariantInit        s_variantinit;
 
-    class wmiconn {
+    class wmiconn
+    {
     public:
         wmiconn() : m_loc(NULL), m_svc(NULL), m_init(false) {}
-        ~wmiconn() { disconnect(); }
+        ~wmiconn()
+        {
+            disconnect();
+        }
         bool connect(const wchar_t* ns);
         void disconnect();
-        IWbemServices* svc() { return m_svc; }
+        IWbemServices* svc()
+        {
+            return m_svc;
+        }
     private:
         IWbemLocator*  m_loc;
         IWbemServices* m_svc;
@@ -46540,14 +46845,25 @@ bool franzdisktype::loadcom()
     return true;
 }
 
-void franzdisktype::unloadcom() {
-    if (s_hole32)    { FreeLibrary(s_hole32);    s_hole32 = NULL; }
-    if (s_holeaut32) { FreeLibrary(s_holeaut32); s_holeaut32 = NULL; }
+void franzdisktype::unloadcom()
+{
+    if (s_hole32)
+    {
+        FreeLibrary(s_hole32);
+        s_hole32 = NULL;
+    }
+    if (s_holeaut32)
+    {
+        FreeLibrary(s_holeaut32);
+        s_holeaut32 = NULL;
+    }
     s_loaded = false;
 }
 
-bool franzdisktype::wmiconn::connect(const wchar_t* ns) {
-    if (!loadcom()) return false;
+bool franzdisktype::wmiconn::connect(const wchar_t* ns)
+{
+    if (!loadcom())
+        return false;
 
     HRESULT hr = s_coinitializeex(NULL, COINIT_MULTITHREADED);
     if (FAILED(hr) && hr != (HRESULT)0x80010106L) return false;
@@ -46555,7 +46871,8 @@ bool franzdisktype::wmiconn::connect(const wchar_t* ns) {
 
     hr = s_cocreateinstance(CLSID_WbemLocator, NULL, CLSCTX_INPROC_SERVER,
                              IID_IWbemLocator, (void**)&m_loc);
-    if (FAILED(hr)) return false;
+    if (FAILED(hr))
+        return false;
 
     BSTR bstrns = s_sysallocstring(ns);
     hr = m_loc->lpVtbl->ConnectServer(m_loc, bstrns, NULL, NULL, NULL, 0, NULL, NULL, &m_svc);
@@ -46638,7 +46955,8 @@ int franzdisktype::getphysicaldisknumber(char driveletter)
             s_variantinit(&vt);
             if (SUCCEEDED(pobj->lpVtbl->Get(pobj, L"DiskIndex", 0, &vt, NULL, NULL)))
             {
-                if (vt.vt == VT_I4 || vt.vt == VT_UI4) disknum = vt.lVal;
+                if (vt.vt == VT_I4 || vt.vt == VT_UI4)
+                    disknum = vt.lVal;
             }
             s_variantclear(&vt);
             pobj->lpVtbl->Release(pobj);
@@ -46649,9 +46967,11 @@ int franzdisktype::getphysicaldisknumber(char driveletter)
     return disknum;
 }
 
-int franzdisktype::querymsftmediatype(int disknumber) {
+int franzdisktype::querymsftmediatype(int disknumber)
+{
     wmiconn wmi;
-    if (!wmi.connect(L"ROOT\\Microsoft\\Windows\\Storage")) return -1;
+    if (!wmi.connect(L"ROOT\\Microsoft\\Windows\\Storage"))
+        return -1;
 
     wchar_t query[256];
     swprintf(query, 256, L"SELECT MediaType FROM MSFT_PhysicalDisk WHERE DeviceID='%d'", disknumber);
@@ -46668,15 +46988,20 @@ int franzdisktype::querymsftmediatype(int disknumber) {
 
     int mediatype = -1;
 
-    if (SUCCEEDED(hr) && penum) {
+    if (SUCCEEDED(hr) && penum)
+    {
         IWbemClassObject* pobj = NULL;
         ULONG ret = 0;
-        if (SUCCEEDED(penum->lpVtbl->Next(penum, WBEM_INFINITE, 1, &pobj, &ret)) && ret > 0 && pobj) {
+        if (SUCCEEDED(penum->lpVtbl->Next(penum, WBEM_INFINITE, 1, &pobj, &ret)) && ret > 0 && pobj)
+        {
             VARIANT vt;
             s_variantinit(&vt);
-            if (SUCCEEDED(pobj->lpVtbl->Get(pobj, L"MediaType", 0, &vt, NULL, NULL))) {
-                if (vt.vt == VT_I4 || vt.vt == VT_UI4) mediatype = vt.lVal;
-                else if (vt.vt == VT_I2 || vt.vt == VT_UI2) mediatype = vt.iVal;
+            if (SUCCEEDED(pobj->lpVtbl->Get(pobj, L"MediaType", 0, &vt, NULL, NULL)))
+            {
+                if (vt.vt == VT_I4 || vt.vt == VT_UI4)
+                    mediatype = vt.lVal;
+                else if (vt.vt == VT_I2 || vt.vt == VT_UI2)
+                    mediatype = vt.iVal;
             }
             s_variantclear(&vt);
             pobj->lpVtbl->Release(pobj);
@@ -46687,9 +47012,11 @@ int franzdisktype::querymsftmediatype(int disknumber) {
     return mediatype;
 }
 
-bool franzdisktype::querymodelnameforSSD(int disknumber) {
+bool franzdisktype::querymodelnameforSSD(int disknumber)
+{
     wmiconn wmi;
-    if (!wmi.connect(L"ROOT\\CIMV2")) return false;
+    if (!wmi.connect(L"ROOT\\CIMV2"))
+        return false;
 
     wchar_t query[256];
     swprintf(query, 256, L"SELECT Model FROM Win32_DiskDrive WHERE Index=%d", disknumber);
@@ -46706,19 +47033,23 @@ bool franzdisktype::querymodelnameforSSD(int disknumber) {
 
     bool isssd = false;
 
-    if (SUCCEEDED(hr) && penum) {
+    if (SUCCEEDED(hr) && penum)
+    {
         IWbemClassObject* pobj = NULL;
         ULONG ret = 0;
-        if (SUCCEEDED(penum->lpVtbl->Next(penum, WBEM_INFINITE, 1, &pobj, &ret)) && ret > 0 && pobj) {
+        if (SUCCEEDED(penum->lpVtbl->Next(penum, WBEM_INFINITE, 1, &pobj, &ret)) && ret > 0 && pobj)
+        {
             VARIANT vt;
             s_variantinit(&vt);
             if (SUCCEEDED(pobj->lpVtbl->Get(pobj, L"Model", 0, &vt, NULL, NULL)) &&
-                vt.vt == VT_BSTR && vt.bstrVal) {
+                vt.vt == VT_BSTR && vt.bstrVal)
+            {
 
                 wchar_t modellower[256];
                 wcsncpy(modellower, vt.bstrVal, 255);
                 modellower[255] = 0;
-                for (wchar_t* p = modellower; *p; p++) *p = towlower(*p);
+                for (wchar_t* p = modellower; *p; p++)
+                    *p = towlower(*p);
 
                 if (wcsstr(modellower, L"ssd") || wcsstr(modellower, L"nvme") ||
                     wcsstr(modellower, L"solid state") || wcsstr(modellower, L"flash")) {
@@ -46734,7 +47065,8 @@ bool franzdisktype::querymodelnameforSSD(int disknumber) {
     return isssd;
 }
 
-int franzdisktype::trydeviceiocontrol(char driveletter) {
+int franzdisktype::trydeviceiocontrol(char driveletter)
+{
     char devpath[32];
     snprintf(devpath, sizeof(devpath), "\\\\.\\%c:", driveletter);
 
@@ -46742,8 +47074,18 @@ int franzdisktype::trydeviceiocontrol(char driveletter) {
                                NULL, OPEN_EXISTING, 0, NULL);
     if (hdev == INVALID_HANDLE_VALUE) return -1;
 
-    struct { DWORD PropertyId; DWORD QueryType; BYTE Additional[1]; } query = {7, 0, {0}};
-    struct { DWORD Version; DWORD Size; BYTE IncursSeekPenalty; } desc = {0};
+    struct
+    {
+        DWORD PropertyId;
+        DWORD QueryType;
+        BYTE Additional[1];
+    } query = {7, 0, {0}};
+    struct
+    {
+        DWORD Version;
+        DWORD Size;
+        BYTE IncursSeekPenalty;
+    } desc = {0};
     DWORD bytesret = 0;
 
     BOOL ok = DeviceIoControl(hdev, 0x002D1400, &query, sizeof(query),
@@ -46754,29 +47096,35 @@ int franzdisktype::trydeviceiocontrol(char driveletter) {
     return -1;
 }
 
-bool franzdisktype::detect(const std::string& path) {
+bool franzdisktype::detect(const std::string& path)
+{
     char drive = getdriveletter(path);
-    if (!drive) return true; // assume HDD
+    if (!drive)
+        return true; // assume HDD
 
     int disknum = getphysicaldisknumber(drive);
 
-    if (disknum >= 0) {
+    if (disknum >= 0)
+    {
         // Method 1: MSFT_PhysicalDisk (Win8+)
         int mediatype = querymsftmediatype(disknum);
-        if (mediatype >= 0) {
+        if (mediatype >= 0)
+        {
             // 3=HDD, 4=SSD, 5=SCM
             return (mediatype != 4 && mediatype != 5);
         }
 
         // Method 2: Model name
-        if (querymodelnameforSSD(disknum)) {
+        if (querymodelnameforSSD(disknum))
+        {
             return false; // is SSD
         }
     }
 
     // Method 3: DeviceIoControl
     int iores = trydeviceiocontrol(drive);
-    if (iores >= 0) {
+    if (iores >= 0)
+    {
         return (iores == 1); // 1=HDD, 0=SSD
     }
 
@@ -53920,8 +54268,6 @@ class franzVSS
 
 		if (FAILED(hr) && hr != RPC_E_TOO_LATE)
 		{
-			//     pCoUninitialize();
-			//   return false;
 			myprintf("WARNING: not TOO_LATE\n");
 		}
 
@@ -55737,7 +56083,7 @@ class Jidac
 #endif /// NOSFTPEND
 	int ads();
 #endif // corresponds to #ifdef (#ifdef _WIN32)
-	int		 extractqueue2(int i_chunk, int i_chunksize);
+	int      extractqueue2(int i_chunk, int i_chunksize, int64_t i_windowoffset= -1, int64_t i_windowsize= 0);
 	int		 multiverify(vector<s_fileandsize> &i_arrayfilename);
 	bool	 removetempdirifempty(string i_folder, bool i_deleteifsizezero);
 	void	 handleflaglongpath();
@@ -58849,7 +59195,6 @@ static void *sftp_rsync_worker_thread(void *arg)
 			// If remote_size is -1, the file does not exist, proceed with full upload
 			if (remote_size == -1)
 			{
-				/// remote_size = 0;  // Tratta come file inesistente
 				resume_from= 0;
 			}
 			else if (remote_size > 0)
@@ -60784,11 +61129,13 @@ void unzSHA256::process() {
   #undef ror
 }
 // Return old result and start a new hash
-const char* unzSHA256::result() {
+const char* unzSHA256::result()
+{
   // pad and append length
   const unsigned s1=len1, s0=len0;
   put(0x80);
-  while ((len0&511)!=448) put(0);
+  while ((len0&511)!=448)
+      put(0);
   put(s1>>24);
   put(s1>>16);
   put(s1>>8);
@@ -60798,7 +61145,8 @@ const char* unzSHA256::result() {
   put(s0>>8);
   put(s0);
   // copy s to hbuf
-  for (int i=0; i<8; ++i) {
+  for (int i=0; i<8; ++i)
+  {
     hbuf[4*i]=s[i]>>24;
     hbuf[4*i+1]=s[i]>>16;
     hbuf[4*i+2]=s[i]>>8;
@@ -60812,7 +61160,8 @@ const char* unzSHA256::result() {
 // For encrypting with AES in CTR mode.
 // The i'th 16 byte block is encrypted by XOR with AES(i)
 // (i is big endian or MSB first, starting with 0).
-class unzAES_CTR {
+class unzAES_CTR
+{
   uint32_t Te0[256], Te1[256], Te2[256], Te3[256], Te4[256]; // encryption tables
   uint32_t ek[60];  // round key
   int Nr;  // number of rounds (10, 12, 14 for AES 128, 192, 256)
@@ -60829,14 +61178,19 @@ public:
 #define Te4_2 0x00FF0000 & Te4
 #define Te4_3 0xFF000000 & Te4
 // Extract byte n of x
-static inline unsigned unzbyte(unsigned x, unsigned n) {return (x>>(8*n))&255;}
+static inline unsigned unzbyte(unsigned x, unsigned n)
+{
+    return (x>>(8*n))&255;
+}
 // x = y[0..3] MSB first
-static inline void LOAD32H(uint32_t& x, const char* y) {
+static inline void LOAD32H(uint32_t& x, const char* y)
+{
   const unsigned char* u=(const unsigned char*)y;
   x=u[0]<<24|u[1]<<16|u[2]<<8|u[3];
 }
 // y[0..3] = x MSB first
-static inline void STORE32H(uint32_t& x, unsigned char* y) {
+static inline void STORE32H(uint32_t& x, unsigned char* y)
+{
   y[0]=x>>24;
   y[1]=x>>16;
   y[2]=x>>8;
@@ -60897,8 +61251,10 @@ unzAES_CTR::unzAES_CTR(const char* key, int keylen, const char* iv) {
   LOAD32H(rk[1], key +  4);
   LOAD32H(rk[2], key +  8);
   LOAD32H(rk[3], key + 12);
-  if (keylen == 16) {
-    for (;;) {
+  if (keylen == 16)
+  {
+    for (;;)
+    {
       temp  = rk[3];
       rk[4] = rk[0] ^ setup_mix(temp) ^ rcon[i];
       rk[5] = rk[1] ^ rk[4];
@@ -61154,11 +61510,12 @@ static void blockmix(uint32_t* b, int r)
       memcpy(b+(i+r)*16, &y[i*32+16], 64);
 }
 // Mix b[0..128*r-1]. Uses 128*r*n bytes of memory and O(r*n) time
-static void smix(char* b, int r, int n) 
+static void smix(char* b, int r, int n)
 {
   Array<uint32_t> x(32*r), v(32*r*n);
-  for (int i=0; i<r*128; ++i) x[i/4]+=(b[i]&255)<<i%4*8;
-  for (int i=0; i<n; ++i) 
+  for (int i=0; i<r*128; ++i)
+      x[i/4]+=(b[i]&255)<<i%4*8;
+  for (int i=0; i<n; ++i)
   {
     memcpy(&v[i*r*32], &x[0], r*128);
     blockmix(&x[0], r);
@@ -61166,17 +61523,19 @@ static void smix(char* b, int r, int n)
   for (int i=0; i<n; ++i)
   {
     uint32_t j=x[(2*r-1)*16]&(n-1);
-    for (int k=0; k<r*32; ++k) x[k]^=v[j*r*32+k];
+    for (int k=0; k<r*32; ++k)
+        x[k]^=v[j*r*32+k];
     blockmix(&x[0], r);
   }
-  for (int i=0; i<r*128; ++i) b[i]=x[i/4]>>(i%4*8);
+  for (int i=0; i<r*128; ++i)
+      b[i]=x[i/4]>>(i%4*8);
 }
 // Strengthen password pw[0..pwlen-1] and salt[0..saltlen-1]
 // to produce key unzBuf[0..buflen-1]. Uses O(n*r*p) time and 128*r*n bytes
 // of memory. n must be a power of 2 and r <= 8.
 void unzscrypt(const char* pw, int pwlen,
             const char* salt, int saltlen,
-            int n, int r, int p, char* unzBuf, int buflen) 
+            int n, int r, int p, char* unzBuf, int buflen)
 {
   assert(r<=8);
   assert(n>0 && (n&(n-1))==0);  // power of 2?
@@ -61188,7 +61547,7 @@ void unzscrypt(const char* pw, int pwlen,
 }
 // Stretch key in[0..31], assumed to be unzSHA256(password), with
 // NUL terminate salt to produce new key out[0..31]
-void stretchKey(char* out, const char* in, const char* salt) 
+void stretchKey(char* out, const char* in, const char* salt)
 {
   unzscrypt(in, 32, salt, 32, 1<<14, 8, 1, out, 32);
 }
@@ -61197,7 +61556,8 @@ void stretchKey(char* out, const char* in, const char* salt)
 typedef enum {NONE,CONS,CM,ICM,MATCH,AVG,MIX2,MIX,ISSE,SSE} CompType;
 const int compsize[256]={0,2,3,2,3,4,6,6,3,5};
 // A unzZPAQL virtual machine COMP+HCOMP or PCOMP.
-class unzZPAQL {
+class unzZPAQL
+{
 public:
   unzZPAQL();
   void clear();           // Free memory, erase program, reset machine state
@@ -61208,7 +61568,10 @@ public:
   void outc(int c);       // output a byte
   unzWriter* output;         // Destination for OUT instruction, or 0 to suppress
   unzSHA1* sha1;             // Points to checksum computer
-  uint32_t H(int i) {return h(i);}  // get element of h
+  uint32_t H(int i)
+  {
+      return h(i);  // get element of h
+  }
   // unzZPAQL block header
   Array<uint8_t> header;   // hsize[2] hh hm ph pm n COMP (guard) HCOMP (guard)
   int cend;           // COMP in header[7...cend-1]
@@ -61224,10 +61587,22 @@ private:
   // Support code
   void init(int hbits, int mbits);  // initialize H and M sizes
   int execute();  // execute 1 instruction, return 0 after HALT, else 1
-  void unzdiv(uint32_t x) {if (x) a/=x; else a=0;}
-  void mod(uint32_t x) {if (x) a%=x; else a=0;}
-  void swap(uint32_t& x) {a^=x; x^=a; a^=x;}
-  void swap(uint8_t& x)  {a^=x; x^=a; a^=x;}
+  void unzdiv(uint32_t x)
+  {
+      if (x) a/=x; else a=0;
+  }
+  void mod(uint32_t x)
+  {
+      if (x) a%=x; else a=0;
+  }
+  void swap(uint32_t& x)
+  {
+      a^=x; x^=a; a^=x;
+  }
+  void swap(uint8_t& x)
+  {
+      a^=x; x^=a; a^=x;
+  }
   void err();  // exit with run time error
 };
 // Read header from in2
@@ -61311,7 +61686,7 @@ void unzZPAQL::inith()
   init(header[2], header[3]); // hh, hm
 }
 // Initialize machine state as PCOMP
-void unzZPAQL::initp() 
+void unzZPAQL::initp()
 {
   assert(header.isize()>6);
   init(header[4], header[5]); // ph, pm
@@ -61683,7 +62058,7 @@ void StateTable::next_state(int& n0, int& n1, int y)
   }
 }
 // Initialize next state table ns[state*4] -> next if 0, next if 1, n0, n1
-StateTable::StateTable() 
+StateTable::StateTable()
 {
   // Assign states by increasing priority
   const int N=50;
@@ -61765,13 +62140,13 @@ private:
     pn+=(error*dt[count]&-1024)+(count<cr.limit);
   }
   // x -> floor(32768/(1+exp(-x/64)))
-  int squash(int x) 
+  int squash(int x)
   {
     assert(x>=-2048 && x<=2047);
     return squasht[x+2048];
   }
   // x -> round(64*log((x+0.5)/(32767.5-x))), approx inverse of squash
-  int stretch(int x) 
+  int stretch(int x)
   {
     assert(x>=0 && x<=32767);
     return stretcht[x];
@@ -62051,7 +62426,7 @@ int unzPredictor::predict()
   return squash(p[n-1]);
 }
 // Update model with decoded bit y (0...1)
-void unzPredictor::update(int y) 
+void unzPredictor::update(int y)
 {
   assert(y==0 || y==1);
   assert(c8>=1 && c8<=255);
@@ -62060,17 +62435,17 @@ void unzPredictor::update(int y)
   const uint8_t* cp=&z.header[7];
   int n=z.header[6];
   assert(n>=1 && n<=255);
-  for (int i=0; i<n; ++i) 
+  for (int i=0; i<n; ++i)
   {
     unzComponent& cr=comp[i];
-    switch(cp[0]) 
+    switch(cp[0])
     {
       case CONS:  // c
         break;
       case CM:  // sizebits limit
         train(cr, y);
         break;
-      case ICM: 
+      case ICM:
     { // sizebits: cxt=ht[b]=bh, ht[c][0..15]=bh row, cxt=bh
         cr.ht[cr.c+(hmap4&15)]=st.next(cr.ht[cr.c+(hmap4&15)], y);
         uint32_t& pn=cr.cm(cr.cxt);
@@ -62087,15 +62462,15 @@ void unzPredictor::update(int y)
         assert(cr.cm.size()==(size_t(1)<<cp[1]));
         assert(cr.ht.size()==(size_t(1)<<cp[2]));
         assert(cr.limit<cr.ht.size());
-        if (int(cr.c)!=y) 
+        if (int(cr.c)!=y)
             cr.a=0;  // mismatch?
         cr.ht(cr.limit)+=cr.ht(cr.limit)+y;
-        if (++cr.cxt==8) 
+        if (++cr.cxt==8)
         {
           cr.cxt=0;
           ++cr.limit;
           cr.limit&=(1<<cp[2])-1;
-          if (cr.a==0) 
+          if (cr.a==0)
           {  // look for a match
             cr.b=cr.limit-cr.cm(h[i]);
             if (cr.b&(cr.ht.size()-1))
@@ -62110,7 +62485,7 @@ void unzPredictor::update(int y)
         break;
       case AVG:  // j k wt
         break;
-      case MIX2: 
+      case MIX2:
     { // sizebits j k rate mask
                    // cm=wt[size], cxt=input
         assert(cr.a16.size()==cr.c);
@@ -62118,14 +62493,14 @@ void unzPredictor::update(int y)
         int err=(y*32767-squash(p[i]))*cp[4]>>5;
         int w=cr.a16[cr.cxt];
         w+=(err*(p[cp[2]]-p[cp[3]])+(1<<12))>>13;
-        if (w<0) 
+        if (w<0)
             w=0;
-        if (w>65535) 
+        if (w>65535)
             w=65535;
         cr.a16[cr.cxt]=w;
       }
         break;
-      case MIX: 
+      case MIX:
     {   // sizebits j m rate mask
                     // cm=wt[size][m], cxt=input
         int m=cp[3];
@@ -62138,7 +62513,7 @@ void unzPredictor::update(int y)
           wt[j]=clamp512k(wt[j]+((err*p[cp[2]+j]+(1<<12))>>13));
       }
         break;
-      case ISSE: 
+      case ISSE:
     { // sizebits j  -- c=hi, cxt=bh
         assert(cr.cxt==uint32_t(cr.ht[cr.c+(hmap4&15)]));
         int err=y*32767-squash(p[i]);
@@ -62161,7 +62536,7 @@ void unzPredictor::update(int y)
   assert(cp[0]==NONE);
   // Save bit y in c8, hmap4
   c8+=c8+y;
-  if (c8>=256) 
+  if (c8>=256)
   {
     z.run(c8-256);
     hmap4=1;
@@ -62177,18 +62552,18 @@ void unzPredictor::update(int y)
 // low sizebits of cxt with element 0 having the next higher 8 bits for
 // collision detection. If not found after 3 adjacent tries, replace the
 // row with lowest element 1 as priority. Return index of row.
-size_t unzPredictor::find(Array<uint8_t>& ht, int sizebits, uint32_t cxt) 
+size_t unzPredictor::find(Array<uint8_t>& ht, int sizebits, uint32_t cxt)
 {
   assert(ht.size()==size_t(16)<<sizebits);
   int chk=cxt>>sizebits&255;
   size_t h0=(cxt*16)&(ht.size()-16);
-  if (ht[h0]==chk) 
+  if (ht[h0]==chk)
       return h0;
   size_t h1=h0^16;
-  if (ht[h1]==chk) 
+  if (ht[h1]==chk)
       return h1;
   size_t h2=h0^32;
-  if (ht[h2]==chk) 
+  if (ht[h2]==chk)
       return h2;
   if (ht[h0+1]<=ht[h1+1] && ht[h0+1]<=ht[h2+1])
     return memset(&ht[h0], 0, 16), ht[h0]=chk, h0;
@@ -62199,7 +62574,8 @@ size_t unzPredictor::find(Array<uint8_t>& ht, int sizebits, uint32_t cxt)
 }
 //////////////////////////// unzDecoder /////////////////////////
 // unzDecoder decompresses using an arithmetic code
-class unzDecoder {
+class unzDecoder
+{
 public:
   unzReader* in;        // destination
   unzDecoder(unzZPAQL& z);
@@ -62212,25 +62588,34 @@ private:
   int decode(int p); // return decoded bit (0..1) with prob. p (0..65535)
 };
 unzDecoder::unzDecoder(unzZPAQL& z):
-    in(0), low(1), high(0xFFFFFFFF), curr(0), pr(z) {
+    in(0), low(1), high(0xFFFFFFFF), curr(0), pr(z)
+{
 }
-void unzDecoder::init() {
+void unzDecoder::init()
+{
   pr.init();
-  if (pr.isModeled()) low=1, high=0xFFFFFFFF, curr=0;
-  else low=high=curr=0;
+  if (pr.isModeled())
+      low=1, high=0xFFFFFFFF, curr=0;
+  else
+      low=high=curr=0;
 }
 // Return next bit of decoded input, which has 16 bit probability p of being 1
-int unzDecoder::decode(int p) {
+int unzDecoder::decode(int p)
+{
   assert(p>=0 && p<65536);
   assert(high>low && low>0);
-  if (curr<low || curr>high) unzerror("archive corrupted");
+  if (curr<low || curr>high)
+      unzerror("archive corrupted");
   assert(curr>=low && curr<=high);
   uint32_t mid=low+uint32_t(((high-low)*uint64_t(uint32_t(p)))>>16);  // split range
   assert(high>mid && mid>=low);
   int y=curr<=mid;
-  if (y) high=mid;
-  else low=mid+1; // pick half
-  while ((high^low)<0x1000000) { // shift out identical leading bytes
+  if (y)
+      high=mid;
+  else
+      low=mid+1; // pick half
+  while ((high^low)<0x1000000)
+  { // shift out identical leading bytes
     high=high<<8|255;
     low=low<<8;
     low+=(low==0);
@@ -62242,19 +62627,25 @@ int unzDecoder::decode(int p) {
   return y;
 }
 // Decompress 1 byte or -1 at end of input
-int unzDecoder::decompress() {
-  if (pr.isModeled()) {  // n>0 components?
-    if (curr==0) {  // segment initialization
+int unzDecoder::decompress()
+{
+  if (pr.isModeled())
+  {  // n>0 components?
+    if (curr==0)
+    {  // segment initialization
       for (int i=0; i<4; ++i)
         curr=curr<<8|in->get();
     }
-    if (decode(0)) {
-      if (curr!=0) unzerror("decoding end of input");
+    if (decode(0))
+    {
+      if (curr!=0)
+          unzerror("decoding end of input");
       return -1;
     }
     else {
       int c=1;
-      while (c<256) {  // get 8 bits
+      while (c<256)
+      {  // get 8 bits
         int p=pr.predict()*2+1;
         c+=c+decode(p);
         pr.update(c&1);
@@ -62262,11 +62653,14 @@ int unzDecoder::decompress() {
       return c-256;
     }
   }
-  else {
-    if (curr==0) {  // segment initialization
+  else
+  {
+    if (curr==0)
+    {  // segment initialization
       for (int i=0; i<4; ++i)
         curr=curr<<8|in->get();
-      if (curr==0) return -1;
+      if (curr==0)
+          return -1;
     }
     assert(curr>0);
     --curr;
@@ -62283,12 +62677,22 @@ public:
   unzPostProcessor(): state(0), hsize(0), ph(0), pm(0) {}
   void init(int h, int m);  // ph, pm sizes of H and M
   int write(int c);  // Input a byte, return state
-  void setOutput(unzWriter* out) {z.output=out;}
-  void setSHA1(unzSHA1* sha1ptr) {z.sha1=sha1ptr;}
-  int getState() const {return state;}
+  void setOutput(unzWriter* out)
+  {
+      z.output=out;
+  }
+  void setSHA1(unzSHA1* sha1ptr)
+  {
+      z.sha1=sha1ptr;
+  }
+  int getState() const
+  {
+      return state;
+  }
 };
 // Copy ph, pm from block header
-void unzPostProcessor::init(int h, int m) {
+void unzPostProcessor::init(int h, int m)
+{
   state=hsize=0;
   ph=h;
   pm=m;
@@ -62296,27 +62700,35 @@ void unzPostProcessor::init(int h, int m) {
 }
 // (PASS=0 | PROG=1 psize[0..1] pcomp[0..psize-1]) data... EOB=-1
 // Return state: 1=PASS, 2..4=loading PROG, 5=PROG loaded
-int unzPostProcessor::write(int c) {
+int unzPostProcessor::write(int c)
+{
   assert(c>=-1 && c<=255);
-  switch (state) {
+  switch (state)
+  {
     case 0:  // initial state
-      if (c<0) unzerror("Unexpected EOS");
+      if (c<0)
+          unzerror("Unexpected EOS");
       state=c+1;  // 1=PASS, 2=PROG
-      if (state>2) unzerror("unknown post processing type");
-      if (state==1) z.clear();
+      if (state>2)
+          unzerror("unknown post processing type");
+      if (state==1)
+          z.clear();
       break;
     case 1:  // PASS
       if (c>=0) z.outc(c);
       break;
     case 2: // PROG
-      if (c<0) unzerror("Unexpected EOS");
+      if (c<0)
+          unzerror("Unexpected EOS");
       hsize=c;  // low byte of size
       state=3;
       break;
     case 3:  // PROG psize[0]
-      if (c<0) unzerror("Unexpected EOS");
+      if (c<0)
+          unzerror("Unexpected EOS");
       hsize+=c*256;  // high byte of psize
-      if (hsize<1) unzerror("Empty PCOMP");
+      if (hsize<1)
+          unzerror("Empty PCOMP");
       z.header.resize(hsize+300);
       z.cend=8;
       z.hbegin=z.hend=z.cend+128;
@@ -62325,7 +62737,8 @@ int unzPostProcessor::write(int c) {
       state=4;
       break;
     case 4:  // PROG psize[0..1] pcomp[0...]
-      if (c<0) unzerror("Unexpected EOS");
+      if (c<0)
+          unzerror("Unexpected EOS");
       assert(z.hend<z.header.isize());
       z.header[z.hend++]=c;  // one byte of pcomp
       if (z.hend-z.hbegin==hsize) {  // last byte of pcomp?
@@ -62391,21 +62804,27 @@ bool unzDecompresser::findBlock() {
 }
 // Read the start of a segment (1) or end of block code (255).
 // If a segment is found, write the filename and return true, else false.
-bool unzDecompresser::findFilename(unzWriter* filename) {
+bool unzDecompresser::findFilename(unzWriter* filename)
+{
   assert(state==FILENAME);
   int c=dec.in->get();
-  if (c==1) {  // segment found
-    while (true) {
+  if (c==1)
+  {  // segment found
+    while (true)
+    {
       c=dec.in->get();
-      if (c==-1) unzerror("unexpected EOF");
-      if (c==0) {
+      if (c==-1)
+          unzerror("unexpected EOF");
+      if (c==0)
+      {
         state=COMMENT;
         return true;
       }
       if (filename) filename->put(c);
     }
   }
-  else if (c==255) {  // end of block found
+  else if (c==255)
+  {  // end of block found
     state=BLOCK;
     return false;
   }
@@ -62414,22 +62833,29 @@ bool unzDecompresser::findFilename(unzWriter* filename) {
   return false;
 }
 // Read the comment from the segment header
-void unzDecompresser::readComment(unzWriter* comment) {
+void unzDecompresser::readComment(unzWriter* comment)
+{
   assert(state==COMMENT);
   state=DATA;
-  while (true) {
+  while (true)
+  {
     int c=dec.in->get();
-    if (c==-1) unzerror("unexpected EOF");
-    if (c==0) break;
+    if (c==-1)
+        unzerror("unexpected EOF");
+    if (c==0)
+        break;
     if (comment) comment->put(c);
   }
-  if (dec.in->get()!=0) unzerror("missing reserved byte");
+  if (dec.in->get()!=0)
+      unzerror("missing reserved byte");
 }
 // Decompress n bytes, or all if n < 0. Return false if done
-void unzDecompresser::decompress() {
+void unzDecompresser::decompress()
+{
   assert(state==DATA);
   // Initialize models to start decompressing block
-  if (decode_state==FIRSTSEG) {
+  if (decode_state==FIRSTSEG)
+  {
     dec.init();
     assert(z.header.size()>5);
     pp.init(z.header[4], z.header[5]);
@@ -62439,10 +62865,12 @@ void unzDecompresser::decompress() {
   while ((pp.getState()&3)!=1)
     pp.write(dec.decompress());
   // Decompress n bytes, or all if n < 0
-  while (true) {
+  while (true)
+  {
     int c=dec.decompress();
     pp.write(c);
-    if (c==-1) {
+    if (c==-1)
+    {
       state=SEGEND;
       return;
     }
@@ -62451,18 +62879,25 @@ void unzDecompresser::decompress() {
 // Read end of block. If a unzSHA1 checksum is present, write 1 and the
 // 20 byte checksum into sha1string, else write 0 in first byte.
 // If sha1string is 0 then discard it.
-void unzDecompresser::readSegmentEnd(char* sha1string) {
+void unzDecompresser::readSegmentEnd(char* sha1string)
+{
   assert(state==SEGEND);
   // Read checksum
   int c=dec.in->get();
-  if (c==254) {
-    if (sha1string) sha1string[0]=0;  // no checksum
+  if (c==254)
+  {
+    if (sha1string)
+        sha1string[0]=0;  // no checksum
   }
-  else if (c==253) {
-    if (sha1string) sha1string[0]=1;
-    for (int i=1; i<=20; ++i) {
+  else if (c==253)
+  {
+    if (sha1string)
+        sha1string[0]=1;
+    for (int i=1; i<=20; ++i)
+    {
       c=dec.in->get();
-      if (sha1string) sha1string[i]=c;
+      if (sha1string)
+          sha1string[i]=c;
     }
   }
   else
@@ -62501,8 +62936,14 @@ public:
     return unzBuf[p++]&255;
   }
   // Return number of bytes read
-  uint64_t tell() {return offset;}
-  int64_t getfilesize() {return filesize;}
+  uint64_t tell()
+  {
+      return offset;
+  }
+  int64_t getfilesize()
+  {
+      return filesize;
+  }
   ~unzInputFile()
   {
     close();
@@ -62516,26 +62957,32 @@ public:
   }
 };
 // Open input. Decrypt with key.
-void unzInputFile::open(const char* filename, const char* key) {
+void unzInputFile::open(const char* filename, const char* key)
+{
   f=fopen(filename, "rb");
-  if (!f) {
+  if (!f)
+  {
     perror(filename);
     return ;
   }
 	fseeko(f, 0, SEEK_END);
 	filesize=ftello(f);
 	fseeko(f, 0, SEEK_SET);
-  if (key) {
+  if (key)
+  {
     char salt[32], stretched_key[32];
     unzSHA256 sha256;
-    for (int i=0; i<32; ++i) salt[i]=get();
-    if (offset!=32) unzerror("no salt");
+    for (int i=0; i<32; ++i)
+        salt[i]=get();
+    if (offset!=32)
+        unzerror("no salt");
     while (*key) sha256.put(*key++);
     stretchKey(stretched_key, sha256.result(), salt);
     aes=new unzAES_CTR(stretched_key, 32, salt);
 	g_allocatedram+=sizeof(unzAES_CTR);
 
-    if (!aes) unzerror("out of memory");
+    if (!aes)
+        unzerror("out of memory");
     aes->encrypt(unzBuf, end, 0);
   }
 }
@@ -62551,7 +62998,7 @@ public:
   void open(const char* filename);
   void close();
   // write 1 byte
-  void put(int c) 
+  void put(int c)
   {
     if (f)
     {
@@ -62905,7 +63352,6 @@ int decode_franz_block(const bool i_isdirectory, const char *i_franz_block, stri
 							o_crc32value= i_franz_block + 67;
 				}
 				o_creationtime= arraytoint64(i_franz_block + 2 + 31 + 1);
-				///				o_accesstime	=arraytoint64(i_franz_block+2+31+1+8);
 			}
 	/// zpaqfranz 52, sha 256. Note: '0' is not "0" !
 	if ((i_franz_block[0] == '0') && (i_franz_block[1] == '4'))
@@ -63287,7 +63733,6 @@ string Jidac::sanitizzanomefile(string i_filename, int i_filelength, int &io_col
 				if (flagdebug3)
 					myprintf("00474: Imploso           %d %s\n", (int)imploso.length(), imploso.c_str());
 				percorso= imploso;
-				///				lunghezzalibera=lunghezza-percorso.length();
 				makepath(percorso);
 			}
 			else
@@ -63401,7 +63846,7 @@ void print_progress(int64_t ts, int64_t td, int64_t i_scritti, int i_percentuale
     if (flagpakka)
     {
         // Every 10%
-        bool aggiorna             = ((percentuale % 10) == 0); /// || (percentuale == 1);
+        bool aggiorna             = ((percentuale % 10) == 0);
         bool percentuale_cambiata = (percentuale != ultima_percentuale) || (percentuale == 1);
 
         if (aggiorna && percentuale_cambiata && !flagnoeta)
@@ -63495,7 +63940,6 @@ void avanzamento(int64_t i_lavorati, int64_t i_totali, int64_t i_inizio)
 	int percentuale= int(i_lavorati * 100.0 / (i_totali + 0.5));
 	if (percentuale > 0)
 		if (((percentuale % 10) == 0) || (percentuale == 1))
-			// if ((((percentuale%10)==0) && (percentuale>0)) || (percentuale==1))
 			if (percentuale != ultimapercentuale)
 			{
 				ultimapercentuale= percentuale;
@@ -64797,7 +65241,7 @@ string help_w(bool i_usage, bool i_example)
 		scrivi_riga(" ", "Extract/test in chunks, on disk or 'ramdisk' (RAM)");
 		scrivi_riga(" ", "The output -to folder MUST BE EMPTY");
 		scrivi_riga("-maxsize X", "Maxsize of the chunk @ X bytes");
-		scrivi_riga("-ramdisk", "Use 'RAMDISK'");
+		scrivi_riga("-ramdisk", "Use RAM batches; split oversized files into sequential RAM windows");
 		scrivi_riga("-frugal", "Use less possible RAM (default: get 75% of free RAM)'");
 		scrivi_riga("-ssd", "Multithread writing from ramdisk");
 		scrivi_riga("-test", "Do not write on media");
@@ -72381,8 +72825,12 @@ struct ExtractJob
 	int64_t			total_size;	 // bytes to extract
 	int64_t			total_done;	 // bytes extracted so far
 	uint64_t		last_write;	 // last fseek
+	bool			windowed;	 // extract one logical file window to RAM
+	uint64_t		window_start;
+	uint64_t		window_size;
 	ExtractJob(Jidac &j) : chunk(0), job(0), jd(j), outf(FPNULL), lastdt(j.dt.end()),
-						   maxMemory(0), total_size(0), total_done(0), last_write(0)
+                           maxMemory(0), total_size(0), total_done(0), last_write(0),
+                           windowed(false), window_start(0), window_size(0)
 	{
 		init_mutex(mutex);
 		init_mutex(write_mutex);
@@ -73198,8 +73646,12 @@ ThreadReturn decompressthreadramdisk(void *arg)
 						if (p->second.pramfile != NULL)
 							(*p->second.pramfile).ramwrite(offset, (char *)out.c_str() + q, usize);
 				}
+				size_t mappedbytes= usize;
+				if (job.windowed && p->second.pramfile != NULL)
+				    mappedbytes= (*p->second.pramfile).mappedsize(offset, usize);
 				offset+= usize;
 				lock(job.mutex);
+				job.total_done+= mappedbytes;
 				job.total_done+= usize;
 				release(job.mutex);
 				if (p->second.data == int64_t(ptr.size()))
@@ -77753,13 +78205,12 @@ void my_handler(int s)
 	myprintf("01250: CONTROL-C detected, try some housekeeping...\n");
 
 #ifdef _WIN32
-	if (flagimage)
-		if (flagvss)
-		{
-			myprintf("\n");
-			if (pjidac != NULL)
-				(*pjidac).imager.forcedeletevss();
-		}
+	if (flagimage && flagvss)
+	{
+		myprintf("\n");
+		if (pjidac != NULL)
+			(*pjidac).imager.forcedeletevss();
+	}
 #endif
 #ifdef unix
 
@@ -77795,10 +78246,8 @@ void my_handler(int s)
 		myprintf("01255: g_archivefp_first handle %21s\n", migliaia(int64_t(g_archivefp_first)));
 		myprintf("01256: g_archivefp       handle %21s\n", migliaia(int64_t(g_archivefp)));
 #endif
-		if (g_write_fp.size() == 2)
-			if (g_write_fp[0] == g_archivefp_first)
-				if (g_write_fp[1] == g_archivefp)
-					myprintf("01257: archivefp/first match (this is good)\n");
+		if ((g_write_fp.size() == 2) && (g_write_fp[0] == g_archivefp_first) && (g_write_fp[1] == g_archivefp))
+			myprintf("01257: archivefp/first match (this is good)\n");
 
 		myprintf("01258: write pool before emergency close (should be 2 max 3)\n");
 		vector<FP> fp_da_chiudere;
@@ -83030,15 +83479,13 @@ int64_t Jidac::franzparallelscandir(bool i_flaghash, bool i_recursive, bool i_fo
 		pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
 		myprintf("01694: Creating %s scan threads\n", migliaia(files.size()));
-		if (!flagsilent)
-			if (!flagnoeta)
-				if (!flagnoconsole)
-				{
-					setupConsole();
-					printf("\033[?25l");
-					fflush(stdout);
-					restoreConsole();
-				}
+		if (!flagsilent && !flagnoeta && !flagnoconsole)
+		{
+			setupConsole();
+			printf("\033[?25l");
+			fflush(stdout);
+			restoreConsole();
+		}
 
 		if (!flagnoeta)
 			for (unsigned int i= 0; i < files.size(); i++)
@@ -83079,16 +83526,13 @@ int64_t Jidac::franzparallelscandir(bool i_flaghash, bool i_recursive, bool i_fo
 			}
 		}
 
-		if (!flagsilent)
-			if (!flagnoeta)
-				if (!flagnoconsole)
-				{
-					setupConsole();
-					printf("\033[%dB", (int)g_arraybytescanned.size());
-					printf("\033[?25h");
-					fflush(stdout);
-					restoreConsole();
-				}
+		if (!flagsilent && !flagnoeta && !flagnoconsole)
+		{
+			setupConsole();
+			printf("\033[?25l");
+			fflush(stdout);
+			restoreConsole();
+		}
 		myprintf("\n");
 		myprintf("01698: Parallel scan ended in %f s\n", (mtime() - startscan) / 1000.0);
 		for (unsigned i= 0; i < files.size(); ++i)
@@ -88582,7 +89026,8 @@ int Jidac::extractw()
 				fileandsize.push_back(myblock);
 			}
 	sort(fileandsize.begin(), fileandsize.end(), comparefilenamesize);
-	int64_t biggestfile= (int64_t)(fileandsize[fileandsize.size() - 1].size * 1.1);
+	int64_t largestfilesize= (int64_t)fileandsize[fileandsize.size() - 1].size;
+	int64_t biggestfile= (int64_t)(largestfilesize * 1.1);
 	if (flagverbose)
 		myprintf("02448: Minimum needed  (+10%%) %21s %s\n", migliaia(biggestfile), fileandsize[fileandsize.size() - 1].filename.c_str());
 	int64_t freediskspace= 0;
@@ -88623,6 +89068,11 @@ int Jidac::extractw()
 		spazio= maxsize;
 	if (flagfrugal)
 		spazio= biggestfile;
+	if (spazio <= 0)
+	{
+			myprintf("02567! Chunk size must be greater than zero\n");
+			return 1;
+	}
 	unsigned int chunkscount   = 0;
 	int64_t		 chunkcorrente = 0;
 	unsigned int indice		   = 0;
@@ -88632,7 +89082,24 @@ int Jidac::extractw()
 	//	count the chunks in advance
 	int quantichunk= 0;
 	while (indice < fileandsize.size())
-		if ((chunkcorrente + (int64_t)fileandsize[indice].size) > spazio)
+	if ((int64_t)fileandsize[indice].size > spazio)
+	{
+		// A chunk is normally a group of complete files. In RAM mode an
+		// oversized file is split into logical windows of at most spazio bytes.
+		// Always advance the index here: the old loop retried the same file
+		// forever.
+		if (chunkcorrente > 0)
+		{
+			quantichunk++;
+			chunkcorrente= 0;
+		}
+		if (flagramdisk)
+			quantichunk+= (int)(((uint64_t)fileandsize[indice].size + (uint64_t)spazio - 1) / (uint64_t)spazio);
+		else
+			quantichunk++;
+		indice++;
+	}
+	else if ((chunkcorrente + (int64_t)fileandsize[indice].size) > spazio)
 		{
 			chunkcorrente= 0;
 			quantichunk++;
@@ -88642,18 +89109,19 @@ int Jidac::extractw()
 			chunkcorrente+= fileandsize[indice].size;
 			indice++;
 		}
-	quantichunk++;
+	if (chunkcorrente > 0)
+		quantichunk++;
 	if (spazio > totalarchive)
 		spazio= totalarchive;
 	myprintf("02452: Chunks %04d x          %21s (total decompressed size %s)\n", quantichunk, migliaia(spazio), migliaia2(totalarchive));
 	if (!flagspace)
 		if (!flagtest)
 		{
-			if (spazio < biggestfile)
-			{
-				myprintf("02453: chunk size (-maxsize) too small %s, at least %s needed (bypass with -space)\n", migliaia(spazio), migliaia2(biggestfile + 1));
-				return 1;
-			}
+		    if (spazio < largestfilesize)
+		{
+		    myprintf("02453: RAM window %s is smaller than the largest file %s; oversized files will use sequential RAM windows\n",
+						migliaia(spazio), migliaia2(largestfilesize));
+		}
 			if (tofiles.size() > 0)
 				if (freediskspace < spazio)
 				{
@@ -88699,7 +89167,84 @@ int Jidac::extractw()
 	chunkcorrente		  = 0;
 	int chunkinlavorazione= 1;
 	while (indice < fileandsize.size())
-		if ((chunkcorrente + (int64_t)fileandsize[indice].size) > spazio)
+	    if ((int64_t)fileandsize[indice].size > spazio)
+		{
+			// First flush any ordinary RAM chunk already being assembled.
+			if (chunkfiles.size() > 0)
+			{
+				printbar('=');
+				errors+= extractqueue2(chunkscount, quantichunk);
+				if (flagverify)
+					errors+= multiverify(chunkfile);
+				if (errors == 0)
+					myprintf("02458: Stage XTR %04d : errors  %d (0=good)", chunkinlavorazione, errors);
+				else
+					myprintf("02459! Stage XTR %04d : errors  %d (0=good) *** NOT GOOD ***", chunkinlavorazione, errors);
+				eol();
+				myprintf("\n");
+				chunkcorrente= 0;
+				chunkscount++;
+				chunkfile.clear();
+				chunkfiles.clear();
+				chunkinlavorazione++;
+			}
+			if (flagverify && flagparanoid)
+			{
+				snprintf(chunksbuffer, sizeof(chunksbuffer), "%08d", (int)chunkscount);
+				tofiles[0]= initialtofiles + chunksbuffer + "/";
+			}
+			else
+			tofiles[0]= initialtofiles;
+
+			string fn= fileandsize[indice].filename;
+			string writtenfilename= rename(fn);
+			fileandsize[indice].writtenfilename= writtenfilename;
+			chunkfile.push_back(fileandsize[indice]);
+			uint64_t oversizedfilesize= fileandsize[indice].size;
+			indice++;
+
+			if (flagramdisk)
+			{
+				uint64_t windowbudget= (uint64_t)spazio;
+				uint64_t windowcount= (oversizedfilesize + windowbudget - 1) / windowbudget;
+				for (uint64_t windowindex= 0; windowindex < windowcount && errors == 0; ++windowindex)
+				{
+					uint64_t windowoffset= windowindex * windowbudget;
+					uint64_t windowsize= oversizedfilesize - windowoffset;
+					if (windowsize > windowbudget)
+						windowsize= windowbudget;
+					chunkfiles.push_back(fn);
+					myprintf("02560: RAM window %llu/%llu offset=%llu size=%llu\n",
+							 (unsigned long long)(windowindex + 1), (unsigned long long)windowcount,
+							 (unsigned long long)windowoffset, (unsigned long long)windowsize);
+					printbar('=');
+					errors+= extractqueue2(chunkscount, quantichunk, (int64_t)windowoffset, (int64_t)windowsize);
+					chunkscount++;
+				}
+			}
+			else
+			{
+				chunkfiles.push_back(fn);
+				myprintf("02568: File %s exceeds disk chunk %s; using direct streaming\n",
+						 tohuman((int64_t)oversizedfilesize), tohuman2(spazio));
+				printbar('=');
+				errors+= extractqueue2(chunkscount, quantichunk);
+				chunkscount++;
+			}
+			if (flagverify)
+				errors+= multiverify(chunkfile);
+			if (errors == 0)
+				myprintf("02458: Stage XTR %04d : errors  %d (0=good)", chunkinlavorazione, errors);
+			else
+				myprintf("02459! Stage XTR %04d : errors  %d (0=good) *** NOT GOOD ***", chunkinlavorazione, errors);
+			eol();
+			myprintf("\n");
+			chunkcorrente= 0;
+			chunkfile.clear();
+			chunkfiles.clear();
+			chunkinlavorazione++;
+		}
+		else if ((chunkcorrente + (int64_t)fileandsize[indice].size) > spazio)
 		{
 			printbar('=');
 			errors+= extractqueue2(chunkscount, quantichunk);
@@ -88737,15 +89282,18 @@ int Jidac::extractw()
 				indice++;
 			}
 		}
-	printbar('=');
-	/// finalize "spare" chunk
-	errors+= extractqueue2(chunkscount, quantichunk);
-	if (flagverify)
-		errors+= multiverify(chunkfile);
-	if (errors == 0)
-		myprintf("02460: Stage VEF %04d : errors  %d (0=good)\n", chunkinlavorazione, errors);
-	else
-		myprintf("02461: VEF %04d : errors  %d (0=good) *** NOT GOOD ***\n", chunkinlavorazione, errors);
+	if (chunkfiles.size() > 0)
+	{
+		printbar('=');
+		/// finalize "spare" chunk
+		errors+= extractqueue2(chunkscount, quantichunk);
+		if (flagverify)
+			errors+= multiverify(chunkfile);
+		if (errors == 0)
+			myprintf("02460: Stage VEF %04d : errors  %d (0=good)\n", chunkinlavorazione, errors);
+		else
+			myprintf("02461: VEF %04d : errors  %d (0=good) *** NOT GOOD ***\n", chunkinlavorazione, errors);
+	}
 	printbar('=');
 	if (flagverify && flagparanoid)
 		if (!removetempdirifempty(outputdirectory, true))
@@ -89094,7 +89642,7 @@ int Jidac::multiverify(vector<s_fileandsize> &i_arrayfilename)
 		}
 	return risultato;
 }
-int Jidac::extractqueue2(int i_chunk, int i_chunksize)
+int Jidac::extractqueue2(int i_chunk, int i_chunksize, int64_t i_windowoffset, int64_t i_windowsize)
 {
 	if (i_chunk < 0)
 	{
@@ -89112,6 +89660,17 @@ int Jidac::extractqueue2(int i_chunk, int i_chunksize)
 	int		   errors	  = 0;
 	int		   total_files= 0;
 	ExtractJob job(*this);
+	job.windowed= i_windowoffset >= 0;
+	if (job.windowed)
+	{
+		if (i_windowsize <= 0 || chunkfiles.size() != 1)
+		{
+			myprintf("02561! RAM window requires one file and a positive size\n");
+			return 1;
+		}
+		job.window_start= (uint64_t)i_windowoffset;
+		job.window_size= (uint64_t)i_windowsize;
+	}
 	for (DTMap::iterator p= dt.begin(); p != dt.end(); ++p)
 	{
 		p->second.data= -1; // skip by default
@@ -89122,7 +89681,23 @@ int Jidac::extractqueue2(int i_chunk, int i_chunksize)
 			if (block.size() > 0)
 			{ // files to decompress
 				p->second.data= 0;
+				if (job.windowed)
+				{
+					if (p->second.pramfile == NULL)
+					{
+						p->second.pramfile= new franzfs;
+						g_allocatedram+= sizeof(franzfs);
+					}
+					else if (p->second.pramfile->data != NULL)
+						p->second.pramfile->reset();
+					if (!p->second.pramfile->initwindow(i_windowsize, (uint64_t)i_windowoffset))
+					{
+						block= preblock;
+						return 1;
+					}
+				}
 				unsigned lo= 0, hi= block.size() - 1; // block indexes for binary search
+				uint64_t fileoffset= 0;
 				for (unsigned i= 0; p->second.data >= 0 && i < p->second.ptr.size(); ++i)
 				{
 					unsigned j= p->second.ptr[i]; // fragment index
@@ -89134,6 +89709,22 @@ int Jidac::extractqueue2(int i_chunk, int i_chunksize)
 						myprintf(": 1 bad frag IDs, skipping...\n");
 						p->second.data= -1;
 						continue;
+					}
+					if (job.windowed && ht[j].usize < 0)
+					{
+						myprintf("02569! RAM window cannot map a fragment with unknown size\n");
+						p->second.pramfile->reset();
+						block= preblock;
+						return 1;
+					}
+					uint64_t fragmentstart= fileoffset;
+					uint64_t fragmentend= fragmentstart + (uint64_t)ht[j].usize;
+					fileoffset= fragmentend;
+					if (job.windowed)
+					{
+						uint64_t windowend= job.window_start + job.window_size;
+						if (fragmentend <= job.window_start || fragmentstart >= windowend)
+							continue;
 					}
 					assert(j > 0 && j < ht.size());
 					if (lo != hi || lo >= block.size() || j < block[lo].start || (lo + 1 < block.size() && j >= block[lo + 1].start))
@@ -89162,7 +89753,7 @@ int Jidac::extractqueue2(int i_chunk, int i_chunksize)
 						block[lo].files.push_back(p);
 				}
 				++total_files;
-				job.total_size+= p->second.size;
+				job.total_size+= job.windowed ? i_windowsize : p->second.size;
 				/// w extract only on EMPTY folder (for speed)
 			}
 			else
@@ -89183,6 +89774,76 @@ int Jidac::extractqueue2(int i_chunk, int i_chunksize)
 		join(tid[i]);
 	printbar(' ', false);
 	myprintf("\r");
+	if (job.windowed)
+	{
+		DTMap::iterator windowfile= dt.end();
+		for (DTMap::iterator p= dt.begin(); p != dt.end(); ++p)
+			if (std::binary_search(chunkfiles.begin(), chunkfiles.end(), p->first))
+			{
+				windowfile= p;
+				break;
+			}
+		if (windowfile == dt.end() || windowfile->second.pramfile == NULL || windowfile->second.pramfile->data == NULL)
+		{
+			myprintf("02562! RAM window buffer is missing\n");
+			errors++;
+		}
+		else
+		{
+			if ((uint64_t)job.total_done != job.window_size)
+			{
+				myprintf("02563! RAM window incomplete %s of %s bytes\n",
+						 migliaia(job.total_done), migliaia2((int64_t)job.window_size));
+				errors++;
+			}
+			if (!flagtest && errors == 0 && !windowfile->second.donotextractme)
+			{
+				string finalfile= rename(windowfile->first);
+				franzreplace(finalfile);
+				if (job.window_start == 0)
+					makepath(finalfile);
+				FP myfile= myfopen(finalfile.c_str(), job.window_start == 0 ? WB : RBPLUS);
+				if (myfile == FPNULL)
+				{
+					myprintf("02564! Cannot open RAM window output %Z\n", finalfile.c_str());
+					errors++;
+				}
+				else
+				{
+					if (fseeko(myfile, job.window_start, SEEK_SET) != 0)
+					{
+						myprintf("02565! Cannot seek RAM window output at %s\n", migliaia((int64_t)job.window_start));
+						errors++;
+					}
+					uint64_t written= 0;
+					const size_t maxwrite= 1000000000;
+					while (errors == 0 && written < job.window_size)
+					{
+						size_t towritenow= (size_t)(job.window_size - written);
+						if (towritenow > maxwrite)
+							towritenow= maxwrite;
+						size_t w= myfwrite(windowfile->second.pramfile->data + written, 1, towritenow, myfile);
+						written+= w;
+						if (w != towritenow)
+						{
+							myprintf("02566! Short RAM window write %s of %s bytes\n",
+									 migliaia((int64_t)written), migliaia2((int64_t)job.window_size));
+							errors++;
+						}
+					}
+					bool lastwindow= job.window_start + job.window_size == (uint64_t)windowfile->second.size;
+					if (lastwindow && errors == 0)
+						close(finalfile.c_str(), windowfile->second.date, windowfile->second.attr, myfile);
+					else
+						myfclose(&myfile);
+				}
+			}
+			windowfile->second.pramfile->reset();
+		}
+		block= preblock;
+		chunkfiles.clear();
+		return errors > 0;
+	}
 	// Report failed extractions (on filesystem)
 	if (!flagramdisk)
 	{
@@ -90099,8 +90760,7 @@ int Jidac::zfsproxbackup()
 		string temp= theconf + files[i] + ".conf";
 		conffiles.push_back(temp);
 #ifdef unix
-		if (!flagforce)
-			if (!fileexists(temp))
+		if (!flagforce && !fileexists(temp))
 			{
 				myprintf("02602: Abort because cannot find conf file %s, use -force to bypass\n", temp.c_str());
 				return 1;
@@ -93849,8 +94509,6 @@ int Jidac::addhome()
 	return risultato;
 }
 
-/// static const int64_t LIST_HT_BAD=   -0x7FFFFFFFFFFFFFFALL;  // no such frag
-
 /////////////////////////// read_archive //////////////////////////////
 // Read arc up to -date into ht, dt, ver. Return place to
 // append. If errors is not NULL then set it to number of errors found.
@@ -93990,7 +94648,7 @@ int64_t Jidac::read_archive(callback_function i_advance, const char *arc, int *e
                     {
                         int eta = 0;
                         int64_t elapsed = mtime() - list_global_start;
-                        if (i_lavorati > 0) 
+                        if (i_lavorati > 0)
                         {
                             eta = (int)(((double)elapsed * (i_totali - i_lavorati) / i_lavorati) / 1000.0);
                         }
@@ -102930,7 +103588,6 @@ int Jidac::repackall()
 	if (part0 != archive)
 	{
 		myprintf("00885! so sorry, this seems a multipart archive, abort\n");
-		//	return 2;
 	}
 	InputArchive in(archive.c_str());
 	if (flagforce)
@@ -104334,8 +104991,6 @@ int Jidac::extract()
 						if (got > 0)
 							fwrite(data, 1, got, stdout);
 					}
-					//					while ((got=fread(data,sizeof(char),sizeof(data),myfile)) > 0)
-					//						fwrite(data,1,got,stdout);
 					fclose(myfile);
 					delete_file(kunfile.c_str());
 				}
@@ -120246,8 +120901,6 @@ void Jidac::gestiscimultipart()
 		myreplace(arcname, ".zpaq", ".tmp");
 		if (flagverbose)
 			myprintf("68984$ Changed <<%Z>> to <<%Z>>\n", oldname.c_str(), arcname.c_str());
-
-		// if (mypos("_00000001.tmp",arcname)==-1)
 		{
 			if (fileexists(arcname))
 			{
@@ -123561,10 +124214,10 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 
 	// Local cache for decompressed blocks
 	std::map<int, string>	   block_cache;
-	std::map<unsigned, string> fragment_cache; // Cache per i singoli frammenti     // English Translation: Cache for individual fragments
+	std::map<unsigned, string> fragment_cache; // Cache for individual fragments
 
-	// Configurazione memoria cache (ridotta rispetto all'estrazione globale, o fissa)  // English Translation: Cache memory configuration (reduced compared to global extraction, or fixed
-	uint64_t MAX_BLOCK_CACHE_SIZE	= 100 * 1024 * 1024; // Esempio: 100MB limit    // English Translation: Example: 100MB limit
+	// Cache memory configuration (reduced compared to global extraction, or fixed
+	uint64_t MAX_BLOCK_CACHE_SIZE	= 100 * 1024 * 1024; // Example: 100MB limit
 	int64_t	 current_block_cache_mem= 0;
 
 	int		last_used_block_idx= -1;
@@ -123572,7 +124225,7 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 	string	temp_block_storage;
 
 	uint64_t  current_buffer_offset= 0;
-	const int LOOKAHEAD_WINDOW	   = 50; // Finestra di lookahead (puoi aggiustarla)    // English Translation: Lookahead window (you can fix it)
+	const int LOOKAHEAD_WINDOW	   = 50; // Lookahead window (you can fix it)
 
 	// 5. Extraction loop
 	for (unsigned i= 0; i < f_info.ptr.size(); ++i)
@@ -123583,8 +124236,8 @@ int Jidac::extracttobuffer(const std::string &filename, std::vector<uint8_t> &ou
 		// Empty/invalid fragment management
 		if (block_idx < 0 || frag_id >= ht.size())
 		{
-			// If fragment does not exist, avanziamo l'offset se previsto,      // English Translation: we advance the offset if provided
-			// or we skip. Qui assumiamo che ht[frag_id].usize sia 0 o gestito. // English Translation: Here we assume that ht[frag_id].usize is 0 or managed.
+			// If fragment does not exist, we advance the offset if provided
+			// or we skip. Here we assume that ht[frag_id].usize is 0 or managed.
 			if (frag_id < ht.size())
 				current_buffer_offset+= ht[frag_id].usize;
 			continue;
@@ -126022,7 +126675,7 @@ void Jidac::perform_single_scan(const std::wstring		   &volume,
 					getcaptcha("ok", "To add");
 
 					int64_t add_start  = mtime();
-					int		risultatino= 0; // add();
+					int		risultatino= 0;
 					int64_t add_time   = mtime() - add_start;
 
 					if (risultatino != 0)
