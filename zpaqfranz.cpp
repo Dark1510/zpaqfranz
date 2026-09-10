@@ -12723,7 +12723,8 @@ void Array<T>::resize(size_t sz, int ex)
           error("Array too big");
       sz*=2, --ex;
   }
-  if (n>0) {
+  if (n>0)
+  {
     assert(offset>0 && offset<=64);
     assert((char*)data-offset);
     ::free((char*)data-offset);
@@ -12797,7 +12798,6 @@ void SHA1::init()
 }
 void SHA1::put(int c)
 {
-
 	w_hw[bufpos++]=c;
 	if (bufpos==SHA1CHUNK)
 	{
@@ -12904,8 +12904,10 @@ const char* SHA1::result()
 void SHA1::write(const char* buf, int64_t n)
 {
   const unsigned char* p=(const unsigned char*) buf;
-  for (; n>0 && (U32(len)&511)!=0; --n) put(*p++);
-  for (; n>=64; n-=64) {
+  for (; n>0 && (U32(len)&511)!=0; --n)
+      put(*p++);
+  for (; n>=64; n-=64)
+  {
     for (unsigned int i=0; i<16; ++i)
       w[i]=p[0]<<24|p[1]<<16|p[2]<<8|p[3], p+=4;
     len+=512;
@@ -12941,7 +12943,8 @@ void SHA1::process()
 
 #define SHA2CHUNK 64
 
-class SHA256 {
+class SHA256
+{
 public:
   void put(int c);
   void write(const char* buf, int64_t n);
@@ -12995,8 +12998,7 @@ void SHA256::write(const char* buf, int64_t n)
 	sha256_write(&sum_ctx,(const uint8_t*)buf,n);
 }
 void SHA256::process()
-{
-}
+{}
 
 #else
 
@@ -13005,11 +13007,14 @@ void SHA256::put(int c)
 {  // hash 1 byte
     unsigned& r=w[len0>>5&15];
     r=(r<<8)|(c&255);
-    if (!(len0+=8)) ++len1;
-    if ((len0&511)==0) process();
+    if (!(len0+=8))
+        ++len1;
+    if ((len0&511)==0)
+        process();
 }
 
-void SHA256::init() {
+void SHA256::init()
+{
   len0=len1=0;
   s[0]=0x6a09e667;
   s[1]=0xbb67ae85;
@@ -13021,7 +13026,8 @@ void SHA256::init() {
   s[7]=0x5be0cd19;
   memset(w, 0, sizeof(w));
 }
-void SHA256::process() {
+void SHA256::process()
+{
   #define ror(a,b) ((a)>>(b)|(a<<(32-(b))))
   #define m(i) \
      w[(i)&15]+=w[(i-7)&15] \
@@ -13102,10 +13108,12 @@ void SHA256::process() {
   #undef m
   #undef ror
 }
-const char* SHA256::result() {
+const char* SHA256::result()
+{
   const unsigned s1=len1, s0=len0;
   put(0x80);
-  while ((len0&511)!=448) put(0);
+  while ((len0&511)!=448)
+      put(0);
   put(s1>>24);
   put(s1>>16);
   put(s1>>8);
@@ -13114,7 +13122,8 @@ const char* SHA256::result() {
   put(s0>>16);
   put(s0>>8);
   put(s0);
-  for (unsigned int i=0; i<8; ++i) {
+  for (unsigned int i=0; i<8; ++i)
+  {
     hbuf[4*i]=s[i]>>24;
     hbuf[4*i+1]=s[i]>>16;
     hbuf[4*i+2]=s[i]>>8;
@@ -13133,7 +13142,8 @@ void SHA256::write(const char* buf, int64_t n)
 // For encrypting with AES in CTR mode.
 // The i'th 16 byte block is encrypted by XOR with AES(i)
 // (i is big endian or MSB first, starting with 0).
-class AES_CTR {
+class AES_CTR
+{
   U32 Te0[256], Te1[256], Te2[256], Te3[256], Te4[256]; // encryption tables
   U32 ek[60];  // round key
   int Nr;  // number of rounds (10, 12, 14 for AES 128, 192, 256)
@@ -13209,10 +13219,32 @@ private:
   void init(int hbits, int mbits);  // initialize H and M sizes
   int execute();  // interpret 1 instruction, return 0 after HALT, else 1
   void run0(U32 input);  // default run() if not JIT
-  void zdiv(U32 x) {if (x) a/=x; else a=0;}
-  void mod(U32 x) {if (x) a%=x; else a=0;}
-  void swap(U32& x) {a^=x; x^=a; a^=x;}
-  void swap(U8& x)  {a^=x; x^=a; a^=x;}
+  void zdiv(U32 x)
+  {
+      if (x)
+          a/=x;
+      else
+          a=0;
+  }
+  void mod(U32 x)
+  {
+      if (x)
+          a%=x;
+      else
+          a=0;
+  }
+  void swap(U32& x)
+  {
+      a^=x;
+      x^=a;
+      a^=x;
+  }
+  void swap(U8& x)
+  {
+      a^=x;
+      x^=a;
+      a^=x;
+  }
   void err();  // exit with run time error
 };
 ///////////////////////// Component //////////////////////////
@@ -13419,7 +13451,8 @@ public:
     out(0), low(1), high(0xFFFFFFFF), pr(z) {}
   void init();
   void compress(int c);  // c is 0..255 or EOF
-  int stat(int x) {return pr.stat(x);}
+  int stat(int x)
+  {return pr.stat(x);}
   Writer* out;  // destination
 private:
   U32 low, high; // range
@@ -13430,7 +13463,8 @@ private:
 //////////////////////////// Compiler ////////////////////////
 // Input ZPAQL source code with args and store the compiled code
 // in hz and pz and write pcomp_cmd to out2.
-class Compiler {
+class Compiler
+{
 public:
   Compiler(const char* in, int* args, ZPAQL& hz, ZPAQL& pz, Writer* out2);
 private:
@@ -13442,10 +13476,38 @@ private:
   int line;        // Input line number for reporting errors
   int state;       // parse state: 0=space -1=word >0 (nest level)
   // Symbolic constants
-  typedef enum {NONE,CONS,CM,ICM,MATCH,AVG,MIX2,MIX,ISSE,SSE,
-    JT=39,JF=47,JMP=63,LJ=255,
-    POST=256,PCOMP,END,IF,IFNOT,ELSE,ENDIF,DO,
-    WHILE,UNTIL,FOREVER,IFL,IFNOTL,ELSEL,SEMICOLON} CompType;
+  typedef enum
+  {
+      NONE,
+      CONS,
+      CM,
+      ICM,
+      MATCH,
+      AVG,
+      MIX2,
+      MIX,
+      ISSE,
+      SSE,
+      JT=39,
+      JF=47,
+      JMP=63,
+      LJ=255,
+      POST=256,
+      PCOMP,
+      END,
+      IF,
+      IFNOT,
+      ELSE,
+      ENDIF,
+      DO,
+      WHILE,
+      UNTIL,
+      FOREVER,
+      IFL,
+      IFNOTL,
+      ELSEL,
+      SEMICOLON
+  } CompType;
   void syntaxError(const char* msg, const char* expected=0); // error()
   void next();                     // advance in to next token
   bool matchToken(const char* tok);// in==token?
@@ -13454,7 +13516,8 @@ private:
   void rtoken(const char* s);      // return token which must be s
   int compile_comp(ZPAQL& z);      // compile either HCOMP or PCOMP
   // Stack of n elements
-  class Stack {
+  class Stack
+  {
     libzpaq::Array<U16> s;
     size_t top;
   public:
@@ -13504,13 +13567,21 @@ private:
   Encoder enc;  // arithmetic encoder containing predictor
   Reader* in;   // input source
   SHA1 sha1;    // to test pz output
-  enum {INIT, BLOCK1, SEG1, BLOCK2, SEG2} state;
+  enum
+  {
+      INIT,
+      BLOCK1,
+      SEG1,
+      BLOCK2,
+      SEG2
+  } state;
   bool verify;  // if true then test by postprocessing
 };
 /////////////////////////// StringBuffer /////////////////////
 // For (de)compressing to/from a string. Writing appends bytes
 // which can be later read.
-class StringBuffer: public libzpaq::Reader, public libzpaq::Writer {
+class StringBuffer: public libzpaq::Reader, public libzpaq::Writer
+{
   unsigned char* p;  // allocated memory, not NUL terminated, may be NULL
   size_t al;         // number of bytes allocated, 0 iff p is NULL
   size_t wpos;       // index of next byte to write, wpos <= al
@@ -13550,7 +13621,11 @@ class StringBuffer: public libzpaq::Reader, public libzpaq::Writer {
   StringBuffer(const StringBuffer&);
 public:
   // Direct access to data
-  unsigned char* data() {assert(p || wpos==0); return p;}
+  unsigned char* data()
+  {
+      assert(p || wpos==0);
+      return p;
+  }
   // Allocate no memory initially
   StringBuffer(size_t n=0):
       p(0), al(0), wpos(0), rpos(0), limit(size_t(-1)), init(n>128?n:128) {}
@@ -13630,7 +13705,8 @@ public:
   void resize(size_t i)
   {
     wpos=i;
-    if (rpos>wpos) rpos=wpos;
+    if (rpos>wpos)
+        rpos=wpos;
   }
   // Swap efficiently (init is not swapped)
   void swap(StringBuffer& s)
@@ -13742,14 +13818,19 @@ void allocx(U8* &p, int &n, int newsize)
 #define Te4_2 0x00FF0000 & Te4
 #define Te4_3 0xFF000000 & Te4
 // Extract byte n of x
-static inline unsigned byte(unsigned x, unsigned n) {return (x>>(8*n))&255;}
+static inline unsigned byte(unsigned x, unsigned n)
+{
+    return (x>>(8*n))&255;
+}
 // x = y[0..3] MSB first
-static inline void LOAD32H(U32& x, const char* y) {
+static inline void LOAD32H(U32& x, const char* y)
+{
   const unsigned char* u=(const unsigned char*)y;
   x=u[0]<<24|u[1]<<16|u[2]<<8|u[3];
 }
 // y[0..3] = x MSB first
-static inline void STORE32H(U32& x, unsigned char* y) {
+static inline void STORE32H(U32& x, unsigned char* y)
+{
   y[0]=x>>24;
   y[1]=x>>16;
   y[2]=x>>8;
@@ -13792,7 +13873,8 @@ AES_CTR::AES_CTR(const char* key, int keylen, const char* iv)
     "\x8c\xa1\x89\x0d\xbf\xe6\x42\x68\x41\x99\x2d\x0f\xb0\x54\xbb\x16"
     [i]&255;
     unsigned s2=s1<<1;
-    if (s2>=0x100) s2^=0x11b;
+    if (s2>=0x100)
+        s2^=0x11b;
     unsigned s3=s1^s2;
     Te0[i]=s2<<24|s1<<16|s1<<8|s3;
     Te1[i]=s3<<24|s2<<16|s1<<8|s1;
@@ -13885,7 +13967,8 @@ void AES_CTR::encrypt(U32 s0, U32 s1, U32 s2, U32 s3, unsigned char* ct)
   s1 ^= rk[1];
   s2 ^= rk[2];
   s3 ^= rk[3];
-  for (;;) {
+  for (;;)
+  {
     t0 =
       Te0[byte(s0, 3)] ^
       Te1[byte(s1, 2)] ^
@@ -13911,7 +13994,8 @@ void AES_CTR::encrypt(U32 s0, U32 s1, U32 s2, U32 s3, unsigned char* ct)
       Te3[byte(s2, 0)] ^
       rk[7];
     rk += 8;
-    if (--r == 0) {
+    if (--r == 0)
+    {
       break;
     }
     s0 =
@@ -13971,11 +14055,14 @@ void AES_CTR::encrypt(U32 s0, U32 s1, U32 s2, U32 s3, unsigned char* ct)
 }
 // Encrypt or decrypt slice buf[0..n-1] at offset by XOR with AES(i) where
 // i is the 128 bit big-endian distance from the start in 16 byte blocks.
-void AES_CTR::encrypt(char* buf, int n, U64 offset) {
-  for (U64 i=offset/16; i<=(offset+n)/16; ++i) {
+void AES_CTR::encrypt(char* buf, int n, U64 offset)
+{
+  for (U64 i=offset/16; i<=(offset+n)/16; ++i)
+  {
     unsigned char ct[16];
     encrypt(iv0, iv1, i>>32, i, ct);
-    for (int j=0; j<16; ++j) {
+    for (int j=0; j<16; ++j)
+    {
       const int k=(i*16-offset)+j;
       if (k>=0 && k<n)
         buf[k]^=ct[j];
@@ -13991,21 +14078,29 @@ void AES_CTR::encrypt(char* buf, int n, U64 offset) {
 // PBKDF2(pw[0..pwlen], salt[0..saltlen], c) to buf[0..dkLen-1]
 // using HMAC-SHA256, for the special case of c = 1 iterations
 // output size dkLen a multiple of 32, and pwLen <= 64.
-static void pbkdf2(const char* pw, int pwLen, const char* salt, int saltLen,
-                    char* buf, int dkLen) {
+static void pbkdf2(const char* pw, int pwLen, const char* salt, int saltLen, char* buf, int dkLen)
+{
   assert(dkLen%32==0);
   assert(pwLen<=64);
   libzpaq::SHA256 sha256;
   char b[32];
-  for (int i=1; i*32<=dkLen; ++i) {
-    for (int j=0; j<pwLen; ++j) sha256.put(pw[j]^0x36);
-    for (int j=pwLen; j<64; ++j) sha256.put(0x36);
-    for (int j=0; j<saltLen; ++j) sha256.put(salt[j]);
-    for (int j=24; j>=0; j-=8) sha256.put(i>>j);
+  for (int i=1; i*32<=dkLen; ++i) 
+  {
+    for (int j=0; j<pwLen; ++j)
+        sha256.put(pw[j]^0x36);
+    for (int j=pwLen; j<64; ++j)
+        sha256.put(0x36);
+    for (int j=0; j<saltLen; ++j)
+        sha256.put(salt[j]);
+    for (int j=24; j>=0; j-=8)
+        sha256.put(i>>j);
     memcpy(b, sha256.result(), 32);
-    for (int j=0; j<pwLen; ++j) sha256.put(pw[j]^0x5c);
-    for (int j=pwLen; j<64; ++j) sha256.put(0x5c);
-    for (int j=0; j<32; ++j) sha256.put(b[j]);
+    for (int j=0; j<pwLen; ++j)
+        sha256.put(pw[j]^0x5c);
+    for (int j=pwLen; j<64; ++j)
+        sha256.put(0x5c);
+    for (int j=0; j<32; ++j)
+        sha256.put(b[j]);
     memcpy(buf+i*32-32, sha256.result(), 32);
   }
 }
@@ -14014,10 +14109,12 @@ static void pbkdf2(const char* pw, int pwLen, const char* salt, int saltLen,
 /// LICENSE_START.2
 // Hash b[0..15] using 8 rounds of salsa20
 // Modified from http://cr.yp.to/salsa20.html (public domain) to 8 rounds
-static void salsa8(U32* b) {
+static void salsa8(U32* b) 
+{
   unsigned x[16]={0};
   memcpy(x, b, 64);
-  for (unsigned int i=0; i<4; ++i) {
+  for (unsigned int i=0; i<4; ++i) 
+  {
     #define R(a,b) (((a)<<(b))+((a)>>(32-b)))
     x[ 4] ^= R(x[ 0]+x[12], 7);  x[ 8] ^= R(x[ 4]+x[ 0], 9);
     x[12] ^= R(x[ 8]+x[ 4],13);  x[ 0] ^= R(x[12]+x[ 8],18);
@@ -14037,53 +14134,68 @@ static void salsa8(U32* b) {
     x[14] ^= R(x[13]+x[12],13);  x[15] ^= R(x[14]+x[13],18);
     #undef R
   }
-  for (unsigned int i=0; i<16; ++i) b[i]+=x[i];
+  for (unsigned int i=0; i<16; ++i) 
+      b[i]+=x[i];
 }
 // BlockMix_{Salsa20/8, r} on b[0..128*r-1]
-static void blockmix(U32* b, int r) {
+static void blockmix(U32* b, int r) 
+{
   assert(r<=8);
   U32 x[16];
   U32 y[256];
   memcpy(x, b+32*r-16, 64);
-  for (int i=0; i<2*r; ++i) {
-    for (int j=0; j<16; ++j) x[j]^=b[i*16+j];
+  for (int i=0; i<2*r; ++i) 
+  {
+    for (int j=0; j<16; ++j) 
+        x[j]^=b[i*16+j];
     salsa8(x);
     memcpy(&y[i*16], x, 64);
   }
-  for (int i=0; i<r; ++i) memcpy(b+i*16, &y[i*32], 64);
-  for (int i=0; i<r; ++i) memcpy(b+(i+r)*16, &y[i*32+16], 64);
+  for (int i=0; i<r; ++i)
+      memcpy(b+i*16, &y[i*32], 64);
+  for (int i=0; i<r; ++i)
+      memcpy(b+(i+r)*16, &y[i*32+16], 64);
 }
 // Mix b[0..128*r-1]. Uses 128*r*n bytes of memory and O(r*n) time
-static void smix(char* b, int r, int n) {
+static void smix(char* b, int r, int n) 
+{
   libzpaq::Array<U32> x(32*r), v(32*r*n);
-  for (int i=0; i<r*128; ++i) x[i/4]+=(b[i]&255)<<i%4*8;
-  for (int i=0; i<n; ++i) {
+  for (int i=0; i<r*128; ++i)
+      x[i/4]+=(b[i]&255)<<i%4*8;
+  for (int i=0; i<n; ++i)
+  {
     memcpy(&v[i*r*32], &x[0], r*128);
     blockmix(&x[0], r);
   }
-  for (int i=0; i<n; ++i) {
+  for (int i=0; i<n; ++i)
+  {
     U32 j=x[(2*r-1)*16]&(n-1);
-    for (int k=0; k<r*32; ++k) x[k]^=v[j*r*32+k];
+    for (int k=0; k<r*32; ++k)
+        x[k]^=v[j*r*32+k];
     blockmix(&x[0], r);
   }
-  for (int i=0; i<r*128; ++i) b[i]=x[i/4]>>(i%4*8);
+  for (int i=0; i<r*128; ++i)
+      b[i]=x[i/4]>>(i%4*8);
 }
 // Strengthen password pw[0..pwlen-1] and salt[0..saltlen-1]
 // to produce key buf[0..buflen-1]. Uses O(n*r*p) time and 128*r*n bytes
 // of memory. n must be a power of 2 and r <= 8.
 void scrypt(const char* pw, int pwlen,
             const char* salt, int saltlen,
-            int n, int r, int p, char* buf, int buflen) {
+            int n, int r, int p, char* buf, int buflen)
+{
   assert(r<=8);
   assert(n>0 && (n&(n-1))==0);  // power of 2?
   libzpaq::Array<char> b(p*r*128);
   pbkdf2(pw, pwlen, salt, saltlen,  &b[0], p*r*128);
-  for (int i=0; i<p; ++i) smix(&b[i*r*128], r, n);
+  for (int i=0; i<p; ++i)
+      smix(&b[i*r*128], r, n);
   pbkdf2(pw, pwlen, &b[0], p*r*128,  buf, buflen);
 }
 // Stretch key in[0..31], assumed to be SHA256(password), with
 // NUL terminate salt to produce new key out[0..31]
-void stretchKey(char* out, const char* in, const char* salt) {
+void stretchKey(char* out, const char* in, const char* salt)
+{
   scrypt(in, 32, salt, 32, 1<<14, 8, 1, out, 32);
 }
 /// LICENSE_END.2
@@ -14100,12 +14212,14 @@ void random(char* buf, int n)
 {}
 #else
 
-void random(char* buf, int n) {
+void random(char* buf, int n)
+{
 #ifdef unix
   FILE* in=fopen("/dev/urandom", "rb");
   if (in && int(fread(buf, 1, n, in))==n)
     fclose(in);
-  else {
+  else
+  {
     error("key generation failed");
   }
 #else
@@ -14113,7 +14227,8 @@ void random(char* buf, int n) {
   if (CryptAcquireContext(&h, NULL, NULL, PROV_RSA_FULL,
       CRYPT_VERIFYCONTEXT) && CryptGenRandom(h, n, (BYTE*)buf))
     CryptReleaseContext(h, 0);
-  else {
+  else
+  {
     printf("CryptGenRandom: error %d\n", int(GetLastError()));
     error("key generation failed");
   }
@@ -14284,7 +14399,8 @@ StateTable::StateTable()
 // If pp is true, then write only the postprocessor code.
 bool ZPAQL::write(Writer* out2, bool pp)
 {
-  if (header.size()<=6) return false;
+  if (header.size()<=6)
+      return false;
   assert(header[0]+256*header[1]==(cend-2)+hend-hbegin);
   assert(cend>=7);
   assert(hbegin>=cend);
@@ -14314,32 +14430,40 @@ int ZPAQL::read(Reader* in2)
   cend=hbegin=hend=0;
   header[cend++]=hsize&255;
   header[cend++]=hsize>>8;
-  while (cend<7) header[cend++]=in2->get(); // hh hm ph pm n
+  while (cend<7)
+      header[cend++]=in2->get(); // hh hm ph pm n
   // Read COMP
   int n=header[cend-1];
   for (int i=0; i<n; ++i)
   {
     int type=in2->get();  // component type
-    if (type<0 || type>255) error("unexpected end of file");
+    if (type<0 || type>255)
+        error("unexpected end of file");
     header[cend++]=type;  // component type
     int size=compsize[type];
-    if (size<1) error("Invalid component type");
-    if (cend+size>hsize) error("COMP overflows header");
+    if (size<1)
+        error("Invalid component type");
+    if (cend+size>hsize)
+        error("COMP overflows header");
     for (int j=1; j<size; ++j)
       header[cend++]=in2->get();
   }
-  if ((header[cend++]=in2->get())!=0) error("missing COMP END");
+  if ((header[cend++]=in2->get())!=0)
+      error("missing COMP END");
   // Insert a guard gap and read HCOMP
   hbegin=hend=cend+128;
-  if (hend>hsize+129) error("missing HCOMP");
+  if (hend>hsize+129)
+      error("missing HCOMP");
   while (hend<hsize+129)
   {
     assert(hend<header.isize()-8);
     int op=in2->get();
-    if (op==-1) error("unexpected end of file");
+    if (op==-1)
+        error("unexpected end of file");
     header[hend++]=op;
   }
-  if ((header[hend++]=in2->get())!=0) error("missing HCOMP END");
+  if ((header[hend++]=in2->get())!=0)
+      error("missing HCOMP END");
   assert(cend>=7 && cend<header.isize());
   assert(hbegin==cend+128 && hbegin<header.isize());
   assert(hend>hbegin && hend<header.isize());
@@ -14349,7 +14473,8 @@ int ZPAQL::read(Reader* in2)
   return cend+hend-hbegin;
 }
 // Free memory, but preserve output, sha1 pointers
-void ZPAQL::clear() {
+void ZPAQL::clear() 
+{
   cend=hbegin=hend=0;  // COMP and HCOMP locations
   a=b=c=d=f=pc=0;      // machine state
   header.resize(0);
@@ -14389,14 +14514,18 @@ void ZPAQL::initp()
 // Flush pending output
 void ZPAQL::flush()
 {
-  if (output) output->write(&outbuf[0], bufptr);
-  if (sha1) sha1->write(&outbuf[0], bufptr);
+  if (output) 
+      output->write(&outbuf[0], bufptr);
+  if (sha1) 
+      sha1->write(&outbuf[0], bufptr);
   bufptr=0;
 }
 // pow(2, x)
-static double pow2(int x) {
+static double pow2(int x) 
+{
   double r=1;
-  for (; x>0; x--) r+=r;
+  for (; x>0; x--) 
+      r+=r;
   return r;
 }
 // Return memory requirement in bytes
@@ -14406,17 +14535,26 @@ double ZPAQL::memory()
             +pow2(header[4]+2)+pow2(header[5])  // ph pm
             +header.size();
   int cp=7;  // start of comp list
-  for (unsigned int i=0; i<header[6]; ++i) {  // n
+  for (unsigned int i=0; i<header[6]; ++i) 
+  {  // n
     assert(cp<cend);
     double size=pow2(header[cp+1]); // sizebits
-    switch(header[cp]) {
-      case CM: mem+=4*size; break;
-      case ICM: mem+=64*size+1024; break;
-      case MATCH: mem+=4*size+pow2(header[cp+2]); break; // bufbits
-      case MIX2: mem+=2*size; break;
-      case MIX: mem+=4*size*header[cp+3]; break; // m
-      case ISSE: mem+=64*size+2048; break;
-      case SSE: mem+=128*size; break;
+    switch(header[cp]) 
+    {
+      case CM: mem+=4*size; 
+          break;
+      case ICM: mem+=64*size+1024; 
+          break;
+      case MATCH: mem+=4*size+pow2(header[cp+2]); 
+          break; // bufbits
+      case MIX2: mem+=2*size; 
+          break;
+      case MIX: mem+=4*size*header[cp+3]; 
+          break; // m
+      case ISSE: mem+=64*size+2048; 
+          break;
+      case SSE: mem+=128*size; 
+          break;
     }
     cp+=compsize[header[cp]];
   }
@@ -14433,8 +14571,10 @@ void ZPAQL::init(int hbits, int mbits)
   assert(header[0]+256*header[1]==(cend-2)+hend-hbegin);
   assert(bufptr==0);
   assert(outbuf.isize()>0);
-  if (hbits>32) error("H too big");
-  if (mbits>32) error("M too big");
+  if (hbits>32) 
+      error("H too big");
+  if (mbits>32) 
+      error("M too big");
   h.resize(1, hbits);
   m.resize(1, mbits);
   r.resize(256);
@@ -14457,8 +14597,10 @@ void ZPAQL::run0(U32 input)
 }
 
 // Execute one instruction, return 0 after HALT else 1
-int ZPAQL::execute() {
-  switch(header[pc++]) {
+int ZPAQL::execute() 
+{
+  switch(header[pc++]) 
+  {
     case 0: err(); break; // ERROR
     case 1: ++a; break; // A++
     case 2: --a; break; // A--
@@ -14680,7 +14822,8 @@ int ZPAQL::execute() {
   return 1;
 }
 // Print illegal instruction error message and exit
-void ZPAQL::err() {
+void ZPAQL::err()
+{
   error("ZPAQL execution error");
 }
 ///////////////////////// Predictor /////////////////////////
@@ -15147,7 +15290,8 @@ void Predictor::init()
     // Copy middle 1344 of 4096 entries.
     memset(squasht, 0, 1376*2);
     memcpy(squasht+1376, ssquasht, 1344*2);
-    for (int i=2720; i<4096; ++i) squasht[i]=32767;
+    for (int i=2720; i<4096; ++i)
+        squasht[i]=32767;
     int k=16384;
     for (unsigned int i=0; i<712; ++i)
       for (int j=stdt[i]; j>0; --j)
@@ -15167,7 +15311,8 @@ void Predictor::init()
 #endif // corresponds to #ifndef (#ifndef NDEBUG)
   }
   // Initialize predictions
-  for (unsigned int i=0; i<256; ++i) h[i]=p[i]=0;
+  for (unsigned int i=0; i<256; ++i)
+      h[i]=p[i]=0;
   // Initialize components
   for (unsigned int i=0; i<256; ++i)  // clear old model
     comp[i].init();
@@ -15178,19 +15323,22 @@ void Predictor::init()
     assert(cp<&z.header[z.cend]);
     assert(cp>&z.header[0] && cp<&z.header[z.header.isize()-8]);
     Component& cr=comp[i];
-    switch(cp[0]) {
+    switch(cp[0])
+    {
       case CONS:  // c
         p[i]=(cp[1]-128)*4;
         break;
       case CM: // sizebits limit
-        if (cp[1]>32) error("max size for CM is 32");
+        if (cp[1]>32)
+            error("max size for CM is 32");
         cr.cm.resize(1, cp[1]);  // packed CM (22 bits) + CMCOUNT (10 bits)
         cr.limit=cp[2]*4;
         for (size_t j=0; j<cr.cm.size(); ++j)
           cr.cm[j]=0x80000000;
         break;
       case ICM: // sizebits
-        if (cp[1]>26) error("max size for ICM is 26");
+        if (cp[1]>26)
+            error("max size for ICM is 26");
         cr.limit=1023;
         cr.cm.resize(256);
         cr.ht.resize(64, cp[1]);
@@ -15198,28 +15346,38 @@ void Predictor::init()
           cr.cm[j]=st.cminit(j);
         break;
       case MATCH:  // sizebits
-        if (cp[1]>32 || cp[2]>32) error("max size for MATCH is 32 32");
+        if (cp[1]>32 || cp[2]>32)
+            error("max size for MATCH is 32 32");
         cr.cm.resize(1, cp[1]);  // index
         cr.ht.resize(1, cp[2]);  // buf
         cr.ht(0)=1;
         break;
       case AVG: // j k wt
-        if (cp[1]>=i) error("AVG j >= i");
-        if (cp[2]>=i) error("AVG k >= i");
+        if (cp[1]>=i)
+            error("AVG j >= i");
+        if (cp[2]>=i)
+            error("AVG k >= i");
         break;
       case MIX2:  // sizebits j k rate mask
-        if (cp[1]>32) error("max size for MIX2 is 32");
-        if (cp[3]>=i) error("MIX2 k >= i");
-        if (cp[2]>=i) error("MIX2 j >= i");
+        if (cp[1]>32)
+            error("max size for MIX2 is 32");
+        if (cp[3]>=i)
+            error("MIX2 k >= i");
+        if (cp[2]>=i)
+            error("MIX2 j >= i");
         cr.c=(size_t(1)<<cp[1]); // size (number of contexts)
         cr.a16.resize(1, cp[1]);  // wt[size][m]
         for (size_t j=0; j<cr.a16.size(); ++j)
           cr.a16[j]=32768;
         break;
-      case MIX: {  // sizebits j m rate mask
-        if (cp[1]>32) error("max size for MIX is 32");
-        if (cp[2]>=i) error("MIX j >= i");
-        if (cp[3]<1 || cp[3]>i-cp[2]) error("MIX m not in 1..i-j");
+      case MIX:
+    {  // sizebits j m rate mask
+        if (cp[1]>32)
+            error("max size for MIX is 32");
+        if (cp[2]>=i)
+            error("MIX j >= i");
+        if (cp[3]<1 || cp[3]>i-cp[2])
+            error("MIX m not in 1..i-j");
         int m=cp[3];  // number of inputs
         assert(m>=1);
         cr.c=(size_t(1)<<cp[1]); // size (number of contexts)
@@ -15229,19 +15387,25 @@ void Predictor::init()
         break;
       }
       case ISSE:  // sizebits j
-        if (cp[1]>32) error("max size for ISSE is 32");
-        if (cp[2]>=i) error("ISSE j >= i");
+        if (cp[1]>32)
+            error("max size for ISSE is 32");
+        if (cp[2]>=i)
+            error("ISSE j >= i");
         cr.ht.resize(64, cp[1]);
         cr.cm.resize(512);
-        for (int j=0; j<256; ++j) {
+        for (int j=0; j<256; ++j)
+        {
           cr.cm[j*2]=1<<15;
           cr.cm[j*2+1]=clamp512k(stretch(st.cminit(j)>>8)*1024);
         }
         break;
       case SSE: // sizebits j start limit
-        if (cp[1]>32) error("max size for SSE is 32");
-        if (cp[2]>=i) error("SSE j >= i");
-        if (cp[3]>cp[4]*4) error("SSE start > limit*4");
+        if (cp[1]>32)
+            error("max size for SSE is 32");
+        if (cp[2]>=i)
+            error("SSE j >= i");
+        if (cp[3]>cp[4]*4)
+            error("SSE start > limit*4");
         cr.cm.resize(32, cp[1]);
         cr.limit=cp[4]*4;
         for (size_t j=0; j<cr.cm.size(); ++j)
@@ -15255,17 +15419,20 @@ void Predictor::init()
   }
 }
 // Return next bit prediction using interpreted COMP code
-int Predictor::predict0() {
+int Predictor::predict0()
+{
   assert(initTables);
   assert(c8>=1 && c8<=255);
   // Predict next bit
   int n=z.header[6];
   assert(n>0 && n<=255);
   const U8* cp=&z.header[7];
-  for (int i=0; i<n; ++i) {
+  for (int i=0; i<n; ++i)
+  {
     assert(cp>&z.header[0] && cp<&z.header[z.header.isize()-8]);
     Component& cr=comp[i];
-    switch(cp[0]) {
+    switch(cp[0])
+    {
       case CONS:  // c
         break;
       case CM:  // sizebits limit
@@ -15274,7 +15441,8 @@ int Predictor::predict0() {
         break;
       case ICM: // sizebits
         assert((hmap4&15)>0);
-        if (c8==1 || (c8&0xf0)==16) cr.c=find(cr.ht, cp[1]+2, h[i]+16*c8);
+        if (c8==1 || (c8&0xf0)==16)
+            cr.c=find(cr.ht, cp[1]+2, h[i]+16*c8);
         cr.cxt=cr.ht[cr.c+(hmap4&15)];
         p[i]=stretch(cr.cm(cr.cxt)>>8);
         break;
@@ -15286,8 +15454,10 @@ int Predictor::predict0() {
         assert(cr.c==0 || cr.c==1);
         assert(cr.cxt<8);
         assert(cr.limit<cr.ht.size());
-        if (cr.a==0) p[i]=0;
-        else {
+        if (cr.a==0)
+            p[i]=0;
+        else
+        {
           cr.c=(cr.ht(cr.limit-cr.b)>>(7-cr.cxt))&1; // predicted bit
           p[i]=stretch(dt2k[cr.a]*(cr.c*-2+1)&32767);
         }
@@ -15295,7 +15465,8 @@ int Predictor::predict0() {
       case AVG: // j k wt
         p[i]=(p[cp[1]]*cp[3]+p[cp[2]]*(256-cp[3]))>>8;
         break;
-      case MIX2: { // sizebits j k rate mask
+      case MIX2:
+    {              // sizebits j k rate mask
                    // c=size cm=wt[size] cxt=input
         cr.cxt=((h[i]+(c8&cp[5]))&(cr.c-1));
         assert(cr.cxt<cr.a16.size());
@@ -15305,7 +15476,8 @@ int Predictor::predict0() {
         assert(p[i]>=-2048 && p[i]<2048);
       }
         break;
-      case MIX: {  // sizebits j m rate mask
+      case MIX:
+    {              // sizebits j m rate mask
                    // c=size cm=wt[size][m] cxt=index of wt in cm
         int m=cp[3];
         assert(m>=1 && m<=i);
@@ -15319,7 +15491,8 @@ int Predictor::predict0() {
         p[i]=clamp2k(p[i]>>8);
       }
         break;
-      case ISSE: { // sizebits j -- c=hi, cxt=bh
+      case ISSE:
+    { // sizebits j -- c=hi, cxt=bh
         assert((hmap4&15)>0);
         if (c8==1 || (c8&0xf0)==16)
           cr.c=find(cr.ht, cp[1]+2, h[i]+16*c8);
@@ -15328,11 +15501,14 @@ int Predictor::predict0() {
         p[i]=clamp2k((wt[0]*p[cp[2]]+wt[1]*64)>>16);
       }
         break;
-      case SSE: { // sizebits j start limit
+      case SSE:
+    { // sizebits j start limit
         cr.cxt=(h[i]+c8)*32;
         int pq=p[cp[2]]+992;
-        if (pq<0) pq=0;
-        if (pq>1983) pq=1983;
+        if (pq<0)
+            pq=0;
+        if (pq>1983)
+            pq=1983;
         int wt=pq&63;
         pq>>=6;
         assert(pq>=0 && pq<=30);
@@ -15352,7 +15528,8 @@ int Predictor::predict0() {
   return squash(p[n-1]);
 }
 // Update model with decoded bit y (0...1)
-void Predictor::update0(int y) {
+void Predictor::update0(int y)
+{
   assert(initTables);
   assert(y==0 || y==1);
   assert(c8>=1 && c8<=255);
@@ -15361,15 +15538,18 @@ void Predictor::update0(int y) {
   const U8* cp=&z.header[7];
   int n=z.header[6];
   assert(n>=1 && n<=255);
-  for (int i=0; i<n; ++i) {
+  for (int i=0; i<n; ++i)
+  {
     Component& cr=comp[i];
-    switch(cp[0]) {
+    switch(cp[0])
+    {
       case CONS:  // c
         break;
       case CM:  // sizebits limit
         train(cr, y);
         break;
-      case ICM: { // sizebits: cxt=ht[b]=bh, ht[c][0..15]=bh row, cxt=bh
+      case ICM:
+    { // sizebits: cxt=ht[b]=bh, ht[c][0..15]=bh row, cxt=bh
         cr.ht[cr.c+(hmap4&15)]=st.next(cr.ht[cr.c+(hmap4&15)], y);
         U32& pn=cr.cm(cr.cxt);
         pn+=int(y*32767-(pn>>8))>>2;
@@ -15385,39 +15565,47 @@ void Predictor::update0(int y) {
         assert(cr.cm.size()==(size_t(1)<<cp[1]));
         assert(cr.ht.size()==(size_t(1)<<cp[2]));
         assert(cr.limit<cr.ht.size());
-        if (int(cr.c)!=y) cr.a=0;  // mismatch?
+        if (int(cr.c)!=y)
+            cr.a=0;  // mismatch?
         cr.ht(cr.limit)+=cr.ht(cr.limit)+y;
-        if (++cr.cxt==8) {
+        if (++cr.cxt==8)
+        {
           cr.cxt=0;
           ++cr.limit;
           cr.limit&=(1<<cp[2])-1;
-          if (cr.a==0) {  // look for a match
+          if (cr.a==0)      // look for a match
+          {
             cr.b=cr.limit-cr.cm(h[i]);
             if (cr.b&(cr.ht.size()-1))
               while (cr.a<255
                      && cr.ht(cr.limit-cr.a-1)==cr.ht(cr.limit-cr.a-cr.b-1))
                 ++cr.a;
           }
-          else cr.a+=cr.a<255;
+          else
+              cr.a+=cr.a<255;
           cr.cm(h[i])=cr.limit;
         }
       }
         break;
       case AVG:  // j k wt
         break;
-      case MIX2: { // sizebits j k rate mask
+      case MIX2:
+    {              // sizebits j k rate mask
                    // cm=wt[size], cxt=input
         assert(cr.a16.size()==cr.c);
         assert(cr.cxt<cr.a16.size());
         int err=(y*32767-squash(p[i]))*cp[4]>>5;
         int w=cr.a16[cr.cxt];
         w+=(err*(p[cp[2]]-p[cp[3]])+(1<<12))>>13;
-        if (w<0) w=0;
-        if (w>65535) w=65535;
+        if (w<0)
+            w=0;
+        if (w>65535)
+            w=65535;
         cr.a16[cr.cxt]=w;
       }
         break;
-      case MIX: {   // sizebits j m rate mask
+      case MIX:
+    {               // sizebits j m rate mask
                     // cm=wt[size][m], cxt=input
         int m=cp[3];
         assert(m>0 && m<=i);
@@ -15429,7 +15617,8 @@ void Predictor::update0(int y) {
           wt[j]=clamp512k(wt[j]+((err*p[cp[2]+j]+(1<<12))>>13));
       }
         break;
-      case ISSE: { // sizebits j  -- c=hi, cxt=bh
+      case ISSE:
+    { // sizebits j  -- c=hi, cxt=bh
         assert(cr.cxt==cr.ht[cr.c+(hmap4&15)]);
         int err=y*32767-squash(p[i]);
         int *wt=(int*)&cr.cm[cr.cxt*2];
@@ -15451,11 +15640,13 @@ void Predictor::update0(int y) {
   assert(cp[0]==NONE);
   // Save bit y in c8, hmap4
   c8+=c8+y;
-  if (c8>=256) {
+  if (c8>=256)
+  {
     z.run(c8-256);
     hmap4=1;
     c8=1;
-    for (int i=0; i<n; ++i) h[i]=z.H(i);
+    for (int i=0; i<n; ++i)
+        h[i]=z.H(i);
   }
   else if (c8>=16 && c8<32)
     hmap4=(hmap4&0xf)<<5|y<<4|1;
@@ -60831,7 +61022,8 @@ public:
 // a(i) - index mod n, n must be a power of 2
 // a.size() - gets n
 template <typename T>
-class Array {
+class Array
+{
   T *data;     // user location of [0] on a 64 byte boundary
   size_t n;    // user size
   int offset;  // distance back in bytes to start of actual allocation
@@ -62668,7 +62860,8 @@ int unzDecoder::decompress()
   }
 }
 /////////////////////////// unzPostProcessor ////////////////////
-class unzPostProcessor {
+class unzPostProcessor
+{
   int state;   // input parse state: 0=INIT, 1=PASS, 2..4=loading, 5=POST
   int hsize;   // header size
   int ph, pm;  // sizes of H and M in z
@@ -62757,7 +62950,8 @@ int unzPostProcessor::write(int c)
 }
 //////////////////////// unzDecompresser ////////////////////////
 // For decompression and listing archive contents
-class unzDecompresser {
+class unzDecompresser
+{
 public:
   unzDecompresser(): z(), dec(z), pp(), state(BLOCK), decode_state(FIRSTSEG) {}
   void setInput(unzReader* in) {dec.in=in;}
@@ -62777,13 +62971,15 @@ private:
 };
 // Find the start of a block and return true if found. Set memptr
 // to memory used.
-bool unzDecompresser::findBlock() {
+bool unzDecompresser::findBlock()
+{
   assert(state==BLOCK);
   // Find start of block
   uint32_t h1=0x3D49B113, h2=0x29EB7F93, h3=0x2614BE13, h4=0x3828EB13;
   // Rolling hashes initialized to hash of first 13 bytes
   int c;
-  while ((c=dec.in->get())!=-1) {
+  while ((c=dec.in->get())!=-1)
+  {
     h1=h1*12+c;
     h2=h2*20+c;
     h3=h3*28+c;
@@ -62793,8 +62989,10 @@ bool unzDecompresser::findBlock() {
   }
   if (c==-1) return false;
   // Read header
-  if ((c=dec.in->get())!=1 && c!=2) unzerror("unsupported ZPAQ level");
-  if (dec.in->get()!=1) unzerror("unsupported unzZPAQL type");
+  if ((c=dec.in->get())!=1 && c!=2)
+      unzerror("unsupported ZPAQ level");
+  if (dec.in->get()!=1)
+      unzerror("unsupported unzZPAQL type");
   z.read(dec.in);
   if (c==1 && z.header.isize()>6 && z.header[6]==0)
     unzerror("ZPAQ level 1 requires at least 1 component");
@@ -62913,7 +63111,8 @@ void unzerror(const char* msg) {
   exit(1);
 }
 // Input archive
-class unzInputFile: public unzReader {
+class unzInputFile: public unzReader
+{
   FILE* f;  // input file
   enum {BUFSIZE=4096};
   uint64_t offset;  // number of bytes read
@@ -62925,13 +63124,17 @@ public:
   unzInputFile(): f(0), offset(0), p(0), end(0), aes(0),filesize(-1) {}
   void open(const char* filename, const char* key);
   // Return one input byte or -1 for EOF
-  int get() {
-    if (f && p>=end) {
+  int get()
+  {
+    if (f && p>=end)
+    {
       p=0;
 	 end=fread(unzBuf, 1, BUFSIZE, f);
-      if (aes) aes->encrypt(unzBuf, end, offset);
+      if (aes)
+          aes->encrypt(unzBuf, end, offset);
     }
-    if (p>=end) return -1;
+    if (p>=end)
+        return -1;
     ++offset;
     return unzBuf[p++]&255;
   }
@@ -62950,7 +63153,8 @@ public:
   }
   void close()
   {
-    if (f) {
+    if (f)
+    {
       fclose(f);
       f = nullptr;
     }
@@ -63050,7 +63254,8 @@ struct unzBuf: public unzWriter
   }
 };
 // Test if 14 digit date is valid YYYYMMDDHHMMSS format
-void verify_date(uint64_t date) {
+void verify_date(uint64_t date)
+{
   int year=date/1000000/10000;
   int month=date/100000000%100;
   int day=date/1000000%100;
@@ -101338,7 +101543,6 @@ int Jidac::count()
 		}
 	}
 #else
-
 	scandir(false, thedt, file1, false);
 	eol();
 #endif // corresponds to #ifdef (#ifdef unix)
@@ -104467,8 +104671,7 @@ int Jidac::extract()
 
 	int64_t freeramdisk= getramdisksize() * 75 / 100;
 
-	if (flaghdd)
-		if (!flagspace)
+	if ((flaghdd) && (!flagspace))
 		{
 			if (job.total_size > freeramdisk)
 			{
@@ -104495,8 +104698,7 @@ int Jidac::extract()
 			color_restore();
 		}
 
-	if (!flagspace)
-		if (!flagzero)
+	if ((!flagspace) && (!flagzero))
 			if (tofiles.size() == 1)
 			{
 				if (!saggiascrivibilitacartella(tofiles[0]))
@@ -104627,7 +104829,7 @@ int Jidac::extract()
 
 	if (flagvhd)
 	{
-		// OK this is slow, but who cares?
+		// OK this is slow, but who cares?      // normally i would, but this is windows and not unix, so idc.
 
 		DTMap::iterator it_header= dt.end();
 		DTMap::iterator it_target= dt.end();
@@ -104898,7 +105100,7 @@ int Jidac::extract()
 #ifdef _WIN32
 	if ((!flagramdisk) && (vhd_header_name == ""))
 #else
-	if ((!flagramdisk))
+	if (!flagramdisk)
 #endif
 	{
 		// Report failed extractions, plain old 715
@@ -114423,8 +114625,7 @@ int caricadllssh()
 
 	// When loading functions add:
 	ssh_version_t ssh_version= (ssh_version_t)get_proc_address(g_sshLib, "ssh_version");
-	if (ssh_version)
-		if (flagdebug)
+	if ((ssh_version) && (flagdebug))
 			myprintf("libssh version: %s\n", ssh_version(0));
 
 	// Resolve functions
@@ -115171,6 +115372,7 @@ int Jidac::ssh_dohasha(std::string i_algo)
 #ifdef _WIN32
 
 // just for Win64, for now
+// Then why the ifdef above???
 #ifdef _WIN64
 	if (pjidac == NULL)
 	{
@@ -116910,8 +117112,7 @@ class normal_extract_handler : public extract_handler
 
   public:
 	normal_extract_handler(bool test_mode) : is_test_mode(test_mode)
-	{
-	}
+	{}
 
 	bool initialize() override
 	{
@@ -116967,8 +117168,7 @@ class partition_restore_handler : public extract_handler
 	partition_restore_handler(franzimager &img, const std::vector<uint8_t> &meta, char dest)
 		: imager_ref(img), metafile(meta), dest_partition(dest),
 		  error_occurred(false), fragments_sent(0), bytes_sent(0)
-	{
-	}
+	{}
 
 	bool initialize() override
 	{
@@ -117059,8 +117259,7 @@ class rawfile_export_handler : public extract_handler
 		: imager_ref(img), metafile(meta), rawfilename(rawfile),
 		  use_sparse(sparse), error_occurred(false),
 		  fragments_sent(0), bytes_sent(0)
-	{
-	}
+	{}
 
 	bool initialize() override
 	{
@@ -117133,8 +117332,7 @@ class raw_restore_handler : public extract_handler
 	raw_restore_handler(franzimager &img, char letter, bool disk_mode)
 		: imager_ref(img), target_letter(letter), is_disk(disk_mode),
 		  error_occurred(false), fragments_sent(0), bytes_sent(0)
-	{
-	}
+	{}
 
 	bool initialize() override
 	{
