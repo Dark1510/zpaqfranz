@@ -5409,21 +5409,20 @@ bool fileexists(const std::string &i_filename)
 #endif // corresponds to #ifdef (#ifdef unix)
 #ifdef _WIN32
 
-	if (flagads)
-		if (mypos(":", i_filename) != -1)
+	if (flagads && mypos(":", i_filename) != -1)
+	{
+	    if (flagdebug3)
+			printf("00109: flagads ON and : in i_filename\n");
+		HANDLE hFile= CreateFileW((utow(i_filename.c_str()).c_str()), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+		if (hFile != INVALID_HANDLE_VALUE)
 		{
 			if (flagdebug3)
-				printf("00109: flagads ON and : in i_filename\n");
-			HANDLE hFile= CreateFileW((utow(i_filename.c_str()).c_str()), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-			if (hFile != INVALID_HANDLE_VALUE)
-			{
-				if (flagdebug3)
-					printf("00110: ADS FOUNDED!\n");
-				CloseHandle(hFile);
-				return true;
-			}
-			return false;
+				printf("00110: ADS FOUNDED!\n");
+			CloseHandle(hFile);
+			return true;
 		}
+		return false;
+	}
 
 	HANDLE			myhandle;
 	WIN32_FIND_DATA findfiledata;
@@ -5479,10 +5478,9 @@ void printUTF8(const char *s, FILE *f= stdout)
 
 void decode_print_flag_refactored(const char *i_buffer, bool *o_flagcolon, bool *o_flagerror, bool *o_flagwarning)
 {
-	if (i_buffer == NULL)
+	if (i_buffer == NULL && flagdebug)
 	{
-		if (flagdebug)
-			printf("02734: i_buffer NULL!\n");
+		printf("02734: i_buffer NULL!\n");
 		return;
 	}
 
@@ -5841,10 +5839,9 @@ static arg_type_t get_arg_type(const char *fmt_spec, char final_specifier)
 
 void my_vprintf_refactored(const char *format, va_list args)
 {
-	if (!format)
+	if (!format && flagdebug)
 	{
-		if (flagdebug)
-			printf("02744: my_vprintf_refactored format NULL\n");
+		printf("02744: my_vprintf_refactored format NULL\n");
 		return;
 	}
 
@@ -5939,10 +5936,9 @@ void my_vprintf_refactored(const char *format, va_list args)
 			}
 			bool left_align= strchr(fmt_specifier_str, '-') != NULL;
 
-			if (strchr(fmt_specifier_str, '.'))
+			if (strchr(fmt_specifier_str, '.') && flagdebug)
 			{
-				if (flagdebug)
-					printf("02751: Ignored precision  %%%c\n", final_specifier);
+				printf("02751: Ignored precision  %%%c\n", final_specifier);
 			}
 
 			if (final_specifier == 'K')
@@ -6038,10 +6034,9 @@ void my_vprintf_refactored(const char *format, va_list args)
 
 void myprintf(const char *format, ...)
 {
-    if (!format)
+    if (!format && flagdebug)
     {
-        if (flagdebug)
-            printf("02750: myprintf format NULL\n");
+        printf("02750: myprintf format NULL\n");
         return;
     }
 #ifdef DLL
@@ -6055,13 +6050,17 @@ void myprintf(const char *format, ...)
 		char new_format[8192];
 		size_t i = 0, j = 0;
 
-		while (format[i] != '\0' && j < sizeof(new_format) - 1) {
-			if (format[i] == '%' && format[i + 1] == 'Z') {
+		while (format[i] != '\0' && j < sizeof(new_format) - 1)
+		{
+			if (format[i] == '%' && format[i + 1] == 'Z')
+			{
 				/* Sostituisce %Z con %s */
 				new_format[j++] = '%';
 				new_format[j++] = 's';
 				i += 2;
-			} else {
+			}
+			else
+			{
 				new_format[j++] = format[i++];
 			}
 		}
@@ -6440,8 +6439,7 @@ class SevenStar : public Fonts
 
   public:
 	SevenStar() : Fonts(rows, cols)
-	{
-	}
+	{}
 
 	char **A()
 	{
@@ -6668,8 +6666,6 @@ class SevenStar : public Fonts
 						character[i][j]= 'F';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -6732,10 +6728,9 @@ class SevenStar : public Fonts
 						character[i][j]= ' ';
 				}
 
-				if (i == 3)
+				if (i == 3 && j > 1 && j < 5)
 				{
-					if (j > 1 && j < 5)
-						character[i][j]= 'H';
+					character[i][j]= 'H';
 				}
 			}
 		}
@@ -6993,8 +6988,6 @@ class SevenStar : public Fonts
 						character[i][j]= 'O';
 				}
 			}
-
-			//	cout<<endl;
 		}
 		return character;
 	}
@@ -7078,8 +7071,6 @@ class SevenStar : public Fonts
 						character[i][j]= 'Q';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -7115,7 +7106,6 @@ class SevenStar : public Fonts
 						character[i][j]= 'R';
 				}
 			}
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -7197,8 +7187,6 @@ class SevenStar : public Fonts
 						character[i][j]= ' ';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -7307,8 +7295,6 @@ class SevenStar : public Fonts
 						character[i][j]= 'W';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -7434,8 +7420,6 @@ class SevenStar : public Fonts
 						character[i][j]= ' ';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -7664,8 +7648,6 @@ class SevenStar : public Fonts
 						character[i][j]= '%';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -8074,8 +8056,6 @@ class SevenStar : public Fonts
 						character[i][j]= '%';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -8111,7 +8091,6 @@ class SevenStar : public Fonts
 						character[i][j]= '%';
 				}
 			}
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -8193,8 +8172,6 @@ class SevenStar : public Fonts
 						character[i][j]= ' ';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -8303,8 +8280,6 @@ class SevenStar : public Fonts
 						character[i][j]= '%';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -8430,8 +8405,6 @@ class SevenStar : public Fonts
 						character[i][j]= ' ';
 				}
 			}
-
-			// cout<<endl;
 		}
 		return character;
 	}
@@ -12855,8 +12828,7 @@ void SHA1::write(const char* buf, int64_t n)
 	len+=n*8;
 }
 void SHA1::process()
-{
-}
+{}
 #else
 ///	zpaq 7.15 use a very, very, very good implementation of SHA1, but full of very dirty tricks
 void SHA1::init()
@@ -12913,7 +12885,8 @@ void SHA1::write(const char* buf, int64_t n)
     len+=512;
 	process();
   }
-  for (; n>0; --n) put(*p++);
+  for (; n>0; --n)
+      put(*p++);
 }
 void SHA1::process()
 {
@@ -13272,14 +13245,14 @@ class StateTable
 {
 public:
   U8 ns[1024]; // state*4 -> next state if 0, if 1, n0, n1
-  int next(int state, int y)
-  {  // next state for bit y
+  int next(int state, int y)  // next state for bit y
+  {
     assert(state>=0 && state<256);
     assert(y>=0 && y<4);
     return ns[state*4+y];
   }
-  int cminit(int state)
-  {  // initial probability of 1 * 2^23
+  int cminit(int state)  // initial probability of 1 * 2^23
+  {
     assert(state>=0 && state<256);
     return ((ns[state*4+3]*2+1)<<22)/(ns[state*4+2]+ns[state*4+3]+1);
   }
@@ -14084,7 +14057,7 @@ static void pbkdf2(const char* pw, int pwLen, const char* salt, int saltLen, cha
   assert(pwLen<=64);
   libzpaq::SHA256 sha256;
   char b[32];
-  for (int i=1; i*32<=dkLen; ++i) 
+  for (int i=1; i*32<=dkLen; ++i)
   {
     for (int j=0; j<pwLen; ++j)
         sha256.put(pw[j]^0x36);
@@ -14109,11 +14082,11 @@ static void pbkdf2(const char* pw, int pwLen, const char* salt, int saltLen, cha
 /// LICENSE_START.2
 // Hash b[0..15] using 8 rounds of salsa20
 // Modified from http://cr.yp.to/salsa20.html (public domain) to 8 rounds
-static void salsa8(U32* b) 
+static void salsa8(U32* b)
 {
   unsigned x[16]={0};
   memcpy(x, b, 64);
-  for (unsigned int i=0; i<4; ++i) 
+  for (unsigned int i=0; i<4; ++i)
   {
     #define R(a,b) (((a)<<(b))+((a)>>(32-b)))
     x[ 4] ^= R(x[ 0]+x[12], 7);  x[ 8] ^= R(x[ 4]+x[ 0], 9);
@@ -14134,19 +14107,19 @@ static void salsa8(U32* b)
     x[14] ^= R(x[13]+x[12],13);  x[15] ^= R(x[14]+x[13],18);
     #undef R
   }
-  for (unsigned int i=0; i<16; ++i) 
+  for (unsigned int i=0; i<16; ++i)
       b[i]+=x[i];
 }
 // BlockMix_{Salsa20/8, r} on b[0..128*r-1]
-static void blockmix(U32* b, int r) 
+static void blockmix(U32* b, int r)
 {
   assert(r<=8);
   U32 x[16];
   U32 y[256];
   memcpy(x, b+32*r-16, 64);
-  for (int i=0; i<2*r; ++i) 
+  for (int i=0; i<2*r; ++i)
   {
-    for (int j=0; j<16; ++j) 
+    for (int j=0; j<16; ++j)
         x[j]^=b[i*16+j];
     salsa8(x);
     memcpy(&y[i*16], x, 64);
@@ -14157,7 +14130,7 @@ static void blockmix(U32* b, int r)
       memcpy(b+(i+r)*16, &y[i*32+16], 64);
 }
 // Mix b[0..128*r-1]. Uses 128*r*n bytes of memory and O(r*n) time
-static void smix(char* b, int r, int n) 
+static void smix(char* b, int r, int n)
 {
   libzpaq::Array<U32> x(32*r), v(32*r*n);
   for (int i=0; i<r*128; ++i)
@@ -14473,7 +14446,7 @@ int ZPAQL::read(Reader* in2)
   return cend+hend-hbegin;
 }
 // Free memory, but preserve output, sha1 pointers
-void ZPAQL::clear() 
+void ZPAQL::clear()
 {
   cend=hbegin=hend=0;  // COMP and HCOMP locations
   a=b=c=d=f=pc=0;      // machine state
@@ -14514,17 +14487,17 @@ void ZPAQL::initp()
 // Flush pending output
 void ZPAQL::flush()
 {
-  if (output) 
+  if (output)
       output->write(&outbuf[0], bufptr);
-  if (sha1) 
+  if (sha1)
       sha1->write(&outbuf[0], bufptr);
   bufptr=0;
 }
 // pow(2, x)
-static double pow2(int x) 
+static double pow2(int x)
 {
   double r=1;
-  for (; x>0; x--) 
+  for (; x>0; x--)
       r+=r;
   return r;
 }
@@ -14535,25 +14508,25 @@ double ZPAQL::memory()
             +pow2(header[4]+2)+pow2(header[5])  // ph pm
             +header.size();
   int cp=7;  // start of comp list
-  for (unsigned int i=0; i<header[6]; ++i) 
+  for (unsigned int i=0; i<header[6]; ++i)
   {  // n
     assert(cp<cend);
     double size=pow2(header[cp+1]); // sizebits
-    switch(header[cp]) 
+    switch(header[cp])
     {
-      case CM: mem+=4*size; 
+      case CM: mem+=4*size;
           break;
-      case ICM: mem+=64*size+1024; 
+      case ICM: mem+=64*size+1024;
           break;
-      case MATCH: mem+=4*size+pow2(header[cp+2]); 
+      case MATCH: mem+=4*size+pow2(header[cp+2]);
           break; // bufbits
-      case MIX2: mem+=2*size; 
+      case MIX2: mem+=2*size;
           break;
-      case MIX: mem+=4*size*header[cp+3]; 
+      case MIX: mem+=4*size*header[cp+3];
           break; // m
-      case ISSE: mem+=64*size+2048; 
+      case ISSE: mem+=64*size+2048;
           break;
-      case SSE: mem+=128*size; 
+      case SSE: mem+=128*size;
           break;
     }
     cp+=compsize[header[cp]];
@@ -14571,9 +14544,9 @@ void ZPAQL::init(int hbits, int mbits)
   assert(header[0]+256*header[1]==(cend-2)+hend-hbegin);
   assert(bufptr==0);
   assert(outbuf.isize()>0);
-  if (hbits>32) 
+  if (hbits>32)
       error("H too big");
-  if (mbits>32) 
+  if (mbits>32)
       error("M too big");
   h.resize(1, hbits);
   m.resize(1, mbits);
@@ -14597,9 +14570,9 @@ void ZPAQL::run0(U32 input)
 }
 
 // Execute one instruction, return 0 after HALT else 1
-int ZPAQL::execute() 
+int ZPAQL::execute()
 {
-  switch(header[pc++]) 
+  switch(header[pc++])
   {
     case 0: err(); break; // ERROR
     case 1: ++a; break; // A++
@@ -17586,7 +17559,8 @@ int ZPAQL::assemble()
 // The assembled code is equivalent to int predict(Predictor*)
 // and void update(Predictor*, int y); The Preditor address is placed in
 // edi/rdi. The update bit y is placed in ebp/rbp.
-int Predictor::assemble_p() {
+int Predictor::assemble_p()
+{
   Predictor& pr=*this;
   U8* rcode=pr.pcode;         // x86 output array
   int rcode_size=pcode_size;  // output size
@@ -17880,8 +17854,8 @@ int Predictor::assemble_p() {
           if (tail>3)
             put4a(0xf30f6fa7,off(p[cp[2]+k+4]));//movdqu xmm4, [edi+&p[j+k+4]]
           put4(0x660f6bdc);                    // packssdw, xmm3, xmm4
-          if (tail>0 && tail<8)
-          {  // last loop, mask extra weights
+          if (tail>0 && tail<8)  // last loop, mask extra weights
+          {
             put4(0x660f76ed);                  // pcmpeqd xmm5, xmm5 ; -1
             put5(0x660f73dd, 16-tail*2);       // psrldq xmm5, 16-tail*2
             put4(0x660fdbcd);                  // pand xmm1, xmm5
@@ -17891,7 +17865,8 @@ int Predictor::assemble_p() {
             put4(0xf30f6fc1);                  // movdqu xmm0, xmm1
             put4(0x660ff5c3);                  // pmaddwd xmm0, xmm3
           }
-          else {  // accumulate sum in xmm0
+          else   // accumulate sum in xmm0
+          {
             put4(0x660ff5cb);                  // pmaddwd xmm1, xmm3
             put4(0x660ffec1);                  // paddd xmm0, xmm1
           }
@@ -18325,7 +18300,8 @@ int Predictor::predict()
   {
     allocx(pcode, pcode_size, (z.cend*100+4096)&-4096);
     int n=assemble_p();
-    if (n>pcode_size) {
+    if (n>pcode_size)
+    {
       allocx(pcode, pcode_size, n);
       n=assemble_p();
     }
@@ -18351,7 +18327,8 @@ void Predictor::update(int y)
   ((void(*)(Predictor*, int))&pcode[5])(this, y);
   // Save bit y in c8, hmap4 (not implemented in JIT)
   c8+=c8+y;
-  if (c8>=256) {
+  if (c8>=256)
+  {
     z.run(c8-256);
     hmap4=1;
     c8=1;
@@ -18364,7 +18341,8 @@ void Predictor::update(int y)
 }
 // Execute the ZPAQL code with input byte or -1 for EOF.
 // Use JIT code at rcode if available, or else create it.
-void ZPAQL::run(U32 input) {
+void ZPAQL::run(U32 input)
+{
 	if (flagnojit)
 	{
 		run0(input);
@@ -18373,7 +18351,8 @@ void ZPAQL::run(U32 input) {
   if (!rcode) {
     allocx(rcode, rcode_size, (hend*10+4096)&-4096);
     int n=assemble();
-    if (n>rcode_size) {
+    if (n>rcode_size)
+    {
       allocx(rcode, rcode_size, n);
       n=assemble();
     }
@@ -18385,10 +18364,14 @@ void ZPAQL::run(U32 input) {
    if (rcode && rcode[0])
    {
         const U32 rc = ((int(*)())(&rcode[0]))();
-        if (rc == 0) return;
-        else if (rc == 1) libzpaq::error("Bad ZPAQL opcode");
-        else if (rc == 2) libzpaq::error("Out of memory");
-        else if (rc == 3) libzpaq::error("Write error");
+        if (rc == 0)
+            return;
+        else if (rc == 1)
+            libzpaq::error("Bad ZPAQL opcode");
+        else if (rc == 2)
+            libzpaq::error("Out of memory");
+        else if (rc == 3)
+            libzpaq::error("Write error");
         else libzpaq::error("ZPAQL execution error");
     }
 	else
@@ -18537,9 +18520,13 @@ static const int sqq_table[256] = {
 };
 static INLINE_divsuf
 int
-ss_isqrt(int x) {
+ss_isqrt(int x)
+{
   int y, e;
-  if(x >= (SS_BLOCKSIZE * SS_BLOCKSIZE)) { return SS_BLOCKSIZE; }
+  if(x >= (SS_BLOCKSIZE * SS_BLOCKSIZE))
+  {
+      return SS_BLOCKSIZE;
+  }
   e = (x & 0xffff0000) ?
         ((x & 0xff000000) ?
           24 + lg_table[(x >> 24) & 0xff] :
@@ -18547,13 +18534,18 @@ ss_isqrt(int x) {
         ((x & 0x0000ff00) ?
            8 + lg_table[(x >>  8) & 0xff] :
            0 + lg_table[(x >>  0) & 0xff]);
-  if(e >= 16) {
+  if(e >= 16)
+  {
     y = sqq_table[x >> ((e - 6) - (e & 1))] << ((e >> 1) - 7);
     if(e >= 24) { y = (y + 1 + x / y) >> 1; }
     y = (y + 1 + x / y) >> 1;
-  } else if(e >= 8) {
+  }
+  else if(e >= 8)
+  {
     y = (sqq_table[x >> ((e - 6) - (e & 1))] >> (7 - (e >> 1))) + 1;
-  } else {
+  }
+  else
+  {
     return sqq_table[x] >> 4;
   }
   return (x < (y * y)) ? y - 1 : y;
@@ -71694,23 +71686,19 @@ void Jidac::addfile(bool i_checkifselected, DTMap &i_edt, string filename, int64
 					int64_t i_creationdate, int64_t i_accessdate)
 {
 	static int milione= 0;
-	if (i_checkifselected)
-		if (!isselected(filename.c_str(), false, esize))
-			return;
+	if (i_checkifselected) && !isselected(filename.c_str(), false, esize))
+		return;
 	//	OK, let's handle longpath on VSS by a kludge
 	//	cook some spaghetti code!
-	if ((flagvss) && (!flagimage))
-		if (filename.size() > 250)
-			myreplace(filename, g_franzsnap, g_vss_shadow);
+	if (flagvss && !flagimage && filename.size() > 250)
+		myreplace(filename, g_franzsnap, g_vss_shadow);
 
 	if (command != 'j')
 	{
-		if (g_datefrom > 0)
-			if (edate <= g_datefrom)
-				return;
-		if (g_dateto > 0)
-			if (edate >= g_dateto)
-				return;
+		if (g_datefrom > 0 && edate >= g_datefrom)
+			return;
+		if (g_dateto > 0 && edate >= g_dateto)
+			return;
 	}
 	DT &d= i_edt[filename];
 	if (g_touch != 0)
@@ -71750,8 +71738,7 @@ void Jidac::addfile(bool i_checkifselected, DTMap &i_edt, string filename, int64
 		}
 	}
 
-	if ((flagnoeta == false) && (!flagterse))
-		if (iscantime != ultimotempo)
+	if ((flagnoeta == false) && (!flagterse) && (iscantime != ultimotempo))
 		{
 			ultimotempo= iscantime;
 
@@ -71796,8 +71783,7 @@ struct CJ
 	Semaphore	 full;		 // 1 if in is FULL of data ready to compress
 	Semaphore	 compressed; // 1 if out contains COMPRESSED data
 	CJ() : state(EMPTY)
-	{
-	}
+	{}
 };
 // Instructions to a compression job
 class CompressJob
@@ -71815,7 +71801,8 @@ class CompressJob
   public:
 	friend ThreadReturn compressThread(void *arg);
 	friend ThreadReturn writeThread(void *arg);
-	CompressJob(int threads, int buffers, OutputArchive *f) : out(f), job(0), q(0), qsize(buffers), front(0)
+	CompressJob(int threads, int buffers, OutputArchive *f) :
+	out(f), job(0), q(0), qsize(buffers), front(0)
 	{
 		if (buffers <= 0)
 		{
@@ -71853,8 +71840,7 @@ class CompressJob
 	vector<int> csize; // compressed block sizes
 };
 // Write s at the back of the queue. Signal end of input with method=""
-void CompressJob::appendz(StringBuffer &s, const char *fn, const string &method,
-						  const char *comment)
+void CompressJob::appendz(StringBuffer &s, const char *fn, const string &method, const char *comment)
 {
 	for (unsigned k= (method == "") ? qsize : 1; k > 0; --k)
 	{
@@ -71909,8 +71895,7 @@ ThreadReturn compressThread(void *arg)
 			cj.state= CJ::COMPRESSING;
 			release(job.mutex);
 			job.compressors.wait();
-			libzpaq::compressBlock(&cj.in, &cj.out, cj.method.c_str(),
-								   cj.filename.c_str(), cj.comment == "" ? 0 : cj.comment.c_str());
+			libzpaq::compressBlock(&cj.in, &cj.out, cj.method.c_str(), cj.filename.c_str(), cj.comment == "" ? 0 : cj.comment.c_str());
 			cj.in.resize(0);
 			lock(job.mutex);
 			cj.state= CJ::COMPRESSED;
@@ -71962,8 +71947,7 @@ ThreadReturn writeThread(void *arg)
 				int64_t		n= cj.out.size();
 				g_scritti+= n; // very rude
 
-				if (flagfast)
-					if (cj.filename == g_thememfileblock)
+				if (flagfast && cj.filename == g_thememfileblock)
 					{
 						if (g_thememfilestart == 0)
 							g_thememfilestart= job.out->tell();
@@ -72257,10 +72241,9 @@ int get_creation_time(const char *filepath, time_t *creation_time)
 	struct stat st;
 	*creation_time= 0;
 
-	if (lstat(filepath, &st) != 0)
+	if (lstat(filepath, &st) != 0 && flagverbose)
 	{
-		if (flagverbose)
-			fprintf(stderr, "Cannot get creation time for %s: %s\n", filepath, strerror(errno));
+		fprintf(stderr, "Cannot get creation time for %s: %s\n", filepath, strerror(errno));
 		return -1;
 	}
 
@@ -72550,13 +72533,10 @@ int restorefilemetadata(const char *filepath, const struct franz_posix *metadata
 
 	if (metadata->typeflag[0] == CHRTYPE && geteuid() == 0)
 	{
-		if (access(filepath, F_OK) == 0)
+		if (access(filepath, F_OK) == 0 && unlink(filepath) == -1)
 		{
-			if (unlink(filepath) == -1)
-			{
-				myprintf("648794: Error unlink %s: %s\n", filepath, strerror(errno));
-				return -1;
-			}
+			myprintf("648794: Error unlink %s: %s\n", filepath, strerror(errno));
+			return -1;
 		}
 		if (mknod(filepath, mode | S_IFCHR, 0) == -1)
 		{
@@ -72630,14 +72610,13 @@ void Jidac::writefranzattr(DTMap::iterator i_dtmap, libzpaq::StringBuffer &i_sb,
 		return;
 	}
 
-	if (flagverify || flagcollision)
-		if (i_crc32 != i_crc32fromfragments)
-		{
-			myprintf("\n");
-			myprintf("00659: GURU-C: on file %s\n", i_filename.c_str());
-			myprintf("00660: GURU: CRC-32 from fragments %08X\n", i_crc32fromfragments);
-			myprintf("00661: GURU: CRC-32 from file      %08X\n", i_crc32);
-		}
+	if (flagverify || flagcollision && i_crc32 != i_crc32fromfragments)
+	{
+		myprintf("\n");
+		myprintf("00659: GURU-C: on file %s\n", i_filename.c_str());
+		myprintf("00660: GURU: CRC-32 from fragments %08X\n", i_crc32fromfragments);
+		myprintf("00661: GURU: CRC-32 from file      %08X\n", i_crc32);
+	}
 	if (g_franzotype == FRANZO_CRC_32) /// store only CRC-32
 	{
 		char mybuffer[FRANZOFFSETV1]= {0};
@@ -73275,10 +73254,9 @@ ThreadReturn decompressThread(void *arg)
 										if (barra == string::npos)
 											break;
 										percorsino+= temppercorso.substr(0, barra) + '\\';
-										if (direxists(percorsino))
+										if (direxists(percorsino) && flagdebug2)
 										{
-											if (flagdebug2)
-												myprintf("00700: Small path exists %s\n", percorsino.c_str());
+											myprintf("00700: Small path exists %s\n", percorsino.c_str());
 										}
 										else
 										{
@@ -73291,18 +73269,15 @@ ThreadReturn decompressThread(void *arg)
 											if ((dafare != "\\") && (dafare != "\\\\") && (dafare != "\\\\?\\"))
 											{
 												bool creazione= CreateDirectory(utow(dafare.c_str()).c_str(), 0);
-												if (!flaglongpath)
-													if (!creazione)
-														if (GetLastError() != ERROR_ALREADY_EXISTS)
-															printerr("decomp1", dafare.c_str(), 0);
+												if (!flaglongpath && !creazione && GetLastError() != ERROR_ALREADY_EXISTS)
+													printerr("decomp1", dafare.c_str(), 0);
 											}
 										}
 										temppercorso= temppercorso.substr(barra + 1, temppercorso.length());
 									}
 								}
-								if (!flaglongpath)
-									if (!direxists(percorso))
-										myprintf("00702! path 'percorso' does not exists <<%s>>\n", percorso.c_str());
+								if (!flaglongpath && !direxists(percorso))
+									myprintf("00702! path 'percorso' does not exists <<%s>>\n", percorso.c_str());
 							}
 #endif // corresponds to #ifdef (#ifdef _WIN32)
 							if (flagstdout)
@@ -73314,14 +73289,11 @@ ThreadReturn decompressThread(void *arg)
 								else
 									job.outf= myfopen(filename.c_str(), WB);
 							}
-							if (!p->second.donotextractme)
+							if (!p->second.donotextractme && job.outf == FPNULL)
 							{
-								if (job.outf == FPNULL)
-								{
-									lock(job.mutex);
-									printerr("decomp2", filename.c_str(), 0);
-									release(job.mutex);
-								}
+								lock(job.mutex);
+								printerr("decomp2", filename.c_str(), 0);
+								release(job.mutex);
 							}
 							if (g_chunk_size > 0)
 							{
@@ -73333,8 +73305,7 @@ ThreadReturn decompressThread(void *arg)
 							{ // sparse?
 								DWORD br= 0;
 
-								if (!DeviceIoControl(job.outf, FSCTL_SET_SPARSE,
-													 NULL, 0, NULL, 0, &br, NULL)) // set sparse attribute
+								if (!DeviceIoControl(job.outf, FSCTL_SET_SPARSE, NULL, 0, NULL, 0, &br, NULL)) // set sparse attribute
 									printerr("decomp3", filename.c_str(), 0);
 							}
 #endif // corresponds to #ifndef (#ifndef unix)
@@ -73429,12 +73400,10 @@ ThreadReturn decompressThread(void *arg)
 					if (flagzero)
 					{
 						/// -zero -debug: write all zeros in output
-						if (flagdebug)
-							/// seek to the end and write a 0
-							if (job.outf != NULL)
-							{
-								fseeko(job.outf, offset + usize, SEEK_SET);
-								myfwrite(&byte0, 1, 1, job.outf);
+						if (flagdebug && job.outf != NULL)
+						    /// seek to the end and write a 0
+							fseeko(job.outf, offset + usize, SEEK_SET);
+							myfwrite(&byte0, 1, 1, job.outf);
 							}
 					}
 					else
@@ -73457,30 +73426,31 @@ ThreadReturn decompressThread(void *arg)
 								/// =>when extracting this kind of file use -image and even -minsize something
 								/// if something is 1 all writes (and seeks) will be showed
 #ifdef _WIN32
-								if (!flagnoeta)
-									if (flagimage)
+								if (!flagnoeta && flagimage)
+								{
+									int64_t zerofill= 0;
+									if (offset > g_maxposition)
 									{
-										int64_t zerofill= 0;
-										if (offset > g_maxposition)
-										{
-											zerofill	 = offset - g_maxposition;
-											g_maxposition= offset;
-										}
-										uint64_t showsize= 20000000;
-										if (minsize > 0)
-											showsize= minsize;
-										if ((zerofill + usize) > showsize)
-										{
-											double eta= 0.001 * (mtime() - g_start) * (job.total_size - job.total_done) / (job.total_done + 1.0);
-											if (job.total_done == 0)
-												eta= 0;
-											int secondi= (mtime() - g_start) / 1000;
-											if (secondi == 0)
-												secondi= 1;
-											printf("W %10s+%10s=%10s | done %10s of %10s %6.2f%% %02d:%02d:%02d %s/s\r", tohuman(usize), tohuman2(zerofill), tohuman3(usize + zerofill), tohuman4(job.total_done), tohuman5(job.total_size),
-												   job.total_done * 100.0 / (job.total_size + 0.5),
-												   int(eta / 3600), int(eta / 60) % 60, int(eta) % 60,
-												   tohuman3(job.total_done / secondi));
+										zerofill	 = offset - g_maxposition;
+										g_maxposition= offset;
+									}
+									uint64_t showsize= 20000000;
+									if (minsize > 0)
+										showsize= minsize;
+									if ((zerofill + usize) > showsize)
+									{
+										double eta= 0.001 * (mtime() - g_start) * (job.total_size - job.total_done) / (job.total_done + 1.0);
+										if (job.total_done == 0)
+											eta= 0;
+										int secondi= (mtime() - g_start) / 1000;
+										if (secondi == 0)
+											secondi= 1;
+										printf("W %10s+%10s=%10s | done %10s of %10s %6.2f%% %02d:%02d:%02d %s/s\r",
+										tohuman(usize), tohuman2(zerofill), tohuman3(usize + zerofill),
+										tohuman4(job.total_done), tohuman5(job.total_size),
+										job.total_done * 100.0 / (job.total_size + 0.5),
+										int(eta / 3600), int(eta / 60) % 60, int(eta) % 60,
+										tohuman3(job.total_done / secondi));
 										}
 									}
 #endif // corresponds to #ifdef (#ifdef _WIN32)
@@ -84815,8 +84785,7 @@ int Jidac::dir(bool flagtreeview)
         {
             if (!isdirectory(newfolder))
                 newfolder += '/';
-            if (!flagterse)
-                if (folder != newfolder)
+            if (!flagterse) && (folder != newfolder))
                 {
                     if (flagverbose)
                         myprintf("01730$ WARNING path : <<%Z>>\nresolved to         : <<%Z>>\n", folder.c_str(), newfolder.c_str());
@@ -84825,10 +84794,8 @@ int Jidac::dir(bool flagtreeview)
         }
 #endif
 
-        if (!isdirectory(folder))
-            if (!realfileexists(folder))
-                if (direxists(folder))
-                    folder += '/';
+        if (!isdirectory(folder)) && (!realfileexists(folder)) && (direxists(folder)))
+            folder += '/';
     }
 
     // IMPORTANT: Update files vector with normalized folders
@@ -94846,8 +94813,10 @@ int64_t Jidac::read_archive(callback_function i_advance, const char *arc, int *e
                     if (i_totali <= 0) i_totali = 1;
 
                     int percentuale = (int)((i_lavorati * 100.0) / i_totali);
-                    if (percentuale > 100) percentuale = 100;
-                    if (percentuale < 0) percentuale = 0;
+                    if (percentuale > 100)
+                        percentuale = 100;
+                    if (percentuale < 0)
+                        percentuale = 0;
 
                     if (percentuale > last_dec_percent)
                     {
@@ -97268,8 +97237,10 @@ int64_t Jidac::pakka_read_archive(const char *arc)
                     if (i_totali <= 0) i_totali = 1; // Evita divisioni per zero
 
                     int percentuale = (int)((i_lavorati * 100.0) / i_totali);
-                    if (percentuale > 100) percentuale = 100;
-                    if (percentuale < 0) percentuale = 0;
+                    if (percentuale > 100)
+                        percentuale = 100;
+                    if (percentuale < 0)
+                        percentuale = 0;
 
                     // Stampa SOLO se la percentuale è scattata in avanti!
                     if (percentuale > last_spk_percent)
@@ -105454,15 +105425,12 @@ int Jidac::extract()
 		}
 
 #ifdef unix
-	if ((!flagstdout) && (!flagterse))
-	{
-		if (!flagtar)
+	if ((!flagstdout) && (!flagterse) && (!flagtar))
 		{
 			int posix= posix_count();
 			if (posix > 0)
 				myprintf("96329$ Info: there are %s metadata (use -tar if you want to restore)\n", migliaia(posix));
 		}
-	}
 #endif
 
 	return errors;
@@ -123685,7 +123653,7 @@ int Jidac::add()
 				++added;
 				///				date and filename
 				puti(is, p->second.date, 8);
-				is.write(filename.c_str(), filename.size()); // strlen(filename.c_str()));
+				is.write(filename.c_str(), filename.size());
 				is.put(0);
 
 				string hashtobewritten;
@@ -124001,8 +123969,7 @@ int Jidac::add()
 				}
 				else if (archive_end == 0)
 				{
-					if (delete_file(arcname.c_str()))
-						if (flagverbose)
+					if (delete_file(arcname.c_str()) && flagverbose)
 						{
 							myprintf("02145: deleted %Z: no data to be archived\n", arcname.c_str());
 						}
@@ -124014,8 +123981,7 @@ int Jidac::add()
 
 	if (archive_end) // sometimes the unencrypted .zpaq is empty
 	{
-		if (flagverbose)
-			if (total_xls)
+		if (flagverbose && total_xls)
 				myprintf("02146: Forced XLS/PPT has included %s bytes in %s files\n", migliaia(total_xls), migliaia2(file_xls));
 
 		int64_t speed= 0;
@@ -124096,9 +124062,7 @@ int Jidac::add()
 		}
 	}
 
-	if (!flagstdin)
-		if (total_size != total_done)
-			if (flagverbose)
+	if (!flagstdin && (total_size != total_done) && flagverbose)
 			{
 				printbar('!');
 				int64_t total_size_vf= 0;
@@ -124118,8 +124082,7 @@ int Jidac::add()
 		return 2;
 
 	/// do a second copy (ex. to USB)
-	if (errors == 0)
-		if (g_copy != "")
+	if (errors == 0 && g_copy != "")
 		{
 			string filescritto= filecopy(false, false, g_archive, g_copy, true, false, false, 0);
 			if (filescritto != "")
@@ -124127,13 +124090,11 @@ int Jidac::add()
 			else
 				myprintf("02166: ERROR doing -copy from %s to %s\n", g_archive.c_str(), filescritto.c_str());
 		}
-	if (flagfilelist)
-		if (fileexists(tempfile))
-		{
-			if (flagdebug2)
-				myprintf("02164: deleting tempfile %s\n", tempfile.c_str());
-			delete_file(tempfile.c_str());
-		}
+	if (flagfilelist && fileexists(tempfile) && flagdebug2)
+	{
+	    myprintf("02164: deleting tempfile %s\n", tempfile.c_str());
+	    delete_file(tempfile.c_str());
+	}
 	gestisciposttest();
 #ifdef ZPAQFULL /// NOSFTPSTART
 	gestiscisfx();
