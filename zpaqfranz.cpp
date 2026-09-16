@@ -15590,8 +15590,8 @@ void Predictor::update0(int y)
           wt[j]=clamp512k(wt[j]+((err*p[cp[2]+j]+(1<<12))>>13));
       }
         break;
-      case ISSE:
-    { // sizebits j  -- c=hi, cxt=bh
+      case ISSE: // sizebits j  -- c=hi, cxt=bh
+    {
         assert(cr.cxt==cr.ht[cr.c+(hmap4&15)]);
         int err=y*32767-squash(p[i]);
         int *wt=(int*)&cr.cm[cr.cxt*2];
@@ -15630,16 +15630,20 @@ void Predictor::update0(int y)
 // low sizebits of cxt with element 0 having the next higher 8 bits for
 // collision detection. If not found after 3 adjacent tries, replace the
 // row with lowest element 1 as priority. Return index of row.
-size_t Predictor::find(Array<U8>& ht, int sizebits, U32 cxt) {
+size_t Predictor::find(Array<U8>& ht, int sizebits, U32 cxt)
+{
   assert(initTables);
   assert(ht.size()==size_t(16)<<sizebits);
   int chk=cxt>>sizebits&255;
   size_t h0=(cxt*16)&(ht.size()-16);
-  if (ht[h0]==chk) return h0;
+  if (ht[h0]==chk)
+      return h0;
   size_t h1=h0^16;
-  if (ht[h1]==chk) return h1;
+  if (ht[h1]==chk)
+      return h1;
   size_t h2=h0^32;
-  if (ht[h2]==chk) return h2;
+  if (ht[h2]==chk)
+      return h2;
   if (ht[h0+1]<=ht[h1+1] && ht[h0+1]<=ht[h2+1])
     return memset(&ht[h0], 0, 16), ht[h0]=chk, h0;
   else if (ht[h1+1]<ht[h2+1])
@@ -15651,33 +15655,38 @@ size_t Predictor::find(Array<U8>& ht, int sizebits, U32 cxt) {
 Decoder::Decoder(ZPAQL& z):
     in(0), low(1), high(0xFFFFFFFF), curr(0), rpos(0), wpos(0),
     pr(z), buf(BUFSIZE)
-    {
-}
+    {}
 void Decoder::init()
 {
   pr.init();
-  if (pr.isModeled()) low=1, high=0xFFFFFFFF, curr=0;
-  else low=high=curr=0;
+  if (pr.isModeled())
+      low=1, high=0xFFFFFFFF, curr=0;
+  else
+      low=high=curr=0;
 }
 // Return next bit of decoded input, which has 16 bit probability p of being 1
 int Decoder::decode(int p)
 {
   assert(p>=0 && p<65536);
   assert(high>low && low>0);
-  if (curr<low || curr>high) error("archive corrupted");
+  if (curr<low || curr>high)
+      error("archive corrupted");
   assert(curr>=low && curr<=high);
   U32 mid=low+U32(((high-low)*U64(U32(p)))>>16);  // split range
   assert(high>mid && mid>=low);
   int y;
-  if (curr<=mid) y=1, high=mid;  // pick half
-  else y=0, low=mid+1;
-  while ((high^low)<0x1000000)
-  { // shift out identical leading bytes
+  if (curr<=mid)
+      y=1, high=mid;  // pick half
+  else
+      y=0, low=mid+1;
+  while ((high^low)<0x1000000) // shift out identical leading bytes
+  {
     high=high<<8|255;
     low=low<<8;
     low+=(low==0);
     int c=get();
-    if (c<0) error("unexpected end of file");
+    if (c<0)
+        error("unexpected end of file");
     curr=curr<<8|c;
   }
   return y;
@@ -15809,8 +15818,8 @@ int PostProcessor::write(int c)
           error("Unexpected EOS");
       assert(z.hend<z.header.isize());
       z.header[z.hend++]=c;  // one byte of pcomp
-      if (z.hend-z.hbegin==hsize)
-      {  // last byte of pcomp?
+      if (z.hend-z.hbegin==hsize)  // last byte of pcomp?
+      {
         hsize=(z.cend-2)+z.hend-z.hbegin;
         z.header[0]=hsize&255;  // header size with empty COMP
         z.header[1]=hsize>>8;
@@ -15845,10 +15854,13 @@ bool Decompresser::findBlock(double* memptr)
     if (h1==0xB16B88F1 && h2==0xFF5376F1 && h3==0x72AC5BF1 && h4==0x2F909AF1)
       break;  // hash of 16 byte string
   }
-  if (c==-1) return false;
+  if (c==-1)
+      return false;
   // Read header
-  if ((c=dec.get())!=1 && c!=2) error("unsupported ZPAQ level");
-  if (dec.get()!=1) error("unsupported ZPAQL type");
+  if ((c=dec.get())!=1 && c!=2)
+      error("unsupported ZPAQ level");
+  if (dec.get()!=1)
+      error("unsupported ZPAQL type");
   z.read(&dec);
   if (c==1 && z.header.isize()>6 && z.header[6]==0)
     error("ZPAQ level 1 requires at least 1 component");
@@ -16558,7 +16570,8 @@ void Compressor::startSegment(const char* filename, const char* comment)
 // if pcomp is 0 then get pcomp from pz.header
 void Compressor::postProcess(const char* pcomp, int len)
 {
-  if (state==SEG2) return;
+  if (state==SEG2)
+      return;
   assert(state==SEG1);
   enc.init();
   if (!pcomp)
@@ -16821,8 +16834,10 @@ static bool iserr(int op)
 // A run of identical ++ or -- is counted as 1 instruction.
 static int oplen(const U8* hcomp)
 {
-  if (*hcomp==255) return 3;
-  if (*hcomp%8==7) return 2;
+  if (*hcomp==255)
+      return 3;
+  if (*hcomp%8==7)
+      return 2;
   if (*hcomp<51 && (*hcomp%8-1)/2==0)
   {  // ++ or -- opcode
     int i;
@@ -16834,15 +16849,20 @@ static int oplen(const U8* hcomp)
 // Write k bytes of x to rcode[o++] MSB first
 static void put(U8* rcode, int n, int& o, U32 x, int k)
 {
-  while (k-->0) {
-    if (o<n) rcode[o]=(x>>(k*8))&255;
+  while (k-->0)
+  {
+    if (o<n)
+        rcode[o]=(x>>(k*8))&255;
     ++o;
   }
 }
 // Write 4 bytes of x to rcode[o++] LSB first
-static void put4lsb(U8* rcode, int n, int& o, U32 x) {
-  for (int k=0; k<4; ++k) {
-    if (o<n) rcode[o]=(x>>(k*8))&255;
+static void put4lsb(U8* rcode, int n, int& o, U32 x)
+{
+  for (int k=0; k<4; ++k)
+  {
+    if (o<n)
+        rcode[o]=(x>>(k*8))&255;
     ++o;
   }
 }
@@ -16853,15 +16873,14 @@ static void put4lsb(U8* rcode, int n, int& o, U32 x) {
 #define put3(x) put(rcode, rcode_size, o, (x), 3)
 #define put4(x) put(rcode, rcode_size, o, (x), 4)
 #define put5(x,y) put4(x), put1(y)
-#define put6(x,y) put4(x), put2(y)
 #define put4r(x) put4lsb(rcode, rcode_size, o, x)
 #define puta(x) t=U32(size_t(x)), put4r(t)
 #define put1a(x,y) put1(x), puta(y)
 #define put2a(x,y) put2(x), puta(y)
 #define put3a(x,y) put3(x), puta(y)
 #define put4a(x,y) put4(x), puta(y)
-#define put2l(x,y) put2(x), t=U32(size_t(y)), put4r(t), \
-  t=U32(size_t(y)>>(S*4)), put4r(t)
+#define put2l(x,y) put2(x), t=U32(size_t(y)), put4r(t), t=U32(size_t(y)>>(S*4)), put4r(t)
+
 // Assemble ZPAQL in in the HCOMP section of header to rcode,
 // but do not write beyond rcode_size. Return the number of
 // bytes output or that would have been output.
@@ -17141,11 +17160,11 @@ int ZPAQL::assemble()
           put2(0x89c0+8*regcode[sss-3+(op==59)]);  // mov eax, {esi,edi,ebp}
           const int sz=(sss==6?hsize:msize)-1;
           if (sz>=128)
-              put1a(0x25, sz);            // and eax, dword msize-1
+              put1a(0x25, sz);                     // and eax, dword msize-1
           else
-              put3(0x83e000+sz);                  // and eax, byte msize-1
-          const int move=(op>=64 && op<112); // = or else ddd is eax
-          if (sss<6) // ddd={a,b,c,d,*b,*c}
+              put3(0x83e000+sz);                   // and eax, byte msize-1
+          const int move=(op>=64 && op<112);       // = or else ddd is eax
+          if (sss<6)                               // ddd={a,b,c,d,*b,*c}
           {
             if (S==8)
                 put5(0x410fb604+8*move*regcode[ddd],0x07);
@@ -17154,18 +17173,18 @@ int ZPAQL::assemble()
                 put3a(0x0fb680+8*move*regcode[ddd], &m[0]);
                                                    // movzx ddd, byte [m+eax]
           }
-          else if ((0x06587000>>(op/8))&1) // {*b,*c,*d,a/,a%,a&~,a<<,a>>}=*d
+          else if ((0x06587000>>(op/8))&1)         // {*b,*c,*d,a/,a%,a&~,a<<,a>>}=*d
           {
             if (S==8)
-                put4(0x418b0484);            // mov eax, [r12+rax*4]
+                put4(0x418b0484);                  // mov eax, [r12+rax*4]
             else
-                put3a(0x8b0485, &h[0]);      // mov eax, [h+eax*4]
+                put3a(0x8b0485, &h[0]);            // mov eax, [h+eax*4]
           }
         }
         // Load destination address *b, *c, *d or hashd (*d) into ecx
         if ((op>=32 && op<56 && op%8<5) || (op>=96 && op<120) || op==60)
         {
-          put2(0x89c1+8*regcode[op/8%8-3-(op==60)]);    // mov ecx,{esi,edi,ebp}
+          put2(0x89c1+8*regcode[op/8%8-3-(op==60)]);// mov ecx,{esi,edi,ebp}
           const int sz=(ddd==6||op==60?hsize:msize)-1;
           if (sz>=128)
               put2a(0x81e1, sz);           // and ecx, dword sz
@@ -17503,13 +17522,15 @@ int ZPAQL::assemble()
   }
   // Finish first pass
   const int rsize=o;
-  if (o>rcode_size) return rsize;
+  if (o>rcode_size)
+      return rsize;
   // Fill in jump addresses (second pass)
-  for (int i=0; i<hlen; ++i) {
+  for (int i=0; i<hlen; ++i)
+  {
     if (it[i]<16) continue;
     int op=hcomp[i];
-    if (op==39 || op==47 || op==63 || op==255)
-    {  // jt, jf, jmp, lj
+    if (op==39 || op==47 || op==63 || op==255)   // jt, jf, jmp, lj
+    {
       int target=hcomp[i+1];
       if (op==255)
           target+=hcomp[i+2]*256;  // lj
@@ -17529,8 +17550,8 @@ int ZPAQL::assemble()
       assert(o<rcode_size);
       op=rcode[o++];  // x86 opcode
       target=it[target]-o;
-      if ((op>=0x72 && op<0x78) || op==0xeb)
-      {  // jx, jmp short
+      if ((op>=0x72 && op<0x78) || op==0xeb)  // jx, jmp short
+      {
         --target;
         if (target<-128 || target>127)
           error("Cannot code x86 short jump");
@@ -19849,7 +19870,8 @@ void e8e9(unsigned char* buf, int n) {
 // sap is pointer to external suffix array of inbuf or 0. If supplied and
 //   args[0]=5..7 then it is assumed that E8E9 was already applied to
 //   both the input and sap and the input buffer is not modified.
-class LZBuffer: public libzpaq::Reader {
+class LZBuffer: public libzpaq::Reader
+{
   libzpaq::Array<unsigned> ht;// hash table, confirm in low bits, or SA+ISA
   const unsigned char* in;    // input pointer
   const int checkbits;        // hash confirmation size or lg(ISA size)
@@ -19879,11 +19901,13 @@ class LZBuffer: public libzpaq::Reader {
   void write_match(unsigned len, unsigned off);
   void fill();  // encode to buf
   // write k bits of x
-  void putb(unsigned x, int k) {
+  void putb(unsigned x, int k)
+  {
     x&=(1<<k)-1;
     bits|=x<<nbits;
     nbits+=k;
-    while (nbits>7) {
+    while (nbits>7)
+    {
       assert(wpos<BUFSIZE);
       if (flagdebug5)
 		  myprintf("15900: wpos %d BUFSIZE %d\n",wpos,BUFSIZE);
@@ -19891,24 +19915,31 @@ class LZBuffer: public libzpaq::Reader {
     }
   }
   // write last byte
-  void flush() {
+  void flush()
+  {
     assert(wpos<BUFSIZE);
-    if (nbits>0) buf[wpos++]=bits;
+    if (nbits>0)
+        buf[wpos++]=bits;
     bits=nbits=0;
   }
   // write 1 byte
-  void put(int c) {
+  void put(int c)
+  {
     assert(wpos<BUFSIZE);
     buf[wpos++]=c;
   }
 public:
   LZBuffer(StringBuffer& inbuf, int args[], const unsigned* sap=0);
   // return 1 byte of compressed output (overrides Reader)
-  int get() {
+  int get()
+  {
     int c=-1;
-    if (rpos==wpos) fill();
-    if (rpos<wpos) c=buf[rpos++];
-    if (rpos==wpos) rpos=wpos=0;
+    if (rpos==wpos)
+        fill();
+    if (rpos<wpos)
+        c=buf[rpos++];
+    if (rpos==wpos)
+        rpos=wpos=0;
     return c;
   }
   // Read up to p[0..n-1] and return bytes read.
@@ -19938,9 +19969,12 @@ public:
 int lg(unsigned x)
 {
   unsigned r=0;
-  if (x>=65536) r=16, x>>=16;
-  if (x>=256) r+=8, x>>=8;
-  if (x>=16) r+=4, x>>=4;
+  if (x>=65536)
+      r=16, x>>=16;
+  if (x>=256)
+      r+=8, x>>=8;
+  if (x>=16)
+      r+=4, x>>=4;
   assert(x>=0 && x<16);
   return
     "\x00\x01\x02\x02\x03\x03\x03\x03\x04\x04\x04\x04\x04\x04\x04\x04"[x]+r;
@@ -19988,11 +20022,13 @@ int LZBuffer::read(char* p, int n)
 
   if (flagdebug5)
   {
-	if (nr) alpine_memcpy(p, buf+rpos, nr);
+	if (nr)
+	alpine_memcpy(p, buf+rpos, nr);
   }
   else
   {
-	if (nr) memcpy(p, buf+rpos, nr);
+	if (nr)
+	memcpy(p, buf+rpos, nr);
   }
   rpos+=nr;
   assert(rpos<=wpos);
@@ -20021,7 +20057,8 @@ LZBuffer::LZBuffer(StringBuffer& inbuf, int args[], const unsigned* sap):
     minMatchBoth(MAX(minMatch, minMatch2+lookahead)+4),
     rb(args[0]>4 ? args[0]-4 : 0),
     bits(0), nbits(0), rpos(0), wpos(0),
-    idx(0), sa(0), isa(0) {
+    idx(0), sa(0), isa(0)
+    {
   assert(args[0]>=0);
   assert(n<=(1u<<20<<args[0]));
   assert(args[1]>=1 && args[1]<=7 && args[1]!=4);
@@ -20029,34 +20066,46 @@ LZBuffer::LZBuffer(StringBuffer& inbuf, int args[], const unsigned* sap):
   if ((minMatch<4 && level==1) || (minMatch<1 && level==2))
     error("match length $3 too small");
   // e8e9 transform
-  if (args[1]>4 && !sap) e8e9(inbuf.data(), n);
+  if (args[1]>4 && !sap)
+      e8e9(inbuf.data(), n);
   // build suffix array if not supplied
-  if (args[5]-args[0]>=21 || level==3) {  // LZ77-SA or BWT
+  if (args[5]-args[0]>=21 || level==3)   // LZ77-SA or BWT
+  {
     if (sap)
       sa=sap;
-    else {
+    else
+    {
       assert(ht.size()>=n);
       assert(ht.size()>0);
       sa=&ht[0];
-      if (n>0) divsufsort((const unsigned char*)in, (int*)sa, n);
+      if (n>0)
+          divsufsort((const unsigned char*)in, (int*)sa, n);
     }
-    if (level<3) {
+    if (level<3)
+    {
       assert(ht.size()>=(n*(sap==0))+(1u<<17<<args[0]));
       isa=&ht[n*(sap==0)];
     }
   }
 }
 // Encode from in to buf until end of input or buf is not empty
-void LZBuffer::fill() {
+void LZBuffer::fill()
+{
   // BWT
-  if (level==3) {
+  if (level==3)
+  {
     assert(in || n==0);
     assert(sa);
-    for (; wpos<BUFSIZE && i<n+5; ++i) {
-      if (i==0) put(n>0 ? in[n-1] : 255);
-      else if (i>n) put(idx&255), idx>>=8;
-      else if (sa[i-1]==0) idx=i, put(255);
-      else put(in[sa[i-1]-1]);
+    for (; wpos<BUFSIZE && i<n+5; ++i)
+    {
+      if (i==0)
+          put(n>0 ? in[n-1] : 255);
+      else if (i>n)
+          put(idx&255), idx>>=8;
+      else if (sa[i-1]==0)
+          idx=i, put(255);
+      else
+          put(in[sa[i-1]-1]);
     }
     return;
   }
@@ -20616,8 +20665,10 @@ std::string makeConfig(const char* method, int args[]) {
       "    d=r 1 b=0 do\n"
       "      a=d a== 0 ifnot\n"
       "        a=*d a>>= 8 d=a\n";
-      if (doe8) pcomp+=" *b=*d b++\n";
-      else      pcomp+=" a=*d out\n";
+      if (doe8)
+          pcomp+=" *b=*d b++\n";
+      else
+          pcomp+=" a=*d out\n";
       pcomp+=
       "      forever\n"
       "    endif\n"
@@ -20776,16 +20827,20 @@ std::string makeConfig(const char* method, int args[]) {
     "  r=a 1  (R1 = 1+expected bytes to next code)\n";
   }
   // Generate the context model
-  while (*method && ncomp<254) {
+  while (*method && ncomp<254)
+  {
     // parse command C[N1[,N2]...] into v = {C, N1, N2...}
     std::vector<int> v;
     v.push_back(*method++);
-    if (isdigit(*method)) {
+    if (isdigit(*method))
+    {
       v.push_back(*method++-'0');
-      while (isdigit(*method) || *method==',' || *method=='.') {
+      while (isdigit(*method) || *method==',' || *method=='.')
+      {
         if (isdigit(*method))
           v.back()=v.back()*10+*method++-'0';
-        else {
+        else
+        {
           v.push_back(0);
           ++method;
         }
@@ -20798,20 +20853,27 @@ std::string makeConfig(const char* method, int args[]) {
     // N3...: 0..255=byte mask + 256=lz77 state. 1000+=run of N3-1000 zeros.
     if (v[0]=='c')
     {
-      while (v.size()<3) v.push_back(0);
+      while (v.size()<3)
+          v.push_back(0);
       comp+=itos(ncomp)+" ";
       sb=11;  // count context bits
-      if (v[2]<256) sb+=lg(v[2]);
-      else sb+=6;
+      if (v[2]<256)
+          sb+=lg(v[2]);
+      else
+          sb+=6;
       for (unsigned i=3; i<v.size(); ++i)
-        if (v[i]<512) sb+=nbits(v[i])*3/4;
-      if (sb>membits) sb=membits;
-      if (v[1]%1000==0) comp+="icm "+itos(sb-6-v[1]/1000)+"\n";
-      else comp+="cm "+itos(sb-2-v[1]/1000)+" "+itos(v[1]%1000-1)+"\n";
+        if (v[i]<512)
+            sb+=nbits(v[i])*3/4;
+      if (sb>membits)
+          sb=membits;
+      if (v[1]%1000==0)
+          comp+="icm "+itos(sb-6-v[1]/1000)+"\n";
+      else
+          comp+="cm "+itos(sb-2-v[1]/1000)+" "+itos(v[1]%1000-1)+"\n";
       // special contexts
       hcomp+="d= "+itos(ncomp)+" *d=0\n";
-      if (v[2]>1 && v[2]<=255)
-      {  // periodic context
+      if (v[2]>1 && v[2]<=255)  // periodic context
+      {
         if (lg(v[2])!=lg(v[2]-1))
           hcomp+="a=c a&= "+itos(v[2]-1)+" hashd\n";
         else
@@ -20824,7 +20886,8 @@ std::string makeConfig(const char* method, int args[]) {
       // Masked context
       for (unsigned i=3; i<v.size(); ++i)
       {
-        if (i==3) hcomp+="b=c ";
+        if (i==3)
+            hcomp+="b=c ";
         if (v[i]==255)
           hcomp+="a=*b hashd\n";  // ordinary byte
         else if (v[i]>0 && v[i]<255)
@@ -20861,9 +20924,12 @@ std::string makeConfig(const char* method, int args[]) {
     // s,8,32,255: SSE, size, start, limit
     if (strchr("mts", v[0]) && ncomp>int(v[0]=='t'))
     {
-      if (v.size()<=1) v.push_back(8);
-      if (v.size()<=2) v.push_back(24+8*(v[0]=='s'));
-      if (v[0]=='s' && v.size()<=3) v.push_back(255);
+      if (v.size()<=1)
+          v.push_back(8);
+      if (v.size()<=2)
+          v.push_back(24+8*(v[0]=='s'));
+      if (v[0]=='s' && v.size()<=3)
+          v.push_back(255);
       comp+=itos(ncomp);
       sb=5+v[1]*3/4;
       if (v[0]=='m')
@@ -20913,8 +20979,10 @@ std::string makeConfig(const char* method, int args[]) {
     // a24,0,0: MATCH. N1=hash multiplier. N2,N3=halve buf, table.
     if (v[0]=='a')
     {
-      if (v.size()<=1) v.push_back(24);
-      while (v.size()<4) v.push_back(0);
+      if (v.size()<=1)
+          v.push_back(24);
+      while (v.size()<4)
+          v.push_back(0);
       comp+=itos(ncomp)+" match "+itos(membits-v[3]-2)+" "
           +itos(membits-v[2])+"\n";
       hcomp+="d= "+itos(ncomp)+" a=*d a*= "+itos(v[1])
@@ -20928,12 +20996,18 @@ std::string makeConfig(const char* method, int args[]) {
     // Decrease memory by 2^-N6.
     if (v[0]=='w')
     {
-      if (v.size()<=1) v.push_back(1);
-      if (v.size()<=2) v.push_back(65);
-      if (v.size()<=3) v.push_back(26);
-      if (v.size()<=4) v.push_back(223);
-      if (v.size()<=5) v.push_back(20);
-      if (v.size()<=6) v.push_back(0);
+      if (v.size()<=1)
+          v.push_back(1);
+      if (v.size()<=2)
+          v.push_back(65);
+      if (v.size()<=3)
+          v.push_back(26);
+      if (v.size()<=4)
+          v.push_back(223);
+      if (v.size()<=5)
+          v.push_back(20);
+      if (v.size()<=6)
+          v.push_back(0);
       comp+=itos(ncomp)+" icm "+itos(membits-6-v[6])+"\n";
       for (int i=1; i<v[1]; ++i)
         comp+=itos(ncomp+i)+" isse "+itos(membits-6-v[6])+" "
@@ -20942,8 +21016,10 @@ std::string makeConfig(const char* method, int args[]) {
            +itos(v[3])+" if\n";
       for (int i=0; i<v[1]; ++i)
       {
-        if (i==0) hcomp+="  d= "+itos(ncomp);
-        else hcomp+="  d++";
+        if (i==0)
+            hcomp+="  d= "+itos(ncomp);
+        else
+            hcomp+="  d++";
         hcomp+=" a=*d a*= "+itos(v[5])+" a+=*c a++ *d=a\n";
       }
       hcomp+="else\n";
@@ -20983,11 +21059,14 @@ void compressBlock(StringBuffer* in, Writer* out, const char* method_,
     int commas=0, arg[4]={0};
     for (int i=1; i<int(method.size()) && commas<4; ++i)
     {
-      if (method[i]==',' || method[i]=='.') ++commas;
+      if (method[i]==',' || method[i]=='.')
+          ++commas;
       else if (isdigit(method[i])) arg[commas]=arg[commas]*10+method[i]-'0';
     }
-    if (commas==0) type=512;
-    else type=arg[1]*4+arg[2];
+    if (commas==0)
+        type=512;
+    else
+        type=arg[1]*4+arg[2];
   }
   // Get hash of input
   libzpaq::SHA1 sha1;
@@ -21022,22 +21101,30 @@ void compressBlock(StringBuffer* in, Writer* out, const char* method_,
       else
       {
         method+=","+itos(1+doe8)+",";
-        if      (type<80)  method+="4,0,1,15";
-        else if (type<128) method+="4,0,2,16";
-        else if (type<256) method+="4,0,2"+htsz;
-        else if (type<960) method+="5,0,3"+htsz;
-        else               method+="6,0,3"+htsz;
+        if (type<80)
+            method+="4,0,1,15";
+        else if (type<128)
+            method+="4,0,2,16";
+        else if (type<256)
+            method+="4,0,2"+htsz;
+        else if (type<960)
+            method+="5,0,3"+htsz;
+        else
+            method+="6,0,3"+htsz;
       }
     }
     // LZ77 with longer search
     else if (level==2)
     {
-      if (type<32) method+=",0";
+      if (type<32)
+          method+=",0";
       else
       {
         method+=","+itos(1+doe8)+",";
-        if (type<64) method+="4,0,3"+htsz;
-        else method+="4,0,7"+sasz+",1";
+        if (type<64)
+            method+="4,0,3"+htsz;
+        else
+            method+="4,0,7"+sasz+",1";
       }
     }
     // LZ77 with CM depending on redundancy
@@ -27751,7 +27838,8 @@ XXH3_128bits_reset_internal(XXH3_state_t* statePtr,
 XXH_errorcode
 XXH3_128bits_reset(XXH3_state_t* statePtr)
 {
-    if (statePtr == NULL) return XXH_ERROR;
+    if (statePtr == NULL)
+        return XXH_ERROR;
     XXH3_128bits_reset_internal(statePtr, 0, XXH3_kSecret, XXH_SECRET_DEFAULT_SIZE);
     return XXH_OK;
 }
@@ -27766,7 +27854,8 @@ XXH3_128bits_update(XXH3_state_t* state, const void* input, size_t len)
 XXH128_hash_t XXH3_128bits_digest (const XXH3_state_t* state)
 {
     const unsigned char* const secret = (state->extSecret == NULL) ? state->customSecret : state->extSecret;
-    if (state->totalLen > XXH3_MIDSIZE_MAX) {
+    if (state->totalLen > XXH3_MIDSIZE_MAX)
+    {
         XXH_ALIGN(XXH_ACC_ALIGN) XXH64_hash_t acc[XXH_ACC_NB];
         XXH3_digest_long(acc, state, secret);
         XXH_ASSERT(state->secretLimit + XXH_STRIPE_LEN >= sizeof(acc) + XXH_SECRET_MERGEACCS_START);
@@ -34925,12 +35014,14 @@ int esamina_password(const string &password, bool i_dooutput= false)
 
 
 
-bool headcompare(std::string i_file1, std::string i_file2) {
+bool headcompare(std::string i_file1, std::string i_file2)
+{
     // 1. Recupero dimensioni
     int64_t len1 = prendidimensionefile(i_file1.c_str());
     int64_t len2 = prendidimensionefile(i_file2.c_str());
 
-    if (len1 < 0 || len2 < 0) {
+    if (len1 < 0 || len2 < 0)
+    {
         myprintf("Errore: impossibile leggere le dimensioni dei file.\n");
         return false;
     }
@@ -34951,15 +35042,19 @@ bool headcompare(std::string i_file1, std::string i_file2) {
     myprintf("84155: Delta size             %21s\n", migliaia(delta));
 
     // Se il file corto è vuoto, è tecnicamente un prefisso di qualsiasi file.
-    if (len1 == 0) return true;
+    if (len1 == 0)
+        return true;
 
     // 3. Apertura file binaria
     FILE *f1 = std::fopen(i_file1.c_str(), "rb");
     FILE *f2 = std::fopen(i_file2.c_str(), "rb");
 
-    if (!f1 || !f2) {
-        if (f1) std::fclose(f1);
-        if (f2) std::fclose(f2);
+    if (!f1 || !f2)
+    {
+        if (f1)
+            std::fclose(f1);
+        if (f2)
+            std::fclose(f2);
         myprintf("Errore apertura file.\n");
         return false;
     }
@@ -34990,17 +35085,23 @@ bool headcompare(std::string i_file1, std::string i_file2) {
         donesize += r1;
 
         // Controllo errori I/O
-        if (r1 != to_read || r2 != to_read) {
+        if (r1 != to_read || r2 != to_read)
+        {
             myprintf("Errore critico di lettura I/O durante il confronto.\n");
             are_equal_prefix = false;
-        } else {
+        }
+        else
+        {
             // Confronto veloce della memoria
-            if (memcmp(buf1.get(), buf2.get(), to_read) != 0) {
+            if (memcmp(buf1.get(), buf2.get(), to_read) != 0)
+            {
                 are_equal_prefix = false;
 
                 // Troviamo il byte esatto che differisce
-                for (size_t i = 0; i < to_read; ++i) {
-                    if (buf1[i] != buf2[i]) {
+                for (size_t i = 0; i < to_read; ++i)
+                {
+                    if (buf1[i] != buf2[i])
+                    {
                         int64_t diff_offset = total_read + i;
 
                         eol();
@@ -35022,14 +35123,18 @@ bool headcompare(std::string i_file1, std::string i_file2) {
     eol();
 
     // 7. Risultato finale
-    if (are_equal_prefix) {
+    if (are_equal_prefix)
+    {
         // Se siamo qui, il contenuto di File1 è identico alla parte iniziale di File2.
 
-        if (len1 == len2) {
+        if (len1 == len2)
+        {
             color_green();
             myprintf("RESULT: FILES ARE IDENTICAL (Same size, same content).\n");
             color_restore();
-        } else {
+        }
+        else
+        {
             // Caso richiesto: File diverso ma prefisso uguale
             color_cyan();
             myprintf("RESULT: MATCH! The shorter file is a perfect prefix.\n");
@@ -35039,7 +35144,9 @@ bool headcompare(std::string i_file1, std::string i_file2) {
             color_restore();
         }
         return true;
-    } else {
+    }
+    else
+    {
         color_red();
         myprintf("RESULT: MISMATCH. Files differ inside the common length.\n");
         color_restore();
@@ -35066,7 +35173,6 @@ const size_t			 CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE= 67108864; // 64MB
 const unsigned long long CRYPTO_PWHASH_OPSLIMIT_MODERATE   = 3;
 const size_t			 CRYPTO_PWHASH_MEMLIMIT_MODERATE   = 268435456; // 256MB
 const unsigned long long CRYPTO_PWHASH_OPSLIMIT_SENSITIVE  = 4;
-/// const size_t CRYPTO_PWHASH_MEMLIMIT_SENSITIVE 				= 1073741824; // 1GB
 
 #define G_FRANZEN_SIZE 65536
 
@@ -73760,23 +73866,19 @@ ThreadReturn decompressthreadramdisk(void *arg)
 					job.lastdt= job.jd.dt.end();
 				if (job.lastdt == job.jd.dt.end())
 				{
-					if (!isdirectory(job.jd.rename(p->first)))
-						if (p->second.pramfile == NULL)
-						{
-							p->second.pramfile= new franzfs;
-							(*p->second.pramfile).init(p->second.size);
-							g_allocatedram+= sizeof(franzfs);
-						}
+					if (!isdirectory(job.jd.rename(p->first)) && p->second.pramfile == NULL)
+					{
+						p->second.pramfile= new franzfs;
+						(*p->second.pramfile).init(p->second.size);
+						g_allocatedram+= sizeof(franzfs);
+					}
 					if (p->second.pramfile == NULL)
 						error("31399 cannot init ramdisk");
-					if (p->second.data == 0)
+					if (p->second.data == 0 && !flagimage)
 					{
-						if (!flagimage)
-						{
 							lock(job.mutex);
 							print_progress(job.total_size, job.total_done, -1, -1);
 							release(job.mutex);
-						}
 					}
 					job.lastdt= p;
 				}
@@ -73799,7 +73901,11 @@ ThreadReturn decompressthreadramdisk(void *arg)
 				uint64_t usize= job.jd.ht[ptr[j]].usize;
 				assert(usize <= 0x7fffffff);
 				assert(b.start + b.size <= job.jd.ht.size());
-				while (j + 1 < ptr.size() && ptr[j + 1] == ptr[j] + 1 && ptr[j + 1] < b.start + b.size && job.jd.ht[ptr[j + 1]].usize >= 0 && usize + job.jd.ht[ptr[j + 1]].usize <= 0x7fffffff)
+				while (j + 1 < ptr.size() &&
+				ptr[j + 1] == ptr[j] + 1 &&
+				ptr[j + 1] < b.start + b.size &&
+				job.jd.ht[ptr[j + 1]].usize >= 0 &&
+				usize + job.jd.ht[ptr[j + 1]].usize <= 0x7fffffff)
 				{
 					++p->second.data;
 					assert(p->second.data <= int64_t(ptr.size()));
@@ -73817,9 +73923,8 @@ ThreadReturn decompressthreadramdisk(void *arg)
 				{
 					if (offset > g_scritti)
 						g_scritti= offset;
-					if (!(flagzero && flagdebug)) //-zero -debug =>write an all zeroed-file
-						if (p->second.pramfile != NULL)
-							(*p->second.pramfile).ramwrite(offset, (char *)out.c_str() + q, usize);
+					if (!(flagzero && flagdebug) && p->second.pramfile != NULL)) //-zero -debug =>write an all zeroed-file
+						(*p->second.pramfile).ramwrite(offset, (char *)out.c_str() + q, usize);
 				}
 				size_t mappedbytes= usize;
 				if (job.windowed && p->second.pramfile != NULL)
@@ -74022,13 +74127,11 @@ int Jidac::zpaqdirsize()
 				if (isdirectory(a->first))
 				{
 					int posizione= myposi(files[i], a->first);
-					if (posizione > -1)
-						if ((unsigned int)posizione == (unsigned int)(a->first.size() - files[i].size()))
-							filelist.push_back(a);
+					if (posizione > -1 && ((unsigned int)posizione == (unsigned int)(a->first.size() - files[i].size())))
+						filelist.push_back(a);
 				}
-			if (flagdebug)
-				if (filelist.size() == oldsize)
-					myprintf("00724$ WARNING cannot find folder in the zpaq <<%s>>\n", files[i].c_str());
+			if (flagdebug && filelist.size() == oldsize))
+				myprintf("00724$ WARNING cannot find folder in the zpaq <<%s>>\n", files[i].c_str());
 		}
 	}
 	sort(filelist.begin(), filelist.end(), compareFragmentList);
@@ -74608,13 +74711,12 @@ int Jidac::list()
 	unsigned fi;
 	for (fi= 0; fi < filelist.size(); ++fi)
 	{
-		if (menoenne)
-			if (fi >= menoenne)
-				break;
+		if (menoenne && fi >= menoenne)
+			break;
 		DTMap::iterator p= filelist[fi];
 
 		flagshow= true;
-		if ((!flag715) && (!flagforcewindows) && (!all))
+		if (!flag715 && !flagforcewindows && !all)
 			flagshow= !iszpaqfranzvirtualfile(p->first);
 
 		/// redundant, but not a really big deal
@@ -74649,194 +74751,190 @@ int Jidac::list()
 			if (flagnodel)
 				flagshow= false;
 
-		if ((flagshow) && (searchfrom != ""))
+		if ((flagshow && searchfrom != ""))
 			flagshow = stristr(p->first.c_str(), searchfrom.c_str());
 
-		if (flagshow)
-			if (!strchr(nottype.c_str(), p->second.data))
+		if (flagshow && !strchr(nottype.c_str(), p->second.data)))
+		{
+			if (p->first != "" && (!isdirectory(p->first)))
+				usize+= p->second.size;
+
+			string		 myfilename	   = p->first;
+			string		 myhashtype	   = "";
+			string		 myhash		   = "";
+			string		 mycrc32	   = "";
+			int64_t		 mycreationtime= 0;
+			int64_t		 myaccesstime  = 0;
+			bool		 myisordered   = false;
+			int			 myversion	   = 0;
+			franz_posix *myposix	   = NULL;
+			bool		 myisadded	   = false;
+
+			int franzotypedetected=
+				decode_franz_block(isdirectory(myfilename), p->second.franz_block,
+								   myhashtype,
+								   myhash,
+								   mycrc32,
+								   mycreationtime,
+								   myaccesstime,
+								   myisordered,
+								   myversion,
+								   myposix, myisadded);
+
+			if (flagdebug3)
+				myprintf("00765: franzotype %d myhashtype %s myhash %s mycrc32 %s myisadded %d\n", franzotypedetected, myhashtype.c_str(), myhash.c_str(), mycrc32.c_str(), (int)myisadded);
+			bool flaghoadded= (myhashtype == "XXHASH64B") || (myhashtype == "MD5B") || (myhashtype == "BLAKE3B") || (myhashtype == "SHA-256B") || (myhashtype == "SHA-3B") || (myhashtype == "XXH3B") || (myhashtype == "SHA1-B");
+
+			if (!flagchecksum)
 			{
-				if (p->first != "" && (!isdirectory(p->first)))
-					usize+= p->second.size;
+				franzotypedetected= 0;
+				myhashtype		  = "";
+				myhash			  = "";
+				mycrc32			  = "";
+			}
+			if (franzotypedetected > 1)
+			{
+				if ((myhashtype != "") && (myhash != ""))
+					myhash= myhashtype + ": " + myhash + " ";
+				if (mycrc32 != "")
+					mycrc32= "CRC32: " + mycrc32 + " ";
+			}
+			else
+			{
+				if ((myhashtype == "") && (myhash == "") && (mycrc32 != ""))
+					mycrc32= "CRC32: " + mycrc32 + " ";
+			}
 
-				string		 myfilename	   = p->first;
-				string		 myhashtype	   = "";
-				string		 myhash		   = "";
-				string		 mycrc32	   = "";
-				int64_t		 mycreationtime= 0;
-				int64_t		 myaccesstime  = 0;
-				bool		 myisordered   = false;
-				int			 myversion	   = 0;
-				franz_posix *myposix	   = NULL;
-				bool		 myisadded	   = false;
+			if (summary <= 0)
+			{
+				unsigned v;
+				string	 theversionnumber = "";
+				bool	 flagnewversion	  = false;
+				bool	 isfolder		  = isdirectory(myfilename);
+				int64_t	 sizetoprint	  = p->second.size;
+				int64_t	 compressedtoprint= p->second.kompressedsize;
 
-				int franzotypedetected=
-					decode_franz_block(isdirectory(myfilename), p->second.franz_block,
-									   myhashtype,
-									   myhash,
-									   mycrc32,
-									   mycreationtime,
-									   myaccesstime,
-									   myisordered,
-									   myversion,
-									   myposix, myisadded);
-
-				if (flagdebug3)
-					myprintf("00765: franzotype %d myhashtype %s myhash %s mycrc32 %s myisadded %d\n", franzotypedetected, myhashtype.c_str(), myhash.c_str(), mycrc32.c_str(), (int)myisadded);
-				bool flaghoadded= (myhashtype == "XXHASH64B") || (myhashtype == "MD5B") || (myhashtype == "BLAKE3B") || (myhashtype == "SHA-256B") || (myhashtype == "SHA-3B") || (myhashtype == "XXH3B") || (myhashtype == "SHA1-B");
-
-				if (!flagchecksum)
+				if (all)
 				{
-					franzotypedetected= 0;
-					myhashtype		  = "";
-					myhash			  = "";
-					mycrc32			  = "";
-				}
-				if (franzotypedetected > 1)
-				{
-					if ((myhashtype != "") && (myhash != ""))
-						myhash= myhashtype + ": " + myhash + " ";
-					if (mycrc32 != "")
-						mycrc32= "CRC32: " + mycrc32 + " ";
+					theversionnumber= myfilename.substr(0, all);
+					if (!isfolder)
+						myfilename= myfilename.substr(all + 3, myfilename.size() - all - 3);
+					else
+						myfilename= myright(myfilename, myfilename.size() - all - 3);
+
+					if ((int)myfilename.length() == (all + 1))
+						if (myfilename[myfilename.length() - 1] == '/')
+						{
+							bool alldigit= true;
+							for (unsigned int i= 0; i < myfilename.length() - 1; i++)
+								if (!isdigit(myfilename[i]))
+								{
+									alldigit= false;
+									break;
+								}
+							if (alldigit)
+							{
+								myfilename	  = "";
+								flagnewversion= true;
+								if (all > 0 && p->first.size() == all + 1u && (v= atoi(p->first.c_str())) > 0 && v < ver.size())
+									sizetoprint= v + 1 < ver.size() ? (ver[v + 1].offset - ver[v].offset) : (csize - ver[v].offset);
+								compressedtoprint= sizetoprint;
+							}
+						}
 				}
 				else
 				{
-					if ((myhashtype == "") && (myhash == "") && (mycrc32 != ""))
-						mycrc32= "CRC32: " + mycrc32 + " ";
+					if (tofiles.size() > 0)
+						myfilename= rename(myfilename);
 				}
 
-				if (summary <= 0)
+				if (!(flagterse && flagnewversion))
 				{
-					unsigned v;
-					string	 theversionnumber = "";
-					bool	 flagnewversion	  = false;
-					bool	 isfolder		  = isdirectory(myfilename);
-					int64_t	 sizetoprint	  = p->second.size;
-					int64_t	 compressedtoprint= p->second.kompressedsize;
+					if (g_csvhf != "")
+						myprintf(g_csvhf.c_str());
+					list_datetime(p->second.date, flagnewversion);
+					tabba();
 
-					if (all)
+					if (flagdate)
 					{
-						theversionnumber= myfilename.substr(0, all);
-						if (!isfolder)
-							myfilename= myfilename.substr(all + 3, myfilename.size() - all - 3);
-						else
-							myfilename= myright(myfilename, myfilename.size() - all - 3);
-
-						if ((int)myfilename.length() == (all + 1))
-							if (myfilename[myfilename.length() - 1] == '/')
-							{
-								bool alldigit= true;
-								for (unsigned int i= 0; i < myfilename.length() - 1; i++)
-									if (!isdigit(myfilename[i]))
-									{
-										alldigit= false;
-										break;
-									}
-								if (alldigit)
-								{
-									myfilename	  = "";
-									flagnewversion= true;
-									if (all > 0 && p->first.size() == all + 1u && (v= atoi(p->first.c_str())) > 0 && v < ver.size())
-										sizetoprint= v + 1 < ver.size() ? (ver[v + 1].offset - ver[v].offset) : (csize - ver[v].offset);
-									compressedtoprint= sizetoprint;
-								}
-							}
+						list_creationdate(mycreationtime);
+						tabba();
 					}
+					if (flagattr || flagterse)
+					{
+						list_attributes(p->second.attr);
+						tabba();
+					}
+
+					list_filesize(isdirectory(p->first), sizetoprint, thesizesize);
+					tabba();
+
+					list_compressedfilesize(compressedtoprint, sizetoprint, flagnewversion, isfolder, p->second.date == 0);
+					tabba();
+
+					if (theversionnumber != "")
+					{
+						if (g_csvstring == "")
+							myprintf("%s|", theversionnumber.c_str());
+						else
+							myprintf("%s", theversionnumber.c_str());
+						if (g_csvstring != "")
+							tabba();
+					}
+					if ((myhash != "") || (mycrc32 != ""))
+					{
+						color_yellow();
+						if (myhash != "")
+						{
+							myprintf("%s ", myhash.c_str());
+							tabba();
+						}
+						if (mycrc32 != "")
+						{
+							myprintf("%s ", mycrc32.c_str());
+							tabba();
+						}
+						color_restore();
+					}
+					if (flagstdout && p->second.isordered)
+						myfilename= "[STDOUT] " + myfilename;
+					string simbolino= "+";
+
+					if (p->second.date == 0)
+						simbolino= "-";
 					else
 					{
-						if (tofiles.size() > 0)
-							myfilename= rename(myfilename);
+						if (flaghoadded && !myisadded)
+							simbolino= "#";
 					}
 
-					if (!(flagterse && flagnewversion))
+					if (all > 0 && p->first.size() == all + 1u && (v= atoi(p->first.c_str())) > 0 && v < ver.size())
+						simbolino= "";
+					myprintf("%s", simbolino.c_str());
+					tabba();
+					printUTF8(myfilename.c_str());
+
+					if (all > 0 && p->first.size() == all + 1u && (v= atoi(p->first.c_str())) > 0 && v < ver.size())
 					{
-						if (g_csvhf != "")
-							myprintf(g_csvhf.c_str());
-						list_datetime(p->second.date, flagnewversion);
-						tabba();
-
-						if (flagdate)
-						{
-							list_creationdate(mycreationtime);
-							tabba();
-						}
-						if (flagattr || flagterse)
-						{
-							list_attributes(p->second.attr);
-							tabba();
-						}
-
-						list_filesize(isdirectory(p->first), sizetoprint, thesizesize);
-						tabba();
-
-						list_compressedfilesize(compressedtoprint, sizetoprint, flagnewversion, isfolder, p->second.date == 0);
-						tabba();
-
-						if (theversionnumber != "")
-						{
-							if (g_csvstring == "")
-								myprintf("%s|", theversionnumber.c_str());
-							else
-								myprintf("%s", theversionnumber.c_str());
-							if (g_csvstring != "")
-								tabba();
-						}
-						if ((myhash != "") || (mycrc32 != ""))
-						{
-							color_yellow();
-							if (myhash != "")
-							{
-								myprintf("%s ", myhash.c_str());
-								tabba();
-							}
-							if (mycrc32 != "")
-							{
-								myprintf("%s ", mycrc32.c_str());
-								tabba();
-							}
-							color_restore();
-						}
-						if (flagstdout)
-							if (p->second.isordered)
-								myfilename= "[STDOUT] " + myfilename;
-						string simbolino= "+";
-
-						if (p->second.date == 0)
-							simbolino= "-";
-						else
-						{
-							if (flaghoadded)
-								if (!myisadded)
-									simbolino= "#";
-						}
-
-						if (all > 0 && p->first.size() == all + 1u && (v= atoi(p->first.c_str())) > 0 && v < ver.size())
-							simbolino= "";
-						myprintf("%s", simbolino.c_str());
-						tabba();
-						printUTF8(myfilename.c_str());
-
-						if (all > 0 && p->first.size() == all + 1u && (v= atoi(p->first.c_str())) > 0 && v < ver.size())
-						{
-							std::map<int, string>::iterator commento= mappacommenti.find(v);
-							color_blackongreen();
-							myprintf("Files: changed/added %s removed %s", migliaia(ver[v].updates), migliaia2(ver[v].deletes));
-							if (commento != mappacommenti.end())
-								myprintf(" <<%s>>", commento->second.c_str());
-							color_restore();
-						}
-						if (g_csvhf != "")
-							myprintf(g_csvhf.c_str());
-
-						if (flagtar)
-							if (myposix)
-							{
-								myprintf("\n");
-								dump_franz_posix(myposix);
-							}
-						myprintf("\n");
+						std::map<int, string>::iterator commento= mappacommenti.find(v);
+						color_blackongreen();
+						myprintf("Files: changed/added %s removed %s", migliaia(ver[v].updates), migliaia2(ver[v].deletes));
+						if (commento != mappacommenti.end())
+							myprintf(" <<%s>>", commento->second.c_str());
+						color_restore();
 					}
+					if (g_csvhf != "")
+						myprintf(g_csvhf.c_str());
+
+					if (flagtar && myposix)
+					{
+						myprintf("\n");
+						dump_franz_posix(myposix);
+					}
+				myprintf("\n");
 				}
 			}
+		}
 	} // end for i = each file version
 
 	if (flagterse)
@@ -74872,8 +74970,7 @@ int Jidac::list()
 		checksha1collision(dt, true);
 
 #ifdef unix
-	if ((!flagstdout) && (!flagterse))
-		if (!flagtar)
+	if (!flagstdout && !flagterse && !flagtar)
 		{
 			int posix= posix_count();
 			if (posix > 0)
@@ -74991,20 +75088,19 @@ bool Jidac::equal(DTMap::const_iterator p, const char *filename, uint32_t &o_crc
 		{
 			percentuale= 100.0 * ((double)i / (double)p->second.ptr.size());
 			int proper = (int)percentuale;
-			if (percentuale > 0)
-				if (proper != ultimapercentuale)
-				{
-					if (proper == 99)
-						proper= 100;
-					double tempo  = (mtime() - timestart + 1) / 1000.0;
-					int	   myspeed= (int)(done / tempo);
+			if (percentuale > 0 && proper != ultimapercentuale)
+			{
+				if (proper == 99)
+					proper= 100;
+				double tempo  = (mtime() - timestart + 1) / 1000.0;
+				int	   myspeed= (int)(done / tempo);
 
-					if (flagchecksum || flagverify || flagparanoid)
-						myprintf("00822: SHA1 %03d%%      %10s/%10s @ %10s/s + %s\r", proper, tohuman(done), tohuman3(p->second.size), tohuman2(myspeed), i_myhashtype.c_str());
-					else
-						myprintf("00823: SHA1 %03d%%      %10s/%10s @ %10s/s\r", proper, tohuman(done), tohuman3(p->second.size), tohuman2(myspeed));
-					ultimapercentuale= (int)percentuale;
-				}
+				if (flagchecksum || flagverify || flagparanoid)
+					myprintf("00822: SHA1 %03d%%      %10s/%10s @ %10s/s + %s\r", proper, tohuman(done), tohuman3(p->second.size), tohuman2(myspeed), i_myhashtype.c_str());
+				else
+					myprintf("00823: SHA1 %03d%%      %10s/%10s @ %10s/s\r", proper, tohuman(done), tohuman3(p->second.size), tohuman2(myspeed));
+				ultimapercentuale= (int)percentuale;
+			}
 		}
 		for (int j= 0; j < ht[f].usize;)
 		{
@@ -75087,13 +75183,12 @@ int Jidac::setpassword()
 		myprintf("00826! so sorry, this seems a multipart archive, abort\n");
 		return 2;
 	}
-	if (!flagspace)
-		if (!saggiascrivibilitacartella(repack))
-		{
-			myprintf("00827! Cannot write on output %s\n", repack.c_str());
-			myprintf("00828! Aborting. Use -space to bypass and enforcing\n");
-			return 2;
-		}
+	if (!flagspace && !saggiascrivibilitacartella(repack))
+	{
+		myprintf("00827! Cannot write on output %s\n", repack.c_str());
+		myprintf("00828! Aborting. Use -space to bypass and enforcing\n");
+		return 2;
+	}
 	myprintf("\n\n");
 	myprintf("00829: Opening the source archive\n");
 	if (g_password != NULL)
@@ -75191,7 +75286,6 @@ int Jidac::checkpassword()
 // Otherwise create only new files and directories. Return 1 if error else 0.
 struct tparametriramtodisk
 {
-	/// vector<string> 	o_hashcalculated;
 	vector<string>	 filenameondisk;
 	vector<int64_t>	 filedate;
 	vector<int64_t>	 fileattr;
@@ -75237,8 +75331,7 @@ struct tparametriramtodisk
 							o_filecrc(0),
 							o_filecrcok(0),
 							o_filecrcerror(0)
-	{
-	}
+	{}
 };
 void *scriviramtodisk(void *t)
 {
@@ -75265,65 +75358,63 @@ void *scriviramtodisk(void *t)
 	par->o_filecrcerror	  = 0;
 	for (unsigned int i= 0; i < par->filenameondisk.size(); i++)
 	{
-		if (flagchecksum)
-			if (!isdirectory(par->filenameondisk[i]))
-				if (par->data[i] != NULL)
+		if (flagchecksum && !isdirectory(par->filenameondisk[i]) && par->data[i] != NULL)
+			{
+				if (par->filecrc[i] != "")
 				{
-					if (par->filecrc[i] != "")
+					int64_t startcrc= mtime();
+					par->o_filecrc++;
+					uint32_t crc= 0;
+					crc			= crc32_16bytes(par->data[i], par->filesize[i], crc);
+					snprintf(buffer, sizeof(buffer), "%08X", crc);
+					crc32fromram= buffer;
+					if (crc32fromram == par->filecrc[i])
+						par->o_filecrcok++;
+					else
 					{
-						int64_t startcrc= mtime();
-						par->o_filecrc++;
-						uint32_t crc= 0;
-						crc			= crc32_16bytes(par->data[i], par->filesize[i], crc);
-						snprintf(buffer, sizeof(buffer), "%08X", crc);
-						crc32fromram= buffer;
-						if (crc32fromram == par->filecrc[i])
-							par->o_filecrcok++;
-						else
+						if (par->filecrc[i] != "00000000")
 						{
-							if (par->filecrc[i] != "00000000")
-							{
-								if (flagverbose)
-									myprintf("00846: ERROR CRC stored %s  from ram|%s|\n", par->filecrc[i].c_str(), crc32fromram.c_str());
-								par->o_filecrcerror++;
-							}
+							if (flagverbose)
+								myprintf("00846: ERROR CRC stored %s  from ram|%s|\n", par->filecrc[i].c_str(), crc32fromram.c_str());
+							par->o_filecrcerror++;
 						}
-						par->o_crcsize+= par->filesize[i];
-						par->o_timecrc+= (mtime() - startcrc);
 					}
-					else
-						par->o_filewithoutcrc++;
-					int64_t starthash= mtime();
-					if (par->algo[i] == "")
-						par->o_filesnotchecked++;
-					else
-					{
-						if (flagdebug3)
-							myprintf("00847: franz_do_hash\n");
-
-						franz_do_hash hashfrombuffer(par->algo[i]);
-						hashfrombuffer.init();
-						hashfrombuffer.update(par->data[i], par->filesize[i]);
-						hashstringato= hashfrombuffer.finalize();
-						par->o_hashedsize+= par->filesize[i];
-					}
-					if (flagdebug)
-						myprintf("00848: INFO hash stored %s %s  from ram|%s| %s\n", par->algo[i].c_str(), par->filecrc[i].c_str(), hashstringato.c_str(), par->filenameondisk[i].c_str());
-
-					if (par->filehash[i] != hashstringato)
-					{
-						par->o_fileerror++;
-						if (flagverbose)
-							myprintf("00849: ERROR hash stored |%s| |%s|  from ram|%s| %s\n", par->algo[i].c_str(), par->filehash[i].c_str(), hashstringato.c_str(), par->filenameondisk[i].c_str());
-					}
-					else
-					{
-						if (hashstringato != "")
-							par->o_fileok++;
-					}
-					int64_t temp= (mtime() - starthash); ///*0.001;
-					par->o_timehash+= temp;
+					par->o_crcsize+= par->filesize[i];
+					par->o_timecrc+= (mtime() - startcrc);
 				}
+				else
+					par->o_filewithoutcrc++;
+				int64_t starthash= mtime();
+				if (par->algo[i] == "")
+					par->o_filesnotchecked++;
+				else
+				{
+					if (flagdebug3)
+						myprintf("00847: franz_do_hash\n");
+
+					franz_do_hash hashfrombuffer(par->algo[i]);
+					hashfrombuffer.init();
+					hashfrombuffer.update(par->data[i], par->filesize[i]);
+					hashstringato= hashfrombuffer.finalize();
+					par->o_hashedsize+= par->filesize[i];
+				}
+				if (flagdebug)
+					myprintf("00848: INFO hash stored %s %s  from ram|%s| %s\n", par->algo[i].c_str(), par->filecrc[i].c_str(), hashstringato.c_str(), par->filenameondisk[i].c_str());
+
+				if (par->filehash[i] != hashstringato)
+				{
+					par->o_fileerror++;
+					if (flagverbose)
+						myprintf("00849: ERROR hash stored |%s| |%s|  from ram|%s| %s\n", par->algo[i].c_str(), par->filehash[i].c_str(), hashstringato.c_str(), par->filenameondisk[i].c_str());
+				}
+				else
+				{
+					if (hashstringato != "")
+						par->o_fileok++;
+				}
+				int64_t temp= (mtime() - starthash); ///*0.001;
+				par->o_timehash+= temp;
+			}
 		if (!par->flagtest)
 		{
 			int64_t startfilesystem= mtime();
@@ -75480,9 +75571,8 @@ int Jidac::searchcomments(string i_testo, vector<DTMap::iterator> &filelist)
 				string numeroversione= fakefile.substr(found + 9, 8);
 				int	   numver		 = mystoi(numeroversione);
 				string commento		 = fakefile.substr(found + 9 + 8 + 1, 65000);
-				if (i_testo.length() > 0)
-					if (!stringcomparei(commento, i_testo))
-						continue;
+				if (i_testo.length() > 0 && !stringcomparei(commento, i_testo))
+					continue;
 				mappacommenti.insert(std::pair<int, string>(numver, commento));
 				versione= numver;
 				quanti++;
@@ -117910,15 +118000,14 @@ int Jidac::extractstdout(char i_dest_partition, const string &i_rawfilename)
 
 #ifdef _WIN32
 	franzdisktype fdt(archive);
-	if (flagverbose)
-		if (fdt.ishdd())
-		{
-			color_yellow();
-			printbar('*');
-			myprintf("10303: WARNING: archive %s does not seems on solid-state media, this can slowdown a lot!\n", archive.c_str());
-			printbar('*');
-			color_restore();
-		}
+	if (flagverbose && fdt.ishdd())
+	{
+		color_yellow();
+		printbar('*');
+		myprintf("10303: WARNING: archive %s does not seems on solid-state media, this can slowdown a lot!\n", archive.c_str());
+		printbar('*');
+		color_restore();
+	}
 #endif
 
 	if (flagramsize)
